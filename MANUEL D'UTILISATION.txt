@@ -1,0 +1,64 @@
+# Manuel d'utilisation
+
+=================
+Structure du site
+=================
+
+Le site est composé de trois parties :
+
+-------------------
+La partie affichage
+-------------------
+
+C'est la première partie du site, qui a une vocation informative. Elle expose différents éléments et menus le plus proprement possible et est disponible sans qu'un compte ait besoin d'être créé. Structurée avec une arborescence facilement configurable, elle permet de présenter toutes sortes d'éléments avec une classification efficace. On retrouve plusieurs éléments dans cette partie :
+
+- le menu principal, facilement modulable. Celui-ci s'articule autour d'un menu déroulant automatique, ainsi que d'un menu latéral, présentant les différents menus. Ces derniers sont également présentés plus précisément dans la partie centrale de cette page principale : une courte description, un texte descriptif, ainsi qu'un lien direct accompagnent les titres des menus. Plus bas encore, ces mêmes menus sont cette fois représentés par des photos, qui renvoient elles aussi vers les menus en question.
+
+- les sous-menus : sélectionnés depuis le menu principal, ils reprennent la structure de celui-ci mais présentent non plus des menus mais des catégories (la page principale est un menu principal qui regroupe plusieurs menus qui regroupent à leur tour plusieurs catégories). Là encore, une description, un texte accompagnent les catégories en question en naviguant vers le bas de page. On retrouve le menu défilant horizontal et la barre de navigation latérale.
+
+- les catégories : celles-ci renvoient vers des pages qui peuvent présenter directement du contenu et sont également facilement modifiables puisqu'elles sont déjà incorporées à leurs pages de menus respectifs.
+
+- les barres de menu : sur toutes ces parties, on retrouve donc la barre de menu défilante horizontale, sur laquelle l'utilisateur peut intéragir, soit en accédant directement à un des éléments déroulants, soit en accédant à un sous-menu grâce aux liens incorporés dans les titres. Pour la barre latérale, si l'utilisateur n'est pas connecté, un menu lui propose d'être redirigé vers les pages de connexion. Inversement, le menu lui proposera alors une redirection vers la page de son profil.
+
+--------------------
+La partie connexion
+--------------------
+
+On retrouve deux pages :
+
+- la page de connexion : un utilisateur non-connecté est redirigé vers cette page depuis le menu latéral. Il peut se connecter à l'aide de ses identifiants et accéder à sa page personnelle, ou bien créer un compte en renseignant les informations nécessaires.
+
+----------------
+La partie profil
+----------------
+
+Cette partie permet à l'utilisateur, qui s'est au préalable connecté, d'accéder à une multitude de fonctionnalités, et ce grâce à plusieurs menus :
+
+- "Mon compte" : c'est la redirection de base quand on se connecte. L'utilisateur peut voir ses informations personnelles (pseudo, statut ...), les modifier, changer de mot de passe, télécharger ou supprimer une photo de profil, ou encore activer un mode qui indique aux autres utilisateurs qu'on ne souhaite pas être dérangé.
+
+- "Mes contacts" : cette partie permet d'enregistrer ou supprimer des contacts. Lorsque l'on enregistre un contact, on peut l'affilier à une "catégorie" (par exemple "ami", ou "pro" ...), modifiable par la suite. Enfin, on peut afficher l'ensemble de ses contacts. On pourra alors voir les photos de profil et statuts de chacun, et leur éventuelle connexion (connecté, non-connecté, ne souhaite pas être dérangé) sur le site.
+
+- "Messagerie" : cette partie permet également d'accéder à la liste de ses contacts (ainsi que leurs statuts, statut de connexion et photos de profil) sur un menu latéral, et permet d'accéder à l'historique des menus avec un contact en question à l'aide d'un simple clic sur un contact donné. Il est ensuite possible d'envoyer des messages. Les contacts sur le menu latéral sont classés du haut vers le bas du message le plus récent échangé au plus ancien.
+
+- "Mes listes" : dans cette partie, un utilisateur peut créer des listes qui seront ensuite modifiables ultérieurement (en construction). Il peut également accéder à l'ensemble de ses listes personnelles, avec les détails primaires de chacune.
+
+- "Assistant" : cette partie (en construction) permet à un utilisateur d'accéder à toute une palette de fonctions diverses : afficher, créer, modifier, supprimer, déplacer du contenu ...
+
+- "Déconnexion" : déconnecte l'utilisateur et le renvoie au menu principal (celui de la partie affichage).
+
+- Bas de page : en bas du menu fixe, l'utilisateur retrouve des liens directs vers 6 réseaux sociaux. Sur la partie centrale, deux catégories (en construction) permettent des redirections vers certaines fonctionnalités ou pages que l'on souhaite mettre en valeur. Une dernière catégorie renvoie l'utilisateur à la partie affichage, que ce soit au menu principal ou directement à un menu précis, et ce sans le déconnecter.
+
+
+----------------------
+Exemples d'utilisation
+----------------------
+
+Le compte utilisé dans le dossier "Démo" correspond aux identifiants suivants (attention, le nom d'utilisateur est sensible à la casse) :
+
+Nom d'utilisateur : Larney
+Mot de passe : larbilson
+
+Un autre nom d'utilisateur (pour tester la messagerie par exemple) est le suivant :
+
+Nom d'utilisateur : Ted
+Mot de passe : tedmosby
