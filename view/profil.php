@@ -262,7 +262,7 @@ require("../model/update.php");
 
         <?php
         if (!isset($_GET['action'])) {
-			require('./profil_views/home.php');
+			require('../controller/profil_accueil.php');
 		} else {
 			switch ($_GET['action']) {
                 //Partie Accueil
