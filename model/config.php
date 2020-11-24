@@ -1,9 +1,9 @@
 <?php 
 
 define('HOST', 'localhost');
-define('DB_NAME', "zwatcher");
-define('USER', 'root');
-define('PASS', '');
+define('DB_NAME', "ZWatcher");
+define('USER', 'ZWadmin');
+define('PASS', 'w$lyXTK=Y2Pm0Vo2');
 
 function connect_start()
 {
