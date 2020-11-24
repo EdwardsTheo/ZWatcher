@@ -228,9 +228,9 @@ require("../model/update.php");
                 if($_SESSION['graph'] == "normal"){
                     echo"<img src='../images/graphismes/logo_normal_ter.png' width=70%/>";
                 }else if($_SESSION['graph'] == "dark"){
-                    echo"<img src='../images/graphismes/logo_transparent_dark.png' width=50%/>";
+                    echo"<img src='../images/graphismes/logo_dark_2.png' width=45%/>";
                 }else if($_SESSION['graph'] == "ocean"){
-                    echo"<img src='../images/graphismes/logo_transparent_dark.png' width=50%/>";
+                    echo"<img src='../images/graphismes/logo_transparent_centre_2.png' width=50%/>";
                 }
                 ?>
                 </a>
@@ -354,12 +354,12 @@ require("../model/update.php");
         <div class="w3-row-padding">
             <div class="w3-third">
             <h3>Administrer</h3>
-            <p>Gérez vos équipes et vos environnements de manière sécurisée et intuitive.</p>
-            <p>From <a href="../../view/main_views/zteam.php" target="_blank">ZTeam</a></p>
+            <p>Gérez vos équipes et vos environnements de manière sécurisée et intuitive. Modifiez, configurez, installez, tracez et gérez vos équipements. Dialoguez, managez, visualisez vos équipes.</p>
+            <p>From <a href="../view/main_views/zteam.php" target="_blank">ZTeam</a></p>
             </div>
         
             <div class="w3-third">
-            <h3>Outils</h3>
+            <h3>Fonctionnalités avancées</h3>
             <ul class="w3-ul w3-hoverable">
                 <li class="w3-padding-16">
                 <img src="../images/bank/en01_bis.jfif" class="w3-left w3-margin-right" style="width:60px; border-radius: 5px;">
@@ -368,7 +368,7 @@ require("../model/update.php");
                 </li>
                 <li class="w3-padding-16">
                 <img src="../images/bank/an04.jfif" class="w3-left w3-margin-right" style="width:60px; border-radius: 5px;">
-                <span class="w3-large">Fonctionnalités avancées</span><br>
+                <span class="w3-large">Gestionnaire d'environnements</span><br>
                 <span>En construction ...</span>
                 </li> 
             </ul>
@@ -380,7 +380,7 @@ require("../model/update.php");
                 <span class="w3-tag w3-black w3-margin-bottom"> <a style="text-decoration:none" href="../index.php">Accueil</span></a> 
                 <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a style="text-decoration:none" href="../view/main_views/presentation.php">Notre outil</span></a> 
                 <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a style="text-decoration:none" href="../view/main_views/zteam.php">Notre équipe</span></a>
-                <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a style="text-decoration:none" href="../view/main_views/contact.php">Contactez nous</span></a> 
+                <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a style="text-decoration:none" href="../view/main_views/contact.php">Contactez-nous</span></a> 
                 <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a style="text-decoration:none" href="../view/main_views/contact.php">Assistance</span></a> 
 
             </p>
@@ -390,7 +390,7 @@ require("../model/update.php");
         </footer>   
         
         
-        <div class="w3-black2 w3-center w3-padding-24">Powered by <a href="../../view/main_views/contact.php" title="ZTeam" target="_blank" class="w3-hover-opacity">ZTeam</a></div>
+        <div class="w3-black2 w3-center w3-padding-24">Powered by <a href="../view/main_views/contact.php" title="ZTeam" target="_blank" class="w3-hover-opacity">ZTeam</a></div>
 
         <!-- End page content -->
         </div>

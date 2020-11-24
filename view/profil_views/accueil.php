@@ -26,7 +26,21 @@
                 <div id="left-box">
                 <h4><b>Accueil</b></h4>
                 Bienvenue sur ZWatcher <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?>.
-                <p>Visualisez vos informations personnelles et modifiez-les, accédez à et changez vos paramètres dans les sous-menus correspondants.
+                <p>Administrez et gérez vos équipes et vos environnements informatiques de manière sécurisée et intuitive. Naviguez et opérez à l'aide des menus suivants :
+
+                <ul>
+					<li>Accueil : gardez une vue d'ensemble sur vos équipes et vos environnements et retrouvez l'arborescence détaillée de l'outil</li></p>
+					<li>Mon compte : modifiez vos informations personnelles et personnalisez votre expérience utilisateur</li></p>
+					<li>Mes contacts : créez et gérez votre liste d'interlocuteurs, personnalisable</li></p>
+                    <li>Messagerie : dialoguez directement avec d'autres utilisateurs de la plateforme grâce à cette interface incorporée</li></p>
+                    <li>Mon parc : visualisez votre parc d'équipements, personnalisez et configurez les éléments qui le composent</li></p>
+                    <li>Modification : modifiez des informations système sur l'un des équipements de votre parc</li></p>
+                    <li>Applications : configurez, installez, gérez voire supprimez des applications sur l'ensemble de votre parc</li></p>
+                    <li>Observation : surveillez l'activité de vos équipements, et téléchargez des fichiers de logs</li></p>
+                    <li>Assistant : bénéficiez de l'aide directe de notre assistant qui vous répondra en temps réel à vos demandes (en cours de construction ...).</li>
+				</ul>
+
+
                 </p>
             </div>
             <div id="ctn">

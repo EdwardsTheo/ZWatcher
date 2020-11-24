@@ -17,6 +17,8 @@
                 <div id="centre">
                 <h4><b>Vos machines</b></h4>
                 
+                Sélectionnez une machine :</p>
+
                 <?php
                 
                 $i = 1;
