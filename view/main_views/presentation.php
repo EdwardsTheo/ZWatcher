@@ -295,7 +295,7 @@ session_start();
 				</div>
 				<a href="../../view/main_views/contact.php">Assistance</a>
 				<a href="../../view/main_views/zteam.php">Qui sommes-nous ?</a>
-				<a href="../../view/main_views/contact_us.php">Nous contacter</a>
+				<a href="../../view/main_views/contact.php">Nous contacter</a>
 				<div class="brand">
 					<img src="../../images/graphismes/logo.png"/>
 				</div>
