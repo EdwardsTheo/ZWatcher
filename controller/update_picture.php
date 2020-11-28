@@ -21,7 +21,7 @@
     if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         $allowTypes = array('jpg','png','jpeg','gif','jfif');
         if(in_array($fileType, $allowTypes)){
-            if(move_uploaded_file($_FILES["file"]["name"], $targetFilePath)){
+            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
                 update_picture($user, $fileName);
                 $_SESSION['errors_2'] = "Votre photo de profil a bien été mise à jour";
             }else{
