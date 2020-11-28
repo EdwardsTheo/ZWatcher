@@ -13,7 +13,7 @@
         unset($_SESSION['errors_2']);
     }
 
-    $targetDir = "../images/uploads/";
+    $targetDir = "./../images/uploads/";
     $fileName = basename($_FILES["file"]["name"]);
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
