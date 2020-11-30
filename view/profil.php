@@ -322,6 +322,9 @@ require("../model/update.php");
                 case 'modif_liste':
 					require('../controller/profil_modif_liste.php');
                 break;
+                case 'modif_machine':
+                    require('../controller/profil_modif_machine.php');
+                break;
                 //Partie Applications
                 case 'application':
 					require('../controller/profil_application.php');

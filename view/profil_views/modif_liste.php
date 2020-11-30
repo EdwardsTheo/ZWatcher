@@ -6,7 +6,7 @@
                 <!--      <span class="w3-margin-right">Filter:</span> -->
                 <a href="?action=modification"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=modif_liste"><button class="w3-button w3-black"><i class="fas fa-info w3-margin-right"></i>Informations</button></a>
-                    <a href="#"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
+                    <a href="?action=modif_machine"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
                     <a href="#"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Paramètres</button></a>
                     </div>
                     </div>
