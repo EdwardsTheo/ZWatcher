@@ -27,9 +27,12 @@
                         echo "<div class='w3-row-padding'>";
                     }
                     $nb = rand(1, 32);
+
+                    //modifier les print de echo donnes qui ne renvoient rien en les uplodant dans le fichier controller precedant a l'aide de la modif du ficher select
+                    
                     echo "<div class='w3-third w3-container w3-margin-bottom'>
                         <img src='../images/listes/l$nb.jfif' alt='' style='width:100%; border-radius:10px 10px 0px 0px;'>
-                        <form action='../controller/display_liste.php' method = 'POST'>
+                        <form action='?action=appli_machine' method = 'POST'>
                         <div class='w3-container w3-white2'>
                             <input class='w3-input w3-border' type='hidden' name='machine_name' value='1'>
                             <p><b>$donnees[1]</b></p>
