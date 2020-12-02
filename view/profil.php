@@ -332,6 +332,9 @@ require("../model/update.php");
                 case 'appli_liste':
 					require('../controller/profil_appli_liste.php');
                 break;
+                case 'appli_machine_liste':
+                    require('../controller/profil_machine_liste.php');
+                break; 
                 //Partie Observation
                 case 'observation':
 					require('../controller/profil_observation.php');
