@@ -37,8 +37,8 @@
                                     echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Desinstallation</button>";
                                 }
                                 echo "
-                                    <input class='w3-input w3-border' type='hidden' name='machine_name' value='1'>
-                                    <input class='w3-input w3-border' type='hidden' name='apache2' value='1'>
+                                    <input class='w3-input w3-border' type='hidden' name='id_machine' value='".$donnees['id_machine']."'>
+                                    <input class='w3-input w3-border' type='hidden' name='nom_appli' value='".$donnees['nom_appli']."'>
                                     </form>
                                     </div>
            
