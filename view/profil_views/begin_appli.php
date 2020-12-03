@@ -5,29 +5,52 @@
                     <div class="w3-section w3-bottombar w3-padding-16">
                 <!--      <span class="w3-margin-right">Filter:</span> -->
                     <a href="?action=application"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
-                    <a href="?action=appli_liste"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Informations</button></a>
-                    <a href="#"><button class="w3-button w3-black"><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
-                    <a href="#"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Paramètres</button></a>
+                    <a href="?action=appli_liste"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Selection de la machine</button></a>
+                    <a href="#"><button class="w3-button w3-black"><i class="fas fa-globe-asia w3-margin-right"></i>Installation</button></a>
+                    <a href="#"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gestion des applications</button></a>
                     </div>
                     </div>
                     </div>
                 </header>
-
-                <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+                    <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                     <div id="centre">
-                        <div class="w3-container w3-padding-large w3-grey">
-                        <!-- Formulaire 1 : Installer une application -->
-                            <h4 id='contact'><b>Installez Apache 2</b></h4>
+                    <h4><b>Informations</b></h4>
+                        Sur cette page, vous pouvez installer ou desinstaller les applications que vous avez choisis, </br>
+                        Pour ajouter de nouvelles applications, accèdez à l'onglet "Gestions des applications"
+                    
+                    <?php
+                            $i = 0;
+                            while($donnees = $req->fetch()){
+                               echo " 
+                               <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                               <div id='centre'>
+                                   <div class='w3-container w3-padding-large w3-grey'>
+                                   <!-- Formulaire 1 : Installer une application -->
+                                       <h4 id='contact'><b>Gestion de ".strtoupper($donnees['nom_appli'])."</b></h4>
+                                       <hr class='w3-opacity'>
+                                       <form action='../controller/install_app.php' method = 'POST'>
+                                ";
+                                if($donnees['status_install'] == 0) {
+                                    echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Installation</button>";
+                                }
+                                else {
+                                    echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Desinstallation</button>";
+                                }
+                                echo "
+                                    <input class='w3-input w3-border' type='hidden' name='machine_name' value='1'>
+                                    <input class='w3-input w3-border' type='hidden' name='apache2' value='1'>
+                                    </form>
+                                    </div>
+           
+                                    </p>
+                                    </div>
+                               </div>
+                               ";
+                            }
 
-                            <hr class="w3-opacity">
-                            <form action="../controller/install_app.php" method = "POST">
-                            <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Valider</button>
-                            <input class='w3-input w3-border' type='hidden' name='machine_name' value='1'>
-                            <input class='w3-input w3-border' type='hidden' name='apache2' value='1'>
-                            </form>
-                            </div>
-
-                            </p>
-                            </div>
+                            ?>
                     </div>
+                    </div>
+              
+              
             </html>
