@@ -156,7 +156,7 @@
     }
 
     function get_app($id_machine) {
-        $db = connect_start();
+	$db = connect_start();
         $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
         FROM app_machine AS am
         LEFT JOIN applis as ap 

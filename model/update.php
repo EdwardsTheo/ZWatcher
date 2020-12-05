@@ -91,4 +91,15 @@
         $req -> execute(array(':sts' => "connecte", ":uname"=>$user));
         connect_end($link);
     }
+    
+    function update_status_install($status, $id_machine, $id_app) {
+    	$link = NULL;
+	$link = connect_start();
+	$req = $link -> prepare("UPDATE `app_machine` SET `status_install` = :status WHERE `id_machine` = :id_machine AND `id_appli` = :id_appli;");
+	$req -> execute(array(':status'=>$status,
+		':id_machine'=>$id_machine,
+		':id_appli'=>$id_app));
+	connect_end($link);
+    }
+
 ?>

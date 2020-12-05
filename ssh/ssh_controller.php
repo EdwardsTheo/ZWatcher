@@ -18,6 +18,12 @@ function ssh_execute($order, $login_info) {
         case "check_install" :
             $command = check_install($_POST['nom_appli']);
         break;
+        case "uninstall" :  
+            $command = uninstall($_POST['nom_appli']);
+        break;
+        case "check_uninstall" :
+            $command = check_uninstall($_POST['nom_appli']);
+        break;
         default :
             "error";
         break;

@@ -16,10 +16,18 @@
                     <div id="centre">
                     <h4><b>Informations</b></h4>
                         Sur cette page, vous pouvez installer ou desinstaller les applications que vous avez choisis, </br>
-                        Pour ajouter de nouvelles applications, accèdez à l'onglet "Gestions des applications"
-                    
+                        Pour ajouter de nouvelles applications, accèdez à l'onglet "Gestions des applications" </br>
                     <?php
-                            $i = 0;
+		
+			if(isset($_SESSION['message'])) {
+				echo "<h4><b>$_SESSION[message]</b></h4>";
+				unset($_SESSION['message']);
+			}			 
+		    ?>
+
+		    <?php
+
+			    $i = 0;
                             while($donnees = $req->fetch()){
                                echo " 
                                <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
@@ -30,14 +38,16 @@
                                        <hr class='w3-opacity'>
                                        <form action='../controller/install_app.php' method = 'POST'>
                                 ";
-                                if($donnees['status_install'] == 0) {
+                               if($donnees['status_install'] == 0) {
                                     echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Installation</button>";
-                                }
-                                else {
+                               }
+                               else {
                                     echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Desinstallation</button>";
                                 }
                                 echo "
+                                    <input class='w3-input w3-border' type='hidden' name='status_install' value='".$donnees['status_install']."'>
                                     <input class='w3-input w3-border' type='hidden' name='id_machine' value='".$donnees['id_machine']."'>
+                                    <input class='w3-input w3-border' type='hidden' name='id_app' value='".$donnees['id_appli']."'>
                                     <input class='w3-input w3-border' type='hidden' name='nom_appli' value='".$donnees['nom_appli']."'>
                                     </form>
                                     </div>
