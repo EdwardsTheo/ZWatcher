@@ -1,9 +1,12 @@
 <?php
 
 function ssh_launch($ip, $port, $username, $password, $command) {
-    echo $ip;
-    echo $port;
-    echo $username;
+	echo $command;
+	echo $ip;
+	echo $port;
+	echo $username;
+	echo $password;
+	
     $con = ssh2_connect($ip, $port);
     ssh2_auth_password($con, $username, $password); 
     $stream = ssh2_exec($con, $command);

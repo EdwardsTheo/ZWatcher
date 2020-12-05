@@ -1,7 +1,7 @@
 <?php 
 
     function install($app) {
-        $command = "yes | sudo apt install $app";
+        $command = "sudo apt install -y $app";
         return $command;
     }
 
