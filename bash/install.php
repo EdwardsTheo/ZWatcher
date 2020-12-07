@@ -7,7 +7,7 @@
 
     function uninstall($app) {
     	$command = "sudo apt autoremove -y $app";
-	return $command;
+	    return $command;
     }
 
 ?>

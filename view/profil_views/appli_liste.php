@@ -7,7 +7,7 @@
                 <a href="?action=application"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=appli_liste"><button class="w3-button w3-black"><i class="fas fa-info w3-margin-right"></i>Selection de la machine</button></a>
                     <a href="#"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Installation</button></a>
-                    <a href="#"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gestion des applications</button></a>
+                    <a href="?action=gestion_app"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gestion des applications</button></a>
                     </div>
                     </div>
                     </div>

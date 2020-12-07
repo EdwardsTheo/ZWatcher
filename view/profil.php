@@ -335,6 +335,9 @@ require("../model/update.php");
                 case 'appli_machine':
                     require('../controller/profil_appli_machine.php');
                 break; 
+                case 'gestion_app':
+                    require('../controller/profil_appli_gestion_app.php');
+                break; 
                 //Partie Observation
                 case 'observation':
 					require('../controller/profil_observation.php');

@@ -156,7 +156,7 @@
     }
 
     function get_app($id_machine) {
-	$db = connect_start();
+	    $db = connect_start();
         $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
         FROM app_machine AS am
         LEFT JOIN applis as ap 
@@ -170,6 +170,12 @@
     function get_listes_machine($id_machine) {
         $db = connect_start();
         $request = $db->query("SELECT * FROM listes WHERE id = $id_machine");
+        return $request;
+    }
+
+    function simple_get_app() {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM applis");
         return $request;
     }
 
