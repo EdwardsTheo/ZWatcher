@@ -179,4 +179,22 @@
         return $request;
     }
 
+    function get_hostname($id_machine){
+        $link = NULL;
+        $id = $_SESSION['id'];
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT id, titre, ip, mac FROM listes WHERE id = $id_machine"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
 ?>

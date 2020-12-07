@@ -15,90 +15,92 @@
 
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                     <div id="centre">
-                        
-                        <div class="w3-container w3-padding-large w3-grey">
-                        <h4 id="contact"><b>Modifier le hostname :</b></h4>
+                    
+                    <?php while($donnees = $req->fetch()){
+                        echo "$donnees[1]";
+                        echo "<div class='w3-container w3-padding-large w3-grey'>
+                        <h4 id='contact'><b>Modifier le hostname :</b></h4>
                         Saisissez un nouveau nom.
-                        <div style="display: inline" class="errors">
-                            <?php
+                        <div style='display: inline' class='errors'>";
                             if(isset($_SESSION['errors'])){ 
                                 echo $_SESSION['errors'];
                                 unset($_SESSION['errors']);
                             }else{
                                 echo "";
                             }
-                            ?>
-                        </div>
+                        echo "</div>
 
                         <!-- Actualiser le controller du formulaire -->
 
-                        <hr class="w3-opacity">
-                        <form action="../controller/.php" method = "POST">
-                        <div class="w3-section">
+                        <hr class='w3-opacity'>
+                        <form action='../controller/.php' method = 'POST'>
+                        <div class='w3-section'>
                             <label>Hostname</label>
-                            <input class="w3-input w3-border" type="text" name="hostname">
+                            <input class='w3-input w3-border' type='text' name='hostname' value='$donnees[1]'>
                         </div>
 
-                        <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Modifier</button>
+                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Modifier</button>
                         </form>
                         </div>
-                        </p>
+                        </p>";
+                    
 
-                        <div class="w3-container w3-padding-large w3-grey">
-                        <h4 id="contact"><b>Modifier l'adresse IP :</b></h4>
+
+                        echo"<div class='w3-container w3-padding-large w3-grey'>
+                        <h4 id='contact'><b>Modifier l'adresse IP :</b></h4>
                         Saisissez une nouvelle adresse IP.
-                        <div style="display: inline" class="errors">
-                            <?php
+                        <div style='display: inline' class='errors'>";
                             if(isset($_SESSION['errors_2'])){ 
                                 echo $_SESSION['errors_2'];
                                 unset($_SESSION['errors_2']);
                             }else{
                                 echo "";
                             }
-                            ?>
-                        </div>
+                        echo"</div>
 
                         <!-- Actualiser le controller du formulaire -->
 
-                        <hr class="w3-opacity">
-                        <form action="../controller/.php" method = "POST">
-                        <div class="w3-section">
+                        <hr class='w3-opacity'>
+                        <form action='../controller/.php' method = 'POST'>
+                        <div class='w3-section'>
                             <label>Adresse IP</label>
-                            <input class="w3-input w3-border" type="text" name="ip">
+                            <input class='w3-input w3-border' type='text' name='ip' value='$donnees[2]'>
                         </div>
 
-                        <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Modifier</button>
+                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Modifier</button>
                         </form>
                         </div>
-                        </p>
+                        </p>";
 
-                        <div class="w3-container w3-padding-large w3-grey">
-                        <h4 id="contact"><b>Modifier l'adresse MAC :</b></h4>
+                        echo"<div class='w3-container w3-padding-large w3-grey'>
+                        <h4 id='contact'><b>Modifier l'adresse MAC :</b></h4>
                         Saisissez une nouvelle adresse MAC.
-                        <div style="display: inline" class="errors">
-                            <?php
+                        <div style='display: inline' class='errors'>";
                             if(isset($_SESSION['errors_3'])){ 
                                 echo $_SESSION['errors_3'];
                                 unset($_SESSION['errors_3']);
                             }else{
                                 echo "";
                             }
-                            ?>
-                        </div>
+                        echo"</div>
 
                         <!-- Actualiser le controller du formulaire -->
 
-                        <hr class="w3-opacity">
-                        <form action="../controller/.php" method = "POST">
-                        <div class="w3-section">
+                        <hr class='w3-opacity'>
+                        <form action='../controller/.php' method = 'POST'>
+                        <div class='w3-section'>
                             <label>Adresse MAC</label>
-                            <input class="w3-input w3-border" type="text" name="mac">
+                            <input class='w3-input w3-border' type='text' name='mac' value=$donnees[3]>
                         </div>
 
-                        <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Modifier</button>
+                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Modifier</button>
                         </form>
                         </div>
-                        </p>
+                        </p>";
+                        
+                    }
+                    $req->closeCursor();
+                    ?>
 
                     </div>
                 </div>
