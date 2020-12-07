@@ -1,11 +1,5 @@
 <?php
 
-require("../model/config.php");
-require("../model/delete.php");
-require("../model/insert.php");
-require("../model/select.php");
-require("../model/update.php");
-
 function info_login($machine_id) {
 
     $req = get_listes_machine($machine_id);

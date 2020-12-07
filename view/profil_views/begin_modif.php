@@ -17,7 +17,7 @@
                     <div id="centre">
                     
                     <?php while($donnees = $req->fetch()){
-                        echo "$donnees[1]";
+                        echo "$donnees[0]";
                         echo "<div class='w3-container w3-padding-large w3-grey'>
                         <h4 id='contact'><b>Modifier le hostname :</b></h4>
                         Saisissez un nouveau nom.
@@ -33,10 +33,11 @@
                         <!-- Actualiser le controller du formulaire -->
 
                         <hr class='w3-opacity'>
-                        <form action='../controller/.php' method = 'POST'>
+                        <form action='?action=modif_hostname' method = 'POST'>
                         <div class='w3-section'>
                             <label>Hostname</label>
                             <input class='w3-input w3-border' type='text' name='hostname' value='$donnees[1]'>
+                            <input class='w3-input w3-border' type='hidden' name='id_machine' value='$donnees[0]'>
                         </div>
 
                         <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Modifier</button>

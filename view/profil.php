@@ -157,7 +157,7 @@ require("../model/update.php");
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
                 <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
-            }else if($_GET['action'] == "modification" || $_GET['action'] == "modif_liste" || $_GET['action'] == "modif_machine"){
+            }else if($_GET['action'] == "modification" || $_GET['action'] == "modif_liste" || $_GET['action'] == "modif_machine" || $_GET['action'] == "modif_hostname"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
@@ -324,6 +324,9 @@ require("../model/update.php");
                 break;
                 case 'modif_machine':
                     require('../controller/profil_modif_machine.php');
+                break;
+                case 'modif_hostname':
+                    require('../controller/modif_hostname.php');
                 break;
                 //Partie Applications
                 case 'application':
