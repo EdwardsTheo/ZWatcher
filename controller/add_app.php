@@ -1,18 +1,15 @@
 <?php
-    
-    require("../model/config.php");
-    require("../model/delete.php");
-    require("../model/insert.php");
-    require("../model/select.php");
-    require("../model/update.php");
 
+    ob_start();
+    session_start();
+    require("../ssh/ssh_controller.php");
+    
     print_r($_POST);
     function main_add_app() {
         $message = check_if_exist($_POST['nom_app']);
-        echo $message;
-        if($message == "") $message = paquet_exist($_POST['nom_app']);
-
-        return $message;
+        if($message == "") $message = paquet_exist();
+	if($message == "") $message = add_app($_POST['nom_app']);
+        return $_SESSION['message'] = $message;
     }
     main_add_app();
 
@@ -29,11 +26,17 @@
 
     function paquet_exist() {
         $output = main_ssh(4, "check_package");
+	$message = ($output != "") ? "true" : "false";
+	if($message == "false") $messsage = "le nom du paquet est invalide, veuillez réessayer"; 
+	else $message = "";	
+
+	return $message;
     }
 
-    function add_app() {
-
+    function add_app($nom_app) {
+	$req = insert_app($nom_app);
+	return $message = "L'application à bien été ajoutée";
     }
 
-
+    header('location: ../view/profil.php?action=gestion_app');
 ?>

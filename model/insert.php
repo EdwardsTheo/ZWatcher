@@ -133,4 +133,16 @@
         connect_end($link);
     }
 
+    function insert_app($nom_app) {
+	    echo $nom_app;    
+	    $nb = 0;
+	$link = NULL; 
+	$link = connect_start();
+	$link->query('INSERT INTO `applis` (`id`,`nom_appli`)
+		VALUES (NULL, 
+		'.$link -> quote($nom_app).'
+		)');
+	connect_end($link);
+    }
+
 ?>
