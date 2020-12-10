@@ -12,7 +12,7 @@
                     </div>
                     </div>
                 </header>
-
+               
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
                 <h4><b>Accueil</b></h4>
@@ -24,4 +24,5 @@
                 </form>
                 </div>
                 </div>
+                
     </html>

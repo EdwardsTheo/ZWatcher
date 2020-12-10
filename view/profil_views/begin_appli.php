@@ -36,7 +36,7 @@
                                    <!-- Formulaire 1 : Installer une application -->
                                        <h4 id='contact'><b>Gestion de ".strtoupper($donnees['nom_appli'])."</b></h4>
                                        <hr class='w3-opacity'>
-                                       <form action='../controller/install_app.php' method = 'POST'>
+                                       <form action='../view/profil.php?action=install_app' method = 'POST'>
                                 ";
                                if($donnees['status_install'] == 0) {
                                     echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Installation</button>";

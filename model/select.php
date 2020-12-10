@@ -156,6 +156,7 @@
     }
 
     function get_app($id_machine) {
+        //$id_machine = 4;
 	    $db = connect_start();
         $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
         FROM app_machine AS am
@@ -176,6 +177,17 @@
     function simple_get_app() {
         $db = connect_start();
         $request = $db->query("SELECT * FROM applis");
+        return $request;
+    }
+
+    function get_app_avaible($id_admin, $status_dispo) {
+        $db = connect_start();
+        $request = $db->query("SELECT ap.nom_appli, am.status_install, am.id_machine, am.id_appli
+        FROM app_machine as am 
+        INNER JOIN applis AS ap ON am.id_appli = ap.id
+        INNER JOIN listes AS list ON am.id_machine = list.id
+        WHERE list.user_admin = $id_admin
+        AND am.status_dispo = $status_dispo");
         return $request;
     }
 

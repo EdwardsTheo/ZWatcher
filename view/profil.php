@@ -341,6 +341,15 @@ require("../model/update.php");
                 case 'gestion_app':
                     require('../controller/profil_appli_gestion_app.php');
                 break; 
+                case 'install_app':
+                    require('../controller/install_app.php');
+                break;
+                case 'update_app' :
+                    require('../controller/update_app.php');
+                break;
+                case 'add_app' : 
+                    require('../controller/add_app.php');
+                break;
                 //Partie Observation
                 case 'observation':
 					require('../controller/profil_observation.php');

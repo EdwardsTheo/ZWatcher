@@ -1,7 +1,5 @@
 <?php
 
-    ob_start();
-    session_start();
     require("../ssh/ssh_controller.php");
     
     print_r($_POST);

@@ -94,12 +94,24 @@
     
     function update_status_install($status, $id_machine, $id_app) {
     	$link = NULL;
-	$link = connect_start();
-	$req = $link -> prepare("UPDATE `app_machine` SET `status_install` = :status WHERE `id_machine` = :id_machine AND `id_appli` = :id_appli;");
-	$req -> execute(array(':status'=>$status,
-		':id_machine'=>$id_machine,
-		':id_appli'=>$id_app));
-	connect_end($link);
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `app_machine` SET `status_install` = :status WHERE `id_machine` = :id_machine AND `id_appli` = :id_appli;");
+        $req -> execute(array(':status'=>$status,
+            ':id_machine'=>$id_machine,
+            ':id_appli'=>$id_app));
+        connect_end($link);
+    }
+
+    function update_status_app($id_app, $nb) {
+        echo $id_app;
+        echo $nb;
+
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `app_machine` SET `status_dispo` =  :status WHERE `id_appli` = :id_appli;");
+        $req -> execute(array(':status'=>$nb,
+            ':id_appli'=>$id_app));
+        connect_end($link);
     }
 
 ?>
