@@ -1,11 +1,4 @@
 <?php
-
-    session_start();
-
-    require('../model/config.php');
-    require('../model/insert.php');
-    require('../model/select.php');
-    require('../model/update.php');
     
     $i=1;
     foreach ($_POST['nom_appli'] as $key => $value) {

@@ -10,4 +10,9 @@
 	    return $command;
     }
 
+    function bash_upgrade_update() {
+        $command = "sudo apt update -y && sudo apt upgrade -y";
+        return $command;
+    }
+
 ?>

@@ -26,39 +26,71 @@
 		    ?>
 
 		    <?php
+                echo "
+                <div class='w3-section w3-bottombar w3-padding-16'>
+                    <form action='../view/profil.php?action=appli_machine' method='POST'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Applications Installées'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Applications Non Installées'>
+                    </form>
+                </div>
+                <div class='w3-section w3-bottombar w3-padding-16'>
+                    <form action='../view/profil.php?action=install_app' method='POST'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Effectuer un apt update et upgrade'>
+                    </form>
+                </div>
+                ";
+                
+                if(isset($_POST['choice'])) {
+                    switch($_POST['choice']) {
+                        case 'Applications Installées' : show_app_installed('1', "Désinstaller les applications");
+                        break;
+                        case 'Applications Non Installées' : show_app_installed('0', "Installer les applications");
+                        break;
+                        case 'Effectuer un apt update et upgrade' : call_update_upgrade();
+                        break;
+                    }
+                }
 
-			    $i = 0;
-                            while($donnees = $req->fetch()){
-                               echo " 
-                               <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                               <div id='centre'>
-                                   <div class='w3-container w3-padding-large w3-grey'>
-                                   <!-- Formulaire 1 : Installer une application -->
-                                       <h4 id='contact'><b>Gestion de ".strtoupper($donnees['nom_appli'])."</b></h4>
-                                       <hr class='w3-opacity'>
-                                       <form action='../view/profil.php?action=install_app' method = 'POST'>
-                                ";
-                               if($donnees['status_install'] == 0) {
-                                    echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Installation</button>";
-                               }
-                               else {
-                                    echo "<button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Desinstallation</button>";
-                                }
-                                echo "
-                                    <input class='w3-input w3-border' type='hidden' name='status_install' value='".$donnees['status_install']."'>
-                                    <input class='w3-input w3-border' type='hidden' name='id_machine' value='".$donnees['id_machine']."'>
-                                    <input class='w3-input w3-border' type='hidden' name='id_app' value='".$donnees['id_appli']."'>
-                                    <input class='w3-input w3-border' type='hidden' name='nom_appli' value='".$donnees['nom_appli']."'>
-                                    </form>
-                                    </div>
-           
-                                    </p>
-                                    </div>
-                               </div>
-                               ";
-                            }
-
-                            ?>
+                 
+                function show_app_installed($status, $button) {
+                    $i = 1;
+                    $req1 = get_app($_SESSION['id_machine'], $status);
+                    echo " <form action='../view/profil.php?action=install_app' method='POST'>";
+                    while($donnees = $req1->fetch()){
+                        if($i % 3 == 1){
+                            echo "<div class='w3-row-padding'>";
+                           
+                        }
+                        $nb = rand(1, 32);
+                        
+                        echo "
+                        <div class='w3-third w3-container w3-margin-bottom'>
+                            <img src='../images/listes/l$nb.jfif' alt='' style='width:100%; border-radius:10px 10px 0px 0px;'>
+                            <div class='w3-container w3-white2'>
+                                <input class='w3-input w3-border' type='hidden' name='nom_appli[$i]' value=".$donnees['nom_appli'].">
+                                <input class='w3-input w3-border' type='hidden' name='id_appli[$i]' value=".$donnees['id_appli'].">
+                                <input class='w3-input w3-border' type='hidden' name='action' value=".$button.">
+                                <input class='w3-input w3-border' type='hidden' name='is' value='not_upgrade'>
+                                <p><b>".strtoupper($donnees['nom_appli'])."</b></p>
+                                <input type='checkbox' id='scales' name='scales[$i]'>
+                            </div>
+                        </div>";
+                        
+                       
+                        
+                        if($i % 3 == 0){
+                            echo "</div>";
+                        }
+                        $i = $i + 1;
+                       }
+                       echo " 
+                       </div>
+                       <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                       <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-left'></i>".$button."</button>
+                       </form>
+                       </div>";
+                }
+            ?>
                     </div>
                     </div>
               

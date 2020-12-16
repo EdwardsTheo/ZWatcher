@@ -155,15 +155,15 @@
         connect_end($link);
     }
 
-    function get_app($id_machine) {
-        //$id_machine = 4;
+    function get_app($id_machine, $status) {
 	    $db = connect_start();
         $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
         FROM app_machine AS am
         LEFT JOIN applis as ap 
         ON am.id_appli = ap.id
-        WHERE id_machine = $id_machine 
-        AND status_dispo = '1'");
+        WHERE am.id_machine = $id_machine 
+        AND am.status_dispo = '1'
+        AND am.status_install = $status");
 
         return $request;
     }

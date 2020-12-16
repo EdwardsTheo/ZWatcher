@@ -6,7 +6,7 @@
 	}
 
 	function check_uninstall($app) {
-		$command = "dpkg -l $app";
+		$command = "apt-cache policy $app | sed -n 2p";
 		return $command;	
 	}
 
