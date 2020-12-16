@@ -34,7 +34,7 @@
                         
                         <div class="w3-third w3-container w3-margin-bottom">
                             <form action="../controller/create_liste.php" method = "POST">
-                            Choisissez un titre et une description.
+                            Choisissez un titre, une description et complétez les informations demandées.
                             <div style="display: inline" class="errors">
                             <?php
                             if(isset($_SESSION['errors'])){ 
@@ -53,6 +53,55 @@
                                 <label>Description</label>
                                 <input class="w3-input w3-border" type="text" name="description">
                             </div>
+
+                            <!-- Trouver un moyen, dans la requete d'avant, de upload :
+                            - ses users si on est admin
+                            - ses admins si on est user 
+                            
+                            - ou alors ajout de machine dispo que si admin ? Bof
+                            - ou alors un admin crée un groupe (nouvelle table)
+                            avec dedans de quoi créer des équipes
+                            
+                            et donc partie votre équipe : liste d'équipes et users/admins de l'équipe
+                            et dans environnement listes de vms à soi + celles administrables si admin-->
+
+                            <div class="w3-section">
+                                <label>Propriétaire</label> </br>
+                                <select name="owner" id="owner">
+                                    <option value="normal">Mode ZWatcher</option>
+                                    <option value="dark">Mode Sombre</option>
+                                    <option value="ocean">Mode Océanique</option>
+                                </select>
+                            </div>
+                            <div class="w3-section">
+                                <label>Administrateur</label> </br>
+                                <select name="admin" id="admin">
+                                    <option value="normal">Mode ZWatcher</option>
+                                    <option value="dark">Mode Sombre</option>
+                                    <option value="ocean">Mode Océanique</option>
+                                </select>
+                            </div>
+                            <div class="w3-section">
+                                <label>Adresse IP</label>
+                                <input class="w3-input w3-border" type="text" name="ip">
+                            </div>
+                            <div class="w3-section">
+                                <label>Adresse MAC</label>
+                                <input class="w3-input w3-border" type="text" name="mac">
+                            </div>
+                            <div class="w3-section">
+                                <label>Port</label>
+                                <input class="w3-input w3-border" type="text" name="port">
+                            </div>
+                            <div class="w3-section">
+                                <label>Identifiant</label>
+                                <input class="w3-input w3-border" type="text" name="port">
+                            </div>
+                            <div class="w3-section">
+                                <label>Mot de passe</label>
+                                <input class="w3-input w3-border" type="password" name="port">
+                            </div>
+                            
 
                             <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Créer</button>
                             </form>
