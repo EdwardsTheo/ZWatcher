@@ -26,6 +26,11 @@
                 <div id="left-box">
                 <h4><b>Accueil</b></h4>
                 Bienvenue sur ZWatcher <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?>.
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 <p>Administrez et gérez vos équipes et vos environnements informatiques de manière sécurisée et intuitive. Naviguez et opérez à l'aide des menus suivants :
 
                 <ul>
@@ -39,6 +44,22 @@
                     <li>Observation : surveillez l'activité de vos équipements, et téléchargez des fichiers de logs</li></p>
                     <li>Assistant : bénéficiez de l'aide directe de notre assistant qui vous répondra en temps réel à vos demandes (en cours de construction ...).</li>
 				</ul>
+
+                <?php
+                }else{
+                ?>
+                <p>Gardez le contact avec vos équipes et votre administrateur système. Naviguez et opérez à l'aide des menus suivants :
+                <ul>
+					<li>Accueil : gardez une vue d'ensemble sur vos équipes et vos environnements et retrouvez l'arborescence détaillée de l'outil</li></p>
+					<li>Mon compte : modifiez vos informations personnelles et personnalisez votre expérience utilisateur</li></p>
+					<li>Mes contacts : créez et gérez votre liste d'interlocuteurs, personnalisable</li></p>
+                    <li>Messagerie : dialoguez directement avec d'autres utilisateurs de la plateforme grâce à cette interface incorporée</li></p>
+                    <li>Mon parc, Modification, Applications et Observation : cette interface de gestion n'est accessible qu'aux administrateurs</li></p>
+                    <li>Assistant : bénéficiez de l'aide directe de notre assistant qui vous répondra en temps réel à vos demandes (en cours de construction ...).</li>
+				</ul>
+                <?php
+                }
+                ?>
 
 
                 </p>
@@ -109,9 +130,7 @@
             </div>
             </div>
 
-                </div>
-                </div>
-
-
-            
+            </div>
+            </div>
+ 
 </html>

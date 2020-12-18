@@ -22,6 +22,7 @@
                 $id = $donnees['id'];
                 $displayer = $donnees['displayer'];
                 $graphs = $donnees['graphismes'];
+                $power = $donnees['power'];
                 connecte_status($user);
             }
         }
@@ -37,6 +38,7 @@
         $_SESSION['status'] = "connecte";
         $_SESSION['messagerie_tmp'] = false;
         $_SESSION['graph'] = $graphs;
+        $_SESSION['power'] = $power;
     }else{
         $errors = "Identifiants incorrects";
         $_SESSION = array();

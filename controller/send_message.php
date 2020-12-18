@@ -15,6 +15,11 @@
     insert_message_user($id1, $id2, $req);
     update_checkpoint($id1, $id2, $date);
 
+    $recip = check_contact($id2, $id1);
+    if(gettype($recip) !== "undefined"){
+        update_checkpoint($id2, $id1, $date);
+    }
+
     header("Location: ../controller/redirect_messagerie.php?user=$id2");
 
 ?>

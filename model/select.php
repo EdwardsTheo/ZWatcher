@@ -1,5 +1,22 @@
 <?php
 
+    function check_contact($id2, $id1){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT C.id FROM contact C WHERE C.user_1 = $id2 AND C.user_2 = $id1"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function get_admin_id(){
         $link = NULL;
 
@@ -143,7 +160,7 @@
             if (!($link = connect_start())) {
                 throw new Exception("DataBase load failed !");
             }
-            if (!($result = $link->query("SELECT id, username, password, mail, displayer, graphismes FROM user"))) {
+            if (!($result = $link->query("SELECT id, username, password, mail, displayer, graphismes, power FROM user"))) {
                 throw new Exception("No access to the table");  
             } 
             return $result;           
