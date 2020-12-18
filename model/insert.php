@@ -1,5 +1,51 @@
 <?php
 
+    function add_admin_new($user, $target){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query('INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`) 
+            VALUES (NULL, 
+            '.$link -> quote($user).', 
+            '.$link -> quote($target).',
+            '.$link -> quote("Nouveau").' 
+            );'))) {
+                throw new Exception("No access to the table");  
+            }   
+            
+            return $result;
+        } catch (Exception $th) {
+            echo "Internal error : ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function add_admin_contact($user, $target){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query('INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`) 
+            VALUES (NULL, 
+            '.$link -> quote($user).', 
+            '.$link -> quote($target).',
+            '.$link -> quote("Admin").' 
+            );'))) {
+                throw new Exception("No access to the table");  
+            }   
+            
+            return $result;
+        } catch (Exception $th) {
+            echo "Internal error : ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function insert_liste($user, $titre, $desc, $date){
         $link = NULL;
 
@@ -80,6 +126,8 @@
             '.$link -> quote("connecte").');'))) {
                 throw new Exception("No access to the table");  
             }
+            //return l'id de l'insert au dessus
+            return $link->lastInsertId();
         } catch (Exception $th) {
             echo "Internal error Devis: ".$th->getMessage();
         }
@@ -136,13 +184,13 @@
     function insert_app($nom_app) {
 	    echo $nom_app;    
 	    $nb = 0;
-	$link = NULL; 
-	$link = connect_start();
-	$link->query('INSERT INTO `applis` (`id`,`nom_appli`)
+	    $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `applis` (`id`,`nom_appli`)
 		VALUES (NULL, 
 		'.$link -> quote($nom_app).'
 		)');
-	connect_end($link);
+	    connect_end($link);
     }
 
 ?>

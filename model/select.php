@@ -1,5 +1,22 @@
 <?php
 
+    function get_admin_id(){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.power = 'admin'"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function get_listes($user){
         $link = NULL;
         try {
@@ -40,6 +57,23 @@
                 throw new Exception("Could not connect to database");
 
                 if (!($result = $link->query("SELECT U.username FROM user U WHERE U.id = $id"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function get_back_id($id){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.id = $id"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 

@@ -34,7 +34,13 @@
             }
         }
         if($cpt == 0){
-            insert_new_account($user, $mail, $password);
+            $new_id = insert_new_account($user, $mail, $password);
+            $req2 = get_admin_id();
+            while($donnees2 = $req2->fetch()){
+                $id_admin = $donnees2['id'];
+            }
+            add_admin_contact($new_id, $id_admin);
+            add_admin_new($id_admin, $new_id);
             $errors = "Votre compte a bien été créé";
             require('../view/connect_view.php');
         }else{
