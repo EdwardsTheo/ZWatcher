@@ -61,6 +61,15 @@
                 }
                 ?>
 
+                <?php
+                $to      = 'thomasparis56@gmail.com';
+                $subject = 'test Mail';
+                $message = 'Salut je teste des trucs';
+                $headers = 'From: noreply@zwatcher.com' . "\r\n" .
+
+                mail($to, $subject, $message, $headers);
+                ?> 
+
 
                 </p>
             </div>
