@@ -114,4 +114,10 @@
         connect_end($link);
     }
 
+    function update_utilisateurs($prenom, $nom, $mail, $hashed_password, $id_profil) {
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `user` SET `Nom` = :unom, `Prenom` = :uprenom, `mail` = :umail, `password` = :pwd WHERE `user`.`id` = :iduser;");
+        $req -> execute(array(':unom' => $nom, ':uprenom' => $prenom, ':umail' => $mail,':pwd' => $hashed_password, ":iduser"=>$id_profil));
+        connect_end($link);
+    }
 ?>

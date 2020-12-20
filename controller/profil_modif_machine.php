@@ -1,5 +1,6 @@
 <?php
 
+    $_SESSION['id_machine'] = $_POST['id'];
     $machine_name = $_POST['id'];
     $req = get_hostname($machine_name);
 

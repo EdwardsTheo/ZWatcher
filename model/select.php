@@ -143,7 +143,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query("SELECT id, username FROM user"))) {
+            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user"))) {
                 throw new Exception("No access to the table");  
             }   
             return $result; 
@@ -260,4 +260,36 @@
         connect_end($link);
     }
 
+    function simple_select_equipes() {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM equipes");
+        return $request;
+    }
+
+    function select_group_details($id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT e.name, user.username, user.id 
+        FROM equipes as e
+        INNER JOIN equipes_bl AS ebl ON e.id = ebl.id_equipe
+        INNER JOIN user AS user ON ebl.id_eleve = user.id 
+        WHERE e.id = $id_groupe");
+        return $request;
+    }
+
+    function select_users_eleves(){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("SELECT * FROM user WHERE power='eleves'"))) {
+                throw new Exception("No access to the table");  
+            }   
+            return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
 ?>

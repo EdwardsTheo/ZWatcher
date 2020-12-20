@@ -15,4 +15,10 @@
         }
         connect_end($link);
     }
+
+    function delete_utilisateurs($id_profil) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM user WHERE id='$id_profil'");
+        return $request;
+    }
 ?>

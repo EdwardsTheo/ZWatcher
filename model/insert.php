@@ -108,8 +108,9 @@
         connect_end($link);
     }
 
-    function insert_new_account($user, $mail, $password){
+    function insert_new_account($user, $nom, $prenom, $mail, $password){
         $link = NULL;
+        echo $user;
 
         $options = array('cost' => 11);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -118,9 +119,11 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `password`, `mail`,`status`) 
+            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `Nom`, `Prenom`, `password`, `mail`,`status`) 
             VALUES (NULL, 
             '.$link -> quote($user).', 
+            '.$link -> quote($nom).', 
+            '.$link -> quote($prenom).', 
             '.$link -> quote($hashed_password).', 
             '.$link -> quote($mail).',
             '.$link -> quote("connecte").');'))) {
@@ -181,8 +184,7 @@
         connect_end($link);
     }
 
-    function insert_app($nom_app) {
-	    echo $nom_app;    
+    function insert_app($nom_app) {  
 	    $nb = 0;
 	    $link = NULL; 
 	    $link = connect_start();
@@ -191,6 +193,28 @@
 		'.$link -> quote($nom_app).'
 		)');
 	    connect_end($link);
+    }
+
+    function insert_create_team($nom_team) {
+	    $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `equipes` (`id`,`name`)
+		VALUES (NULL, 
+        '.$link -> quote($nom_team).'
+        )');
+        return $link->lastInsertId();
+        connect_end($link);
+    }
+
+    function insert_user_team($id_team, $id_eleve) {
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `equipes_bl` (`id`,`id_eleve`, `id_equipe`)
+		VALUES (NULL, 
+        '.$link -> quote($id_eleve).',
+        '.$link -> quote($id_team).'
+		)');
+        connect_end($link);
     }
 
 ?>
