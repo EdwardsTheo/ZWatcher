@@ -61,19 +61,9 @@
                 }
                 ?>
 
-                <?php
-                $to      = 'thomasparis56@gmail.com';
-                $subject = 'test Mail';
-                $message = 'Salut je teste des trucs';
-                $headers = 'From: noreply@zwatcher.com' . "\r\n" .
-                'Reply-To: noreply@zwatcher.com' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-                mail($to, $subject, $message, $headers);
-
-                echo(error_get_last()['message']);
-                ?> 
-
+                <hr class="w3-opacity">
+                <form action="../controller/send_confirmation_account.php" method = "POST">
+                <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Mail</button>
 
                 </p>
             </div>
