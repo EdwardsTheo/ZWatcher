@@ -446,7 +446,7 @@
 
     mail($to, $subject, $message, $headers);
 
-    echo(error_get_last()['message']);
+    //echo(error_get_last()['message']);
 
     
     header('location: ../view/profil.php?action=accueil');
