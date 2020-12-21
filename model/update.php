@@ -102,10 +102,7 @@
         connect_end($link);
     }
 
-    function update_status_app($id_app, $nb) {
-        echo $id_app;
-        echo $nb;
-
+    function update_status_app($id_app, $nb) { 
         $link = NULL;
         $link = connect_start();
         $req = $link -> prepare("UPDATE `app_machine` SET `status_dispo` =  :status WHERE `id_appli` = :id_appli;");
@@ -118,6 +115,16 @@
         $link = connect_start();
         $req = $link -> prepare("UPDATE `user` SET `Nom` = :unom, `Prenom` = :uprenom, `mail` = :umail, `password` = :pwd WHERE `user`.`id` = :iduser;");
         $req -> execute(array(':unom' => $nom, ':uprenom' => $prenom, ':umail' => $mail,':pwd' => $hashed_password, ":iduser"=>$id_profil));
+        connect_end($link);
+    }
+
+    function  update_team_name($nom_equipe, $id_equipe) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `equipes` SET `name` =  :name WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id_equipe,
+            ':name'=>$nom_equipe
+            ));
         connect_end($link);
     }
 ?>

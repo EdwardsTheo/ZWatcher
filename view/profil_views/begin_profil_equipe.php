@@ -27,6 +27,12 @@
             $id_equipe = $_SESSION['id_equipe'];
             unset($_SESSION['id_equipe']);
         }
+
+        function stop_session() {
+            if(isset($_SESSION['id_equipe'])) {
+            unset($_SESSION['id_equipe']);
+            }
+        }
         
         ?>
 
@@ -42,19 +48,23 @@
             
             if(isset($_POST['choice'])) {
                 switch($_POST['choice']) {
-                    case 'Montrer les équipes existantes' : show_table_equipes();
+                    case 'Montrer les équipes existantes' : show_table_team();
                     break;
-                    case 'Créer une équipe avec des membres' : form_add_table_equipes();
+                    case 'Créer une équipe avec des membres' : form_add_table_team();
                     break;
-                    case "Valider le nombre" : form_add_table_equipes();
+                    case "Valider le nombre" : form_add_table_team();
                     break;
-                    case "details équipe" : show_detail_equipes($id_equipe);
+                    case "details équipe" : show_detail_team($id_equipe);
+                    break;
+                    case 'Ajouter de nouveaux membres à cette équipe' : form_add_exist_team();
+                    break;
                 }
             }
 
-            function show_table_equipes() {
-                $req = simple_select_equipes();
-                $i = 0;
+            function show_table_team() {
+                stop_session();
+                $req = simple_select_team();
+                $i = 1;
                 echo " <form action='../view/profil.php?action=add_table_equipes' method='POST'>";
                 while($donnees = $req->fetch()) {
                     if($i % 3 == 1){
@@ -67,7 +77,7 @@
                             <p><b>Groupe $donnees[1]</b></p>
                             <input type='checkbox' id='scales' name='scales[$i]'>
                             <input type='hidden' name='id_groupe[$i]' value='$donnees[id]'>
-                            <input type='submit' class='w3-button w3-black' name='choice' value='Voir les details de cette équipe'>
+                            
                         </div>
                     </div>";
                     if($i % 3 == 0){
@@ -78,12 +88,14 @@
                 echo "
                 <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
                     <hr class='w3-opacity'>
+                    <input type='submit' class='w3-button w3-black' name='choice' value='Voir les details de cette équipe'>
                     <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer'>
                 </form>
                 ";
             }
 
-            function form_add_table_equipes() {
+            function form_add_table_team() {
+                stop_session();
                 $j = count_users_eleves();
                 if($_POST['choice'] == 'Créer une équipe avec des membres') {
                     echo " 
@@ -145,13 +157,23 @@
                 return $i;
             }
 
-            function show_detail_equipes($id_equipe) {
+            function count_users_eleves_spe() {
+                $req = select_users_eleves_team();
+                $i = 0;
+                while($donnees = $req->fetch()) {
+                    $i++;
+                }
+                return $i;
+            }
+
+            function show_detail_team($id_equipe) {
                 $req = select_group_details($id_equipe);
                 $i = 1;
                 echo "<h4><b>Details de l'équipe</b></h4>";
                 echo " <form action='../view/profil.php?action=add_table_equipes' method='POST'>";
                 while($donnees = $req->fetch()) {
                     $nom_equipe = $donnees['name'];
+                    $id_equipe = $donnees['id_equipe'];
                     if($i % 3 == 1){
                         echo "<div class='w3-row-padding'>";
                     }
@@ -161,7 +183,7 @@
                         <div class='w3-container w3-white2'>
                             <p><b>Eleve $donnees[username]</b></p>
                             <input type='checkbox' id='scales' name='scales[$i]'>
-                            <input type='hidden' name='id_groupe[$i]' value='$donnees[id]'>
+                            <input type='hidden' name='id_users[$i]' value='$donnees[id]'>
                         </div>
                     </div>";
                     if($i % 3 == 0){
@@ -183,16 +205,81 @@
                     <h4><b>Nom de l'équipe</b></h4>
                     <hr class='w3-opacity'>
                     <input class='w3-input w3-border' type='text' name='nom_equipe' value='$nom_equipe' required></br>
+                    <input type='hidden' name='id_equipe' value='$id_equipe'>
                     <input type='submit' class='w3-button w3-black' name='choice' value='Changer le nom'>
                 </div>
                 </form>";
                 
                 echo "
                 <hr class='w3-opacity'>
-                <form action='../view/profil.php?action=add_table_equipes' method='POST'>
+                <form action='../view/profil.php?action=modif_table_equipe' method='POST'>
                     <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter de nouveaux membres à cette équipe'>
+                    <input type='hidden' name='id_equipe' value='$id_equipe'>
                 </form>";
             }
+
+
+            // The thing I'm gonna do is not right 
+
+            function form_add_exist_team() {
+                $id_equipe = $_POST['id_equipe'];
+                $j = count_users_eleves_spe();
+                $h = count_users_eleves();
+                $j = $h - $j;
+                if($_POST['choice'] == 'Ajouter de nouveaux membres à cette équipe' && !isset($_POST['choice_special'])) {
+                echo " 
+                <div class='w3-container w3-padding-large w3-grey'>
+                    <h4><b>Premièrement, sélectionnez le nombre d'élèves que vous voulez rajouter à l'équipe (min 1 - max $j)</b></h4>
+                    <form action='../view/profil.php?action=modif_table_equipe' method='POST'>
+                        <input class='w3-input w3-border' type='number' name='eleves' min='1' max='$j' required></br>
+                        <hr class='w3-opacity'>
+                        <input type='submit' class='w3-button w3-black' name='choice_special' value='Valider le nombre'>
+                        <input type='hidden' name='choice' value='Ajouter de nouveaux membres à cette équipe'>
+                        <input type='hidden' name='id_equipe' value='$_POST[id_equipe]'>
+                    </form>
+                </div>
+                ";
+                }
+                
+                if(isset($_POST['choice_special'])) {
+                    if($_POST['choice_special'] == 'Valider le nombre') {
+                        $h = 1;
+                        $check = 'first';
+                        echo "<div class='w3-section w3-bottombar w3-padding-16'>
+                        <form action='../view/profil.php?action=add_table_equipes' method='POST'>";
+                            for($i=1; $i != $_POST['eleves'] + 1; $i++) {
+                                $req = select_users_eleves();
+                                $req1 = select_users_eleves_team();
+                                echo "<label for='choice'>Utilisateurs disponibles : </label>";
+                                echo  "<select name='user[$i]'>";
+                                while($donnees = $req->fetch()) {
+                                    while($data = $req1->fetch()) {
+                                        if($data['id'] != $donnees['id']) {
+                                            $username= $donnees['username'];
+                                            $id = $donnees['id'];
+                                            if($check == 'first') {
+                                                $id_array[$h] = $id;
+                                                $h++;
+                                            }
+                                            ?>
+                                            <option name="id_user[$i]" value="<?php echo $username ?>"><?php echo $username ?></option>
+                                            <?php
+                                        }
+                                    }
+                                }
+                                $check = 'two';
+                                echo "</select>";
+                            }
+                                for($k=1; $k != count($id_array) + 1; $k++) {
+                                    echo "<input type='hidden' name='id_eleve[$k]' value='$id_array[$k]'>";
+                                }
+                                echo "</div>
+                                <input type='submit' class='w3-button w3-black' name='choice' value='Valider les nouveaux membres'>
+                                </form>";
+                        }
+                    }
+                }
+            
 
         ?>
         </div>

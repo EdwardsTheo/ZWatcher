@@ -16,6 +16,7 @@ require("../model/update.php");
         <title>ZWatcher</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <?php
             if($_SESSION['graph'] == "normal"){
                 echo"<link rel='stylesheet' href='../assets/css/profil_1.css'>

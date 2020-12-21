@@ -260,7 +260,7 @@
         connect_end($link);
     }
 
-    function simple_select_equipes() {
+    function simple_select_team() {
         $db = connect_start();
         $request = $db->query("SELECT * FROM equipes");
         return $request;
@@ -268,7 +268,7 @@
 
     function select_group_details($id_groupe) {
         $db = connect_start();
-        $request = $db->query("SELECT e.name, user.username, user.id 
+        $request = $db->query("SELECT e.name, user.username, e.id as id_equipe, user.id
         FROM equipes as e
         INNER JOIN equipes_bl AS ebl ON e.id = ebl.id_equipe
         INNER JOIN user AS user ON ebl.id_eleve = user.id 
@@ -291,5 +291,13 @@
             echo "Internal error: ".$th->getMessage();
         }
         connect_end($link);
+    }
+
+    function select_users_eleves_team() {
+        $db = connect_start();
+        $request = $db->query("SELECT u.id
+        FROM user AS u
+        INNER JOIN equipes_bl AS ebl ON u.id = ebl.id_eleve");
+        return $request;
     }
 ?>
