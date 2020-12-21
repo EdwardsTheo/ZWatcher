@@ -18,20 +18,22 @@
                     Sur cette page, vous pouvez gèrer les Utilisateurs présents sur le site</br>
                 <?php
         
+        print_r($_SESSION);
+        
         if(isset($_SESSION['message'])) {
             echo "<h4><b>$_SESSION[message]</b></h4>";
             unset($_SESSION['message']);
         }	
-        if(isset($_SESSION['id_user'])) {
+        if(isset($_SESSION['id_eleve'])) {
             $_POST['choice'] = 'info_utilisateur'; 
-            $id_user = $_SESSION['id_user'];
-            unset($_SESSION['id_user']);
+            $id_user = $_SESSION['id_eleve'];
+            unset($_SESSION['id_eleve']);
         }
-
+        print_r($_POST);
         echo "
         <div class='w3-section w3-bottombar w3-padding-16'>
             <form action='../view/profil.php?action=user' method='POST'>
-                <input type='submit' class='w3-button w3-black' name='choice' value='Montrer les utilisateurs existants'>
+                <input type='submit' class='w3-button w3-black p' name='choice' value='Montrer les utilisateurs existants'>
                 <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter de nouveaux utilisateurs'>
             </form>
         </div>
@@ -76,7 +78,7 @@
                             <input class='w3-input w3-border' type='text' name='prenom_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
                         <h4><b>Email de l'élève $i</b></h4>
-                            <input class='w3-input w3-border' type='text' name='mail_eleve[$i]' value='' required></br>
+                            <input class='w3-input w3-border' type='email' name='mail_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
                         <h4><b>Attribuez un mot de passe temporaire</b></h4>
                             <input class='w3-input w3-border' type='text' name='password_eleve[$i]' value='' required></br>
@@ -107,7 +109,7 @@
                             <p><b> Utilisateur : $donnees[1]</b></p>
                             <input type='checkbox' id='scales' name='scales[$i]'>
                             <input type='hidden' id='scales' name='id_profil[$i]' value='$donnees[id]'>
-                            <input type='submit' class='w3-button w3-black' name='choice' value='Details'>
+                            
                         </div>
                     </div>";
                     if($i % 3 == 0){
@@ -119,6 +121,7 @@
             echo "
             <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
                 <hr class='w3-opacity'>
+                <input type='submit' class='w3-button w3-black' name='choice' value='Détails du profil'>
                 <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer les membres'>
             </form>
             ";
@@ -126,32 +129,38 @@
 
         function form_modifiy_user($id_user) {
             $req = select_users();
+            $i=1;
             while($donnees = $req->fetch()) {
-                if($donnees['id'] == $id_user) {
-                    echo "<div class='w3-section w3-bottombar w3-padding-16'>
-                    <form action='../view/profil.php?action=add_utilisateurs' method='POST'>
-                        <div class='w3-container w3-padding-large w3-grey'>
-                            <h4><b>Nom de l'élève </b></h4>
-                                <input class='w3-input w3-border' type='text' name='nom_eleve[1]' value='$donnees[Nom]' required></br>
-                                <hr class='w3-opacity'>
-                            <h4><b>Prénom de l'élève </b></h4>
-                                <input class='w3-input w3-border' type='text' name='prenom_eleve[1]' value='$donnees[Prenom]' required></br>
-                                <hr class='w3-opacity'>
-                            <h4><b>Email de l'élève </b></h4>
-                                <input class='w3-input w3-border' type='text' name='mail_eleve[1]' value='$donnees[mail]' required></br>
-                                <hr class='w3-opacity'>
-                            <h4><b>Changez son mot de passe</b></h4>
-                                <input class='w3-input w3-border' type='password' name='password_eleve[1]' value=''></br>
-                                <hr class='w3-opacity'>
-                        </div>
-                        <hr class='w3-opacity'>
-                        ";
-                    echo "
-                    <input type='submit' class='w3-button w3-black' name='choice' value='Modifier les informations'>
-                    <input type='hidden' id='scales' name='id_profil[1]' value='$donnees[id]'>
-                    </form>";
+                if(isset($id_user[$i])) {
+                    if($donnees['id'] == $id_user[$i]) {
+                        echo "<div class='w3-section w3-bottombar w3-padding-16'>
+                        <form action='../view/profil.php?action=add_utilisateurs' method='POST'>
+                            <div class='w3-container w3-padding-large w3-grey'>
+                                <h4><b>Nom de l'élève </b></h4>
+                                    <input class='w3-input w3-border' type='text' name='nom_eleve[$i]' value='$donnees[Nom]' required></br>
+                                    <hr class='w3-opacity'>
+                                <h4><b>Prénom de l'élève </b></h4>
+                                    <input class='w3-input w3-border' type='text' name='prenom_eleve[$i]' value='$donnees[Prenom]' required></br>
+                                    <hr class='w3-opacity'>
+                                <h4><b>Email de l'élève </b></h4>
+                                    <input class='w3-input w3-border' type='email' name='mail_eleve[$i]' value='$donnees[mail]' required></br>
+                                    <hr class='w3-opacity'>
+                                <h4><b>Changez son mot de passe</b></h4>
+                                    <input class='w3-input w3-border' type='password' name='password_eleve[$i]' value=''></br>
+                                    <hr class='w3-opacity'>
+                            </div>
+                            <hr class='w3-opacity'>
+                            <input type='hidden' id='scales' name='id_profil[$i]' value='$donnees[id]'>
+                            ";
+                    $i++;
+                    }
                 }
+                
             }
+            echo "
+            <input type='submit' class='w3-button w3-black' name='choice' value='Modifier les informations'>
+            
+            </form>";
         }
 
         ?>

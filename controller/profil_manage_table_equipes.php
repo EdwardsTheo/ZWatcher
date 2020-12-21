@@ -7,6 +7,11 @@ switch($_POST['choice']) {
     break;
     case 'Voir les details de cette équipe' : details_equipe();
     break;
+    case 'Changer le nom' : change_team_name();
+    break;
+    case 'Supprimer les ou le membres de cette équipe' : delete_members_team();
+    break;
+    case 'Supprimer' : delete_teams();
 }
 
 function main_table_equipe() {
@@ -51,7 +56,7 @@ function check_double($value, $i) {
 }
 
 function check_team_name($team_name) {
-    $req = simple_select_equipes();
+    $req = simple_select_team();
     $test = true;
     while($donnnes = $req->fetch()) {
         if($donnnes['name'] == $team_name) {
@@ -63,7 +68,58 @@ function check_team_name($team_name) {
 }
 
 function details_equipe() {
-    $_SESSION['id_equipe'] = $_POST['id_groupe'][0];
+    $i=0;
+    foreach($_POST['scales'] as $key => $value) {
+        $i++;
+    }
+    if($i > 1) $_SESSION['message'] = "Vous ne pouvez voir les détails que d'une seule équipe à la fois";
+    else {
+        $i=1;
+        foreach ($_POST['id_groupe'] as $key => $value) {
+            if(isset($_POST['scales'][$i])) {
+                if($_POST['scales'][$i] == "on") {
+                    $_SESSION['id_equipe'] = $_POST['id_groupe'][$i];
+                }
+            }
+            $i++;
+        }
+    }
+}
+
+function change_team_name() {
+    $test = check_team_name($_POST['nom_equipe']);
+    if($test == true) {
+        update_team_name($_POST['nom_equipe'], $_POST['id_equipe']);
+    }
+    else {
+        $_SESSION['message'] = 'Le nom de votre équipe est déjà pris !';
+    }
+}
+
+function delete_members_team() {
+    $i=1;
+    foreach ($_POST['id_users'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+                delete_user_team($_POST['id_users'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
+function delete_teams() {
+    $i=0;
+    foreach ($_POST['id_groupe'] as $key => $value) {
+        
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+                delete_user_team_idteam($_POST['id_groupe'][$i]);
+                delete_user_teambl($_POST['id_groupe'][$i]);
+            }
+        }
+        $i++;
+    }
 }
 
 header('location: ../view/profil.php?action=modif_table_equipe'); // redirect to the main app page with a message of confirmation 
