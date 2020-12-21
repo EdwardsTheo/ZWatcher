@@ -53,19 +53,20 @@ session_start();
                     </input>
                 </div>
                 </form>
-                <form action = "../controller/register.php" method = "POST">
+                <form action = "../index.php" method = "POST">
                 <div class="login_fields__submit2">
-                    <input type="submit" value="Inscription">
+                    <input type="submit" value="Retour au site">
                     </input>
                     </form>
                     <div class="forgot">
-                        <a href="#">Mot de passe oublié ?</a>
+                        <a href="./forgotten.php">Mot de passe oublié ?</a>
                     </div>
                 </div>
             </div>
 
             <div class="disclaimer">
-                L'utilisation d'un compte implique l'acceptation de nos conditions d'utilisation, disponibles dans la section assistance.
+                <center>ZWatcher 2020-2021. </center> </br>
+                <center>Tous droits réservés - All rights reserved. </center>
             </div>
         </div>
     </body>
