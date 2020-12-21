@@ -3,8 +3,7 @@
     session_start();
 
     $to      = 'thomasparis56@gmail.com';
-    $subject = 'test Mail';
-    //$message = 'Salut je teste des trucs';
+    $subject = 'Réinitialisation de votre mot de passe';
 
     $message = "<html>
     <head>
@@ -29,9 +28,11 @@
           border-collapse: collapse;
           mso-table-lspace: 0pt;
           mso-table-rspace: 0pt;
+          margin: 0;
         }
         table td {
           vertical-align: top;
+          margin: 0;
         }
         
         /* -------------------------------------
@@ -77,6 +78,13 @@
           width: 100%;
           background-color: #fff;
         }
+
+        .hero_image1 {
+            max-width: 580px;
+            width: 100%;
+            margin-bottom: -4px ;
+            background-color: #fff;
+          }
         
         .offer_image {
           max-width: 580px;
@@ -133,7 +141,7 @@
         }
         
         .footer, .footer_content {
-          padding: 30px;
+          padding: 0px;
           background-color: #fff;
         }
         
@@ -207,7 +215,7 @@
           border-bottom-width: 1px;
           border-bottom-style: solid;
           border-bottom-color: #88b5bf;
-          width: 130px;
+          width: 200px;
           transition: color .3s linear;
         }
         
@@ -255,6 +263,11 @@
             width: 100% !important; 
           }
           table[class=body] .hero_image {
+            height: auto !important;
+            max-width: 100% !important;
+            width: auto !important; 
+          }
+          table[class=body] .hero_image1 {
             height: auto !important;
             max-width: 100% !important;
             width: auto !important; 
@@ -310,58 +323,40 @@
             <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='main'>
               <tbody>
                 <tr>
-                  <td align='wrapper'>
+                  <td>
                     <!-- MAIN AREA -->
                     <table role='presentation' border='0' cellspacing='0' cellpadding='0'>
                       <td>
                         <tr>
-                          <a href='https://anaheart.co.uk/' target='_blank' class='main_logo'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/ana_heart_logo.jpeg' class='main_logo'/></a>
-                          <p>Elegance in high performance</p>
-                          <img src='/images/graphismes/mail_ban.png' alt='img' class='hero_image'/>
+                            <img src='http://zwa.2nd-itinet.fr/images/graphismes/mail_ban.png' alt='img' style='display:block' class='hero_image1'/>
                         </tr>
                         <tr>
                           <table role='presentation' border='0' cellspacing='0' cellpadding='0'>
                             <div class='message'>
-                              <h1>How Yoga Helps You to Know Yourself</h1>
-                              <p>Yoga is renowned for healing the body and mind. However, the holistic therapy has other benefits, too. When used regularly, yoga can help you get to know yourself on a deeper level through a series of simple steps. <br>In this article, we explore how yoga helps you to know yourself in more detail. Before you begin, we recommend picking up some comfortable yoga clothes to practice in. <br>Until the weather gets warmer, it’s best to wrap up in a thick <a href='https://anaheart.co.uk/hoodies' target='_blank' class='hyperlink'>yoga hoodie</a> to prevent your muscles from getting too cold.</p>
+                              <h1>Réinitialisation de votre mot de passe</h1>
+                              <p> Vous avez effectué une demande pour réinitialiser votre mot de passe.</p>
+                              <p>Cliquez sur le lien ci-dessous pour compléter votre démarche :</p>
+                              <p> Si vous n'êtes pas à l'origine de cette action, nous vous conseillons de sécuriser votre compte en actualisant votre mot de passe.</p>
+                              </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>
                               <table style='background-color:#f2f2f2;margin-top:-45px;'>
                                 <th>
                                   <td style='padding-left: 23px;padding-bottom: 20px;'>
-                                    <a href='https://anaheart.co.uk/blog/how-yoga-helps-you-to-know-yourself/' target='_blank' class='article'><h3 class='underline'>Read more about</a>
+                                    <a href='http://zwa.2nd-itinet.fr/controller/connect.php' target='_blank' class='article'><h3 class='underline'>Interface de connexion</a>
                                   </td>
                                 </th>
                               </table>
                             </div>
                           </table>
-                          <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='offer'>
-                          <tr>
-                            <td>
-                              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/offer-JAN20.jpg' class='offer_image'/>
-                              <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='btn'>
-                                <tr>
-                                  <td>
-                                    <table role='presentation' border='0' cellspacing='0' cellpadding='0'>
-                                      <tbody>
-                                        <tr>
-                                          <td>
-                                            <a href='#' target='_blank'>SHOP NOW</a>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                      </table>
+                          
+
+
                           <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='body_bottom'>
                         <tr>
                           <td>
                             <table role='presentation' border='0' cellspacing='0' cellpadding='0'>
                               <tr>
                                 <td>
-                                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/yoga_ana_heart3.jpg' class='hero_image' />
+                                  <img src='http://zwa.2nd-itinet.fr/images/bank/en01_bis.jfif' class='hero_image' />
                                 </td>
                               </tr>
                             </table>
@@ -371,25 +366,61 @@
                               <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                               <tr class='social_icon'>
                                 <td>
-                                  <a href='#'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/FB.png'/></a>
+                                  <a href='https://www.facebook.com/'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/FB.png'/></a>
                                 </td>
                                 <td>
-                                  <a href='#'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/IG-B.png'/></a>
+                                  <a href='https://www.instagram.com/'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/IG-B.png'/></a>
                                 </td>
                                 <td>
-                                  <a href='#'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/TW-B.png'/></a>
+                                  <a href='https://www.twitter.com/'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/TW-B.png'/></a>
                                 </td>
                               </tr>
                             </table>
                           </td>
                         </tr>
                       </table>
+
+
+                      <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='offer'>
+                      <tr>
+                        <td>
+                          <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='btn'>
+                            <tr>
+                              <td>
+                                <table role='presentation' border='0' cellspacing='0' cellpadding='0'>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <a href='#' target='_blank'>ZWatcher</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                  </table>
+                  <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='footer'>
+                    <tr>
+                        <a href='http://zwa.2nd-itinet.fr' target='_blank' class='main_logo'><img src='http://zwa.2nd-itinet.fr/images/graphismes/logo_normal_bis.png' class='main_logo'/></a>
+                        <p>ZWatcher by ZTeam</p>
+                    </tr>
+                   </table>
                       <table role='presentation' border='0' cellspacing='0' cellpadding='0' class='footer'>
                         <tr>
                           <td>
                             <div class='footer_content'>
-                              <p>Ana Heart - 58 Kinnerton Street - London SW1X 8ES, UK<br>
-                              Because you subscribed to our newsletter, you will receive this email.<br>If you change your mind, just use <a href='#' style='text-decoration: none; color: initial;'>this link</a> to remove your email from the newsletters. You will be<br>automatically removed from our weekly update.<br>Ana Heart &copy; 2018</p>
+                              <p>ZWatcher by ZTeam - Tous droits réservés - All Rights Reserved.<br>
+                              Ceci est un message automatique. Merci de ne pas y répondre.
+                              Aucune réponse directe<br> à ce message ne sera prise en compte.
+                              Pour nous contacter, utilisez la section d' <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' style='text-decoration: none color: black'>assistance</a> prévue à cet effet.
+                              <br> Toute utilisation de ce message non conforme à sa destination, sa diffusion ou publication<br> est interdite sauf autorisation expresse.
+                              
+                             
+                             <br>ZWatcher &copy; 2021</p>
+                                
                             </div>
                           </td>
                         </tr>
@@ -418,6 +449,6 @@
     echo(error_get_last()['message']);
 
     
-    header('location: ../view/profil.php?action=status');
+    header('location: ../view/profil.php?action=accueil');
 
 ?>
