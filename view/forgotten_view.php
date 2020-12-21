@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="login_fields">
-    <form action = "../controller/create_account.php" method = "POST">
+    <form action = "../controller/reinitiate_account.php" method = "POST">
     <div class="login_fields__user">
       <div class="icon">
         <i class="far fa-user"></i>
@@ -49,7 +49,7 @@
       <input type="submit" value="Retour connexion"></input>
       </form>
       <div class="forgot">
-        <a href="#">Conditions d'utilisation</a>
+        <a href="../view/main_views/contact.php">Section assistance</a>
       </div>
     </div>
   </div>

@@ -26,6 +26,8 @@ header('Content-Type: text/html; charset=utf-8');
 				<ul class="links">
 					<li><a href="index.php">Accueil</a></li>
 					<li><a href="./view/main_views/presentation.php">Présentation</a></li>
+					<li><a href="./view/main_views/zteam.php">Notre équipe</a></li>
+					<li><a href="./view/main_views/contact.php">Contact</a></li>
 					<?php
 					if(isset($_SESSION['username'])){
 						echo"<li><a href='./view/profil.php'><i class='fa fa-user fa-fw'></i> Profil</li>";

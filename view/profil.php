@@ -102,11 +102,11 @@ require("../model/update.php");
         if (!isset($_GET['action'])){
             echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
             <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-            <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
-            <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
             <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
             <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
             <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+            <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+            <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
             <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
             <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
             <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -115,11 +115,11 @@ require("../model/update.php");
             if($_GET['action'] == "accueil"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -127,11 +127,11 @@ require("../model/update.php");
 			}else if($_GET['action'] == "compte" || $_GET['action'] == "infos" || $_GET['action'] == "status" || $_GET['action'] == "parameters" || $_GET['action'] == "graphismes"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding  w3-text-teal'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -139,11 +139,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "contacts" || $_GET['action'] == "add_contact" ||$_GET['action'] == "delete_contact" || $_GET['action'] == "par_contacts"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a>
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -151,11 +151,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "messagerie" || $_GET['action'] == "messages"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -163,11 +163,35 @@ require("../model/update.php");
             }else if($_GET['action'] == "listes" || $_GET['action'] == "display_listes" || $_GET['action'] == "create_liste"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
+                <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
+                <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
+                <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
+            }else if($_GET['action'] == "equipe" || $_GET['action'] == "modif_table_equipe" || $_GET['action'] == "add_table_equipes"){
+                echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
+                <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
+                <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
+                <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
+                <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
+                <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
+                <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
+                <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
+            }else if($_GET['action'] == "user" || $_GET['action'] == "add_utilisateurs"){
+                echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
+                <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
+                <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
+                <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
+                <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -175,11 +199,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "modification" || $_GET['action'] == "modif_liste" || $_GET['action'] == "modif_machine" || $_GET['action'] == "modif_hostname"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -187,11 +211,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "application" || $_GET['action'] == "appli_liste" || $_GET['action'] == "appli_machine"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -199,11 +223,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "observation" || $_GET['action'] == "observ_liste" || $_GET['action'] == "observ_machine"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding w3-text-teal'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -211,11 +235,11 @@ require("../model/update.php");
             }else if($_GET['action'] == "assistant"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
-                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
-                  <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
                 <a href='?action=messagerie' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-envelope fa-fw w3-margin-right'></i>Messagerie</a>
                 <a href='?action=listes' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-book-open fa-fw w3-margin-right'></i>Mon parc</a>
+                <a href='?action=user' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user-plus fa-fw w3-margin-right'></i>Utilisateurs</a>
+                <a href='?action=equipe' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-users fa-fw w3-margin-right'></i>Equipes</a>
                 <a href='?action=modification' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-pencil-alt fa-fw w3-margin-right'></i>Modification</a>
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
@@ -310,23 +334,6 @@ require("../model/update.php");
                 case 'graphismes':
                     require('../controller/profil_graphismes.php');
                 break;
-                // Partie utilisateur 
-                case 'user' :
-                    require('../controller/profil_main_users.php');
-                break;
-                case 'add_utilisateurs' :
-                    require('../controller/profil_manage_utilisateurs.php');
-                break;
-                // Partie Equipe
-                case 'equipe' :
-                    require('../controller/profil_equipe.php');
-                break;
-                case 'modif_table_equipe' :
-                    require('../controller/profil_equipe.php');
-                break;
-                case 'add_table_equipes' :
-                    require('../controller/profil_manage_table_equipes.php');
-                break;
                 //Partie Contacts
 				case 'contacts':
 					require('../controller/display_contacts.php');
@@ -356,6 +363,23 @@ require("../model/update.php");
                 break;
                 case 'create_liste':
 					require('../controller/profil_create_liste.php');
+                break;
+                // Partie Equipe
+                case 'equipe' :
+                    require('../controller/profil_equipe.php');
+                break;
+                case 'modif_table_equipe' :
+                    require('../controller/profil_equipe.php');
+                break;
+                case 'add_table_equipes' :
+                    require('../controller/profil_manage_table_equipes.php');
+                break;
+                // Partie Utilisateur 
+                case 'user' :
+                    require('../controller/profil_main_users.php');
+                break;
+                case 'add_utilisateurs' :
+                    require('../controller/profil_manage_utilisateurs.php');
                 break;
                 //Partie Modifications
                 case 'modification':
