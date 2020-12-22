@@ -391,7 +391,7 @@
                                   <tbody>
                                     <tr>
                                       <td>
-                                        <a href='#' target='_blank'>ZWatcher</a>
+                                        <a href='http://zwa.2nd-itinet.fr' target='_blank'>ZWatcher</a>
                                       </td>
                                     </tr>
                                   </tbody>
