@@ -124,7 +124,7 @@ body .login_title {
   color: #dadce7;
   margin-top: -34px;
   margin-bottom: 4px;
-  height: 50px;
+  /*height: 50px;*/
   text-align: left;
   font-size: 16px;
 }

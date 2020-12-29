@@ -1,5 +1,17 @@
 <?php
 
+    function update_code($user, $code) {
+        $link = NULL;
+
+        $options = array('cost' => 11);
+        $hashed_code = password_hash($password, PASSWORD_BCRYPT, $options);
+
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `user` SET `code` = :newcode WHERE `user`.`username` = :name_user;");
+        $req -> execute(array(":name_user"=>$user, ':newcode' => $hashed_code));
+        connect_end($link);
+    }
+
     function update_graphismes($user, $mode) {
         $link = NULL;
         $link = connect_start();

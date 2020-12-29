@@ -1,5 +1,22 @@
 <?php
 
+    function get_hash($name){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.password FROM user U WHERE U.username = $name"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function check_contact($id2, $id1){
         $link = NULL;
 
