@@ -30,7 +30,9 @@
             }
 
             $code = randomNumber(8);
-            update_code($user, $code);
+            $options = array('cost' => 11);
+            $hashed_code = password_hash($code, PASSWORD_BCRYPT, $options);
+            update_code($user, $hashed_code);
             
             $hash = $donnees['password'];
 
@@ -371,7 +373,7 @@
                                     <p> Vous avez effectué une demande pour réinitialiser votre mot de passe.</p>
                                     <p>Cliquez sur le lien ci-dessous pour compléter votre démarche :</p>
 
-                                    <p><a href='http://zwa.2nd-itinet.fr/controller/redem_init.php?email=$mail&hash=$hash target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
+                                    <p><a href='http://zwa.2nd-itinet.fr/controller/redem_init.php?user=$user&hash=$hash&code=$hashed_code' target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
 
                                     <p> Si vous n'êtes pas à l'origine de cette action, nous vous conseillons de sécuriser votre compte en actualisant votre mot de passe.</p>
                                     </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>
