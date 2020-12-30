@@ -188,6 +188,23 @@
         connect_end($link);
     }
 
+    function fetch_user($id){
+        $link=NULL;   
+
+        try {
+            if (!($link = connect_start())) {
+                throw new Exception("DataBase load failed !");
+            }
+            if (!($result = $link->query("SELECT id, username, password, code, exp_date, mail, displayer, graphismes, power FROM user WHERE user.id = $id"))) {
+                throw new Exception("No access to the table");  
+            } 
+            return $result;           
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        } 
+        connect_end($link);
+    }
+
     function fetch_ids(){
         $link=NULL;   
 
@@ -195,7 +212,7 @@
             if (!($link = connect_start())) {
                 throw new Exception("DataBase load failed !");
             }
-            if (!($result = $link->query("SELECT id, username, password, mail, displayer, graphismes, power FROM user"))) {
+            if (!($result = $link->query("SELECT id, username, password, code, exp_date, mail, displayer, graphismes, power FROM user"))) {
                 throw new Exception("No access to the table");  
             } 
             return $result;           

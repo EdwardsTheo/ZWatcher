@@ -32,7 +32,9 @@
             $code = randomNumber(8);
             $options = array('cost' => 11);
             $hashed_code = password_hash($code, PASSWORD_BCRYPT, $options);
-            update_code($user, $hashed_code);
+            $exp_format = mktime(date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y"));
+            $exp_date = date("Y-m-d H:i:s",$exp_format);
+            update_code($user, $hashed_code, $exp_date);
             
             $hash = $donnees['password'];
 
@@ -376,6 +378,8 @@
                                     <p>Cliquez sur le lien ci-dessous pour compléter votre démarche :</p>
 
                                     <p><a href='http://zwa.2nd-itinet.fr/controller/redem_init.php?user=$user&hash=$hash&code=$hashed_code' target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
+                                    <!--<p><a href='http://etudes:8080/ZWatcher/controller/redem_init.php?user=$user&hash=$hash&code=$hashed_code' target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
+                                    -->
                                     <p>Munissez-vous du code suivant : $code </p>
                                     <p> Si vous n'êtes pas à l'origine de cette action, nous vous conseillons de sécuriser votre compte en actualisant votre mot de passe.</p>
                                     </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>

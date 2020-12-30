@@ -1,10 +1,22 @@
 <?php
 
-    function update_code($user, $code) {
+    function update_password($password, $user) {
+        $link = NULL;
+
+        $options = array('cost' => 11);
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `user` SET `password` = :pwd WHERE `user`.`id` = :iduser;");
+        $req -> execute(array(':pwd' => $hashed_password, ":iduser"=>$user));
+        connect_end($link);
+    }
+
+    function update_code($user, $code, $exp_date) {
         $link = NULL;
         $link = connect_start();
-        $req = $link -> prepare("UPDATE `user` SET `code` = :newcode WHERE `user`.`username` = :name_user;");
-        $req -> execute(array(":name_user"=>$user, ':newcode' => $code));
+        $req = $link -> prepare("UPDATE `user` SET `code` = :newcode, `exp_date` = :new_date WHERE `user`.`username` = :name_user;");
+        $req -> execute(array(":name_user"=>$user, ':newcode' => $code, ':new_date' => $exp_date));
         connect_end($link);
     }
 

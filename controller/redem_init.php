@@ -16,25 +16,25 @@
         $allow = false;
 
         while ($donnees = $req->fetch()){
-            if($donnees['username'] == $user && $donnees['hash'] == $hash && $donnees['code'] == $code){
-                $allow = true;
-
-                //check si les données correspondent
-                //code valable que 24h dans reinitiate_account.php ?
-                //dans ce cas rajouter une case dans la bdd après code
-                
-                //on check si current time correspond à exptime dans la bdd
+            if($donnees['username'] == $user && $donnees['password'] == $hash && $donnees['code'] == $code){
+                $cur_date = date("Y-m-d H:i:s");
+                if($cur_date <= $donnees['exp_date']){
+                    $allow = true;
+                    $tmp = $donnees['id'];
+                }
                 //si oui on affiche la page pour reset avec comme value l'id de l'user qui effectue l'action
-
             }
         }
         if($allow == true){
+            $errors = "";
+            $user_id = $tmp;
             require('../view/insert_new.php');
         }else{
             $errors = "Une erreur est survenue lors de la procédure.";
             require('../view/connect_view.php');
         }
     }else{
-        //rediriger vers une page random
+        $errors = "Une erreur est survenue lors de la procédure.";
+        require('../view/connect_view.php');
     }
 ?>
