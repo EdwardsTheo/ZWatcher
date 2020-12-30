@@ -147,4 +147,19 @@
             ));
         connect_end($link);
     }
+
+    function update_users_listes($username, $password, $id_user) {
+        echo $username;
+        //echo $password;
+        echo $id_user;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `user_listes` 
+        SET `username` = :user, `pswd` = :upswd 
+        WHERE `id` = :id;");
+        $req -> execute(array(':user' => $username, 
+        ':upswd' => $password, 
+        ':id'=>$id_user
+        ));
+        connect_end($link);
+    }
 ?>

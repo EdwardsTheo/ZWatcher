@@ -398,8 +398,14 @@ require("../model/update.php");
                 case 'modif_users':
                     require('../controller/profil_modif_users.php');
                 break;
+                case 'manage_users':
+                    require('../controller/profil_manage_users.php');
+                break;
                 case 'modif_groups':
                     require('../controller/profil_modif_groups.php');
+                break;
+                case 'manage_groups':
+                    require('../controller/profil_manage_groups.php');
                 break;
                 //Partie Applications
                 case 'application':

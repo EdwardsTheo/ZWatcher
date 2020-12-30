@@ -218,4 +218,31 @@
         connect_end($link);
     }
 
+    function  insert_new_user_listes($username, $password, $id_machine) {
+        $options = array('cost' => 11);
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `user_listes` (`id`,`username`, `pswd`, `id_listes`)
+		VALUES (NULL, 
+        '.$link -> quote($username).',
+        '.$link -> quote($hashed_password).',
+        '.$link -> quote($id_machine).'
+		)');
+        connect_end($link);
+    }
+
+    function  insert_new_groups_listes($grp_name, $id_machine, $sudo) {
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`)
+		VALUES (NULL, 
+        '.$link -> quote($grp_name).',
+        '.$link -> quote($id_machine).',
+        '.$link -> quote($sudo).'
+		)');
+        connect_end($link);
+    }
+
 ?>

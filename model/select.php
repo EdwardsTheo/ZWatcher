@@ -352,4 +352,23 @@
         }
         connect_end($link);
     }
+
+    
+    function select_users_listes($id_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM user_listes WHERE `id_listes` = $id_machine");
+        return $request;
+    }
+
+    function select_users_listes_id($id_machine, $id) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM user_listes WHERE `id_listes` = $id_machine AND `id` = $id");
+        return $request;
+    }
+
+    function select_groups_listes($id_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM groupe_listes WHERE `id_listes` = $id_machine");
+        return $request;
+    }
 ?>

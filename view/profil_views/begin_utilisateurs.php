@@ -98,7 +98,7 @@
 
         function show_utilisateurs() {
             $empty = false;
-            $req = select_users();
+            $req = select_users_eleves();
             $i = 1;
             echo " <form action='../view/profil.php?action=add_utilisateurs' method='POST'>";
             while($donnees = $req->fetch()) {
@@ -138,7 +138,7 @@
         }
 
         function form_modifiy_user($id_user) {
-            $req = select_users();
+            $req = select_users_eleves();
             $i=1;
             while($donnees = $req->fetch()) {
                 if(isset($id_user[$i])) {

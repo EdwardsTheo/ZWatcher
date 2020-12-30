@@ -40,4 +40,10 @@
         return $request;
     }
 
+    function delete_user_listes($id) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM user_listes WHERE id='$id'");
+        return $request;
+    }
+
 ?>

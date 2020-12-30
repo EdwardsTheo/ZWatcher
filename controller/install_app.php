@@ -34,7 +34,6 @@
     }
 
     function return_status($output, $id_machine, $id_appli) {
-
 		$_SESSION['check_install'] = (trim($output) == "Status: install ok installed") ? "true" : "false"; // returns true if install ok
 		
 		if($_SESSION['check_install'] == true) {
@@ -50,7 +49,6 @@
 	
 
     function unistall_and_check($id_machine, $action, $app_name) {
-	    
 		main_ssh($id_machine, $action, $app_name); // Uninstall the package
 		$output = main_ssh($id_machine, 'check_uninstall', $app_name); // Check is the package is uninstalled 
 		return $output;

@@ -1,7 +1,5 @@
 <?php
 
-print_r($_POST);
-
 switch($_POST['choice']) {
     case 'Ajouter les utilisateurs' :  main_add_utilisateurs();
     break;
@@ -39,7 +37,7 @@ function main_add_utilisateurs() {
 }
 
 function test_mail($mail, $id = NULL) {
-    if($id == NULL) $req = select_users();
+    if($id == NULL) $req = select_users_eleves();
     else $req = select_users_id($id);
     $test = true;
     while($donnees = $req->fetch()) {
@@ -51,7 +49,7 @@ function test_mail($mail, $id = NULL) {
 }
 
 function test_name_surname($name, $surname, $id = NULL) { 
-    if($id == NULL) $req = select_users();
+    if($id == NULL) $req = select_users_eleves();
     else $req = select_users_id($id);
     $test = true;  
     while($donnees = $req->fetch()) {
@@ -63,7 +61,7 @@ function test_name_surname($name, $surname, $id = NULL) {
 }
 
 function test_user_new($user, $id = NULL) {
-    if($id == NULL) $req = select_users();
+    if($id == NULL) $req = select_users_eleves();
     else $req = select_users_id($id);
     $test = true;
     while($donnees = $req->fetch()) {
@@ -104,7 +102,7 @@ function main_update_utilisateurs() {
     foreach ($_POST['id_profil'] as $key => $value) {
         $from = $_POST['id_profil'][$i];
         if($_POST['password_eleve'][$i] == "") {
-            $req = select_users();
+            $req = select_users_eleves();
             while($donnees = $req->fetch()) {
                 $hashed_password = $donnees['password'];
             }

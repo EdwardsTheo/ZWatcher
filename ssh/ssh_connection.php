@@ -1,7 +1,6 @@
 <?php
 
 function info_login($machine_id) {
-    echo $machine_id;
     $req = get_listes_machine($machine_id);
     while($donnees = $req->fetch()){
         
