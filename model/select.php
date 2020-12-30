@@ -83,6 +83,24 @@
         connect_end($link);
     }
 
+
+    function get_back_username($username){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.username = $username"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function get_back_user($id){
         $link = NULL;
 

@@ -38,6 +38,8 @@
 
             //récupérer le mail de l'user
 
+            // Important ! empecher les doublons de pseudos
+
             $to      = 'thomasparis56@gmail.com';
             $subject = 'Réinitialisation de votre mot de passe';
 
@@ -374,7 +376,7 @@
                                     <p>Cliquez sur le lien ci-dessous pour compléter votre démarche :</p>
 
                                     <p><a href='http://zwa.2nd-itinet.fr/controller/redem_init.php?user=$user&hash=$hash&code=$hashed_code' target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
-
+                                    <p>Munissez-vous du code suivant : $code </p>
                                     <p> Si vous n'êtes pas à l'origine de cette action, nous vous conseillons de sécuriser votre compte en actualisant votre mot de passe.</p>
                                     </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>
                                     <table style='background-color:#f2f2f2;margin-top:-45px;'>
