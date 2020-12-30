@@ -22,9 +22,9 @@
         return $request;
     }
 
-    function delete_user_team($id_user) {
+    function delete_user_team($id_user, $id_equipe) {
         $db = connect_start();
-        $request = $db->query("DELETE FROM equipes_bl WHERE id_eleve='$id_user'");
+        $request = $db->query("DELETE FROM equipes_bl WHERE id_eleve='$id_user' AND id_equipe='$id_equipe'");
         return $request;
     }
 
@@ -35,7 +35,6 @@
     }
 
     function delete_user_team_idteam($id_team) {
-        echo $id_team;
         $db = connect_start();
         $request = $db->query("DELETE FROM equipes WHERE id='$id_team'");
         return $request;

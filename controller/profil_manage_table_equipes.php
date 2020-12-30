@@ -12,6 +12,9 @@ switch($_POST['choice']) {
     case 'Supprimer les ou le membres de cette équipe' : delete_members_team();
     break;
     case 'Supprimer' : delete_teams();
+    break;
+    case 'Valider les nouveaux membres' : add_new_members();
+    break;
 }
 
 function main_table_equipe() {
@@ -101,7 +104,7 @@ function delete_members_team() {
     foreach ($_POST['id_users'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
-                delete_user_team($_POST['id_users'][$i]);
+                delete_user_team($_POST['id_users'][$i], $_POST['id_equipe']);
             }
         }
         $i++;
@@ -109,9 +112,8 @@ function delete_members_team() {
 }
 
 function delete_teams() {
-    $i=0;
+    $i=1;
     foreach ($_POST['id_groupe'] as $key => $value) {
-        
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
                 delete_user_team_idteam($_POST['id_groupe'][$i]);
@@ -120,6 +122,15 @@ function delete_teams() {
         }
         $i++;
     }
+}
+
+function add_new_members() {
+    $i=1;
+    foreach($_POST['id_eleve'] as $key => $value) {
+        insert_user_team($_POST['id_equipe'], $_POST['id_eleve'][$i]);
+        $i++;
+    }
+    $_SESSION['id_equipe'] = $_POST['id_equipe'];
 }
 
 header('location: ../view/profil.php?action=modif_table_equipe'); // redirect to the main app page with a message of confirmation 

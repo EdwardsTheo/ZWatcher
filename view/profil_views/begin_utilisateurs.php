@@ -16,9 +16,7 @@
                 <div id="centre">
                 <h4><b>Informations</b></h4>
                     Sur cette page, vous pouvez gèrer les Utilisateurs présents sur le site</br>
-                <?php
-        
-        print_r($_SESSION);
+    <?php
         
         if(isset($_SESSION['message'])) {
             echo "<h4><b>$_SESSION[message]</b></h4>";
@@ -29,7 +27,9 @@
             $id_user = $_SESSION['id_eleve'];
             unset($_SESSION['id_eleve']);
         }
-        print_r($_POST);
+
+        if(isset($_SESSION['error'][1])) error();
+        
         echo "
         <div class='w3-section w3-bottombar w3-padding-16'>
             <form action='../view/profil.php?action=user' method='POST'>
@@ -72,16 +72,19 @@
                     echo "
                     <div class='w3-container w3-padding-large w3-grey'>
                         <h4><b>Nom de l'élève $i</b></h4>
-                            <input class='w3-input w3-border' type='text' name='nom_eleve[$i]' value='' required></br>
+                            <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='nom_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
                         <h4><b>Prénom de l'élève $i</b></h4>
-                            <input class='w3-input w3-border' type='text' name='prenom_eleve[$i]' value='' required></br>
+                            <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='prenom_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
                         <h4><b>Email de l'élève $i</b></h4>
                             <input class='w3-input w3-border' type='email' name='mail_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
+                        <h4><b>Nom de compte de l'élève $i</b></h4>
+                            <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='username[$i]' value='' required></br>
+                            <hr class='w3-opacity'>
                         <h4><b>Attribuez un mot de passe temporaire</b></h4>
-                            <input class='w3-input w3-border' type='text' name='password_eleve[$i]' value='' required></br>
+                            <input class='w3-input w3-border' type='password' name='password_eleve[$i]' value='' required></br>
                             <hr class='w3-opacity'>
                     </div>
                     <hr class='w3-opacity'>
@@ -94,11 +97,13 @@
         }
 
         function show_utilisateurs() {
+            $empty = false;
             $req = select_users();
             $i = 1;
             echo " <form action='../view/profil.php?action=add_utilisateurs' method='POST'>";
             while($donnees = $req->fetch()) {
                 if($donnees['id'] != 1) {
+                    $empty = true;
                     if($i % 3 == 1){
                         echo "<div class='w3-row-padding'>";
                     }
@@ -118,13 +123,18 @@
                     $i = $i + 1;
                 }
             }
-            echo "
-            <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                <hr class='w3-opacity'>
-                <input type='submit' class='w3-button w3-black' name='choice' value='Détails du profil'>
-                <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer les membres'>
-            </form>
-            ";
+            echo "<div class='w3-container w3-padding-large' style='margin-bottom:32px'>";
+            if($empty == true) {
+                echo "
+                    <hr class='w3-opacity'>
+                    <input type='submit' class='w3-button w3-black' name='choice' value='Détails du profil'>
+                    <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer les membres'>
+                </form>
+                ";
+            }
+            else {
+                echo "<h4><b>Il n'y a actuellement aucun utilisateurs !</b></h4>";
+            }
         }
 
         function form_modifiy_user($id_user) {
@@ -137,13 +147,16 @@
                         <form action='../view/profil.php?action=add_utilisateurs' method='POST'>
                             <div class='w3-container w3-padding-large w3-grey'>
                                 <h4><b>Nom de l'élève </b></h4>
-                                    <input class='w3-input w3-border' type='text' name='nom_eleve[$i]' value='$donnees[Nom]' required></br>
+                                    <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='nom_eleve[$i]' value='$donnees[Nom]' required></br>
                                     <hr class='w3-opacity'>
                                 <h4><b>Prénom de l'élève </b></h4>
-                                    <input class='w3-input w3-border' type='text' name='prenom_eleve[$i]' value='$donnees[Prenom]' required></br>
+                                    <input class='w3-input w3-border' type='text' pattern='[a-zA-Z]+' name='prenom_eleve[$i]' value='$donnees[Prenom]' required></br>
                                     <hr class='w3-opacity'>
                                 <h4><b>Email de l'élève </b></h4>
                                     <input class='w3-input w3-border' type='email' name='mail_eleve[$i]' value='$donnees[mail]' required></br>
+                                    <hr class='w3-opacity'>
+                                    <h4><b>Nom de compte de l'élève $i</b></h4>
+                                    <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='username[$i]' value='$donnees[username]' required></br>
                                     <hr class='w3-opacity'>
                                 <h4><b>Changez son mot de passe</b></h4>
                                     <input class='w3-input w3-border' type='password' name='password_eleve[$i]' value=''></br>
@@ -161,6 +174,17 @@
             <input type='submit' class='w3-button w3-black' name='choice' value='Modifier les informations'>
             
             </form>";
+        }
+
+        function error() {
+            for($i = 1; $i < count($_SESSION['error']) + 1; $i++) {
+                ?>
+                <h4><b><?php echo "Problème lors de la création du compte $i"; ?></b></h4>
+                <h4><b><?php print_r($_SESSION['error'][$i]); ?></b></h4>
+                <?php
+                unset($_SESSION['error'][$i]);
+                unset($_SESSION[$i]);
+            }
         }
 
         ?>

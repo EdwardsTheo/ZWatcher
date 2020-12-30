@@ -119,14 +119,15 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `Nom`, `Prenom`, `password`, `mail`,`status`) 
+            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `Nom`, `Prenom`, `password`, `mail`,`status`, `power`) 
             VALUES (NULL, 
             '.$link -> quote($user).', 
             '.$link -> quote($nom).', 
             '.$link -> quote($prenom).', 
             '.$link -> quote($hashed_password).', 
             '.$link -> quote($mail).',
-            '.$link -> quote("connecte").');'))) {
+            '.$link -> quote("connecte").',
+            '.$link -> quote('eleves').');'))) {
                 throw new Exception("No access to the table");  
             }
             //return l'id de l'insert au dessus

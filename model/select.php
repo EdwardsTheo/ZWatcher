@@ -293,11 +293,28 @@
         connect_end($link);
     }
 
-    function select_users_eleves_team() {
+    function select_users_eleves_team($id_groupe) {
         $db = connect_start();
         $request = $db->query("SELECT u.id
         FROM user AS u
-        INNER JOIN equipes_bl AS ebl ON u.id = ebl.id_eleve");
+        INNER JOIN equipes_bl AS ebl ON u.id = ebl.id_eleve  WHERE ebl.id_equipe != $id_groupe");
         return $request;
+    }
+
+    function select_users_id($id_profil) {
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user WHERE `id` != $id_profil"))) {
+                throw new Exception("No access to the table");  
+            }   
+            return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
     }
 ?>
