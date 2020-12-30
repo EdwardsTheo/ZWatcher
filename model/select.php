@@ -1,5 +1,22 @@
 <?php
 
+    function get_hash($name){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.password FROM user U WHERE U.username = $name"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function check_contact($id2, $id1){
         $link = NULL;
 
@@ -57,6 +74,24 @@
                 throw new Exception("Could not connect to database");
 
                 if (!($result = $link->query("SELECT U.image FROM user U WHERE U.id = $id"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+
+    function get_back_username($username){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.username = $username"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -136,20 +171,20 @@
         connect_end($link);
     }
 
-    function select_users(){
-        $link = NULL;
+    function fetch_user($id){
+        $link=NULL;   
 
         try {
-            if (!($link = connect_start()))
-                throw new Exception("Could not connect to database");
-
-            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user"))) {
+            if (!($link = connect_start())) {
+                throw new Exception("DataBase load failed !");
+            }
+            if (!($result = $link->query("SELECT id, username, password, code, exp_date, mail, displayer, graphismes, power FROM user WHERE user.id = $id"))) {
                 throw new Exception("No access to the table");  
-            }   
-            return $result; 
+            } 
+            return $result;           
         } catch (Exception $th) {
             echo "Internal error: ".$th->getMessage();
-        }
+        } 
         connect_end($link);
     }
 
@@ -160,7 +195,7 @@
             if (!($link = connect_start())) {
                 throw new Exception("DataBase load failed !");
             }
-            if (!($result = $link->query("SELECT id, username, password, mail, displayer, graphismes, power FROM user"))) {
+            if (!($result = $link->query("SELECT id, username, password, code, exp_date, mail, displayer, graphismes, power FROM user"))) {
                 throw new Exception("No access to the table");  
             } 
             return $result;           

@@ -61,10 +61,6 @@
                 }
                 ?>
 
-                <hr class="w3-opacity">
-                <form action="../controller/send_confirmation_account.php" method = "POST">
-                <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Mail</button>
-
                 </p>
             </div>
             <div id="ctn">

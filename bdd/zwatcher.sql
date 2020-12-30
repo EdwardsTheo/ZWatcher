@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : mer. 02 déc. 2020 à 19:20
--- Version du serveur :  10.3.25-MariaDB-0+deb10u1
--- Version de PHP : 7.3.19-1~deb10u1
+-- Hôte : 127.0.0.1:3306
+-- Généré le : mer. 30 déc. 2020 à 04:13
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `ZWatcher`
+-- Base de données : `zwatcher`
 --
 
 -- --------------------------------------------------------
@@ -27,10 +27,12 @@ SET time_zone = "+00:00";
 -- Structure de la table `applis`
 --
 
-CREATE TABLE `applis` (
-  `id` int(11) NOT NULL,
-  `nom_appli` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `applis`;
+CREATE TABLE IF NOT EXISTS `applis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_appli` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `applis`
@@ -45,13 +47,17 @@ INSERT INTO `applis` (`id`, `nom_appli`) VALUES
 -- Structure de la table `app_machine`
 --
 
-CREATE TABLE `app_machine` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `app_machine`;
+CREATE TABLE IF NOT EXISTS `app_machine` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_machine` int(11) NOT NULL,
   `id_appli` int(11) NOT NULL,
   `status_dispo` enum('0','1') NOT NULL DEFAULT '0',
-  `status_install` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status_install` enum('0','1') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `id_machine` (`id_machine`),
+  KEY `id_appli` (`id_appli`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `app_machine`
@@ -66,26 +72,75 @@ INSERT INTO `app_machine` (`id`, `id_machine`, `id_appli`, `status_dispo`, `stat
 -- Structure de la table `contact`
 --
 
-CREATE TABLE `contact` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_1` int(11) NOT NULL,
   `user_2` int(11) NOT NULL,
   `type` varchar(20) DEFAULT NULL,
-  `checkpoint` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `checkpoint` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_contact_user1_idx` (`user_1`),
+  KEY `fk_contact_user2_idx` (`user_2`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`, `checkpoint`) VALUES
-(1, 1, 2, 'Eléve', '2020-11-23'),
+(1, 1, 2, 'ElÃ¨ve', '2020-12-17'),
 (2, 2, 1, NULL, ''),
 (3, 1, 3, 'Pro', '2020-06-18'),
 (6, 5, 1, 'Prof', ''),
 (7, 1, 1, 'Moi', '2020-06-20'),
-(8, 1, 6, 'Eléve', '2020-06-12'),
-(11, 1, 5, 'Apprenti', '2020-11-28');
+(8, 1, 6, 'ElÃ¨ve', '2020-06-12'),
+(11, 1, 5, 'Apprenti', '2020-11-28'),
+(13, 9, 1, 'Admin', '2020-12-18'),
+(14, 1, 9, 'Nouveau', '2020-12-18');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `equipes`
+--
+
+DROP TABLE IF EXISTS `equipes`;
+CREATE TABLE IF NOT EXISTS `equipes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `id_listes` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `equipes`
+--
+
+INSERT INTO `equipes` (`id`, `name`, `id_listes`) VALUES
+(19, 'Crousti', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `equipes_bl`
+--
+
+DROP TABLE IF EXISTS `equipes_bl`;
+CREATE TABLE IF NOT EXISTS `equipes_bl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_eleve` int(11) NOT NULL,
+  `id_equipe` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `equipes_bl`
+--
+
+INSERT INTO `equipes_bl` (`id`, `id_eleve`, `id_equipe`) VALUES
+(16, 70, 19),
+(15, 69, 19);
 
 -- --------------------------------------------------------
 
@@ -93,30 +148,35 @@ INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`, `checkpoint`) VALUES
 -- Structure de la table `listes`
 --
 
-CREATE TABLE `listes` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `listes`;
+CREATE TABLE IF NOT EXISTS `listes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(60) NOT NULL,
   `description` varchar(200) NOT NULL,
   `date_liste` date NOT NULL,
   `user_id` int(11) NOT NULL,
   `user_admin` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
+  `mac` varchar(40) NOT NULL,
   `port` int(10) NOT NULL,
   `id_machine` varchar(40) NOT NULL,
-  `pwd_machine` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pwd_machine` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `user_admin` (`user_admin`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `listes`
 --
 
-INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `user_id`, `user_admin`, `ip`, `port`, `id_machine`, `pwd_machine`) VALUES
-(4, 'Machine 1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', 1, 1, '82.64.225.10', 2020, 'barney', 'stinson'),
-(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', 1, 1, '', 0, '', ''),
-(6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', 1, 1, '', 0, '', ''),
-(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', 1, 1, '', 0, '', ''),
-(8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', 1, 1, '', 0, '', ''),
-(9, 'Machine 6', 'Debian 9 - Equipe 4', '2020-11-30', 1, 1, '', 0, '', '');
+INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `user_id`, `user_admin`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) VALUES
+(4, 'Machine1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', 1, 1, '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
+(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', 1, 1, '', '', 0, '', ''),
+(6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', 1, 1, '', '', 0, '', ''),
+(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', 1, 1, '', '', 0, '', ''),
+(8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', 1, 1, '', '', 0, '', ''),
+(9, 'Machine 6', 'Debian 9 - Equipe 4', '2020-11-30', 1, 1, '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -124,11 +184,13 @@ INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `user_id`, `us
 -- Structure de la table `message`
 --
 
-CREATE TABLE `message` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message`
@@ -143,8 +205,10 @@ INSERT INTO `message` (`id`, `content`, `date`) VALUES
 (12, 'D\'accord', '2020-06-20'),
 (13, 'Excellent !', '2020-06-21'),
 (14, ':D', '2020-07-09'),
-(15, 'Bonne journée', '2020-11-23'),
-(16, 'Dur n\'est ce pas ?', '2020-11-28');
+(16, 'Dur n\'est ce pas ?', '2020-11-28'),
+(17, 'Bonne journÃ©e', '2020-12-17'),
+(25, 'Yo man', '2020-12-18'),
+(26, 're', '2020-12-18');
 
 -- --------------------------------------------------------
 
@@ -152,12 +216,17 @@ INSERT INTO `message` (`id`, `content`, `date`) VALUES
 -- Structure de la table `message_user`
 --
 
-CREATE TABLE `message_user` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `message_user`;
+CREATE TABLE IF NOT EXISTS `message_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_send` int(11) NOT NULL,
   `user_receive` int(11) NOT NULL,
-  `message_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `message_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_message_user_user1_idx` (`user_send`),
+  KEY `fk_message_user_user2_idx` (`user_receive`),
+  KEY `fk_message_user_message1_idx` (`message_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message_user`
@@ -172,8 +241,10 @@ INSERT INTO `message_user` (`id`, `user_send`, `user_receive`, `message_id`) VAL
 (12, 2, 1, 12),
 (13, 1, 2, 13),
 (14, 1, 2, 14),
-(15, 1, 2, 15),
-(16, 1, 5, 16);
+(16, 1, 5, 16),
+(17, 1, 2, 17),
+(25, 9, 1, 25),
+(26, 9, 1, 26);
 
 -- --------------------------------------------------------
 
@@ -181,131 +252,33 @@ INSERT INTO `message_user` (`id`, `user_send`, `user_receive`, `message_id`) VAL
 -- Structure de la table `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(40) NOT NULL,
   `password` varchar(128) NOT NULL,
+  `code` varchar(128) NOT NULL,
+  `exp_date` datetime DEFAULT NULL,
   `mail` varchar(100) NOT NULL,
   `displayer` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
   `status` varchar(20) NOT NULL,
   `image` varchar(200) DEFAULT 'none',
   `graphismes` enum('normal','dark','ocean') NOT NULL DEFAULT 'normal',
-  `power` varchar(50) NOT NULL DEFAULT 'utilisateur'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `power` enum('utilisateur','admin') NOT NULL DEFAULT 'utilisateur',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `mail`, `displayer`, `status`, `image`, `graphismes`, `power`) VALUES
-(1, 'Larney', '$2y$11$T77fy2r10E4DYxA9dvinGeqXktYJzj1d4GpD1zwR5PlELDupXJzAO', 'larney@gmail.com', 'Présente l\'itération 2 !', 'connecte', 'ProjectExcelsior-1024x1024.jpg', 'normal', 'utilisateur'),
-(2, 'Ted', '$2y$11$kK0GHUFPqLVDain7JMbzwODVUFXJ5uxsstQ7KpD1TXJEHOFQ7pNou', 'ted@mosby.com', 'Bonjour, je m\'appelle Ted', 'disconnecte', 'none', 'normal', 'utilisateur'),
-(3, 'Marshall', '$2y$11$HlMvRfF91fPa7le.vsKLjuIgJOGlItEOoPzXxPbMykC7chkm4tauO', 'eriksen@gmail.com', 'Actuellement occupée', 'occupe', 'marshall_hat.jpg', 'normal', 'utilisateur'),
-(5, 'Arnie', '$2y$11$d4LpNil8UVZPoG2lbY4cuOtZcLumz11lWvfDdW54lganbZNeAxhJi', 'arnie@gmail.com', 'Essaye d\'installer Arch Linux', 'connecte', 'none', 'normal', 'utilisateur'),
-(6, 'Frédo', '$2y$11$5hItgYpUg.PvqWuTMFEkgOBtdWhKsHAEtOM9.3sk4E4zb9MzVxZDq', 'fredo@gmail.com', 'Ne fait rien', 'connecte', 'none', 'normal', 'utilisateur'),
-(7, 'toto', '$2y$11$2p5M4488frWU3SZZik1hBe7acsYQ3f4nfvsLLo3tChRcQ8FDI1TUG', 'toto@gmail.com', NULL, 'connecte', 'none', 'normal', 'utilisateur'),
-(8, 'tata', '$2y$11$bLk6urOWEKBnAPk2qiZbk.4DISYNCzJk7yDC2ZcSSqTbn3UnbKi8K', 'tata@tata', NULL, 'connecte', 'none', 'normal', 'utilisateur');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `applis`
---
-ALTER TABLE `applis`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `app_machine`
---
-ALTER TABLE `app_machine`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_machine` (`id_machine`),
-  ADD KEY `id_appli` (`id_appli`);
-
---
--- Index pour la table `contact`
---
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_contact_user1_idx` (`user_1`),
-  ADD KEY `fk_contact_user2_idx` (`user_2`);
-
---
--- Index pour la table `listes`
---
-ALTER TABLE `listes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `user_admin` (`user_admin`);
-
---
--- Index pour la table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `message_user`
---
-ALTER TABLE `message_user`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_message_user_user1_idx` (`user_send`),
-  ADD KEY `fk_message_user_user2_idx` (`user_receive`),
-  ADD KEY `fk_message_user_message1_idx` (`message_id`);
-
---
--- Index pour la table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `applis`
---
-ALTER TABLE `applis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `app_machine`
---
-ALTER TABLE `app_machine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `contact`
---
-ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT pour la table `listes`
---
-ALTER TABLE `listes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT pour la table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT pour la table `message_user`
---
-ALTER TABLE `message_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+INSERT INTO `user` (`id`, `username`, `password`, `code`, `exp_date`, `mail`, `displayer`, `status`, `image`, `graphismes`, `power`) VALUES
+(1, 'Larney', '$2y$11$Vff1z6.O717Fv7B2cyNhi.f5MIiG5vV1LXeV90ng.l1JX9e5s5KNG', '$2y$11$YrTG7J1t4SBtjDMNyoCDIO1yy9bJROYiIyB.vhKpfSz7XqJV/RDuK', '2020-12-31 03:57:52', 'larney@gmail.com', 'Travaille les accentuÃ©s', 'disconnecte', 'ProjectExcelsior-1024x1024.jpg', 'normal', 'admin'),
+(2, 'Ted', '$2y$11$kK0GHUFPqLVDain7JMbzwODVUFXJ5uxsstQ7KpD1TXJEHOFQ7pNou', '', NULL, 'ted@mosby.com', 'Bonjour, je m\'appelle Ted', 'disconnecte', 'none', 'normal', 'utilisateur'),
+(3, 'Marshall', '$2y$11$HlMvRfF91fPa7le.vsKLjuIgJOGlItEOoPzXxPbMykC7chkm4tauO', '', NULL, 'eriksen@gmail.com', 'N\'est pas disponible', 'occupe', 'marshall_hat.jpg', 'normal', 'utilisateur'),
+(5, 'Arnie', '$2y$11$d4LpNil8UVZPoG2lbY4cuOtZcLumz11lWvfDdW54lganbZNeAxhJi', '', NULL, 'arnie@gmail.com', 'Essaye d\'installer Arch Linux', 'connecte', 'none', 'normal', 'utilisateur'),
+(6, 'Jack Package', '$2y$11$5hItgYpUg.PvqWuTMFEkgOBtdWhKsHAEtOM9.3sk4E4zb9MzVxZDq', '', NULL, 'fredo@gmail.com', 'Ne fait rien', 'connecte', 'none', 'normal', 'utilisateur'),
+(9, 'TheCommodore', '$2y$11$3GwbIK1n6OAV8aMUHcQzsuY.9hMIivVZ5Xj4HwBQaEAv4TCwoS2ym', '', NULL, 'the@commodore', NULL, 'connecte', 'none', 'dark', 'utilisateur');
 
 --
 -- Contraintes pour les tables déchargées
