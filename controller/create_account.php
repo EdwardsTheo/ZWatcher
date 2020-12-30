@@ -24,7 +24,7 @@
     }
 
     if($error_mail == 0 && $error_user == 0 && $error_pwd == 0){
-        $req = select_users();
+        $req = fetch_ids();
         $cpt = 0;
         while($donnees = $req->fetch()){
             $tmp = strtolower($donnees['username']);

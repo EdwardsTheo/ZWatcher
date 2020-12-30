@@ -31,9 +31,22 @@
     }
 
     if($error_mail == 0 && $error_name == 0 && $error_pwd == 0){
-        $_SESSION['username'] = $name;
-        $_SESSION['mail'] = $mail;
-        update_infos($name, $mail, $newpassword, $user);
+        $req = fetch_ids();
+        $cpt = 0;
+        while($donnees = $req->fetch()){
+            $tmp = strtolower($donnees['username']);
+            $tmp2 = strtolower($name);
+            if($tmp == $tmp2){
+                $cpt = $cpt + 1;
+            }
+        }
+        if($cpt == 0){
+            $_SESSION['username'] = $name;
+            $_SESSION['mail'] = $mail;
+            update_infos($name, $mail, $newpassword, $user);
+        }else{
+            $_SESSION['errors'] = "Ce pseudo existe déjà";
+        }
     }else if($error_mail == 1){
         $_SESSION['errors'] = "Adresse mail non valide";
     }else if($error_mail == 0 && $error_name == 1){

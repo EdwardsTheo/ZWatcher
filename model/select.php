@@ -171,23 +171,6 @@
         connect_end($link);
     }
 
-    function select_users(){
-        $link = NULL;
-
-        try {
-            if (!($link = connect_start()))
-                throw new Exception("Could not connect to database");
-
-            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user"))) {
-                throw new Exception("No access to the table");  
-            }   
-            return $result; 
-        } catch (Exception $th) {
-            echo "Internal error: ".$th->getMessage();
-        }
-        connect_end($link);
-    }
-
     function fetch_user($id){
         $link=NULL;   
 
