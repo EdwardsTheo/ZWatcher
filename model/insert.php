@@ -245,4 +245,15 @@
         connect_end($link);
     }
 
+    function  insert_user_to_group($id_user, $id_group) {
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `groupe_bl` (`id`,`id_groupe`, `id_user_listes`)
+		VALUES (NULL, 
+        '.$link -> quote($id_group).',
+        '.$link -> quote($id_user).'
+		)');
+        connect_end($link);
+    }
+
 ?>

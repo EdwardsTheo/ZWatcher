@@ -371,4 +371,40 @@
         $request = $db->query("SELECT * FROM groupe_listes WHERE `id_listes` = $id_machine");
         return $request;
     }
+
+    function select_group_listes_details($id_group, $id_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM groupe_listes WHERE `id_listes` = $id_machine AND `id` = $id_group");
+        return $request;
+    }
+
+    function select_groups_listes_id($id_machine, $id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM groupe_listes WHERE `id_listes` = $id_machine AND `id` != $id_groupe");
+        return $request;
+    }
+
+    function select_user_avaible($id_machine, $id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT ul.id, ul.username
+        FROM user_listes AS ul 
+        LEFT OUTER JOIN groupe_bl AS bl
+        ON ul.id = bl.id_user_listes
+        WHERE bl.id_groupe != $id_groupe
+        AND ul.id_listes = $id_machine");
+        return $request;
+    }
+
+    function select_user_bl_group($id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT u.username, gl.id, gl.id_groupe, gli.nom
+        FROM user_listes AS u 
+        LEFT OUTER JOIN groupe_bl AS gl 
+        ON u.id = gl.id_user_listes 
+        LEFT OUTER JOIN groupe_listes AS gli
+        ON gli.id = gl.id_groupe 
+        WHERE gl.id_groupe = $id_groupe ");
+        return $request;
+    }
+
 ?>

@@ -66,6 +66,18 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case "add_groups_sudo" : 
             $command = add_groups_sudo($username);
         break;
+        case "change_group_name" :
+            $command = change_group_name($username, $password);
+        break;
+        case "add_user_to_groups" :
+            $command = add_user_to_groups($username, $password);
+        break;
+        case "remove_from_groups" :
+            $command = remove_from_groups($username, $password);
+        break;
+        case 'delete_groups' :
+            $command = bash_delete_groups($username);
+        break;
         //Default
         default :
             "error";
@@ -77,6 +89,7 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
 function special_sudo($machine_id, $order, $username) {
     //THIS IS PAS TRES PROPRE
     if($order == 'add_groups_sudo') $command = add_groups_sudo($username);
+    elseif($order == "retire_sudo_groups") $command = del_groups_sudo($username);
     $req = get_listes_machine($machine_id);
     while($donnees = $req->fetch()){
         $login['name'] = "root";

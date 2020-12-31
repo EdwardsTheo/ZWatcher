@@ -45,4 +45,29 @@ function add_groups_sudo($name_group) {
     return $command;
 }
 
+function del_groups_sudo($name_group) {
+    $command = "sudo sed -i '/%$name_group ALL=(ALL:ALL) ALL/d' /etc/sudoers";
+    return $command;
+}
+
+function change_group_name($name_group, $old_name) {
+    $command = "sudo groupmod -n $name_group $old_name";
+    return $command;
+}
+
+function add_user_to_groups($username, $group_name) {
+    $command = "sudo usermod -a -G $username $group_name";
+    return $command;
+}
+
+function remove_from_groups($username, $groupname) {
+    $command = "sudo deluser $groupname $username";
+    return $command;
+}
+
+function bash_delete_groups($groupname) {
+    $command = "sudo groupdel $groupname";
+    return $command;
+}
+
 ?>

@@ -28,7 +28,16 @@
         if(isset($_SESSION['id_groupe'][1])) {
             $_POST['choice'] = 'Détails du groupe'; 
             $id_groupe = $_SESSION['id_groupe'][1];
-            //unset($_SESSION['id_groupe'][[1]]);
+        }
+
+        if(isset($_POST['choice_details'])) {
+            if($_POST['choice_details'] == 'Revenir au menu principale') {
+                unset($_SESSION['id_groupe'][1]);
+                unset($_POST['choice']);
+            }
+            elseif($_POST['choice_details'] == 'Ajouter des users à ce groupe') {
+                $_POST['show_users'] = "true";
+            }
         }
 
         ?>
@@ -134,8 +143,133 @@
             }
 
             function groups_details($id_groupe) {
+                $i=1;
                 echo "<h4><b>Details du groupe</b></h4>";
+                $req1 = select_user_bl_group($id_groupe);
+                $empty = false;
                 echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
+                echo "<h4><b>Users faisant partie du groupe : </b></h4>";
+                while($donnees = $req1->fetch()) {
+                    $empty = true;
+                    if($i % 3 == 1){
+                        echo "<div class='w3-row-padding'>";
+                    }
+                    $nb = rand(1, 32);
+                    echo "<div class='w3-third w3-container w3-margin-bottom'>
+
+                        <div class='w3-container w3-white2'>
+                            <p><b>Eleve $donnees[username]</b></p>
+                            <input type='checkbox' id='scales' name='scales[$i]'>
+                            <input type='hidden' name='id_table[$i]' value='$donnees[id]'>
+                            <input type='hidden' name='nom_groupe[$i]' value='$donnees[nom]'>
+                            <input type='hidden' name='nom_user[$i]' value='$donnees[username]'>";
+
+
+                    echo "
+                        </div>
+                    </div>";
+                    if($i % 3 == 0){
+                        echo "</div>";
+                    }
+                    $i = $i + 1;
+                }
+
+                if($empty == true) {
+                    echo "
+                        <hr class='w3-opacity'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer les utilisateurs de ce groupe'>
+                        </div>
+                        </form>
+                        <hr class='w3-opacity'>";
+                    echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
+                }
+                $req = select_group_listes_details($id_groupe, $_SESSION['id_machine']);
+                while($donnees = $req->fetch()) {
+                    $nom_groupe = $donnees['nom'];
+                    echo "
+                    <form action='../view/profil.php?action=manage_groups' method='POST'>
+                    <hr class='w3-opacity'>
+                    <div class='w3-container w3-padding-large w3-grey'>
+                        <h4><b>Nom du groupe</b></h4>
+                        <hr class='w3-opacity'>
+                        <input class='w3-input w3-border' type='text' name='nom_groupe[$i]' value='$donnees[nom]' required></br>
+                        <input type='hidden' name='id_equipe[$i]' value='$id_groupe'>
+                        <input type='hidden' name='old_groupe[$i]' value='$donnees[nom]'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Changer le nom'>
+                    </div>
+                    </form>";
+                    if($donnees['sudo'] == 1) $button = "Retirer les droits sudo";
+                    else $button = "Donner a ce groupe les droits sudo";
+
+                    echo " <div class='w3-section w3-bottombar w3-padding-16'>
+                    <hr class='w3-opacity'>
+                    <form action='../view/profil.php?action=modif_groups' method='POST'>
+                        <input type='hidden' name='id_group[$i]' value='$id_groupe'>
+                        <input type='hidden' name='nom_groupe[$i]' value='$donnees[nom]'>
+                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Ajouter des users à ce groupe'>
+                    <hr class='w3-opacity'>
+                    </form>
+                    ";
+
+                    if(isset($_POST['show_users'])) {
+                        $j = 1;
+                        $empty = false;
+                        $req = select_user_avaible($_SESSION['id_machine'], $id_groupe); 
+                        echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
+                        while($donnees = $req->fetch()) {
+                            $empty = true;
+                            if($j % 3 == 1){
+                                echo "<div class='w3-row-padding'>";
+                            }
+                            $nb = rand(1, 32);
+                            echo "<div class='w3-third w3-container w3-margin-bottom'>
+        
+                                <div class='w3-container w3-white2'>
+                                    <p><b>User $donnees[username]</b></p>
+                                    <input type='checkbox' id='scales' name='scales[$j]'>
+                                    <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
+                                    <input type='hidden' name='id_group[$j]' value='$id_groupe'>
+                                    <input type='hidden' name='nom_groupe[$j]' value='$nom_groupe'>
+                                    <input type='hidden' name='nom_user[$j]' value='$donnees[username]'>";
+        
+                            echo "
+                                </div>
+                            </div>";
+                            if($j % 3 == 0){
+                                echo "</div>";
+                            }
+                            $j++;
+                            echo "<hr class='w3-opacity'>";
+                        }
+                        if($empty == true) {
+                            echo " 
+                            <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter'>
+                            </form>";
+                        }
+                        else {
+                            echo "Les users sont déjà tous dans ce groupe";
+                        }
+                    }
+
+                    echo "
+                        </div>
+                        <hr class='w3-opacity'>
+                        <form action='../view/profil.php?action=manage_groups' method='POST'>
+                        <input type='hidden' name='id_group[$i]' value='$id_groupe'>
+                        <input type='hidden' name='nom_groupe[$i]' value='$donnees[nom]'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='$button'>
+                        </form>
+                    ";
+
+                    echo "
+                    <hr class='w3-opacity'>
+                    <form action='../view/profil.php?action=modif_groups' method='POST'>
+                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principale'>
+                    </form>
+                    </div>";
+                    $i++;
+                   
+                }
             }
         ?>
         </div>

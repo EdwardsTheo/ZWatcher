@@ -12,6 +12,18 @@ switch($_POST['choice']) {
     break;
     case 'Détails du groupe' :  set_session_groups();
     break;
+    case 'Changer le nom' : change_grp_name();
+    break;
+    case 'Retirer les droits sudo' : manage_sudo_right();
+    break;
+    case 'Donner a ce groupe les droits sudo' : manage_sudo_right();
+    break;
+    case 'Ajouter' : add_user_to_group();
+    break;
+    case 'Supprimer les utilisateurs de ce groupe' : delete_user_bl();
+    break;
+    case 'Supprimer le groupe' : main_delete_group();
+    break;
 }
 
 function main_add_groups() {
@@ -25,7 +37,7 @@ function main_add_groups() {
             $output = main_ssh($_SESSION['id_machine'], 'check_groups', NULL, $_POST['groupe_name'][$i]);
             if($output != "") {
                 if($_POST['sudo_right'][$i] == 'on') {
-                    //special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]);
+                    special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]);
                     $sudo = 1;
                 }
                 else $sudo = 0;
@@ -55,13 +67,85 @@ function set_session_groups() {
     foreach ($_POST['id_groupe'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
-                $_SESSION['id_groupe'][$i] = $_POST['id_groupe'][$i];
+                $_SESSION['id_groupe'][1] = $_POST['id_groupe'][$i];
             }
         }
         $i++;
     }
     print_r($_SESSION['id_groupe']);
 }
+
+function change_grp_name() {
+    $i=1;
+    foreach ($_POST['nom_groupe'] as $key => $value) {
+        $test_name_group = test_name_groups($_POST['nom_groupe'][$i], $_POST['id_equipe'][$i]);
+        if($test_name_group == true) {
+            echo "oui";
+            update_group_name($_POST['id_equipe'][$i], $_POST['nom_groupe'][$i]);
+            main_ssh($_SESSION['id_machine'], 'change_group_name', NULL, $_POST['nom_groupe'][$i], $_POST['old_groupe'][$i]);
+        }
+        else $_SESSION['error'][$i] = "Le nom de groupe ". $_POST['nom_groupe'][$i] ." est déjà prit";
+        $i++;
+    }
+}
+
+function manage_sudo_right() {
+    $i = 1;
+    foreach ($_POST['id_group'] as $key => $value) {
+        if($_POST['choice'] == 'Retirer les droits sudo') {
+            $sudo = 0;
+            special_sudo($_SESSION['id_machine'], 'retire_sudo_groups', $_POST['nom_groupe'][$i]);
+        }
+        else {
+            special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['nom_groupe'][$i]);
+            $sudo = 1;
+        }
+        update_group_sudo($_POST['id_group'][$i], $sudo);
+        $i++;
+    }
+}
+
+function add_user_to_group() {
+    $i = 1;
+    foreach ($_POST['id_group'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+                insert_user_to_group($_POST['id_user'][$i], $_POST['id_group'][$i]);
+                main_ssh($_SESSION['id_machine'], 'add_user_to_groups', NULL, $_POST['nom_groupe'][$i], $_POST['nom_user'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
+function delete_user_bl() {
+    $i = 1;
+    foreach ($_POST['nom_groupe'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+                delete_user_from_group($_POST['id_table'][$i]);
+                main_ssh($_SESSION['id_machine'], 'remove_from_groups', NULL, $_POST['nom_groupe'][$i], $_POST['nom_user'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
+function main_delete_group() {
+    $i = 1;
+    foreach ($_POST['id_groupe'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+                echo "oui";
+                delete_groups_bl($_POST['id_groupe'][$i]);
+                delete_groups($_POST['id_groupe'][$i]);
+                main_ssh($_SESSION['id_machine'], 'delete_groups', NULL, $_POST['group_name'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
 
 header('location: ../view/profil.php?action=modif_groups'); // redirect to the main app page with a message of confirmation 
 

@@ -46,4 +46,22 @@
         return $request;
     }
 
+    function delete_user_from_group($id_table) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM groupe_bl WHERE id='$id_table'");
+        return $request;
+    }
+
+    function  delete_groups_bl($id_group) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM groupe_bl WHERE id_groupe='$id_group'");
+        return $request;
+    }
+
+    function delete_groups($id_group) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM groupe_listes WHERE id='$id_group'");
+        return $request;
+    }
+
 ?>

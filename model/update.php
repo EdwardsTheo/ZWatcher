@@ -149,9 +149,6 @@
     }
 
     function update_users_listes($username, $password, $id_user) {
-        echo $username;
-        //echo $password;
-        echo $id_user;
         $link = connect_start();
         $req = $link -> prepare("UPDATE `user_listes` 
         SET `username` = :user, `pswd` = :upswd 
@@ -160,6 +157,26 @@
         ':upswd' => $password, 
         ':id'=>$id_user
         ));
+        connect_end($link);
+    }
+
+    function update_group_name($id_groupe, $group_name) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `groupe_listes` SET `nom` =  :name WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id_groupe,
+            ':name'=>$group_name
+            ));
+        connect_end($link);
+    }
+
+    function  update_group_sudo($id_groupe, $sudo) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `groupe_listes` SET `sudo` =  :sudo WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id_groupe,
+            ':sudo'=>$sudo
+            ));
         connect_end($link);
     }
 ?>
