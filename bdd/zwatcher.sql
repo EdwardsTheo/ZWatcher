@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 30 déc. 2020 à 04:13
+-- Généré le : jeu. 31 déc. 2020 à 05:11
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`),
   KEY `fk_contact_user1_idx` (`user_1`),
   KEY `fk_contact_user2_idx` (`user_2`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `contact`
@@ -92,12 +92,12 @@ INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`, `checkpoint`) VALUES
 (1, 1, 2, 'ElÃ¨ve', '2020-12-17'),
 (2, 2, 1, NULL, ''),
 (3, 1, 3, 'Pro', '2020-06-18'),
-(6, 5, 1, 'Prof', ''),
+(6, 5, 1, 'Prof', '2020-12-31'),
 (7, 1, 1, 'Moi', '2020-06-20'),
 (8, 1, 6, 'ElÃ¨ve', '2020-06-12'),
-(11, 1, 5, 'Apprenti', '2020-11-28'),
-(13, 9, 1, 'Admin', '2020-12-18'),
-(14, 1, 9, 'Nouveau', '2020-12-18');
+(11, 1, 5, 'Apprenti', '2020-12-31'),
+(13, 9, 1, 'Admin', '2020-12-31'),
+(14, 1, 9, 'Nouveau', '2020-12-31');
 
 -- --------------------------------------------------------
 
@@ -110,8 +110,9 @@ CREATE TABLE IF NOT EXISTS `equipes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `id_listes` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `id_listes` (`id_listes`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes`
@@ -131,16 +132,18 @@ CREATE TABLE IF NOT EXISTS `equipes_bl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_eleve` int(11) NOT NULL,
   `id_equipe` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `id_eleve` (`id_eleve`),
+  KEY `id_equipe` (`id_equipe`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes_bl`
 --
 
 INSERT INTO `equipes_bl` (`id`, `id_eleve`, `id_equipe`) VALUES
-(16, 70, 19),
-(15, 69, 19);
+(15, 2, 19),
+(16, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -154,29 +157,25 @@ CREATE TABLE IF NOT EXISTS `listes` (
   `titre` varchar(60) NOT NULL,
   `description` varchar(200) NOT NULL,
   `date_liste` date NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `user_admin` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `mac` varchar(40) NOT NULL,
   `port` int(10) NOT NULL,
   `id_machine` varchar(40) NOT NULL,
   `pwd_machine` varchar(128) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `user_admin` (`user_admin`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `listes`
 --
 
-INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `user_id`, `user_admin`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) VALUES
-(4, 'Machine1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', 1, 1, '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
-(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', 1, 1, '', '', 0, '', ''),
-(6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', 1, 1, '', '', 0, '', ''),
-(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', 1, 1, '', '', 0, '', ''),
-(8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', 1, 1, '', '', 0, '', ''),
-(9, 'Machine 6', 'Debian 9 - Equipe 4', '2020-11-30', 1, 1, '', '', 0, '', '');
+INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) VALUES
+(4, 'Machine1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
+(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', '', '', 0, '', ''),
+(6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', '', '', 0, '', ''),
+(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', '', '', 0, '', ''),
+(8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', '', '', 0, '', ''),
+(9, 'Machine 6', 'Debian 9 - Equipe 4', '2020-11-30', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -190,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `content` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message`
@@ -208,7 +207,9 @@ INSERT INTO `message` (`id`, `content`, `date`) VALUES
 (16, 'Dur n\'est ce pas ?', '2020-11-28'),
 (17, 'Bonne journÃ©e', '2020-12-17'),
 (25, 'Yo man', '2020-12-18'),
-(26, 're', '2020-12-18');
+(26, 're', '2020-12-18'),
+(27, 'Salut', '2020-12-31'),
+(28, 'Il est au musÃ©e !', '2020-12-31');
 
 -- --------------------------------------------------------
 
@@ -226,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `message_user` (
   KEY `fk_message_user_user1_idx` (`user_send`),
   KEY `fk_message_user_user2_idx` (`user_receive`),
   KEY `fk_message_user_message1_idx` (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message_user`
@@ -244,7 +245,9 @@ INSERT INTO `message_user` (`id`, `user_send`, `user_receive`, `message_id`) VAL
 (16, 1, 5, 16),
 (17, 1, 2, 17),
 (25, 9, 1, 25),
-(26, 9, 1, 26);
+(26, 9, 1, 26),
+(27, 1, 9, 27),
+(28, 1, 5, 28);
 
 -- --------------------------------------------------------
 
@@ -257,25 +260,25 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(40) NOT NULL,
   `password` varchar(128) NOT NULL,
-  `code` varchar(128) NOT NULL,
+  `code` varchar(128) DEFAULT NULL,
   `exp_date` datetime DEFAULT NULL,
   `mail` varchar(100) NOT NULL,
   `displayer` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
-  `status` varchar(20) NOT NULL,
+  `status` varchar(20) DEFAULT NULL,
   `image` varchar(200) DEFAULT 'none',
   `graphismes` enum('normal','dark','ocean') NOT NULL DEFAULT 'normal',
   `power` enum('utilisateur','admin') NOT NULL DEFAULT 'utilisateur',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `code`, `exp_date`, `mail`, `displayer`, `status`, `image`, `graphismes`, `power`) VALUES
-(1, 'Larney', '$2y$11$Vff1z6.O717Fv7B2cyNhi.f5MIiG5vV1LXeV90ng.l1JX9e5s5KNG', '$2y$11$YrTG7J1t4SBtjDMNyoCDIO1yy9bJROYiIyB.vhKpfSz7XqJV/RDuK', '2020-12-31 03:57:52', 'larney@gmail.com', 'Travaille les accentuÃ©s', 'disconnecte', 'ProjectExcelsior-1024x1024.jpg', 'normal', 'admin'),
+(1, 'Larney', '$2y$11$AWdm7.KQp/53yM8eWGmsDOOo9EFDhTnfj.OMAc8OJrZ/niHr8MZj.', '$2y$11$2.JVjhsZNnwDaTo30c1boObAB.hU42V5ovb/PeJwMpWxVxCyqYd2K', '2021-01-01 01:42:09', 'thomasparis56@gmail.com', 'Travaille les accentuÃ©s', 'connecte', 'ProjectExcelsior-1024x1024.jpg', 'normal', 'admin'),
 (2, 'Ted', '$2y$11$kK0GHUFPqLVDain7JMbzwODVUFXJ5uxsstQ7KpD1TXJEHOFQ7pNou', '', NULL, 'ted@mosby.com', 'Bonjour, je m\'appelle Ted', 'disconnecte', 'none', 'normal', 'utilisateur'),
-(3, 'Marshall', '$2y$11$HlMvRfF91fPa7le.vsKLjuIgJOGlItEOoPzXxPbMykC7chkm4tauO', '', NULL, 'eriksen@gmail.com', 'N\'est pas disponible', 'occupe', 'marshall_hat.jpg', 'normal', 'utilisateur'),
+(3, 'Marshall', '$2y$11$HlMvRfF91fPa7le.vsKLjuIgJOGlItEOoPzXxPbMykC7chkm4tauO', '', NULL, 'eriksen@gmail.com', 'N\'est pas disponible', 'disconnecte', 'marshall_hat.jpg', 'normal', 'utilisateur'),
 (5, 'Arnie', '$2y$11$d4LpNil8UVZPoG2lbY4cuOtZcLumz11lWvfDdW54lganbZNeAxhJi', '', NULL, 'arnie@gmail.com', 'Essaye d\'installer Arch Linux', 'connecte', 'none', 'normal', 'utilisateur'),
 (6, 'Jack Package', '$2y$11$5hItgYpUg.PvqWuTMFEkgOBtdWhKsHAEtOM9.3sk4E4zb9MzVxZDq', '', NULL, 'fredo@gmail.com', 'Ne fait rien', 'connecte', 'none', 'normal', 'utilisateur'),
 (9, 'TheCommodore', '$2y$11$3GwbIK1n6OAV8aMUHcQzsuY.9hMIivVZ5Xj4HwBQaEAv4TCwoS2ym', '', NULL, 'the@commodore', NULL, 'connecte', 'none', 'dark', 'utilisateur');
@@ -299,11 +302,17 @@ ALTER TABLE `contact`
   ADD CONSTRAINT `fk_contact_user2` FOREIGN KEY (`user_2`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `listes`
+-- Contraintes pour la table `equipes`
 --
-ALTER TABLE `listes`
-  ADD CONSTRAINT `listes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `user_admin` FOREIGN KEY (`user_admin`) REFERENCES `user` (`id`);
+ALTER TABLE `equipes`
+  ADD CONSTRAINT `id_listes` FOREIGN KEY (`id_listes`) REFERENCES `listes` (`id`);
+
+--
+-- Contraintes pour la table `equipes_bl`
+--
+ALTER TABLE `equipes_bl`
+  ADD CONSTRAINT `id_eleve` FOREIGN KEY (`id_eleve`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `id_equipe` FOREIGN KEY (`id_equipe`) REFERENCES `equipes` (`id`);
 
 --
 -- Contraintes pour la table `message_user`

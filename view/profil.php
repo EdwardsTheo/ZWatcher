@@ -475,12 +475,12 @@ require("../model/update.php");
                 <li class="w3-padding-16">
                 <img src="../images/bank/en01_bis.jfif" class="w3-left w3-margin-right" style="width:60px; border-radius: 5px;">
                 <span class="w3-large"><a href="?action=equipe" style="text-decoration:none;">Gérer votre équipe</a></span><br>
-                <span>En construction ...</span>
+                <span>Visualisez et gérez vos équipes</span>
                 </li>
                 <li class="w3-padding-16">
                 <img src="../images/bank/an04.jfif" class="w3-left w3-margin-right" style="width:60px; border-radius: 5px;">
                 <span class="w3-large"><a href="?action=display_listes" style="text-decoration:none;">Gestionnaire d'environnements</a></span><br>
-                <span>En construction ...</span>
+                <span>Tour d'horizon de votre parc</span>
                 </li> 
             </ul>
             </div>

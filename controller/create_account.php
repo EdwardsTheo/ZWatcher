@@ -386,7 +386,7 @@
                                     <div class='message'>
                                     <h1>Création de compte</h1>
                                     <p> Votre compte vient d'être créé sur la plateforme ZWatcher.</p>
-                                    <p>Veuillez-prendre conscience de vos identifiants : </p>
+                                    <p>Veuillez-prendre connaissance de vos identifiants : </p>
 
                                     <p>Nom d'utilisateur : $user </p>
                                     <p>Mot de passe : $password </p>
