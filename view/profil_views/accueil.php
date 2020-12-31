@@ -78,7 +78,7 @@
                     <div class='photo2' style='background-image: url(../images/bank/en01_bis.jfif);'>
                     </div>
                     <div class='desc-ct'>
-                        <p class='name'> Vos équipes </p>
+                        <p class='name'> <a href="?action=equipe" style="text-decoration:none;">Vos équipes </a></p>
                         <p class='message'>  </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class='photo2' style='background-image: url(../images/bank/an04.jfif);'>
                     </div>
                     <div class='desc-ct'>
-                        <p class='name'> Vos environnements </p>
+                        <p class='name'> <a href="?action=display_listes" style="text-decoration:none;">Vos environnements </a></p>
                         <p class='message'>  </p>
                     </div>
                 </div>

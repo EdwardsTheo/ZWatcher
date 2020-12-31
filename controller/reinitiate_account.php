@@ -42,7 +42,7 @@
 
             // Important ! empecher les doublons de pseudos
 
-            $to      = 'thomasparis56@gmail.com';
+            $to      = $mail;
             $subject = 'Réinitialisation de votre mot de passe';
 
             $message = "<html>
@@ -381,6 +381,7 @@
                                     <!--<p><a href='http://etudes:8080/ZWatcher/controller/redem_init.php?user=$user&hash=$hash&code=$hashed_code' target='_blank' class='article'><h3 class='underline'>Réinitialiser mon mot de passe</a>    </p>
                                     -->
                                     <p>Munissez-vous du code suivant : $code </p>
+                                    <p>Ce code et ce lien ne sont valables que pour une durée de 24h pour des raisons de sécurité. </p>
                                     <p> Si vous n'êtes pas à l'origine de cette action, nous vous conseillons de sécuriser votre compte en actualisant votre mot de passe.</p>
                                     </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>
                                     <table style='background-color:#f2f2f2;margin-top:-45px;'>

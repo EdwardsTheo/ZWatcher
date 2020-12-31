@@ -30,6 +30,7 @@
 
             if($bool == true){
                 $take_action = true;
+                $mail = $donnees['mail'];
             }
         }
     }
@@ -48,7 +49,7 @@
         $code = randomNumber(8);
         $options = array('cost' => 11);
         $hashed_code = password_hash($code, PASSWORD_BCRYPT, $options);
-        $exp_format = mktime(date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y"));
+        $exp_format = mktime(date("H"), date("i"), date("s"), date("m") ,date("d"), date("Y"));
         $exp_date = date("Y-m-d H:i:s",$exp_format);
 
         update_code($user_id, $hashed_code, $exp_date);
@@ -57,7 +58,7 @@
 
         $errors = "Votre mot de passe a bien été modifié";
 
-        $to      = 'thomasparis56@gmail.com';
+        $to      = $mail;
         $subject = 'Réinitialisation de votre mot de passe';
 
         $message = "<html>

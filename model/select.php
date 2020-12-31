@@ -57,7 +57,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT id, titre, description, date_liste FROM listes WHERE user_id = $user"))) {
+                if (!($result = $link->query("SELECT id, titre, description, date_liste FROM listes"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -241,6 +241,23 @@
         connect_end($link);
     }
 
+    function select_users_eleves(){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("SELECT U.username AS ctct, U.id AS idf, U.displayer AS dis, U.status FROM user U WHERE power='utilisateur'ORDER BY U.username"))) {
+                throw new Exception("No access to the table");  
+            }   
+            return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function get_app($id_machine, $status) {
 	    $db = connect_start();
         $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
@@ -309,23 +326,6 @@
         INNER JOIN user AS user ON ebl.id_eleve = user.id 
         WHERE e.id = $id_groupe");
         return $request;
-    }
-
-    function select_users_eleves(){
-        $link = NULL;
-
-        try {
-            if (!($link = connect_start()))
-                throw new Exception("Could not connect to database");
-
-            if (!($result = $link->query("SELECT * FROM user WHERE power='eleves'"))) {
-                throw new Exception("No access to the table");  
-            }   
-            return $result; 
-        } catch (Exception $th) {
-            echo "Internal error: ".$th->getMessage();
-        }
-        connect_end($link);
     }
 
     function select_users_eleves_team($id_groupe) {

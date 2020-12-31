@@ -8,6 +8,12 @@
 
     $titre = $_POST['titre'];
     $desc = $_POST['description'];
+    $ip = $_POST['ip'];
+    $mac = $_POST['mac'];
+    $port = $_POST['port'];
+    $iden = $_POST['iden'];
+    $pwd = $_POST['password'];
+
     $user = $_SESSION['id'];
     $date = date('Y-m-d');
 
@@ -21,7 +27,7 @@
     }
 
     if($cpt == 0){
-        insert_liste($user, $titre, $desc, $date);
+        insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd);
         $_SESSION['errors'] = "La liste a bien été crée";
         header('location: ../view/profil.php?action=create_liste');
     }else{

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <div id="haut">
-    <h1><b>Applications</b></h1>
+    <h1><b>Utilisateurs</b></h1>
                 <div class="w3-section w3-bottombar w3-padding-16">
             <!--      <span class="w3-margin-right">Filter:</span> -->
             <a href="?action=modification"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>

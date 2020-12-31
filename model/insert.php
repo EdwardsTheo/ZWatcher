@@ -46,19 +46,23 @@
         connect_end($link);
     }
 
-    function insert_liste($user, $titre, $desc, $date){
+    function insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd){
         $link = NULL;
 
         try {
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query('INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `user_id`) 
+            if (!($result = $link->query('INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) 
             VALUES (NULL, 
             '.$link -> quote($titre).', 
             '.$link -> quote($desc).',
             '.$link -> quote($date).',
-            '.$link -> quote($user).');'))) {
+            '.$link -> quote($ip).',
+            '.$link -> quote($mac).',
+            '.$link -> quote($port).',
+            '.$link -> quote($iden).',
+            '.$link -> quote($pwd).');'))) {
                 throw new Exception("No access to the table");  
             }
         } catch (Exception $th) {
@@ -108,9 +112,8 @@
         connect_end($link);
     }
 
-    function insert_new_account($user, $nom, $prenom, $mail, $password){
+    function insert_new_account($user, $password, $mail){
         $link = NULL;
-        echo $user;
 
         $options = array('cost' => 11);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -119,15 +122,12 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `Nom`, `Prenom`, `password`, `mail`,`status`, `power`) 
+            if (!($result = $link->query('INSERT INTO `user` (`id`, `username`, `password`, `mail`, `status`) 
             VALUES (NULL, 
             '.$link -> quote($user).', 
-            '.$link -> quote($nom).', 
-            '.$link -> quote($prenom).', 
             '.$link -> quote($hashed_password).', 
             '.$link -> quote($mail).',
-            '.$link -> quote("connecte").',
-            '.$link -> quote('eleves').');'))) {
+            '.$link -> quote("disconnecte").');'))) {
                 throw new Exception("No access to the table");  
             }
             //return l'id de l'insert au dessus

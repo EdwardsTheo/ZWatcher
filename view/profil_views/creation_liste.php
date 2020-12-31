@@ -66,22 +66,6 @@
                             et dans environnement listes de vms à soi + celles administrables si admin-->
 
                             <div class="w3-section">
-                                <label>Propriétaire</label> </br>
-                                <select name="owner" id="owner">
-                                    <option value="normal">Mode ZWatcher</option>
-                                    <option value="dark">Mode Sombre</option>
-                                    <option value="ocean">Mode Océanique</option>
-                                </select>
-                            </div>
-                            <div class="w3-section">
-                                <label>Administrateur</label> </br>
-                                <select name="admin" id="admin">
-                                    <option value="normal">Mode ZWatcher</option>
-                                    <option value="dark">Mode Sombre</option>
-                                    <option value="ocean">Mode Océanique</option>
-                                </select>
-                            </div>
-                            <div class="w3-section">
                                 <label>Adresse IP</label>
                                 <input class="w3-input w3-border" type="text" name="ip">
                             </div>
@@ -95,11 +79,11 @@
                             </div>
                             <div class="w3-section">
                                 <label>Identifiant</label>
-                                <input class="w3-input w3-border" type="text" name="port">
+                                <input class="w3-input w3-border" type="text" name="iden">
                             </div>
                             <div class="w3-section">
                                 <label>Mot de passe</label>
-                                <input class="w3-input w3-border" type="password" name="port">
+                                <input class="w3-input w3-border" type="password" name="password">
                             </div>
                             
 
