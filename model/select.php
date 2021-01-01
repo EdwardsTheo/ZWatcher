@@ -51,7 +51,7 @@
         connect_end($link);
     }
 
-    function get_listes($user){
+    function get_listes(){
         $link = NULL;
         try {
             if (!($link = connect_start()))
@@ -325,6 +325,12 @@
         INNER JOIN equipes_bl AS ebl ON e.id = ebl.id_equipe
         INNER JOIN user AS user ON ebl.id_eleve = user.id 
         WHERE e.id = $id_groupe");
+        return $request;
+    }
+
+    function select_group_name($id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT e.id, e.name, e.id_listes FROM equipes as e WHERE e.id = $id_groupe");
         return $request;
     }
 

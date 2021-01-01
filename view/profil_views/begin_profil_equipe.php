@@ -6,7 +6,9 @@
             <!--      <span class="w3-margin-right">Filter:</span> -->
                     <a href="?action=equipe"><button class="w3-button w3-black"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=display_equipes"><button class="w3-button w3-white"><i class="fas fa-book-open w3-margin-right"></i>Affichage</button></a>
-                    <a href="#"><button class="w3-button w3-white"><i class="fas fa-plus w3-margin-right"></i>Ajouter</button></a>
+                    <a href="#"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Informations</button></a>
+                    <a href="?action=create_equipe"><button class="w3-button w3-white"><i class="fas fa-plus w3-margin-right"></i>Créer</button></a>
+                    <a href="?action=delete_equipe"><button class="w3-button w3-white"><i class="fas fa-minus w3-margin-right"></i>Supprimer</button></a>
                 </div>
                 </div>
                 </div>

@@ -173,7 +173,8 @@ require("../model/update.php");
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
                 <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
-            }else if($_GET['action'] == "equipe" || $_GET['action'] == "display_equipes" || $_GET['action'] == "info_equipe" || $_GET['action'] == "add_table_equipes" || $_GET['action'] == "edit_equipe" || $_GET['action'] == "add_member_equipe"){
+            }else if($_GET['action'] == "equipe" || $_GET['action'] == "display_equipes" || $_GET['action'] == "info_equipe" || $_GET['action'] == "add_table_equipes" || $_GET['action'] == "edit_equipe" || $_GET['action'] == "add_member_equipe"
+            || $_GET['action'] == "create_equipe" || $_GET['action'] == "init_equipe" || $_GET['action'] == "delete_equipe" || $_GET['action'] == "erase_equipe"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
@@ -385,6 +386,18 @@ require("../model/update.php");
                 break;
                 case 'add_member_equipe' :
                     require('../controller/profil_add_member_equipe.php');
+                break;
+                case 'create_equipe' :
+                    require('../controller/profil_create_equipe.php');
+                break;
+                case 'init_equipe' :
+                    require('../controller/init_equipe.php');
+                break;
+                case 'delete_equipe' :
+                    require('../controller/profil_delete_equipe.php');
+                break;
+                case 'erase_equipe' :
+                    require('../controller/profil_erase_equipe.php');
                 break;
                 // Partie Utilisateur 
                 case 'user' :

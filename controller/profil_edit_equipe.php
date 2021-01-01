@@ -25,6 +25,7 @@
     $_SESSION['errors3'] = "";
     $id_equipe = $_POST['id_equipe'];
     $req = select_group_details($id_equipe);
+    $req2 = select_group_name($id_equipe);
     require("../view/profil_views/info_equipe.php");
 
 ?>
