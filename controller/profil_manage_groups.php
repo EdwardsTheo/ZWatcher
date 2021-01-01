@@ -64,6 +64,7 @@ function test_name_groups($group_name, $id = NULL) {
 
 function set_session_groups() {
     $i=1;
+    unset($_SESSION['id_groupe']);
     foreach ($_POST['id_groupe'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
@@ -136,10 +137,10 @@ function main_delete_group() {
     foreach ($_POST['id_groupe'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
-                echo "oui";
                 delete_groups_bl($_POST['id_groupe'][$i]);
                 delete_groups($_POST['id_groupe'][$i]);
-                main_ssh($_SESSION['id_machine'], 'delete_groups', NULL, $_POST['group_name'][$i]);
+                special_sudo($_SESSION['id_machine'], 'retire_sudo_groups', $_POST['nom_groupe'][$i]);
+                main_ssh($_SESSION['id_machine'], 'delete_groups', NULL, $_POST['group_name'][$i]);               
             }
         }
         $i++;

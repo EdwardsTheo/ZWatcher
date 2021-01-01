@@ -214,32 +214,46 @@
                     if(isset($_POST['show_users'])) {
                         $j = 1;
                         $empty = false;
-                        $req = select_user_avaible($_SESSION['id_machine'], $id_groupe); 
+                        $req = select_user_bl_group2($id_groupe);
+                        $req2 = select_users_listes($_SESSION['id_machine']);
                         echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
-                        while($donnees = $req->fetch()) {
-                            $empty = true;
-                            if($j % 3 == 1){
-                                echo "<div class='w3-row-padding'>";
+                        while($donnees = $req2->fetch()) {
+                            $username = $donnees['username'];
+                            echo $username;
+                            echo $j;
+                            $test = false;
+                            while($data = $req->fetch()) {
+                                print_r($data['id']);
+                                if($donnees['id'] == $data['id']) {
+                                    $test = true;
+                                }
                             }
-                            $nb = rand(1, 32);
-                            echo "<div class='w3-third w3-container w3-margin-bottom'>
-        
-                                <div class='w3-container w3-white2'>
-                                    <p><b>User $donnees[username]</b></p>
-                                    <input type='checkbox' id='scales' name='scales[$j]'>
-                                    <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
-                                    <input type='hidden' name='id_group[$j]' value='$id_groupe'>
-                                    <input type='hidden' name='nom_groupe[$j]' value='$nom_groupe'>
-                                    <input type='hidden' name='nom_user[$j]' value='$donnees[username]'>";
-        
-                            echo "
-                                </div>
-                            </div>";
-                            if($j % 3 == 0){
-                                echo "</div>";
-                            }
-                            $j++;
-                            echo "<hr class='w3-opacity'>";
+                                $empty = true;
+                                if($test == false) {
+                                    if($j % 3 == 1){
+                                        echo "<div class='w3-row-padding'>";
+                                    }
+                                    $nb = rand(1, 32);
+                                    echo "<div class='w3-third w3-container w3-margin-bottom'>
+                
+                                        <div class='w3-container w3-white2'>
+                                            <p><b>User $username</b></p>
+                                            <input type='checkbox' id='scales' name='scales[$j]'>
+                                        <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
+                                            <input type='hidden' name='id_group[$j]' value='$id_groupe'>
+                                            <input type='hidden' name='nom_groupe[$j]' value='$nom_groupe'>
+                                            <input type='hidden' name='nom_user[$j]' value='$donnees[username]'>";
+                                
+                                    echo "
+                                        </div>
+                                    </div>";
+                                    if($j % 3 == 0){
+                                        echo "</div>";
+                                    }
+                                   
+                                    echo "<hr class='w3-opacity'>";
+                                }
+                             $j++;
                         }
                         if($empty == true) {
                             echo " 
