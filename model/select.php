@@ -435,12 +435,7 @@
 
     function select_user_bl_group2($id_groupe) {
         $db = connect_start();
-        $request = $db->query("SELECT u.username, gl.id, gl.id_groupe, gli.nom
-        FROM user_listes AS u 
-        LEFT OUTER JOIN groupe_bl AS gl 
-        ON u.id = gl.id_user_listes 
-        LEFT OUTER JOIN groupe_listes AS gli
-        ON gli.id = gl.id_groupe ");
+        $request = $db->query("SELECT * FROM groupe_bl WHERE `id_groupe` = $id_groupe");
         return $request;
     }
 
