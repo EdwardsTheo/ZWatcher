@@ -15,7 +15,7 @@
         unset($_SESSION['errors']);
     }
 
-    $req = select_users();
+    $req = fetch_ids();
     $cpt = 0;
     while($donnees = $req->fetch()){
         $tmp = $donnees['username'];

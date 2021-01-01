@@ -71,6 +71,25 @@
         connect_end($link);
     }
 
+    function insert_equipe($titre, $associated){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query('INSERT INTO `equipes` (`id`, `name`, `id_listes`) 
+            VALUES (NULL, 
+            '.$link -> quote($titre).', 
+            '.$link -> quote($associated).');'))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function insert_message_user($id1, $id2, $req){
         $link = NULL;
 

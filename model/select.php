@@ -51,7 +51,7 @@
         connect_end($link);
     }
 
-    function get_listes($user){
+    function get_listes(){
         $link = NULL;
         try {
             if (!($link = connect_start()))
@@ -91,7 +91,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.username = $username"))) {
+                if (!($result = $link->query("SELECT U.id FROM user U WHERE U.username = '$username'"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -320,11 +320,17 @@
 
     function select_group_details($id_groupe) {
         $db = connect_start();
-        $request = $db->query("SELECT e.name, user.username, e.id as id_equipe, user.id
+        $request = $db->query("SELECT user.username AS ctct, user.id AS idf, user.displayer AS dis, user.status, e.name, user.username, e.id as id_equipe, user.id
         FROM equipes as e
         INNER JOIN equipes_bl AS ebl ON e.id = ebl.id_equipe
         INNER JOIN user AS user ON ebl.id_eleve = user.id 
         WHERE e.id = $id_groupe");
+        return $request;
+    }
+
+    function select_group_name($id_groupe) {
+        $db = connect_start();
+        $request = $db->query("SELECT e.id, e.name, e.id_listes FROM equipes as e WHERE e.id = $id_groupe");
         return $request;
     }
 
@@ -334,6 +340,25 @@
         FROM user AS u
         INNER JOIN equipes_bl AS ebl ON u.id = ebl.id_eleve  WHERE ebl.id_equipe != $id_groupe");
         return $request;
+    }
+
+    function get_equipe_members($id_equipe) {
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("SELECT u.username AS member_name
+            FROM user AS u
+            INNER JOIN equipes_bl AS ebl ON u.id = ebl.id_eleve WHERE ebl.id_equipe = $id_equipe"))) {
+                throw new Exception("No access to the table");  
+            }   
+            return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
     }
 
     function select_users_id($id_profil) {
