@@ -16,7 +16,7 @@
                 <div id="centre">
                 <div class="w3-container w3-padding-large w3-grey">
                 <h4 id="contact"><b>Ajouter un utilisateur :</b></h4>
-                Saisissez les informations de l'utilisateur que vous souhaitez ajouter.
+                Saisissez les informations de l'utilisateur que vous souhaitez ajouter. Celui-ci recevra ses identifiants par mail.
                 <div style="display: inline" class="errors">
                     <?php
                     if(isset($_SESSION['errors'])){ 

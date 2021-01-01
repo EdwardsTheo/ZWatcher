@@ -173,7 +173,7 @@ require("../model/update.php");
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
                 <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
-            }else if($_GET['action'] == "equipe" || $_GET['action'] == "modif_table_equipe" || $_GET['action'] == "add_table_equipes"){
+            }else if($_GET['action'] == "equipe" || $_GET['action'] == "display_equipes" || $_GET['action'] == "info_equipe" || $_GET['action'] == "add_table_equipes" || $_GET['action'] == "edit_equipe" || $_GET['action'] == "add_member_equipe"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
@@ -365,21 +365,26 @@ require("../model/update.php");
                 case 'create_liste':
 					require('../controller/profil_create_liste.php');
                 break;
+
+
                 // Partie Equipe
                 case 'equipe' :
                     require('../controller/profil_equipe.php');
                 break;
-                case 'modif_table_equipe' :
-                    require('../controller/profil_equipe.php');
+                case 'display_equipes' :
+                    require('../controller/display_equipes.php');
+                break;
+                case 'info_equipe' :
+                    require('../controller/profil_info_equipe.php');
                 break;
                 case 'add_table_equipes' :
                     require('../controller/profil_manage_table_equipes.php');
                 break;
-                case 'modif_groups':
-                    require('../controller/profil_modif_groups.php');
+                case 'edit_equipe' :
+                    require('../controller/profil_edit_equipe.php');
                 break;
-                case 'manage_groups':
-                    require('../controller/profil_manage_groups.php');
+                case 'add_member_equipe' :
+                    require('../controller/profil_add_member_equipe.php');
                 break;
                 // Partie Utilisateur 
                 case 'user' :
@@ -391,10 +396,12 @@ require("../model/update.php");
                 case 'new_utilisateur' :
                     require('../controller/profil_new_utilisateur.php');
                 break;
-
+                //Utilisateur : gestion ?
                 case 'add_utilisateurs' :
                     require('../controller/profil_manage_utilisateurs.php');
                 break;
+
+
                 //Partie Modifications
                 case 'modification':
 					require('../controller/profil_modification.php');
@@ -408,12 +415,18 @@ require("../model/update.php");
                 case 'modif_hostname':
                     require('../controller/modif_hostname.php');
                 break;
-                //Partie inconnue ?
+                //Partie Modifications Users et Groupes
                 case 'modif_users':
                     require('../controller/profil_modif_users.php');
                 break;
                 case 'manage_users':
                     require('../controller/profil_manage_users.php');
+                break;
+                case 'manage_groups':
+                    require('../controller/profil_manage_groups.php');
+                break;
+                case 'modif_groups':
+                    require('../controller/profil_modif_groups.php');
                 break;
                 //Partie Applications
                 case 'application':
