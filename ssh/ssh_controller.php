@@ -5,7 +5,7 @@
     require('../bash/install.php');
     require('../bash/check_install.php');
     require('../bash/check_package.php');
-    require('../bash/edit_hostname.php');
+    require('../bash/edit_machine.php');
     require('../bash/user_group.php');
 
 function main_ssh($machine_ip, $order, $app_name = NULL, $username = NULL, $password = NULL) {
@@ -16,8 +16,11 @@ function main_ssh($machine_ip, $order, $app_name = NULL, $username = NULL, $pass
 function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $password = NULL) {
     switch($order) {
         //Modifications
+        case "get_machine_hostname" :
+            $command =  get_machine_hostname();
+        break;
         case "edit_hostname" :
-            $command =  edit_hostname($_POST['hostname']);
+            $command =  edit_hostname($_POST['hostname'], $_POST['old_name']);
         break;
         //Applications
         case "Installer" :  

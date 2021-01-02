@@ -41,7 +41,7 @@
 			update_status_install('1', $id_machine, $id_appli);
 		}
 		else {
-			$_SESSION['message'] = "il y'a eu une erreur dans l'installion veuillez réssayer ou changer certaines configurations dans la partie gestion en cas de nouvelles erreurs"; 
+			$_SESSION['message'] = "il y'a eu une erreur dans l'installion veuillez réessayer ou changer certaines configurations dans la partie gestion en cas de nouvelles erreurs"; 
 		}
 		
 		$_SESSION['id_machine'] = $id_machine;
