@@ -179,4 +179,14 @@
             ));
         connect_end($link);
     }
+
+    function update_users_rsa($id_user, $rsa) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `user_listes` SET `rsa` =  :rsa WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id_user,
+            ':rsa'=>$rsa
+            ));
+        connect_end($link);
+    }
 ?>

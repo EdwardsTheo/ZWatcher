@@ -318,6 +318,13 @@
         return $request;
     }
 
+    function simple_select_teambl() {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM equipes_bl");
+        return $request;
+    }
+
+
     function select_group_details($id_groupe) {
         $db = connect_start();
         $request = $db->query("SELECT user.username AS ctct, user.id AS idf, user.displayer AS dis, user.status, e.name, user.username, e.id as id_equipe, user.id
@@ -363,12 +370,27 @@
 
     function select_users_id($id_profil) {
         $link = NULL;
-
         try {
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
             if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user WHERE `id` != $id_profil"))) {
+                throw new Exception("No access to the table");  
+            }   
+            return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function select_users_id2($id_profil) {
+        $link = NULL;
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user WHERE `id` = $id_profil"))) {
                 throw new Exception("No access to the table");  
             }   
             return $result; 
@@ -436,6 +458,18 @@
     function select_user_bl_group2($id_groupe) {
         $db = connect_start();
         $request = $db->query("SELECT * FROM groupe_bl WHERE `id_groupe` = $id_groupe");
+        return $request;
+    }
+
+    function select_equipe_idmachine($id_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM equipes WHERE `id_listes` = $id_machine");
+        return $request;
+    }
+
+    function select_id_team($nom_equipe, $id_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM equipes WHERE `name` = '$nom_equipe' AND `id_listes` = $id_machine");
         return $request;
     }
 

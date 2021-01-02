@@ -56,6 +56,8 @@
                     break;
                     case 'info_utilisateur' : form_modifiy_user_listes($id_user);
                     break;
+                    case 'Ajouter une équipe' : form_add_team_listes();
+                    break;
                 }
             }
 
@@ -158,12 +160,72 @@
                         $i++;
                         }
                     }
-                    
                 }
                 echo "
                 <input type='submit' class='w3-button w3-black' name='choice' value='Modifier les informations'>
                 
                 </form>";
+                $i=1;
+                $req = select_users_listes($_SESSION['id_machine']);
+                while($donnees = $req->fetch()) {
+                    if(isset($id_user[$i])) {
+                        if($donnees['id'] == $id_user[$i]) {
+                            $username = $donnees['username'];
+                            $id_user_string = $donnees['id'];
+                            if($donnees['rsa'] == 0) $button = "créer une clé rsa pour cet user";
+                            else $button = "Supprimer la clé RSA";
+                        }
+                    }
+                    $i++;
+                }
+                if($button == "Supprimer la clé RSA") {
+                    //AFFICHAGE DE LA clé rsa à dl
+                }
+                echo "
+                <form action='../view/profil.php?action=manage_users' method='POST'>
+                    <hr class='w3-opacity'> 
+                ";
+                if($button == "créer une clé rsa pour cet user") {
+                    echo "
+                        <h4><b>Veuillez rentrer le mot de passe de l'user pour créer une clé rsa </b></h4>
+                        <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>
+                    ";
+                }
+                elseif($button == 'Supprimer la clé RSA') {
+                    $file = $username . "_" . $_SESSION['id_machine'];
+                    echo "
+                        <a href='../rsa/$file.txt' download>Télécharger la clé RSA de l'utilisateur</a></br>
+                        <hr class='w3-opacity'> 
+                        <h4><b>Veuillez rentrer le mot de passe de l'user pour supprimer la clé rsa </b></h4>
+                        <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>
+                    ";
+                }
+                echo "
+                    <input type='submit' class='w3-button w3-black' name='choice' value='$button'>
+                    <hr class='w3-opacity'>
+                    <input type='hidden' id='scales' name='id_profil[$i]' value=' $id_user_string'>
+                    <input type='hidden' id='scales' name='old_username[$i]' value='$username'>
+                </form>
+                ";
+            }
+
+            function form_add_team_listes() {
+                for($i=1; $i < 2 ; $i++) {
+                    echo "<div class='w3-section w3-bottombar w3-padding-16'>";
+                    echo " <form action='../view/profil.php?action=manage_users' method='POST'>
+                    <div class='w3-container w3-padding-large w3-grey'>
+                        <h4><b>Ajouter une équipe dans la machine </b></h4>
+                        <hr class='w3-opacity'>
+                        <h5><b>Nom de l'équipe</b></h5>
+                        <input class='w3-input w3-border' type='text'  pattern='[a-zA-Z]+' name='nom_equipe[$i]' value='' required></br>
+                        <label for='input'>Donner droit sudo à l'équipe</label> <input type='checkbox' name='sudo[$i] '>
+                        <hr class='w3-opacity'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter cette équipe'>
+                    </div>
+                    </form>
+                    </div>";
+                $i++;
+                }
             }
 
             function error() {

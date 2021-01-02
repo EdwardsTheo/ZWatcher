@@ -15,6 +15,11 @@ function change_bash($username) {
     return $command;
 }
 
+function create_home($username) {
+    $command = "sudo mkdir /home/$username && sudo chown $username:$username /home/$username";
+    return $command;
+}
+
 function bash_user_exist($username) {
     $command = "getent passwd $username";
     return $command;
@@ -22,6 +27,11 @@ function bash_user_exist($username) {
 
 function delete_users($username) {
     $command = "sudo userdel $username";
+    return $command;
+}
+
+function delete_home($username) {
+    $command = "sudo rm -rf /home/$username";
     return $command;
 }
 

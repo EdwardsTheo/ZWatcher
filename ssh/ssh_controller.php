@@ -7,6 +7,7 @@
     require('../bash/check_package.php');
     require('../bash/edit_machine.php');
     require('../bash/user_group.php');
+    require('../bash/rsa.php');
 
 function main_ssh($machine_ip, $order, $app_name = NULL, $username = NULL, $password = NULL) {
     $login_info = info_login($machine_ip);  // give the information of the machine you want to connect
@@ -59,6 +60,12 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case "change_username" :
             $command = change_username($username, $password);
         break;
+        case "create_home" :
+            $command = create_home($username);
+        break;
+        case "delete_home" :
+            $command = delete_home($username);
+        break;
         // USERNAME == GROUPS NAME 
         case "add_groups" :
             $command = add_groups($username);
@@ -81,6 +88,12 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case 'delete_groups' :
             $command = bash_delete_groups($username);
         break;
+        case 'cat_rsa_key' :
+            $command = cat_rsa_key($username);
+        break;
+        case "delete rsa dir" : 
+            $command = delete_rsa_dir($username);
+        break;
         //Default
         default :
             "error";
@@ -100,7 +113,25 @@ function special_sudo($machine_id, $order, $username) {
         $login['ip'] = $donnees['ip'];
         $login['port'] = $donnees['port'];
     }
-    print_r($login);
+    return $output = ssh_launch($login['ip'], $login['port'], $login['name'], $login['password'], $command);
+}
+
+function rsa_controller($machine_id, $order, $username, $password, $hash = NULL) {
+    switch($order) {
+        case "create_rsa" : 
+            $command = create_rsa($username, $hash);
+        break;
+        case "authorise key" : 
+            $command = authorise_key();
+        break;
+    }
+    $req = get_listes_machine($machine_id);
+    while($donnees = $req->fetch()){
+        $login['name'] = $username;
+        $login['password'] = $password;
+        $login['ip'] = $donnees['ip'];
+        $login['port'] = $donnees['port'];
+    }
     return $output = ssh_launch($login['ip'], $login['port'], $login['name'], $login['password'], $command);
 }
     

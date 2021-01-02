@@ -237,30 +237,69 @@
         connect_end($link);
     }
 
-    function  insert_new_user_listes($username, $password, $id_machine) {
+    function  insert_new_user_listes($username, $password, $id_machine, $rsa, $id_team = NULL) {
         $options = array('cost' => 11);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
         
         $link = NULL; 
 	    $link = connect_start();
-	    $link->query('INSERT INTO `user_listes` (`id`,`username`, `pswd`, `id_listes`)
+	    $link->query('INSERT INTO `user_listes` (`id`,`username`, `pswd`, `id_listes`, `rsa`, `id_equipe`)
 		VALUES (NULL, 
         '.$link -> quote($username).',
         '.$link -> quote($hashed_password).',
-        '.$link -> quote($id_machine).'
-		)');
+        '.$link -> quote($id_machine).',
+        '.$link -> quote($rsa).',
+        '.$link -> quote($id_team).'
+        )');
+        return $link->lastInsertId();
         connect_end($link);
     }
 
-    function  insert_new_groups_listes($grp_name, $id_machine, $sudo) {
+    function  insert_new_user_listesnull($username, $password, $id_machine, $rsa, $id_team = NULL) {
+        $options = array('cost' => 11);
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        
         $link = NULL; 
 	    $link = connect_start();
-	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`)
+	    $link->query('INSERT INTO `user_listes` (`id`,`username`, `pswd`, `id_listes`, `rsa`, `id_equipe`)
+		VALUES (NULL, 
+        '.$link -> quote($username).',
+        '.$link -> quote($hashed_password).',
+        '.$link -> quote($id_machine).',
+        '.$link -> quote($rsa).',
+        NULL        
+        )');
+        return $link->lastInsertId();
+        connect_end($link);
+    }
+
+    function  insert_new_groups_listes($grp_name, $id_machine, $sudo, $id_equipe = NULL) {
+        echo gettype($id_equipe);
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`, `id_equipe`)
 		VALUES (NULL, 
         '.$link -> quote($grp_name).',
         '.$link -> quote($id_machine).',
-        '.$link -> quote($sudo).'
-		)');
+        '.$link -> quote($sudo).',
+        '.$link -> quote($id_equipe).'
+        )');
+        return $link->lastInsertId();
+        connect_end($link);
+    }
+
+    function insert_new_groups_listes_nullteam($grp_name, $id_machine, $sudo, $id_equipe = NULL) {
+        echo gettype($id_equipe);
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`, `id_equipe`)
+		VALUES (NULL, 
+        '.$link -> quote($grp_name).',
+        '.$link -> quote($id_machine).',
+        '.$link -> quote($sudo).',
+        NULL
+        )');
+        return $link->lastInsertId();
         connect_end($link);
     }
 

@@ -36,12 +36,15 @@ function main_add_groups() {
             main_ssh($_SESSION['id_machine'], 'add_groups', NULL, $_POST['groupe_name'][$i]);
             $output = main_ssh($_SESSION['id_machine'], 'check_groups', NULL, $_POST['groupe_name'][$i]);
             if($output != "") {
-                if($_POST['sudo_right'][$i] == 'on') {
+                if(isset($_POST['sudo_right'][$i])) {
+                    if($_POST['sudo_right'][$i] == 'on') {
                     special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]);
                     $sudo = 1;
+                    }
+                    else $sudo = 0;
                 }
                 else $sudo = 0;
-                insert_new_groups_listes($_POST['groupe_name'][$i], $_SESSION['id_machine'], $sudo);
+                insert_new_groups_listes_nullteam($_POST['groupe_name'][$i], $_SESSION['id_machine'], $sudo);
             }
             else $_SESSION['error'][$i] = "une erreur est survenue";
         }
@@ -92,7 +95,9 @@ function change_grp_name() {
 
 function manage_sudo_right() {
     $i = 1;
+    $test = 0;
     foreach ($_POST['id_group'] as $key => $value) {
+        if($test == 0) $i = $key;
         if($_POST['choice'] == 'Retirer les droits sudo') {
             $sudo = 0;
             special_sudo($_SESSION['id_machine'], 'retire_sudo_groups', $_POST['nom_groupe'][$i]);
@@ -102,6 +107,7 @@ function manage_sudo_right() {
             $sudo = 1;
         }
         update_group_sudo($_POST['id_group'][$i], $sudo);
+        $test = 1;
         $i++;
     }
 }

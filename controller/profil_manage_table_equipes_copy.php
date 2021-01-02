@@ -25,8 +25,8 @@ function main_table_equipe() {
             break;
         }
         elseif($test != false && $final_test == false) {
-            $test = check_team_name($_POST['nom_equipe']);
-            if($test == false) {
+            $test = check_team_name($_POST['nom_equipe'], $_SESSION['id_machine']);
+            if($test == true) {
                 $_SESSION['message'] = 'Le nom de votre équipe est déjà pris !';
                 break;
             }
@@ -51,6 +51,17 @@ function check_double($value, $i) {
                 $test = false;
                 break;
             }
+        }
+    }
+    return $test;
+}
+
+function check_team_name($nom_team, $id_machine) {
+    $req =  select_equipe_idmachine($id_machine);
+    $test = false;
+    while($donnees = $req->fetch()) {
+        if($nom_team == $donnees['name']) {
+            $test = true;
         }
     }
     return $test;

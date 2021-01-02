@@ -214,20 +214,14 @@
                     if(isset($_POST['show_users'])) {
                         $j = 1;
                         $empty = false;
-                        $req = select_user_bl_group2($id_groupe);
                         $req2 = select_users_listes($_SESSION['id_machine']);
                         echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
                         while($donnees = $req2->fetch()) {
                             $username = $donnees['username'];
-                            $test = false;
-                            while($data = $req->fetch()) {
-                                if($donnees['id'] == $data['id_user_listes']) {
-                                    $test = true;
-                                }
-                            }
                             $empty = true;
-                             if($test == false) {
 
+                            $test = already_grouped($donnees['id'], $id_groupe);
+                            if($test == false) {
                                 if($j % 3 == 1){
                                     echo "<div class='w3-row-padding'>";
                                 }
@@ -281,6 +275,17 @@
                     $i++;
                    
                 }
+            }
+
+            function already_grouped($id_members, $id_groupe) {
+                $req = select_user_bl_group2($id_groupe);
+                $test = false;
+                while($donnees = $req->fetch()) {
+                    if($id_members == $donnees['id_user_listes']) {
+                        $test = true;
+                    }
+                }
+                return $test;
             }
         ?>
         </div>
