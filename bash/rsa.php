@@ -5,8 +5,8 @@ function create_rsa($username, $hash) {
     return $command;
 }
 
-function authorise_key() {
-    $command = "cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys";
+function authorise_key($username) {
+    $command = "cat /home/$username/.ssh/id_rsa.pub > /home/$username/.ssh/authorized_keys";
     return $command;
 }
 

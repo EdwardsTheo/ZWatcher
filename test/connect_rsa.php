@@ -17,5 +17,4 @@ if (ssh2_auth_pubkey_file($connection, 'bob',
 } else {
   die('Echec de l\'identification en utilisant une clé publique');
 }
-
 ?>

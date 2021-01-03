@@ -146,7 +146,7 @@ function rsa_controller($machine_id, $order, $username, $password, $hash = NULL)
             $command = create_rsa($username, $hash);
         break;
         case "authorise key" : 
-            $command = authorise_key();
+            $command = authorise_key($username);
         break;
     }
     $req = get_listes_machine($machine_id);

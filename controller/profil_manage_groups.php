@@ -145,7 +145,7 @@ function main_delete_group() {
             if($_POST['scales'][$i] == "on") {
                 delete_groups_bl($_POST['id_groupe'][$i]);
                 delete_groups($_POST['id_groupe'][$i]);
-                main_ssh($_SESSION['id_machine'], 'retire_sudo_groups', NULL, $_POST['nom_groupe'][$i]);
+                main_ssh($_SESSION['id_machine'], 'retire_sudo_groups', NULL, $_POST['group_name'][$i]);
                 main_ssh($_SESSION['id_machine'], 'delete_groups', NULL, $_POST['group_name'][$i]);               
             }
         }
@@ -154,6 +154,6 @@ function main_delete_group() {
 }
 
 
-//header('location: ../view/profil.php?action=modif_groups'); // redirect to the main app page with a message of confirmation 
+header('location: ../view/profil.php?action=modif_groups'); // redirect to the main app page with a message of confirmation 
 
 ?>

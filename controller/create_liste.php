@@ -27,12 +27,22 @@
     }
 
     if($cpt == 0){
-        insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd);
+        $rsa = 0;
+        $connex = 0;
+        $id = insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd, $rsa, $connex);
         $_SESSION['errors'] = "La liste a bien été crée";
+        insert_basic_app($id);
         header('location: ../view/profil.php?action=create_liste');
     }else{
         $_SESSION['errors'] = "Veuillez saisir un titre et une description valide";
         header('location: ../view/profil.php?action=create_liste');
+    }
+
+    function insert_basic_app($id) {
+        $req = select_get_app();
+        while($donnes = $req->fetch()) {
+            insert_app_dispo($donnes['id'], $id);
+        }
     }
 
 ?>

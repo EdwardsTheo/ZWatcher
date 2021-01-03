@@ -3,24 +3,7 @@
 require('../ssh/ssh_controller.php');
 require('profil_manage_table_equipes_copy.php');
 
-switch($_POST['choice']) {
-    case 'Ajouter les users' :  main_add_users();
-    break;
-    case 'Supprimer les users' : main_delete_users();
-    break;
-    case 'Modifier les informations' : main_update_users_list();
-    break;
-    case 'Détails du profil' :  set_session_user();
-    break;
-    case "Ajouter cette équipe" : add_team_grp();
-    break;
-    case "créer une clé rsa pour cet user" : generate_rsa_key();
-    break;
-    case "Supprimer la clé RSA" : delete_rsa_keys();
-    break;
-}
 
-print_r($_POST);
 
 function main_add_users() {
     $i = 1;
@@ -174,6 +157,7 @@ function add_team_to_grpbl($id_grp, $id_team, $nom_equipe) {
 
 function get_username($id_eleve) {
     $req = select_users_id2($id_eleve);
+    print_r($req);
     while($donnees = $req->fetch()) {
         if($id_eleve == $donnees['id']) {
             $username = $donnees['username'];
@@ -225,6 +209,7 @@ function test_password_bash($id_user, $password) {
         if($donnees['id'] == $id_user){
             $hashed_password = $donnees['pswd'];
             $bool = password_verify($password, $hashed_password);
+            echo "oui";
         }
     }
    return $bool;
@@ -251,6 +236,24 @@ function delete_rsa_keys() {
         else $_SESSION['error'][$i] = "Mot de passe incorrect";
     }
 }
+
+switch($_POST['choice']) {
+    case 'Ajouter les users' :  main_add_users();
+    break;
+    case 'Supprimer les users' : main_delete_users();
+    break;
+    case 'Modifier les informations' : main_update_users_list();
+    break;
+    case 'Détails du profil' :  set_session_user();
+    break;
+    case "Ajouter cette équipe" : add_team_grp();
+    break;
+    case "créer une clé rsa pour cet user" : generate_rsa_key();
+    break;
+    case "Supprimer la clé RSA" : delete_rsa_keys();
+    break;
+}
+
 
 header('location: ../view/profil.php?action=modif_users'); // redirect to the main app page with a message of confirmation 
 
