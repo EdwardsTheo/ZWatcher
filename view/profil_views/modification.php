@@ -16,12 +16,25 @@
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
                 <h4><b>Accueil</b></h4>
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 Bienvenue <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?> dans la section Modifications.
                 <p>Sélectionnez une machine de votre parc et modifiez ses informations système à l'aide des sous-menus correspondants.
                 <hr class="w3-opacity">
                 <form action="?action=modif_liste" method = "POST">
                 <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Commencer</button>
                 </form>
+
+                <?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
                 </div>
                 </div>
     </html>

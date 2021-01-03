@@ -17,6 +17,11 @@
                 <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                 <div id="centre">
                 <h4><b>Informations</b></h4>
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                     Sur cette page, vous pouvez ajouter ou retirer des utilisateur qui sont sur votre machine</br>
                 <?php
         print_r($_POST);
@@ -240,6 +245,14 @@
             }
     
         ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
         </div>
     </div>
 </html>

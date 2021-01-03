@@ -17,6 +17,11 @@
                 <div id="centre">
 
                 <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
+
+                <?php
                 
                 //Log 1
 
@@ -87,7 +92,15 @@
                 echo "</div>";
 
 
-                ?>          
+                ?>    
+                <?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?> 
+                     
                             
                     </div>
                 </div>

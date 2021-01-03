@@ -17,7 +17,10 @@
                 <div class="w3-container w3-padding-large" style="">
                 <div id="centre">
                 <h4><b>Vos machines</b></h4>
-                
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 <?php
                 
                 $i = 1;
@@ -40,6 +43,13 @@
                     $i = $i + 1;
                 }
                 
+                ?>
+                <?php
+                }else{
+                ?>
+                Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                }
                 ?>
 
                 </div>

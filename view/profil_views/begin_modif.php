@@ -16,6 +16,11 @@
 
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                     <div id="centre">
+
+                    <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                     
                     <?php
 
@@ -82,6 +87,14 @@
                     }
                     $req->closeCursor();
                     ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
 
                     </div>
                 </div>

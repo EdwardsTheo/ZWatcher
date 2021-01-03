@@ -17,6 +17,10 @@
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
                     <h4><b>Ajout d'un équipement</b></h4>
+                    <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                     </p>
                     <div class="w3-row-padding">
                         <a href = "?action=home_creation_liste">
@@ -92,6 +96,13 @@
                         </div>
                         
                     </div>
+                <?php
+                }else{
+                ?>
+                Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                }
+                ?>
 
                    
 

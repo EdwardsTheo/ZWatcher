@@ -15,6 +15,11 @@
                 
             <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 <div class="w3-container w3-padding-large w3-grey">
                 <h4 id="contact"><b>Ajouter un utilisateur :</b></h4>
                 Saisissez les informations de l'utilisateur que vous souhaitez ajouter. Celui-ci recevra ses identifiants par mail.
@@ -43,6 +48,14 @@
                 <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Créer le compte</button>
                 </form>
                 </div>
+
+                <?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
                 
         </div>
     </div>

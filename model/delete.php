@@ -1,49 +1,52 @@
 <?php
 
     function erase_contact_utilisateur($id_utilisateur){
-    $link = NULL;
+        $link = NULL;
 
-    try {
-        if (!($link = connect_start()))
-            throw new Exception("Could not connect to database");
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
 
-        if (!($result = $link->query("DELETE FROM contact WHERE user_1='$id_utilisateur' OR user_2='$id_utilisateur')"))) {
-            throw new Exception("No access to the table");  
+            if (!($result = $link->query("DELETE FROM contact WHERE user_1='$id_utilisateur' OR user_2='$id_utilisateur'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
         }
-    } catch (Exception $th) {
-        echo "Internal error Devis: ".$th->getMessage();
+        connect_end($link);
     }
-    connect_end($link);
 
     function erase_equipe_utilisateur($id_utilisateur){
-    $link = NULL;
+        $link = NULL;
 
-    try {
-        if (!($link = connect_start()))
-            throw new Exception("Could not connect to database");
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
 
-        if (!($result = $link->query("DELETE FROM equipes_bl WHERE id_eleve='$id_utilisateur')"))) {
-            throw new Exception("No access to the table");  
+            if (!($result = $link->query("DELETE FROM equipes_bl WHERE id_eleve='$id_utilisateur'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
         }
-    } catch (Exception $th) {
-        echo "Internal error Devis: ".$th->getMessage();
+        connect_end($link);
     }
-    connect_end($link);
 
     function erase_groupe_utilisateur($id_utilisateur){
-    $link = NULL;
+        $link = NULL;
 
-    try {
-        if (!($link = connect_start()))
-            throw new Exception("Could not connect to database");
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
 
-        if (!($result = $link->query("DELETE FROM groupe_bl WHERE id_user_listes='$id_utilisateur')"))) {
-            throw new Exception("No access to the table");  
+            if (!($result = $link->query("DELETE FROM groupe_bl WHERE id_user_listes='$id_utilisateur'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
         }
-    } catch (Exception $th) {
-        echo "Internal error Devis: ".$th->getMessage();
+        connect_end($link);
     }
-    connect_end($link);
 
     function erase_messages($id_utilisateur){
         $link = NULL;

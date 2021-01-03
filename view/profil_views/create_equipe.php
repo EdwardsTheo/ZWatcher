@@ -18,6 +18,11 @@
                 <h4><b></b></h4>
                 
                 <h4><b>Création d'équipe</b></h4>
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                     </p>
                     <div class="w3-row-padding">
                         <a href = "?action=create_equipe">
@@ -59,6 +64,14 @@
                         </div>
                         
                     </div>
+
+                    <?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
                 
         </div>
     </div>

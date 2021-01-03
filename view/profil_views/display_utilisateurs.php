@@ -27,6 +27,11 @@
                 <h4><b>Les utilisateurs</b></h4>
 
                 <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
+
+                <?php
 
                 $i = 0;
                 while($donnees = $req->fetch()){
@@ -63,6 +68,14 @@
                 }
                 
                 $req->closeCursor();
+                ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
                 ?>
                 
         </div>

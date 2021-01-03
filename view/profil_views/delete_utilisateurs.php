@@ -26,6 +26,11 @@
                 <div id="centre">
                 <h4><b>Supprimer un utilisateur</b></h4>
 
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
+
                 <div style="display: inline" class="errors">
                     <?php
                     echo $errors;
@@ -72,6 +77,14 @@
                 }
                 
                 $req->closeCursor();
+                ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
                 ?>
                 
         </div>

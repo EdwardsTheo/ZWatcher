@@ -14,6 +14,10 @@
                     <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                     <div id="centre">
                     <h4><b>Informations</b></h4>
+                    <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                         Sur cette page, vous décidez des applications que vous voulez rendre disponible pour vos machines. </br>
                         Vous pouvez également proposer de nouvelles applications avec le formulaire</br>
                     
@@ -101,8 +105,15 @@
                         }
                         
                     ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
                    
-            </div>
         </div>
     </div>
 </html>
