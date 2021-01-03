@@ -10,6 +10,7 @@
     
     main_ssh($id_machine, 'edit_ip');
     $actual_ip = main_ssh($id_machine, 'get_ip');
+    $actual_hostname = main_ssh($id_machine, 'get_machine_hostname');
 
     //partie après exécution de la tache
 
