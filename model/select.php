@@ -73,7 +73,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT * FROM listes WHERE id = $id"))) {
+                if (!($result = $link->query("SELECT id, titre, description, port, id_machine, pwd_machine FROM listes WHERE id = $id"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 

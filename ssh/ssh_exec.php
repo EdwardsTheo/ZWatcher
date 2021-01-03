@@ -4,10 +4,10 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     
     
     echo $command; 
-    //echo $ip;
-    //echo $port;
-    //echo $username;
-    //echo $password;
+    echo $ip;
+    echo $port;
+    echo $username;
+    echo $password;
     
         
     $con = ssh2_connect($ip, $port);

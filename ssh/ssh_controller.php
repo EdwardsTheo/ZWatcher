@@ -140,7 +140,7 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
     return $output = ssh_launch($login_info['ip'], $login_info['port'], $login_info['name'], $login_info['password'], $command);
 }
 
-function rsa_controller($machine_id, $order, $username, $password, $hash = NULL) {
+function rsa_controller($machine_id, $order, $username, $password, $hash = NULL) {	
     switch($order) {
         case "create_rsa" : 
             $command = create_rsa($username, $hash);
