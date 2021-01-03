@@ -6,6 +6,7 @@
     require('../bash/check_install.php');
     require('../bash/check_package.php');
     require('../bash/edit_machine.php');
+    require('../bash/observ_machine.php');
     require('../bash/user_group.php');
     require('../bash/rsa.php');
 
@@ -22,6 +23,28 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         break;
         case "edit_hostname" :
             $command =  edit_hostname($_POST['hostname'], $_POST['old_name']);
+        break;
+        case "get_ip" :
+            $command =  get_ip();
+        break;
+        case "edit_ip" :
+            $command =  edit_ip($_POST['ip'], $_POST['interface']);
+        break;
+        case "get_interface" :
+            $command =  get_interface();
+        break;
+        //Observation
+        case "dwl_auth" :
+            $command =  dwl_auth();
+        break;
+        case "dwl_kern" :
+            $command =  dwl_kern();
+        break;
+        case "dwl_messages" :
+            $command =  dwl_messages();
+        break;
+        case "dwl_syslog" :
+            $command =  dwl_syslog();
         break;
         //Applications
         case "Installer" :  

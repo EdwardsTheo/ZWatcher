@@ -65,10 +65,13 @@
                         <!-- Actualiser le controller du formulaire -->
 
                         <hr class='w3-opacity'>
-                        <form action='../controller/.php' method = 'POST'>
+                        <form action='?action=modif_ip' method = 'POST'>
                         <div class='w3-section'>
                             <label>Adresse IP</label>
-                            <input class='w3-input w3-border' type='text' name='ip' value='$donnees[2]'>
+                            <input class='w3-input w3-border' type='text' name='ip' value='$actual_ip'>
+                            <input class='w3-input w3-border' type='hidden' name='id_machine' value='$donnees[0]'>
+                            <input class='w3-input w3-border' type='hidden' name='old_ip' value='$actual_ip'>
+                            <input class='w3-input w3-border' type='hidden' name='interface' value='$interface'>
                         </div>
 
                         <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Modifier</button>

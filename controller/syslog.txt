@@ -1,0 +1,100 @@
+Jan  3 05:15:42 Gotham systemd[1]: session-472.scope: Succeeded.
+Jan  3 05:15:42 Gotham systemd[1]: Started Session 473 of user barney.
+Jan  3 05:15:42 Gotham systemd[1]: session-473.scope: Succeeded.
+Jan  3 05:15:43 Gotham systemd[1]: Started Session 474 of user barney.
+Jan  3 05:15:43 Gotham systemd[1]: session-474.scope: Succeeded.
+Jan  3 05:17:01 Gotham systemd[1]: Started Session 475 of user barney.
+Jan  3 05:17:01 Gotham systemd[1]: session-475.scope: Succeeded.
+Jan  3 05:17:01 Gotham systemd[1]: Started Session 476 of user barney.
+Jan  3 05:17:01 Gotham CRON[17952]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan  3 05:17:01 Gotham systemd[1]: session-476.scope: Succeeded.
+Jan  3 05:17:01 Gotham systemd[1]: session-464.scope: Succeeded.
+Jan  3 05:17:03 Gotham systemd[1]: Started Session 478 of user barney.
+Jan  3 05:17:03 Gotham systemd[1]: session-478.scope: Succeeded.
+Jan  3 05:17:03 Gotham systemd[1]: Started Session 479 of user barney.
+Jan  3 05:17:04 Gotham systemd[1]: session-479.scope: Succeeded.
+Jan  3 05:19:22 Gotham systemd[1]: session-447.scope: Succeeded.
+Jan  3 05:19:25 Gotham systemd[1]: Started Session 480 of user barney.
+Jan  3 05:19:25 Gotham systemd[1]: session-480.scope: Succeeded.
+Jan  3 05:19:26 Gotham systemd[1]: Started Session 481 of user barney.
+Jan  3 05:19:26 Gotham systemd[1]: session-481.scope: Succeeded.
+Jan  3 05:19:26 Gotham systemd[1]: Started Session 482 of user barney.
+Jan  3 05:19:26 Gotham systemd[1]: session-482.scope: Succeeded.
+Jan  3 05:19:27 Gotham systemd[1]: Started Session 483 of user barney.
+Jan  3 05:19:27 Gotham systemd[1]: session-483.scope: Succeeded.
+Jan  3 05:22:25 Gotham systemd[1]: Started Session 484 of user barney.
+Jan  3 05:22:25 Gotham systemd[1]: session-484.scope: Succeeded.
+Jan  3 05:22:25 Gotham systemd[1]: Started Session 485 of user barney.
+Jan  3 05:22:25 Gotham systemd[1]: session-485.scope: Succeeded.
+Jan  3 05:22:26 Gotham systemd[1]: Started Session 486 of user barney.
+Jan  3 05:22:26 Gotham systemd[1]: session-486.scope: Succeeded.
+Jan  3 05:22:27 Gotham systemd[1]: Started Session 487 of user barney.
+Jan  3 05:22:27 Gotham systemd[1]: session-487.scope: Succeeded.
+Jan  3 05:23:28 Gotham systemd[1]: Started Session 488 of user barney.
+Jan  3 05:23:28 Gotham systemd[1]: session-488.scope: Succeeded.
+Jan  3 05:23:28 Gotham systemd[1]: Started Session 489 of user barney.
+Jan  3 05:23:28 Gotham systemd[1]: session-489.scope: Succeeded.
+Jan  3 05:23:29 Gotham systemd[1]: Started Session 490 of user barney.
+Jan  3 05:23:29 Gotham systemd[1]: session-490.scope: Succeeded.
+Jan  3 05:38:33 Gotham systemd[1]: Started Session 491 of user barney.
+Jan  3 05:38:34 Gotham systemd[1]: session-491.scope: Succeeded.
+Jan  3 05:39:01 Gotham CRON[18245]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+Jan  3 05:39:01 Gotham systemd[1]: Starting Clean php session files...
+Jan  3 05:39:01 Gotham systemd[1]: phpsessionclean.service: Succeeded.
+Jan  3 05:39:01 Gotham systemd[1]: Started Clean php session files.
+Jan  3 05:45:12 Gotham systemd[1]: Started Session 493 of user barney.
+Jan  3 05:45:13 Gotham systemd[1]: session-493.scope: Succeeded.
+Jan  3 05:45:36 Gotham systemd[1]: Started Session 494 of user barney.
+Jan  3 05:45:36 Gotham systemd[1]: session-494.scope: Succeeded.
+Jan  3 05:47:01 Gotham systemd[1]: Started Session 495 of user barney.
+Jan  3 05:47:20 Gotham systemd[1]: Started Session 496 of user barney.
+Jan  3 05:47:20 Gotham systemd[1]: session-496.scope: Succeeded.
+Jan  3 05:47:21 Gotham systemd[1]: Started Session 497 of user barney.
+Jan  3 05:47:21 Gotham systemd[1]: session-497.scope: Succeeded.
+Jan  3 05:47:21 Gotham systemd[1]: Started Session 498 of user barney.
+Jan  3 05:47:22 Gotham systemd[1]: session-498.scope: Succeeded.
+Jan  3 05:47:30 Gotham systemd[1]: Started Session 499 of user barney.
+Jan  3 05:47:30 Gotham dbus-daemon[545]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.4828' (uid=0 pid=18421 comm="hostnamectl set-hostname KingofGotham ")
+Jan  3 05:47:30 Gotham systemd[1]: Starting Hostname Service...
+Jan  3 05:47:30 Gotham dbus-daemon[545]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan  3 05:47:30 Gotham systemd[1]: Started Hostname Service.
+Jan  3 05:47:30 Gotham systemd-hostnamed[18422]: Changed static host name to 'KingofGotham'
+Jan  3 05:47:30 Gotham systemd-hostnamed[18422]: Changed host name to 'KingofGotham'
+Jan  3 05:47:30 Gotham systemd[1]: session-499.scope: Succeeded.
+Jan  3 05:47:31 Gotham systemd[1]: Started Session 500 of user barney.
+Jan  3 05:47:31 Gotham systemd[1]: session-500.scope: Succeeded.
+Jan  3 05:47:55 Gotham systemd[1]: Started Session 501 of user barney.
+Jan  3 05:47:55 Gotham systemd[1]: session-501.scope: Succeeded.
+Jan  3 05:48:00 Gotham systemd[1]: systemd-hostnamed.service: Succeeded.
+Jan  3 05:49:20 Gotham systemd[1]: Started Session 502 of user barney.
+Jan  3 05:49:20 Gotham systemd[1]: session-502.scope: Succeeded.
+Jan  3 05:50:45 Gotham systemd[1]: Started Session 503 of user barney.
+Jan  3 05:50:46 Gotham systemd[1]: session-503.scope: Succeeded.
+Jan  3 05:51:26 Gotham systemd[1]: Started Session 504 of user barney.
+Jan  3 05:51:26 Gotham systemd[1]: session-504.scope: Succeeded.
+Jan  3 05:51:48 Gotham systemd[1]: Started Session 505 of user barney.
+Jan  3 05:51:48 Gotham systemd[1]: session-505.scope: Succeeded.
+Jan  3 05:51:58 Gotham systemd[1]: Started Session 506 of user barney.
+Jan  3 05:51:58 Gotham systemd[1]: session-506.scope: Succeeded.
+Jan  3 05:54:52 Gotham systemd[1]: Started Session 507 of user barney.
+Jan  3 05:54:53 Gotham systemd[1]: session-507.scope: Succeeded.
+Jan  3 05:55:58 Gotham systemd[1]: session-455.scope: Succeeded.
+Jan  3 05:56:46 Gotham systemd[1]: Started Session 508 of user barney.
+Jan  3 05:56:47 Gotham systemd[1]: session-508.scope: Succeeded.
+Jan  3 05:57:20 Gotham systemd[1]: Started Session 509 of user barney.
+Jan  3 05:57:20 Gotham systemd[1]: session-509.scope: Succeeded.
+Jan  3 05:57:21 Gotham systemd[1]: Started Session 510 of user barney.
+Jan  3 05:57:22 Gotham systemd[1]: session-510.scope: Succeeded.
+Jan  3 05:57:23 Gotham systemd[1]: Started Session 511 of user barney.
+Jan  3 05:57:23 Gotham systemd[1]: session-511.scope: Succeeded.
+Jan  3 05:57:24 Gotham systemd[1]: Started Session 512 of user barney.
+Jan  3 05:57:24 Gotham systemd[1]: session-512.scope: Succeeded.
+Jan  3 05:58:45 Gotham systemd[1]: Started Session 513 of user barney.
+Jan  3 05:58:45 Gotham systemd[1]: session-513.scope: Succeeded.
+Jan  3 05:58:58 Gotham systemd[1]: Started Session 514 of user barney.
+Jan  3 05:58:58 Gotham systemd[1]: session-514.scope: Succeeded.
+Jan  3 05:59:05 Gotham systemd[1]: Started Session 515 of user barney.
+Jan  3 05:59:05 Gotham systemd[1]: session-515.scope: Succeeded.
+Jan  3 05:59:10 Gotham systemd[1]: Started Session 516 of user barney.
+Jan  3 05:59:10 Gotham systemd[1]: session-516.scope: Succeeded.
+Jan  3 05:59:15 Gotham systemd[1]: Started Session 517 of user barney.

@@ -7,7 +7,9 @@
     require('../ssh/ssh_controller.php');
    
     $actual_hostname = main_ssh($machine_id, 'get_machine_hostname');
-
+    $actual_ip = main_ssh($machine_id, 'get_ip');
+    $interface = main_ssh($machine_id, 'get_interface');
+   
     $_SESSION['errors'] = "";
     $_SESSION['errors_2'] = "";
 

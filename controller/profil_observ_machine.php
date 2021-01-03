@@ -1,7 +1,6 @@
 <?php
 
-    $machine_name = $_POST['machine_name'];
-    $_SESSION['machine_name'] = $machine_name;
+    $machine_name = $_POST['id'];
 
     require('../view/profil_views/begin_observ.php');
 

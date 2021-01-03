@@ -35,12 +35,13 @@
                         <img src='../images/listes/l$nb.jfif' alt='' style='width:100%; border-radius:10px 10px 0px 0px;'>
                         <form action='?action=observ_machine' method = 'POST'>
                         <div class='w3-container w3-white2'>
-                            <input class='w3-input w3-border' type='hidden' name='machine_name' value='1'>
+                            <input class='w3-input w3-border' type='hidden' name='id' value='$donnees[0]'>
                             <p><b>$donnees[1]</b></p>
                             <p>$donnees[2]</p>
                             $donnees[3]</br> </br>
                             <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Accèder à la machine</button>
                         </div>
+                        </form>
                     </div>";
                     if($i % 3 == 0){
                         echo "</div>";
