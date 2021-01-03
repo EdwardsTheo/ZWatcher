@@ -1,8 +1,6 @@
-1) Modifier, Supprimer utilisateur par admin
-2) Supprimer machine :  récupérer les ids des équipes et groupes supprimés pôur supprimer par ricochet dans equipes_bl et groupes_bl.
-Rectifier les clés étrangères dans la bdd.
+1) Supprimer machine :  Rectifier les clés étrangères dans la bdd, et enable le delete en cascade (voir delete messages).
 
-3) Gérer droits et affichages des pages
+2) Gérer droits et affichages des pages
 
 => Relecture globale : CSS, fonctionnement ... Modif ip
 ===========================

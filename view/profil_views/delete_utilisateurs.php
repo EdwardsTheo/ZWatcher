@@ -15,16 +15,22 @@
                 <div class="w3-section w3-bottombar w3-padding-16">
             <!--      <span class="w3-margin-right">Filter:</span> -->
                     <a href="?action=user"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
-                    <a href="?action=display_utilisateurs"><button class="w3-button w3-black"><i class="fas fa-book-open w3-margin-right"></i>Affichage</button></a>
+                    <a href="?action=display_utilisateurs"><button class="w3-button w3-white"><i class="fas fa-book-open w3-margin-right"></i>Affichage</button></a>
                     <a href="?action=new_utilisateur"><button class="w3-button w3-white"><i class="fas fa-plus w3-margin-right"></i>Ajouter</button></a>
-                    <a href="?action=delete_utilisateur"><button class="w3-button w3-white"><i class="fas fa-minus w3-margin-right"></i>Supprimer</button></a>
+                    <a href="?action=delete_utilisateur"><button class="w3-button w3-black"><i class="fas fa-minus w3-margin-right"></i>Supprimer</button></a>
                 </div>
                 </div>
                 </div>
             </header>
                 <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                 <div id="centre">
-                <h4><b>Les utilisateurs</b></h4>
+                <h4><b>Supprimer un utilisateur</b></h4>
+
+                <div style="display: inline" class="errors">
+                    <?php
+                    echo $errors;
+                    ?>
+                </div>
 
                 <?php
 
@@ -54,7 +60,10 @@
                         <p class='name'> $donnees[0] </p>
                         <p class='message'> $donnees[2] </p>
                     </div>
-                    <div class='timer'>Utilisateur</div></div></section>";
+                    <form action='?action=erase_utilisateur' method = 'POST'>
+                    <input class='w3-input w3-border' type='hidden' name='id_user' value='$donnees[1]'></input>
+                    <button type='submit' class='w3-button w3-black'><i class='fas fa-check w3-margin-right'></i>Supprimer</button></form>
+                    <div class='timer'>Utilisateur</div></form></div></section>";
                     if($i%2 == 0){
                         echo "&nbsp&nbsp";
                     }
