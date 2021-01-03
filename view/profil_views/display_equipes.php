@@ -15,9 +15,12 @@
             </header>
                 <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                 <div id="centre">
-                <h4><b>Accueil</b></h4>
-                Bienvenue <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?> dans le système de gestion des équipes.
-                <p>Affichez les équipes disponibles, créez ou modifiez à l'aide des sous-menus correspondants.
+                <h4><b>Vos équipes</b></h4>
+                
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
 
                 <?php
 
@@ -47,6 +50,38 @@
                 if($exist == false) {
                     echo "<h4><b>Il n'y a actuellement aucune équipe.</b></h4>";
                 }
+                ?>
+                 <?php
+                    }else{
+                ?>
+                <?php
+
+                $i = 1;
+                $exist = false;
+                while($donnees = $req->fetch()) {
+                    $exist = true;
+                    if($i % 3 == 1){
+                        echo "<div class='w3-row-padding'>";
+                    }
+                    $nb = rand(1, 32);
+                    echo "<div class='w3-third w3-container w3-margin-bottom'>
+                        <img src='../images/listes/l$nb.jfif' alt='' style='width:100%; border-radius:10px 10px 0px 0px;'>
+                        <div class='w3-container w3-white2'>
+                            <input class='w3-input w3-border' type='hidden' name='id_equipe' value='$donnees[0]'>
+                            <p><b>Groupe $donnees[1]</b></p>
+                        </div>
+                    </div>";
+                    if($i % 3 == 0){
+                        echo "</div>";
+                    }
+                    $i = $i + 1;
+                }
+                if($exist == false) {
+                    echo "<h4><b>Il n'y a actuellement aucune équipe.</b></h4>";
+                }
+                ?>
+                <?php
+                    }
                 ?>
                 
         </div>

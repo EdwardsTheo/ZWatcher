@@ -1,7 +1,5 @@
 1) Supprimer machine :  Rectifier les clés étrangères dans la bdd, et enable le delete en cascade (voir delete messages).
 
-2) Droits partout sauf equipes 1-2-3 et utilisateurs 2-3-4
-
 => Relecture globale : CSS, fonctionnement ... Modif ip
 ===========================
 

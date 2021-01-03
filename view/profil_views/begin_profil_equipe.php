@@ -17,7 +17,18 @@
                 <div id="centre">
                 <h4><b>Accueil</b></h4>
                 Bienvenue <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?> dans le système de gestion des équipes.
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 <p>Affichez les équipes disponibles, créez ou modifiez à l'aide des sous-menus correspondants.
+                <?php
+                    }else{
+                ?>
+                    <p>Affichez vos équipes.
+                <?php
+                    }
+                ?>
                 
         </div>
     </div>

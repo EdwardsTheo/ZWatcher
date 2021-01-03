@@ -1,100 +1,100 @@
-Jan  3 05:55:58 Gotham systemd-logind[557]: Session 455 logged out. Waiting for processes to exit.
-Jan  3 05:55:58 Gotham systemd-logind[557]: Removed session 455.
-Jan  3 05:56:46 Gotham sshd[18557]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:56:46 Gotham sshd[18557]: Accepted password for barney from 37.166.7.140 port 62533 ssh2
-Jan  3 05:56:46 Gotham sshd[18557]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:56:46 Gotham systemd-logind[557]: New session 508 of user barney.
-Jan  3 05:56:47 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan  3 05:56:47 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:56:47 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:56:47 Gotham sshd[18563]: Received disconnect from 37.166.7.140 port 62533:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:56:47 Gotham sshd[18563]: Disconnected from user barney 37.166.7.140 port 62533
-Jan  3 05:56:47 Gotham sshd[18557]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:56:47 Gotham systemd-logind[557]: Session 508 logged out. Waiting for processes to exit.
-Jan  3 05:56:47 Gotham systemd-logind[557]: Removed session 508.
-Jan  3 05:56:54 Gotham sshd[18566]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:56:55 Gotham sshd[18566]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=159.203.63.125  user=root
-Jan  3 05:56:57 Gotham sshd[18566]: Failed password for root from 159.203.63.125 port 56596 ssh2
-Jan  3 05:56:58 Gotham sshd[18566]: Received disconnect from 159.203.63.125 port 56596:11: Bye Bye [preauth]
-Jan  3 05:56:58 Gotham sshd[18566]: Disconnected from authenticating user root 159.203.63.125 port 56596 [preauth]
-Jan  3 05:57:04 Gotham sshd[18568]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:09 Gotham sshd[18570]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:10 Gotham sshd[18570]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=115.78.96.99  user=root
-Jan  3 05:57:13 Gotham sshd[18570]: Failed password for root from 115.78.96.99 port 60073 ssh2
-Jan  3 05:57:14 Gotham sshd[18570]: Received disconnect from 115.78.96.99 port 60073:11: Bye Bye [preauth]
-Jan  3 05:57:14 Gotham sshd[18570]: Disconnected from authenticating user root 115.78.96.99 port 60073 [preauth]
-Jan  3 05:57:19 Gotham sshd[18572]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:20 Gotham sshd[18572]: Accepted password for barney from 37.166.7.140 port 62570 ssh2
-Jan  3 05:57:20 Gotham sshd[18572]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:57:20 Gotham systemd-logind[557]: New session 509 of user barney.
-Jan  3 05:57:20 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan  3 05:57:20 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:57:20 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:57:20 Gotham sshd[18578]: Received disconnect from 37.166.7.140 port 62570:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:57:20 Gotham sshd[18578]: Disconnected from user barney 37.166.7.140 port 62570
-Jan  3 05:57:20 Gotham sshd[18572]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:57:20 Gotham systemd-logind[557]: Session 509 logged out. Waiting for processes to exit.
-Jan  3 05:57:20 Gotham systemd-logind[557]: Removed session 509.
-Jan  3 05:57:21 Gotham sshd[18581]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:21 Gotham sshd[18581]: Accepted password for barney from 37.166.7.140 port 62572 ssh2
-Jan  3 05:57:21 Gotham sshd[18581]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:57:21 Gotham systemd-logind[557]: New session 510 of user barney.
-Jan  3 05:57:22 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/kern.log
-Jan  3 05:57:22 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:57:22 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:57:22 Gotham sshd[18587]: Received disconnect from 37.166.7.140 port 62572:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:57:22 Gotham sshd[18587]: Disconnected from user barney 37.166.7.140 port 62572
-Jan  3 05:57:22 Gotham sshd[18581]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:57:22 Gotham systemd-logind[557]: Session 510 logged out. Waiting for processes to exit.
-Jan  3 05:57:22 Gotham systemd-logind[557]: Removed session 510.
-Jan  3 05:57:22 Gotham sshd[18590]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:23 Gotham sshd[18590]: Accepted password for barney from 37.166.7.140 port 62573 ssh2
-Jan  3 05:57:23 Gotham sshd[18590]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:57:23 Gotham systemd-logind[557]: New session 511 of user barney.
-Jan  3 05:57:23 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/messages
-Jan  3 05:57:23 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:57:23 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:57:23 Gotham sshd[18596]: Received disconnect from 37.166.7.140 port 62573:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:57:23 Gotham sshd[18596]: Disconnected from user barney 37.166.7.140 port 62573
-Jan  3 05:57:23 Gotham sshd[18590]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:57:23 Gotham systemd-logind[557]: Session 511 logged out. Waiting for processes to exit.
-Jan  3 05:57:23 Gotham systemd-logind[557]: Removed session 511.
-Jan  3 05:57:24 Gotham sshd[18599]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:24 Gotham sshd[18599]: Accepted password for barney from 37.166.7.140 port 62574 ssh2
-Jan  3 05:57:24 Gotham sshd[18599]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:57:24 Gotham systemd-logind[557]: New session 512 of user barney.
-Jan  3 05:57:24 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/syslog
-Jan  3 05:57:24 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:57:24 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:57:24 Gotham sshd[18605]: Received disconnect from 37.166.7.140 port 62574:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:57:24 Gotham sshd[18605]: Disconnected from user barney 37.166.7.140 port 62574
-Jan  3 05:57:24 Gotham sshd[18599]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:57:24 Gotham systemd-logind[557]: Session 512 logged out. Waiting for processes to exit.
-Jan  3 05:57:24 Gotham systemd-logind[557]: Removed session 512.
-Jan  3 05:57:26 Gotham sshd[18608]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:57:27 Gotham sshd[18608]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=13.90.138.102  user=root
-Jan  3 05:57:29 Gotham sshd[18608]: Failed password for root from 13.90.138.102 port 43238 ssh2
-Jan  3 05:57:30 Gotham sshd[18608]: Received disconnect from 13.90.138.102 port 43238:11: Bye Bye [preauth]
-Jan  3 05:57:30 Gotham sshd[18608]: Disconnected from authenticating user root 13.90.138.102 port 43238 [preauth]
-Jan  3 05:57:58 Gotham sshd[18568]: Connection closed by 152.136.110.246 port 40984 [preauth]
-Jan  3 05:58:44 Gotham sshd[18615]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:58:45 Gotham sshd[18615]: Accepted password for barney from 37.166.7.140 port 62529 ssh2
-Jan  3 05:58:45 Gotham sshd[18615]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:58:45 Gotham systemd-logind[557]: New session 513 of user barney.
-Jan  3 05:58:45 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan  3 05:58:45 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Jan  3 05:58:45 Gotham sudo: pam_unix(sudo:session): session closed for user root
-Jan  3 05:58:45 Gotham sshd[18621]: Received disconnect from 37.166.7.140 port 62529:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
-Jan  3 05:58:45 Gotham sshd[18621]: Disconnected from user barney 37.166.7.140 port 62529
-Jan  3 05:58:45 Gotham sshd[18615]: pam_unix(sshd:session): session closed for user barney
-Jan  3 05:58:45 Gotham systemd-logind[557]: Session 513 logged out. Waiting for processes to exit.
-Jan  3 05:58:45 Gotham systemd-logind[557]: Removed session 513.
-Jan  3 05:58:46 Gotham sshd[18624]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:58:47 Gotham sshd[18624]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=159.203.63.125  user=root
-Jan  3 05:58:48 Gotham sshd[18624]: Failed password for root from 159.203.63.125 port 42167 ssh2
-Jan  3 05:58:58 Gotham sshd[18631]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  3 05:58:58 Gotham sshd[18631]: Accepted password for barney from 37.166.7.140 port 62518 ssh2
-Jan  3 05:58:58 Gotham sshd[18631]: pam_unix(sshd:session): session opened for user barney by (uid=0)
-Jan  3 05:58:58 Gotham systemd-logind[557]: New session 514 of user barney.
-Jan  3 05:58:58 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan  3 05:58:58 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan  3 10:53:03 Gotham sshd[21613]: Received disconnect from 139.59.233.51 port 43470:11: Bye Bye [preauth]
+Jan  3 10:53:03 Gotham sshd[21613]: Disconnected from authenticating user root 139.59.233.51 port 43470 [preauth]
+Jan  3 10:54:05 Gotham sshd[21615]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:13 Gotham sshd[21615]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.69.15.129  user=root
+Jan  3 10:54:15 Gotham sshd[21615]: Failed password for root from 81.69.15.129 port 40642 ssh2
+Jan  3 10:54:17 Gotham sshd[21617]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:17 Gotham sshd[21615]: Received disconnect from 81.69.15.129 port 40642:11: Bye Bye [preauth]
+Jan  3 10:54:17 Gotham sshd[21615]: Disconnected from authenticating user root 81.69.15.129 port 40642 [preauth]
+Jan  3 10:54:18 Gotham sshd[21617]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=34.96.167.190  user=root
+Jan  3 10:54:20 Gotham sshd[21617]: Failed password for root from 34.96.167.190 port 18450 ssh2
+Jan  3 10:54:21 Gotham sshd[21617]: Received disconnect from 34.96.167.190 port 18450:11: Bye Bye [preauth]
+Jan  3 10:54:21 Gotham sshd[21617]: Disconnected from authenticating user root 34.96.167.190 port 18450 [preauth]
+Jan  3 10:54:24 Gotham sshd[21619]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:28 Gotham sshd[21619]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.70.155.151  user=root
+Jan  3 10:54:30 Gotham sshd[21619]: Failed password for root from 81.70.155.151 port 55466 ssh2
+Jan  3 10:54:37 Gotham sshd[21631]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:39 Gotham sshd[21633]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:39 Gotham sshd[21631]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=124.156.103.155  user=root
+Jan  3 10:54:42 Gotham sshd[21631]: Failed password for root from 124.156.103.155 port 59520 ssh2
+Jan  3 10:54:42 Gotham sshd[21631]: Received disconnect from 124.156.103.155 port 59520:11: Bye Bye [preauth]
+Jan  3 10:54:42 Gotham sshd[21631]: Disconnected from authenticating user root 124.156.103.155 port 59520 [preauth]
+Jan  3 10:54:43 Gotham sshd[21633]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=157.230.5.169  user=root
+Jan  3 10:54:43 Gotham sshd[21635]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:45 Gotham sshd[21633]: Failed password for root from 157.230.5.169 port 46760 ssh2
+Jan  3 10:54:45 Gotham sshd[21635]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.68.87.47  user=root
+Jan  3 10:54:46 Gotham sshd[21633]: Received disconnect from 157.230.5.169 port 46760:11: Bye Bye [preauth]
+Jan  3 10:54:46 Gotham sshd[21633]: Disconnected from authenticating user root 157.230.5.169 port 46760 [preauth]
+Jan  3 10:54:47 Gotham sshd[21635]: Failed password for root from 81.68.87.47 port 57798 ssh2
+Jan  3 10:54:49 Gotham sshd[21642]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:51 Gotham sshd[21642]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=129.226.138.179  user=root
+Jan  3 10:54:52 Gotham sshd[21649]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:54:53 Gotham sshd[21642]: Failed password for root from 129.226.138.179 port 54786 ssh2
+Jan  3 10:54:54 Gotham sshd[21649]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.66.168.81  user=root
+Jan  3 10:54:56 Gotham sshd[21649]: Failed password for root from 203.66.168.81 port 54148 ssh2
+Jan  3 10:55:46 Gotham sshd[21656]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:55:47 Gotham sshd[21656]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=124.156.103.155  user=root
+Jan  3 10:55:49 Gotham sshd[21656]: Failed password for root from 124.156.103.155 port 45606 ssh2
+Jan  3 10:55:50 Gotham sshd[21656]: Received disconnect from 124.156.103.155 port 45606:11: Bye Bye [preauth]
+Jan  3 10:55:50 Gotham sshd[21656]: Disconnected from authenticating user root 124.156.103.155 port 45606 [preauth]
+Jan  3 10:57:05 Gotham sshd[21668]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:57:11 Gotham sshd[21668]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=124.156.103.155  user=root
+Jan  3 10:57:12 Gotham sshd[21668]: Failed password for root from 124.156.103.155 port 59928 ssh2
+Jan  3 10:57:14 Gotham sshd[21675]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:57:16 Gotham sshd[21675]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=34.96.167.190  user=root
+Jan  3 10:57:18 Gotham sshd[21675]: Failed password for root from 34.96.167.190 port 65011 ssh2
+Jan  3 10:58:07 Gotham sshd[21682]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:58:08 Gotham sshd[21682]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=119.28.235.221  user=root
+Jan  3 10:58:10 Gotham sshd[21682]: Failed password for root from 119.28.235.221 port 34602 ssh2
+Jan  3 10:58:12 Gotham sshd[21682]: Received disconnect from 119.28.235.221 port 34602:11: Bye Bye [preauth]
+Jan  3 10:58:12 Gotham sshd[21682]: Disconnected from authenticating user root 119.28.235.221 port 34602 [preauth]
+Jan  3 10:58:34 Gotham sshd[21684]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:58:38 Gotham sshd[21686]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:58:39 Gotham sshd[21684]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.59.233.51  user=root
+Jan  3 10:58:40 Gotham sshd[21686]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=175.24.46.21  user=root
+Jan  3 10:58:41 Gotham sshd[21686]: Failed password for root from 175.24.46.21 port 56086 ssh2
+Jan  3 10:58:42 Gotham sshd[21686]: Received disconnect from 175.24.46.21 port 56086:11: Bye Bye [preauth]
+Jan  3 10:58:42 Gotham sshd[21686]: Disconnected from authenticating user root 175.24.46.21 port 56086 [preauth]
+Jan  3 10:58:42 Gotham sshd[21684]: Failed password for root from 139.59.233.51 port 45236 ssh2
+Jan  3 10:58:43 Gotham sshd[21684]: Received disconnect from 139.59.233.51 port 45236:11: Bye Bye [preauth]
+Jan  3 10:58:43 Gotham sshd[21684]: Disconnected from authenticating user root 139.59.233.51 port 45236 [preauth]
+Jan  3 10:59:01 Gotham sshd[21688]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:59:02 Gotham sshd[21688]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=37.34.208.91  user=root
+Jan  3 10:59:04 Gotham sshd[21688]: Failed password for root from 37.34.208.91 port 36450 ssh2
+Jan  3 10:59:05 Gotham sshd[21688]: Received disconnect from 37.34.208.91 port 36450:11: Bye Bye [preauth]
+Jan  3 10:59:05 Gotham sshd[21688]: Disconnected from authenticating user root 37.34.208.91 port 36450 [preauth]
+Jan  3 10:59:18 Gotham sshd[21690]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 10:59:20 Gotham sshd[21690]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.69.15.129  user=root
+Jan  3 10:59:22 Gotham sshd[21690]: Failed password for root from 81.69.15.129 port 57202 ssh2
+Jan  3 10:59:24 Gotham sshd[21690]: Received disconnect from 81.69.15.129 port 57202:11: Bye Bye [preauth]
+Jan  3 10:59:24 Gotham sshd[21690]: Disconnected from authenticating user root 81.69.15.129 port 57202 [preauth]
+Jan  3 11:00:01 Gotham sshd[21692]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:00:08 Gotham sshd[21692]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=157.230.5.169  user=root
+Jan  3 11:00:10 Gotham sshd[21692]: Failed password for root from 157.230.5.169 port 37434 ssh2
+Jan  3 11:00:11 Gotham sshd[21692]: Received disconnect from 157.230.5.169 port 37434:11: Bye Bye [preauth]
+Jan  3 11:00:11 Gotham sshd[21692]: Disconnected from authenticating user root 157.230.5.169 port 37434 [preauth]
+Jan  3 11:00:20 Gotham sshd[21694]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:00:22 Gotham sshd[21694]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=119.28.235.221  user=root
+Jan  3 11:00:24 Gotham sshd[21694]: Failed password for root from 119.28.235.221 port 40808 ssh2
+Jan  3 11:00:25 Gotham sshd[21694]: Received disconnect from 119.28.235.221 port 40808:11: Bye Bye [preauth]
+Jan  3 11:00:25 Gotham sshd[21694]: Disconnected from authenticating user root 119.28.235.221 port 40808 [preauth]
+Jan  3 11:02:43 Gotham sshd[21701]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:02:44 Gotham sshd[21703]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:02:45 Gotham sshd[21703]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=119.28.235.221  user=root
+Jan  3 11:02:46 Gotham sshd[21701]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=175.24.46.21  user=root
+Jan  3 11:02:47 Gotham sshd[21703]: Failed password for root from 119.28.235.221 port 47014 ssh2
+Jan  3 11:02:48 Gotham sshd[21701]: Failed password for root from 175.24.46.21 port 44056 ssh2
+Jan  3 11:02:49 Gotham sshd[21701]: Received disconnect from 175.24.46.21 port 44056:11: Bye Bye [preauth]
+Jan  3 11:02:49 Gotham sshd[21701]: Disconnected from authenticating user root 175.24.46.21 port 44056 [preauth]
+Jan  3 11:03:42 Gotham sshd[21710]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:03:45 Gotham sshd[21710]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=118.24.119.36  user=root
+Jan  3 11:03:47 Gotham sshd[21710]: Failed password for root from 118.24.119.36 port 59070 ssh2
+Jan  3 11:03:48 Gotham sshd[21710]: Received disconnect from 118.24.119.36 port 59070:11: Bye Bye [preauth]
+Jan  3 11:03:48 Gotham sshd[21710]: Disconnected from authenticating user root 118.24.119.36 port 59070 [preauth]
+Jan  3 11:04:01 Gotham sshd[21712]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  3 11:04:01 Gotham sshd[21712]: Accepted password for barney from 37.166.7.140 port 62603 ssh2
+Jan  3 11:04:01 Gotham sshd[21712]: pam_unix(sshd:session): session opened for user barney by (uid=0)
+Jan  3 11:04:01 Gotham systemd-logind[557]: New session 555 of user barney.
+Jan  3 11:04:02 Gotham systemd: pam_unix(systemd-user:session): session opened for user barney by (uid=0)
+Jan  3 11:04:02 Gotham sudo:   barney : TTY=unknown ; PWD=/home/barney ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan  3 11:04:02 Gotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)

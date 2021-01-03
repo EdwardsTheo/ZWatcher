@@ -15,8 +15,21 @@
                 <div class="w3-container w3-padding-large" style="margin-bottom: -10rm">
                 <div id="centre">
                 <h4><b>Accueil</b></h4>
+
+                <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
                 Bienvenue <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?> dans le système de gestion d'utilisateurs.
                 <p>Affichez la liste d'utilisateurs du site, et créez de nouveaux utilisateurs à l'aide des sous-menus correspondants.
+
+                <?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
     
         </div>
     </div>

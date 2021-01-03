@@ -28,6 +28,11 @@
                 <h4><b></b></h4>
 
                 <?php
+                    if($_SESSION['power'] == "admin"){
+
+                ?>
+
+                <?php
 
                 echo"<div class='w3-container w3-padding-large w3-grey'>";
                 echo "<h4><b>Membres de l'équipe</b></h4>";
@@ -130,6 +135,14 @@
                     <input type='hidden' name='id_equipe' value='$id_equipe'></div><hr class='w3-opacity'>";
             
             ?>
+
+<?php
+                    }else{
+                ?>
+                    Vous n'avez pas les droits pour accéder à ces fonctions.
+                <?php
+                    }
+                ?>
                 
         </div>
     </div>
