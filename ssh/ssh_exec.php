@@ -9,8 +9,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     echo $username;
     echo $password;
     
-    
-    
+        
     $con = ssh2_connect($ip, $port);
     ssh2_auth_password($con, $username, $password); 
     $stream = ssh2_exec($con, $command);
@@ -18,7 +17,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     $output = stream_get_contents($stream);
     echo nl2br ("$output \n");
     unset($con);
-
+    
     /*
     $con = ssh2_connect(, $port);
     ssh2_auth_password($con, $username, $password); 

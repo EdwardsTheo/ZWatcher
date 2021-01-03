@@ -36,24 +36,14 @@
                             <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter une applications'>
                             </form>
                         </div>";
-
-                        //PARTIE APPLICATIONS 
-                        if(isset($_POST['choice'])) {
-                            switch($_POST['choice']) {
-                                case 'Applications activées' : show_app_activate('1', "Désactiver les applications pour vos machines");
-                                break;
-                                case 'Applications disponibles' : show_app_activate('0', "Activer les applications pour vos machines");
-                                break;
-                                case 'Ajouter une applications' : show_add_app();
-                                break;
-                            }
-                        }
                         
                         function show_app_activate($status, $button) {
                             $i = 1;
                             $req1 = get_app_avaible($_SESSION['id'], $status);
+                            $empty = true;
                             echo " <form action='../view/profil.php?action=update_app' method='POST'>";
                             while($donnees = $req1->fetch()){
+                                $empty = false;
                                 if($i % 3 == 1){
                                     echo "<div class='w3-row-padding'>";
                                    
@@ -79,18 +69,21 @@
                                 }
                                 $i = $i + 1;
                                }
-                               echo " 
-                               </div>
-                               <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                               <button type='submit' class='w3-button w3-black '><i class='fas fa-check w3-margin-left'></i>".$button."</button>
-                               </form>
-                               </div>";
+                               if($empty == false) {
+                                    echo " 
+                                    </div>
+                                    <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                                    <button type='submit' class='w3-button w3-black '><i class='fas fa-check w3-margin-left'></i>".$button."</button>
+                                    </form>
+                                    </div>";
+                               }
                         }
                         
                         function show_add_app() {
                             echo "
+                            
                             <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                            <div id='centre'>
+                           
                             <div class='w3-container w3-padding-large w3-grey'>
                             <h4 id='contact'><b>Ajouter une nouvelle application</b></h4>
                             <hr class='w3-opacity'>
@@ -100,8 +93,22 @@
                                 <input class='w3-input w3-border' type='text' name='nom_app' value=''>
                             </div>  
                                 <button type='submit' name='submit' value='add_app' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Ajouter</button>         
-                            </form>    
+                            </form>   
+                            <hr class='w3-opacity'> 
+                            </div>
                             "; 
+                        }
+
+                           //PARTIE APPLICATIONS 
+                           if(isset($_POST['choice'])) {
+                            switch($_POST['choice']) {
+                                case 'Applications activées' : show_app_activate('1', "Désactiver les applications pour vos machines");
+                                break;
+                                case 'Applications disponibles' : show_app_activate('0', "Activer les applications pour vos machines");
+                                break;
+                                case 'Ajouter une applications' : show_add_app();
+                                break;
+                            }
                         }
                         
                     ?>

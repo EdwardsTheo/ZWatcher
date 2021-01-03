@@ -27,7 +27,9 @@
 
                 <?php
                     if($_SESSION['power'] == 'utilisateur') {
-                        
+                        // EQUIPES 
+                        // UTILISATEUR SUR UNE MACHINE ?
+                        // SI OUI => CLE RSA ?
                     }
                 ?>
     </html>

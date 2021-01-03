@@ -43,8 +43,10 @@
                 function show_app_installed($status, $button) {
                     $i = 1;
                     $req1 = get_app($_SESSION['id_machine'], $status);
+                    $empty = true;
                     echo " <form action='../view/profil.php?action=install_app' method='POST'>";
                     while($donnees = $req1->fetch()){
+                        $empty = false;
                         if($i % 3 == 1){
                             echo "<div class='w3-row-padding'>";
                            
@@ -71,12 +73,14 @@
                         }
                         $i = $i + 1;
                        }
-                       echo " 
-                       </div>
-                       <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                       <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-left'></i>".$button."</button>
-                       </form>
-                       </div>";
+                       if($empty == false) {
+                        echo " 
+                        </div>
+                        <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-left'></i>".$button."</button>
+                        </form>
+                        </div>";
+                       }
                 }
 
                 if(isset($_POST['choice'])) {

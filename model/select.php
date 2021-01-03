@@ -89,7 +89,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT * FROM listes WHERE user_admin = $id AND id = $id_machine"))) {
+                if (!($result = $link->query("SELECT * FROM listes WHERE id = $id_machine"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -321,7 +321,7 @@
         FROM app_machine as am 
         INNER JOIN applis AS ap ON am.id_appli = ap.id
         INNER JOIN listes AS list ON am.id_machine = list.id
-        WHERE list.user_admin = $id_admin
+        WHERE list.id = $_SESSION[id_machine]
         AND am.status_dispo = $status_dispo");
         return $request;
     }
@@ -422,7 +422,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query("SELECT id, username, Nom, Prenom, mail, password FROM user WHERE `id` = $id_profil"))) {
+            if (!($result = $link->query("SELECT id, username, mail, password FROM user WHERE `id` = $id_profil"))) {
                 throw new Exception("No access to the table");  
             }   
             return $result; 
@@ -510,6 +510,12 @@
         $request = $db->query("SELECT * 
         FROM groupe_bl 
         WHERE `id_groupe` = $id_groupe");
+        return $request;
+    }
+
+    function select_get_app() {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM applis");
         return $request;
     }
 

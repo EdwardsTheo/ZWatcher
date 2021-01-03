@@ -24,17 +24,25 @@
 
     function paquet_exist() {
         $output = main_ssh(4, "check_package");
-	$message = ($output != "") ? "true" : "false";
-	if($message == "false") $messsage = "le nom du paquet est invalide, veuillez réessayer"; 
-	else $message = "";	
+	    $message = ($output != "") ? "true" : "false";
+	    if($message == "false") $messsage = "le nom du paquet est invalide, veuillez réessayer"; 
+	    else $message = "";	
 
-	return $message;
+	    return $message;
     }
 
     function add_app($nom_app) {
-	$req = insert_app($nom_app);
-	return $message = "L'application à bien été ajoutée";
+        $id = insert_app($nom_app);
+        $req = get_listes();
+        while($donnees = $req->fetch()) {
+            $id_machine = $donnees['id'];
+            $req = insert_app_dispo($id, $id_machine);
+      
+        return $message = "L'application à bien été ajoutée";
+        }
     }
 
+    
     header('location: ../view/profil.php?action=gestion_app');
 ?>
+ 

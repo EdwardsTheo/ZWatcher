@@ -46,14 +46,14 @@
         connect_end($link);
     }
 
-    function insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd){
+    function insert_liste($titre, $desc, $date, $ip, $mac, $port, $iden, $pwd, $rsa, $connex){
         $link = NULL;
 
         try {
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-            if (!($result = $link->query('INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) 
+            if (!($result = $link->query('INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`, `rsa`, `connexion_rsa`) 
             VALUES (NULL, 
             '.$link -> quote($titre).', 
             '.$link -> quote($desc).',
@@ -62,9 +62,14 @@
             '.$link -> quote($mac).',
             '.$link -> quote($port).',
             '.$link -> quote($iden).',
-            '.$link -> quote($pwd).');'))) {
+            '.$link -> quote($pwd).',
+            '.$link -> quote($rsa).',
+            '.$link -> quote($connex).'
+    
+            );'))) {
                 throw new Exception("No access to the table");  
             }
+          return $link->lastInsertId();
         } catch (Exception $th) {
             echo "Internal error Devis: ".$th->getMessage();
         }
@@ -211,8 +216,26 @@
 	    $link->query('INSERT INTO `applis` (`id`,`nom_appli`)
 		VALUES (NULL, 
 		'.$link -> quote($nom_app).'
-		)');
+        )');
+        return $link->lastInsertId();
 	    connect_end($link);
+    }
+
+    function insert_app_dispo($id_app, $id_machine) {
+        echo $id_app;
+        $status_dispo = 0;
+        $status_install = 0;
+
+        $link = NULL; 
+        $link = connect_start();
+        $link->query('INSERT INTO `app_machine` (`id`,`id_machine`, `id_appli`, `status_dispo`, `status_install`)
+            VALUES (NULL, 
+        '.$link -> quote($id_machine).',
+        '.$link -> quote($id_app).',
+        '.$link -> quote($status_dispo).',
+        '.$link -> quote($status_install).'        
+        )');
+        connect_end($link);
     }
 
     function insert_create_team($nom_team) {

@@ -3,6 +3,7 @@
 ob_start();
 session_start();
 print_r($_SESSION);
+print_r($_POST);
 
 require("../model/config.php");
 require("../model/delete.php");
