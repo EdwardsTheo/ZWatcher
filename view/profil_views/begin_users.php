@@ -24,6 +24,13 @@
                 ?>
                     Sur cette page, vous pouvez ajouter ou retirer des utilisateur qui sont sur votre machine</br>
                 <?php
+        	
+		if(isset($_SESSION['id_user'])) {
+			
+			$_POST['choice'] = 'info_utilisateur'; 
+            		$id_user = $_SESSION['id_user'];
+            		unset($_SESSION['id_user']);
+		}
 
 
         ?>
@@ -236,11 +243,6 @@
             unset($_SESSION['message']);
         }			 
 
-        if(isset($_SESSION['id_user'])) {
-            $_POST['choice'] = 'info_utilisateur'; 
-            $id_user = $_SESSION['id_user'];
-            unset($_SESSION['id_user']);
-        }
 
         if(isset($_SESSION['error'][1])) error();
         

@@ -1,5 +1,6 @@
 <?php
 
+print_r($_POST);
 require('../ssh/ssh_controller.php');
 require('profil_manage_table_equipes_copy.php');
 
@@ -91,7 +92,7 @@ function main_update_users_list() {
         $test_username = true;
         if($test_username == true) {
             update_users_listes($_POST['username'][$i], $hashed_password, $_POST['id_profil'][$i]);
-            main_ssh($_SESSION['id_machine'], 'change_username', NULL, $_POST['username'][$i], $_POST['old_username'][$i]);
+	    main_ssh($_SESSION['id_machine'], 'change_username', NULL, $_POST['username'][$i], $_POST['old_username'][$i]);
             if(isset($update)) main_ssh($_SESSION['id_machine'], 'change_password', NULL, $_POST['username'][$i], $_POST['psswd'][$i]);
         }
         else $_SESSION['error'][$i] = "Le nom d'utilisateur ". $_POST['username'][$i] ." est déjà prit";
@@ -178,7 +179,7 @@ function generate_rsa_key() {
         $test_password_bash = test_password_bash($_POST['id_profil'][$i], $_POST['password'][$i]);
         if($test_password_bash == true) {
             
-            //CREATION DE LA CLE RSA passphrase RANDOM 
+	    //CREATION DE LA CLE RSA passphrase RANDOM 
             $hash = bin2hex(random_bytes(16));
             $_SESSION['hash'][1] = $hash;
             rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
@@ -187,9 +188,11 @@ function generate_rsa_key() {
             rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
             
             // Creation du fichier php au nom de l'user 
-             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
+	    $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
+	    
+	    
              $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
-             file_put_contents("../rsa/$file.txt", $output);
+	     file_put_contents("../rsa/$file.txt", $output);
              
              //Update du statut rsa 0 => 1
              $rsa = 1;
@@ -209,7 +212,7 @@ function test_password_bash($id_user, $password) {
         if($donnees['id'] == $id_user){
             $hashed_password = $donnees['pswd'];
             $bool = password_verify($password, $hashed_password);
-            echo "oui";
+   
         }
     }
    return $bool;
