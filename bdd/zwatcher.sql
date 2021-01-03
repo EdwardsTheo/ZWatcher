@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 03 jan. 2021 à 05:27
+-- Généré le : Dim 03 jan. 2021 à 07:30
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -32,11 +32,12 @@ CREATE TABLE IF NOT EXISTS `applis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom_appli` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `applis`
 --
+
 INSERT INTO `applis` (`id`, `nom_appli`) VALUES
 (1, 'vim'),
 (2, 'php');
@@ -46,26 +47,18 @@ INSERT INTO `applis` (`id`, `nom_appli`) VALUES
 --
 -- Structure de la table `app_machine`
 --
+
 DROP TABLE IF EXISTS `app_machine`;
 CREATE TABLE IF NOT EXISTS `app_machine` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_machine` int(11) NOT NULL,
   `id_appli` int(11) NOT NULL,
-  `status_dispo` tinyint(1) NOT NULL DEFAULT 0,
-  `status_install` tinyint(1) NOT NULL DEFAULT 0,
+  `status_dispo` tinyint(1) NOT NULL DEFAULT '0',
+  `status_install` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `id_machine` (`id_machine`),
-  KEY `id_appli` (`id_appli`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `app_machine`
---
-
-INSERT INTO `app_machine` (`id`, `id_machine`, `id_appli`, `status_dispo`, `status_install`) VALUES
-(1, 4, 1, 1, 1),
-(2, 4, 2, 1, 1);
-
+  KEY `id_appli` (`id_appli`),
+  KEY `id_machine_link` (`id_machine`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `equipes` (
   `id_listes` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_listes` (`id_listes`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes`
@@ -134,9 +127,8 @@ CREATE TABLE IF NOT EXISTS `equipes_bl` (
   `id_eleve` int(11) NOT NULL,
   `id_equipe` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_eleve` (`id_eleve`),
-  KEY `id_equipe` (`id_equipe`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+  KEY `id_eleve` (`id_eleve`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes_bl`
@@ -158,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `groupe_bl` (
   `id_groupe` int(11) NOT NULL,
   `id_user_listes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -172,8 +164,9 @@ CREATE TABLE IF NOT EXISTS `groupe_listes` (
   `nom` varchar(40) NOT NULL,
   `id_listes` int(11) NOT NULL,
   `sudo` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `id_listes_link` (`id_listes`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -193,19 +186,17 @@ CREATE TABLE IF NOT EXISTS `listes` (
   `id_machine` varchar(40) NOT NULL,
   `pwd_machine` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `listes`
 --
 
 INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) VALUES
-(4, 'Machine1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
+(4, 'Machine 1', 'Debian de test', '2020-06-21', '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
 (5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', '82.64.225.10', '100.0.00.00', 3009, 'adminit', 'ghghghgh'),
 (6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', '', '', 0, '', ''),
-(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', '', '', 0, '', ''),
-(8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', '', '', 0, '', ''),
-(9, 'Machine 6', 'Debian 9 - Equipe 4', '2020-11-30', '', '', 0, '', '');
+(7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -324,7 +315,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `code`, `exp_date`, `mail`, `d
 --
 ALTER TABLE `app_machine`
   ADD CONSTRAINT `id_appli_link` FOREIGN KEY (`id_appli`) REFERENCES `applis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_machine_link` FOREIGN KEY (`id_machine`) REFERENCES `listes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `id_machine_link` FOREIGN KEY (`id_machine`) REFERENCES `listes` (`id`);
 
 --
 -- Contraintes pour la table `contact`
@@ -334,17 +325,16 @@ ALTER TABLE `contact`
   ADD CONSTRAINT `fk_contact_user2` FOREIGN KEY (`user_2`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `equipes`
---
-ALTER TABLE `equipes`
-  ADD CONSTRAINT `id_listes` FOREIGN KEY (`id_listes`) REFERENCES `listes` (`id`);
-
---
 -- Contraintes pour la table `equipes_bl`
 --
 ALTER TABLE `equipes_bl`
-  ADD CONSTRAINT `id_eleve` FOREIGN KEY (`id_eleve`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `id_equipe` FOREIGN KEY (`id_equipe`) REFERENCES `equipes` (`id`);
+  ADD CONSTRAINT `id_eleve` FOREIGN KEY (`id_eleve`) REFERENCES `user` (`id`);
+
+--
+-- Contraintes pour la table `groupe_listes`
+--
+ALTER TABLE `groupe_listes`
+  ADD CONSTRAINT `id_listes_link` FOREIGN KEY (`id_listes`) REFERENCES `listes` (`id`);
 
 --
 -- Contraintes pour la table `message_user`
