@@ -3,11 +3,11 @@
 function ssh_launch($ip, $port, $username, $password, $command) {
     
     
-	echo $command;
-	echo $ip;
-	echo $port;
-    echo $username;
-    echo $password;
+    //echo $command; 
+    //echo $ip;
+    //echo $port;
+    //echo $username;
+    //echo $password;
     
     
     

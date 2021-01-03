@@ -130,7 +130,7 @@ function add_team_grp() {
             $output = "o";
             if($output != "") {
                 if($_POST['sudo'][$i] == 'on') {
-                    special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['nom_equipe'][$i]);
+                    main_ssh($_SESSION['id_machine'], 'add_groups_sudo', $_POST['nom_equipe'][$i]);
                     $sudo = 1;  
                 }
                 else $sudo = 0;
