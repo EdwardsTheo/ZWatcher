@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 03 jan. 2021 à 07:30
+-- Généré le : Dim 03 jan. 2021 à 10:12
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `content` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message`
@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `message_user` (
   KEY `fk_message_user_user1_idx` (`user_send`),
   KEY `fk_message_user_user2_idx` (`user_receive`),
   KEY `fk_message_user_message1_idx` (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message_user`
@@ -266,9 +266,6 @@ INSERT INTO `message_user` (`id`, `user_send`, `user_receive`, `message_id`) VAL
 (14, 1, 2, 14),
 (16, 1, 5, 16),
 (17, 1, 2, 17),
-(25, 9, 1, 25),
-(26, 9, 1, 26),
-(27, 1, 9, 27),
 (28, 1, 5, 28),
 (29, 1, 1, 29);
 
@@ -300,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `code`, `exp_date`, `mail`, `displayer`, `status`, `image`, `graphismes`, `power`) VALUES
 (1, 'Larney', '$2y$11$AWdm7.KQp/53yM8eWGmsDOOo9EFDhTnfj.OMAc8OJrZ/niHr8MZj.', '$2y$11$2.JVjhsZNnwDaTo30c1boObAB.hU42V5ovb/PeJwMpWxVxCyqYd2K', '2021-01-01 01:42:09', 'thomasparis56@gmail.com', 'Travaille les accentuÃ©s', 'connecte', 'ProjectExcelsior-1024x1024.jpg', 'normal', 'admin'),
-(2, 'Ted', '$2y$11$kK0GHUFPqLVDain7JMbzwODVUFXJ5uxsstQ7KpD1TXJEHOFQ7pNou', '', NULL, 'ted@mosby.com', 'Bonjour, je m\'appelle Ted', 'disconnecte', 'none', 'normal', 'utilisateur'),
+(2, 'Ted', '$2y$11$kK0GHUFPqLVDain7JMbzwODVUFXJ5uxsstQ7KpD1TXJEHOFQ7pNou', '', NULL, 'ted@mosby.com', 'Bonjour, je m\'appelle Ted', 'connecte', 'none', 'normal', 'utilisateur'),
 (3, 'Marshall', '$2y$11$HlMvRfF91fPa7le.vsKLjuIgJOGlItEOoPzXxPbMykC7chkm4tauO', '', NULL, 'eriksen@gmail.com', 'N\'est pas disponible', 'disconnecte', 'marshall_hat.jpg', 'normal', 'utilisateur'),
 (5, 'Arnie', '$2y$11$d4LpNil8UVZPoG2lbY4cuOtZcLumz11lWvfDdW54lganbZNeAxhJi', '', NULL, 'arnie@gmail.com', 'Essaye d\'installer Arch Linux', 'connecte', 'none', 'normal', 'utilisateur'),
 (6, 'Jack Package', '$2y$11$5hItgYpUg.PvqWuTMFEkgOBtdWhKsHAEtOM9.3sk4E4zb9MzVxZDq', '', NULL, 'fredo@gmail.com', 'Ne fait rien', 'connecte', 'none', 'normal', 'utilisateur'),
@@ -334,15 +331,15 @@ ALTER TABLE `equipes_bl`
 -- Contraintes pour la table `groupe_listes`
 --
 ALTER TABLE `groupe_listes`
-  ADD CONSTRAINT `id_listes_link` FOREIGN KEY (`id_listes`) REFERENCES `listes` (`id`);
+  ADD CONSTRAINT `id_listes_link` FOREIGN KEY (`id_listes`) REFERENCES `listes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `message_user`
 --
 ALTER TABLE `message_user`
-  ADD CONSTRAINT `fk_message_user_message1` FOREIGN KEY (`message_id`) REFERENCES `message` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_message_user_user1` FOREIGN KEY (`user_send`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_message_user_user2` FOREIGN KEY (`user_receive`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_message_user_message1` FOREIGN KEY (`message_id`) REFERENCES `message` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_message_user_user1` FOREIGN KEY (`user_send`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_message_user_user2` FOREIGN KEY (`user_receive`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
