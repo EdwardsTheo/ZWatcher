@@ -51,7 +51,7 @@ function check_groups($name_group) {
 }
 
 function add_groups_sudo($name_group) {
-    $command = "echo '%$name_group ALL=(ALL:ALL) ALL' >> /etc/sudoers";
+    $command = "echo '%$name_group ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo";
     return $command;
 }
 

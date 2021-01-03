@@ -50,6 +50,7 @@
         <?php
             print_r($_POST);
             print_r($_SESSION);
+            echo "oui";
             echo "
             <div class='w3-section w3-bottombar w3-padding-16'>
                 <form action='../view/profil.php?action=modif_groups' method='POST'>
@@ -58,20 +59,7 @@
                 </form>
             </div>
             ";
-            
-            if(isset($_POST['choice'])) {
-                switch($_POST['choice']) {
-                    case 'Groupes présents sur la machine' : show_groupe($_SESSION['id_machine']);
-                    break;
-                    case 'Ajouter un ou des groupes' : form_add_groups();
-                    break;
-                    case 'Valider le nombre' : form_add_groups();
-                    break;
-                    case 'Détails du groupe' : groups_details($id_groupe);
-                    break;
-                }
-            }
-
+    
             function show_groupe($id_machine) {
                 $empty = false;
                 $req = select_groups_listes($id_machine);
@@ -291,6 +279,19 @@
                     }
                 }
                 return $test;
+            }
+
+            if(isset($_POST['choice'])) {
+                switch($_POST['choice']) {
+                    case 'Groupes présents sur la machine' : show_groupe($_SESSION['id_machine']);
+                    break;
+                    case 'Ajouter un ou des groupes' : form_add_groups();
+                    break;
+                    case 'Valider le nombre' : form_add_groups();
+                    break;
+                    case 'Détails du groupe' : groups_details($id_groupe);
+                    break;
+                }
             }
         ?>
         <?php

@@ -197,4 +197,37 @@
             ));
         connect_end($link);
     }
+
+    function update_id_pswd_machine($id, $username, $password) {
+        echo gettype($password);
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `listes` SET `id_machine` =  :id_machine, `pwd_machine` = :pwd_machine WHERE `id` = :id;");
+        $req -> execute(array( 
+        ':id_machine' => $username, 
+        ':pwd_machine' => $password,
+        ':id' => $id
+            ));
+        connect_end($link);
+    }
+
+    function update_admin_rsa($id, $rsa) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `listes` SET `rsa` =  :rsa WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id,
+            ':rsa'=>$rsa
+            ));
+        connect_end($link);
+    }
+
+    function update_admin_connect($id, $connect) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `listes` SET `connexion_rsa` =  :rsa WHERE `id` = :id;");
+        $req -> execute(array(':id' => $id,
+            ':rsa'=>$connect
+            ));
+        connect_end($link);
+    }
 ?>

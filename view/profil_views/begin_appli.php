@@ -39,19 +39,7 @@
                     </form>
                 </div>
                 ";
-                
-                if(isset($_POST['choice'])) {
-                    switch($_POST['choice']) {
-                        case 'Applications Installées' : show_app_installed('1', "Désinstaller les applications");
-                        break;
-                        case 'Applications Non Installées' : show_app_installed('0', "Installer les applications");
-                        break;
-                        case 'Effectuer un apt update et upgrade' : call_update_upgrade();
-                        break;
-                    }
-                }
-
-                 
+                     
                 function show_app_installed($status, $button) {
                     $i = 1;
                     $req1 = get_app($_SESSION['id_machine'], $status);
@@ -89,6 +77,17 @@
                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-left'></i>".$button."</button>
                        </form>
                        </div>";
+                }
+
+                if(isset($_POST['choice'])) {
+                    switch($_POST['choice']) {
+                        case 'Applications Installées' : show_app_installed('1', "Désinstaller les applications");
+                        break;
+                        case 'Applications Non Installées' : show_app_installed('0', "Installer les applications");
+                        break;
+                        case 'Effectuer un apt update et upgrade' : call_update_upgrade();
+                        break;
+                    }
                 }
             ?>
                     </div>

@@ -24,4 +24,10 @@
                 Votre statut : <?php echo htmlspecialchars(htmlspecialchars($_SESSION['displayer']))?>
                 </div>
                 </div>
+
+                <?php
+                    if($_SESSION['power'] == 'utilisateur') {
+                        
+                    }
+                ?>
     </html>

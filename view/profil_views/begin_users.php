@@ -24,7 +24,7 @@
                 ?>
                     Sur cette page, vous pouvez ajouter ou retirer des utilisateur qui sont sur votre machine</br>
                 <?php
-        print_r($_POST);
+
         if(isset($_SESSION['message'])) {
             echo "<h4><b>$_SESSION[message]</b></h4>";
             unset($_SESSION['message']);
@@ -50,21 +50,6 @@
                 </form>
             </div>
             ";
-            
-            if(isset($_POST['choice'])) {
-                switch($_POST['choice']) {
-                    case 'Users présents sur la machine' : show_users($_SESSION['id_machine']);
-                    break;
-                    case 'Ajouter un ou des users' : form_add_users();
-                    break;
-                    case 'Valider le nombre' : form_add_users();
-                    break;
-                    case 'info_utilisateur' : form_modifiy_user_listes($id_user);
-                    break;
-                    case 'Ajouter une équipe' : form_add_team_listes();
-                    break;
-                }
-            }
 
             function show_users($id_machine) {
                 $empty = false;
@@ -243,6 +228,22 @@
                     unset($_SESSION[$i]);
                 }
             }
+
+            if(isset($_POST['choice'])) {
+                switch($_POST['choice']) {
+                    case 'Users présents sur la machine' : show_users($_SESSION['id_machine']);
+                    break;
+                    case 'Ajouter un ou des users' : form_add_users();
+                    break;
+                    case 'Valider le nombre' : form_add_users();
+                    break;
+                    case 'info_utilisateur' : form_modifiy_user_listes($id_user);
+                    break;
+                    case 'Ajouter une équipe' : form_add_team_listes();
+                    break;
+                }
+            }
+        
     
         ?>
 

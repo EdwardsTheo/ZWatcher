@@ -22,8 +22,6 @@ switch($_POST['choice']) {
 
 print_r($_POST);
 
-print_r($_SESSION);
-
 function main_add_users() {
     $i = 1;
     foreach ($_POST['username'] as $key => $value) { 

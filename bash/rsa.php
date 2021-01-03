@@ -1,7 +1,6 @@
 <?php 
 
 function create_rsa($username, $hash) {
-    echo $hash;
     $command = "ssh-keygen -t rsa -b 4096 -N '$hash' -f ~/.ssh/id_rsa";
     return $command;
 }
@@ -17,8 +16,22 @@ function cat_rsa_key($username) {
 }
 
 function delete_rsa_dir($username) {
-    echo $username;
     $command = "sudo rm -rf /home/$username/.ssh";
+    return $command;
+}
+
+function bash_active_rsa_login() {
+    $command = "sudo sed -i '/PasswordAuthentication yes/c\PasswordAuthentication no' /etc/ssh/sshd_config";
+    return $command;
+}
+
+function bash_desactivate_rsa_login() {
+    $command = "sudo sed -i '/PasswordAuthentication no/c\PasswordAuthentication yes' /etc/ssh/sshd_config";
+    return $command;
+}
+
+function restart_ssh() {
+    $command = "sudo systemctl restart ssh";
     return $command;
 }
 

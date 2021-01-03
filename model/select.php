@@ -73,7 +73,23 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT id, titre, description, port, id_machine, pwd_machine FROM listes WHERE id = $id"))) {
+                if (!($result = $link->query("SELECT * FROM listes WHERE id = $id"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function get_liste_data_id_admin($id, $id_machine){
+        $link = NULL;
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT * FROM listes WHERE user_admin = $id AND id = $id_machine"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -486,6 +502,14 @@
     function select_id_team($nom_equipe, $id_machine) {
         $db = connect_start();
         $request = $db->query("SELECT * FROM equipes WHERE `name` = '$nom_equipe' AND `id_listes` = $id_machine");
+        return $request;
+    }
+
+    function select_user_team() {
+        $db = connect_start();
+        $request = $db->query("SELECT * 
+        FROM groupe_bl 
+        WHERE `id_groupe` = $id_groupe");
         return $request;
     }
 

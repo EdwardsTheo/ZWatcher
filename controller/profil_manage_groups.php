@@ -38,7 +38,7 @@ function main_add_groups() {
             if($output != "") {
                 if(isset($_POST['sudo_right'][$i])) {
                     if($_POST['sudo_right'][$i] == 'on') {
-                    special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]);
+                    main_ssh($_SESSION['id_machine'], 'add_groups_sudo', NULL, $_POST['groupe_name'][$i]);
                     $sudo = 1;
                     }
                     else $sudo = 0;
@@ -100,10 +100,10 @@ function manage_sudo_right() {
         if($test == 0) $i = $key;
         if($_POST['choice'] == 'Retirer les droits sudo') {
             $sudo = 0;
-            special_sudo($_SESSION['id_machine'], 'retire_sudo_groups', $_POST['nom_groupe'][$i]);
+            main_ssh($_SESSION['id_machine'], 'retire_sudo_groups', NULL, $_POST['nom_groupe'][$i]);
         }
         else {
-            special_sudo($_SESSION['id_machine'], 'add_groups_sudo', $_POST['nom_groupe'][$i]);
+            main_ssh($_SESSION['id_machine'], 'add_groups_sudo', NULL, $_POST['nom_groupe'][$i]);
             $sudo = 1;
         }
         update_group_sudo($_POST['id_group'][$i], $sudo);
@@ -145,7 +145,7 @@ function main_delete_group() {
             if($_POST['scales'][$i] == "on") {
                 delete_groups_bl($_POST['id_groupe'][$i]);
                 delete_groups($_POST['id_groupe'][$i]);
-                special_sudo($_SESSION['id_machine'], 'retire_sudo_groups', $_POST['nom_groupe'][$i]);
+                main_ssh($_SESSION['id_machine'], 'retire_sudo_groups', NULL, $_POST['nom_groupe'][$i]);
                 main_ssh($_SESSION['id_machine'], 'delete_groups', NULL, $_POST['group_name'][$i]);               
             }
         }
@@ -154,6 +154,6 @@ function main_delete_group() {
 }
 
 
-header('location: ../view/profil.php?action=modif_groups'); // redirect to the main app page with a message of confirmation 
+//header('location: ../view/profil.php?action=modif_groups'); // redirect to the main app page with a message of confirmation 
 
 ?>

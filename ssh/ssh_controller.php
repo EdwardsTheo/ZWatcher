@@ -117,26 +117,27 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case "delete rsa dir" : 
             $command = delete_rsa_dir($username);
         break;
+        case "add_groups_sudo" : 
+            $command = add_groups_sudo($username);
+        break; 
+        case "retire_sudo_groups" : 
+            $command = del_groups_sudo($username);
+        break; 
+        case "activer rsa login" :
+           $command = bash_active_rsa_login();
+        break;
+        case 'desactiver rsa login' :
+            $command = bash_desactivate_rsa_login();
+        break;
+        case 'restart ssh' :
+            $command = restart_ssh();
+        break;
         //Default
         default :
             "error";
         break;
     }
     return $output = ssh_launch($login_info['ip'], $login_info['port'], $login_info['name'], $login_info['password'], $command);
-}
-
-function special_sudo($machine_id, $order, $username) {
-    //THIS IS PAS TRES PROPRE
-    if($order == 'add_groups_sudo') $command = add_groups_sudo($username);
-    elseif($order == "retire_sudo_groups") $command = del_groups_sudo($username);
-    $req = get_listes_machine($machine_id);
-    while($donnees = $req->fetch()){
-        $login['name'] = "root";
-        $login['password'] = "ghghghgh";
-        $login['ip'] = $donnees['ip'];
-        $login['port'] = $donnees['port'];
-    }
-    return $output = ssh_launch($login['ip'], $login['port'], $login['name'], $login['password'], $command);
 }
 
 function rsa_controller($machine_id, $order, $username, $password, $hash = NULL) {

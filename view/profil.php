@@ -2,6 +2,7 @@
 
 ob_start();
 session_start();
+print_r($_SESSION);
 
 require("../model/config.php");
 require("../model/delete.php");
@@ -466,6 +467,13 @@ require("../model/update.php");
                 break;
                 case 'modif_groups':
                     require('../controller/profil_modif_groups.php');
+                break;
+                //Partie Admin
+                case 'modif_admin_listes' :
+                    require('../controller/profil_modif_admin_listes.php');
+                break;
+                case 'manage_admin' :
+                    require('../controller/profil_manage_admin.php');
                 break;
                 //Partie Applications
                 case 'application':
