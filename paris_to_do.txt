@@ -1,8 +1,7 @@
 1) Modifier, Supprimer utilisateur par admin
 2) Modifier, Supprimer machine
 
-3) Modif hostname, ip
-4) Download log
+3) Modif ip
 
 5) Revoir : Modifications et Applications
 

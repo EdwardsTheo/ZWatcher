@@ -8,6 +8,8 @@
    
     main_ssh($id_machine, 'edit_hostname');
     $actual_hostname = main_ssh($id_machine, 'get_machine_hostname');
+    $actual_ip = main_ssh($id_machine, 'get_ip');
+    $interface = main_ssh($id_machine, 'get_interface');
 
     //partie après exécution de la tache
 

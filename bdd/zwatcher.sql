@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 31 déc. 2020 à 05:11
+-- Généré le : Dim 03 jan. 2021 à 05:27
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -37,34 +37,35 @@ CREATE TABLE IF NOT EXISTS `applis` (
 --
 -- Déchargement des données de la table `applis`
 --
-
 INSERT INTO `applis` (`id`, `nom_appli`) VALUES
-(1, 'vim');
+(1, 'vim'),
+(2, 'php');
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `app_machine`
 --
-
 DROP TABLE IF EXISTS `app_machine`;
 CREATE TABLE IF NOT EXISTS `app_machine` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_machine` int(11) NOT NULL,
   `id_appli` int(11) NOT NULL,
-  `status_dispo` enum('0','1') NOT NULL DEFAULT '0',
-  `status_install` enum('0','1') NOT NULL DEFAULT '0',
+  `status_dispo` tinyint(1) NOT NULL DEFAULT 0,
+  `status_install` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `id_machine` (`id_machine`),
   KEY `id_appli` (`id_appli`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `app_machine`
 --
 
 INSERT INTO `app_machine` (`id`, `id_machine`, `id_appli`, `status_dispo`, `status_install`) VALUES
-(1, 4, 1, '0', '0');
+(1, 4, 1, 1, 1),
+(2, 4, 2, 1, 1);
+
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`),
   KEY `fk_contact_user1_idx` (`user_1`),
   KEY `fk_contact_user2_idx` (`user_2`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `contact`
@@ -93,7 +94,7 @@ INSERT INTO `contact` (`id`, `user_1`, `user_2`, `type`, `checkpoint`) VALUES
 (2, 2, 1, NULL, ''),
 (3, 1, 3, 'Pro', '2020-06-18'),
 (6, 5, 1, 'Prof', '2020-12-31'),
-(7, 1, 1, 'Moi', '2020-06-20'),
+(7, 1, 1, 'Boss', '2020-12-31'),
 (8, 1, 6, 'ElÃ¨ve', '2020-06-12'),
 (11, 1, 5, 'Apprenti', '2020-12-31'),
 (13, 9, 1, 'Admin', '2020-12-31'),
@@ -112,14 +113,14 @@ CREATE TABLE IF NOT EXISTS `equipes` (
   `id_listes` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_listes` (`id_listes`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes`
 --
 
 INSERT INTO `equipes` (`id`, `name`, `id_listes`) VALUES
-(19, 'Crousti', NULL);
+(21, 'Croustis', 4);
 
 -- --------------------------------------------------------
 
@@ -135,15 +136,44 @@ CREATE TABLE IF NOT EXISTS `equipes_bl` (
   PRIMARY KEY (`id`),
   KEY `id_eleve` (`id_eleve`),
   KEY `id_equipe` (`id_equipe`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `equipes_bl`
 --
 
 INSERT INTO `equipes_bl` (`id`, `id_eleve`, `id_equipe`) VALUES
-(15, 2, 19),
-(16, 3, 19);
+(30, 2, 21),
+(33, 3, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `groupe_bl`
+--
+
+DROP TABLE IF EXISTS `groupe_bl`;
+CREATE TABLE IF NOT EXISTS `groupe_bl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_groupe` int(11) NOT NULL,
+  `id_user_listes` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `groupe_listes`
+--
+
+DROP TABLE IF EXISTS `groupe_listes`;
+CREATE TABLE IF NOT EXISTS `groupe_listes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(40) NOT NULL,
+  `id_listes` int(11) NOT NULL,
+  `sudo` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -163,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `listes` (
   `id_machine` varchar(40) NOT NULL,
   `pwd_machine` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `listes`
@@ -171,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `listes` (
 
 INSERT INTO `listes` (`id`, `titre`, `description`, `date_liste`, `ip`, `mac`, `port`, `id_machine`, `pwd_machine`) VALUES
 (4, 'Machine1 - Test', 'Debian 10 - Equipe 1', '2020-06-21', '82.64.225.10', '100.0.00.00', 2020, 'barney', 'stinson'),
-(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', '', '', 0, '', ''),
+(5, 'Machine 2', 'Ubuntu - Equipe 1', '2020-06-21', '82.64.225.10', '100.0.00.00', 3009, 'adminit', 'ghghghgh'),
 (6, 'Machine 3', 'Arch Linux - Equipe 2', '2020-06-21', '', '', 0, '', ''),
 (7, 'Machine 4', 'Debian - Equipe 2', '2020-06-21', '', '', 0, '', ''),
 (8, 'Machine 5', 'Linux - Equipe 3', '2020-11-30', '', '', 0, '', ''),
@@ -189,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `content` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message`
@@ -209,7 +239,8 @@ INSERT INTO `message` (`id`, `content`, `date`) VALUES
 (25, 'Yo man', '2020-12-18'),
 (26, 're', '2020-12-18'),
 (27, 'Salut', '2020-12-31'),
-(28, 'Il est au musÃ©e !', '2020-12-31');
+(28, 'Il est au musÃ©e !', '2020-12-31'),
+(29, 'Is that you', '2020-12-31');
 
 -- --------------------------------------------------------
 
@@ -227,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `message_user` (
   KEY `fk_message_user_user1_idx` (`user_send`),
   KEY `fk_message_user_user2_idx` (`user_receive`),
   KEY `fk_message_user_message1_idx` (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message_user`
@@ -247,7 +278,8 @@ INSERT INTO `message_user` (`id`, `user_send`, `user_receive`, `message_id`) VAL
 (25, 9, 1, 25),
 (26, 9, 1, 26),
 (27, 1, 9, 27),
-(28, 1, 5, 28);
+(28, 1, 5, 28),
+(29, 1, 1, 29);
 
 -- --------------------------------------------------------
 
@@ -269,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `graphismes` enum('normal','dark','ocean') NOT NULL DEFAULT 'normal',
   `power` enum('utilisateur','admin') NOT NULL DEFAULT 'utilisateur',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
