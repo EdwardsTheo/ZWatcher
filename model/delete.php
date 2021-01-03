@@ -1,5 +1,72 @@
 <?php
 
+    function erase_liste($id_machine){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("DELETE FROM listes WHERE id='$id_machine'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function erase_app_liste($id_machine){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("DELETE FROM app_machine WHERE id_machine='$id_machine'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function erase_equipes_liste($id_machine){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("DELETE FROM equipes WHERE id_listes='$id_machine'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+    function erase_groupes_liste($id_machine){
+        $link = NULL;
+
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+            if (!($result = $link->query("DELETE FROM groupe_listes WHERE id_listes='$id_machine'"))) {
+                throw new Exception("No access to the table");  
+            }
+        } catch (Exception $th) {
+            echo "Internal error Devis: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
+
+
+
     function delete_contact($user, $target){
         $link = NULL;
 

@@ -161,7 +161,8 @@ require("../model/update.php");
                 <a href='?action=application' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-map fa-fw w3-margin-right'></i>Applications</a>
                 <a href='?action=observation' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-user-secret fa-fw w3-margin-right'></i>Observation</a>
                 <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
-            }else if($_GET['action'] == "listes" || $_GET['action'] == "display_listes" || $_GET['action'] == "create_liste"){
+            }else if($_GET['action'] == "listes" || $_GET['action'] == "display_listes" || $_GET['action'] == "create_liste" || $_GET['action'] == "delete_liste" || $_GET['action'] == "edit_liste"
+            || $_GET['action'] == "erase_liste" || $_GET['action'] == "begin_edit_liste" || $_GET['action'] == "confirm_edit_liste"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
@@ -365,6 +366,21 @@ require("../model/update.php");
                 break;
                 case 'create_liste':
 					require('../controller/profil_create_liste.php');
+                break;
+                case 'delete_liste':
+					require('../controller/profil_delete_liste.php');
+                break;
+                case 'edit_liste':
+					require('../controller/profil_edit_liste.php');
+                break;
+                case 'erase_liste':
+					require('../controller/profil_erase_liste.php');
+                break;
+                case 'begin_edit_liste':
+					require('../controller/profil_begin_edit_liste.php');
+                break;
+                case 'confirm_edit_liste':
+					require('../controller/profil_confirm_edit_liste.php');
                 break;
 
 

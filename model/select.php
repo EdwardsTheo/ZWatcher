@@ -67,6 +67,22 @@
         connect_end($link);
     }
 
+    function get_liste_data($id){
+        $link = NULL;
+        try {
+            if (!($link = connect_start()))
+                throw new Exception("Could not connect to database");
+
+                if (!($result = $link->query("SELECT id, titre, description, port, id_machine, pwd_machine FROM listes WHERE id = $id"))) {
+                    throw new Exception("No access to the table");  
+                }   
+                return $result; 
+        } catch (Exception $th) {
+            echo "Internal error: ".$th->getMessage();
+        }
+        connect_end($link);
+    }
+
     function get_image_user($id){
         $link = NULL;
         try {

@@ -1,5 +1,13 @@
 <?php
 
+    function update_liste($id_liste, $titre, $description, $port, $iden, $pwd) {
+        $link = NULL;
+        $link = connect_start();
+        $req = $link -> prepare("UPDATE `listes` SET `titre` = :new_titre, `description` = :new_desc, `port` = :new_port, `id_machine` = :new_iden, `pwd_machine` = :new_pwd WHERE `listes`.`id` = :id_machine;");
+        $req -> execute(array(":id_machine"=>$id_liste, ':new_titre' => $titre, ':new_desc' => $description, ':new_port' => $port, ':new_iden' => $iden, ':new_pwd' => $pwd));
+        connect_end($link);
+    }
+
     function update_password($password, $user) {
         $link = NULL;
 
