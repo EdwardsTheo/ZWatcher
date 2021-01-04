@@ -33,7 +33,7 @@
         }
         
         if(isset($_POST['choice_details'])) {
-            if($_POST['choice_details'] == 'Revenir au menu principale') {
+            if($_POST['choice_details'] == 'Revenir au menu principal') {
                 unset($_SESSION['id_user']);
                 unset($_POST['choice']);
             }
@@ -177,7 +177,7 @@
                 <form action='../view/profil.php?action=manage_users' method='POST'>
                     <hr class='w3-opacity'> 
                 ";
-                if($button == "créer une clé rsa pour cet user") {
+                if($button == "Créer une clé rsa pour cet user") {
                     echo "
                         <h4><b>Veuillez rentrer le mot de passe de l'user pour créer une clé rsa </b></h4>
                         <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>
