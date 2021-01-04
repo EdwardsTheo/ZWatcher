@@ -505,18 +505,18 @@
             mail($to, $subject, $message, $headers);
 
 
-            header('location: ../view/profil?action=new_utilisateur');
+            header('location: ../view/profil.php?action=new_utilisateur');
         }else{
             $_SESSION['errors'] = "Ce pseudo existe déjà";
-            header('location: ../view/profil?action=new_utilisateur');
+            header('location: ../view/profil.php?action=new_utilisateur');
         }
 
     }else if($error_mail == 1){
         $_SESSION['errors'] = "Adresse mail non valide";
-        header('location: ../view/profil?action=new_utilisateur');
+        header('location: ../view/profil.php?action=new_utilisateur');
     }else if($error_mail == 0 && $error_user == 1){
         $_SESSION['errors'] = "Nom d'utilisateur trop court ou long";
-        header('location: ../view/profil?action=new_utilisateur');
+        header('location: ../view/profil.php?action=new_utilisateur');
     }
 
 ?>

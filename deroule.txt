@@ -1,0 +1,74 @@
+Intro :
+- site entier à la main
+- mvc
+- toutes les pages passent par la page principale profil.php
+
+1) Partie connexion qui a changé :
+- test utilisateur ne peut pas se connecter
+- que admin
+
+2) Mot de passe oublié :
+- tester nom utilisateur inexistant
+- tester mail inexistant
+- autres boutons ok
+- reiniti et voir mail
+- cliquer sur le lien
+- parler du code à deux facteurs (si la bdd tombe = secure)
+- code valable que 24h
+- tester avec mauvais code puis le bon
+- voir mail que c'est ok
+- tester nouveau login
+
+===========================
+
+Test Admin
+
+3) Accueil : rapide (dire que les liens sont ok en haut à droite)
+
+4) Mon compte : Rapide
+
+5) Contacts : rapide
+
+6) Messagerie : présenter un peu tout
+
+7) Mon parc : affichage, créer et supprimer puis modifier
+
+8) Equipes : voir, et afficher détails. Tester tout, et tester ajout membre qui existe pas. Créer, ajouter puis supprimer.
+
+9) Utilisateurs : affichage, ajout et suppression.
+Ajout : envoie mail et tester connexion. Admin ajouté en contact direct pour enable messagerie.
+
+10) Modifications : hostname et tester dans la vm les trois commandes.
+Ip : test ajout parler de suppression impossible ip de base
+
+Gérer users, users présents, modif infos. test clé rsa complet + mail
+
+test ajout users, supprimer, 
+
+
+
+
+page supprimer user qui bug en reload
+
+mon parc ajouter liste qui change et crée un user - baptiste
+
+ajouter utilisateur : forbidden - thomas
+
+supprimer la ligne en haut de page dans modif - baptiste
+modifier ip - thomas
+dans gérer users : supprimer bouton parametres et ajouter compte admin - baptiste
+dans gerer groupes : ajouter compte admin - baptiste
+changer nom page Modification > Applications - baptiste
+modifier user sur machine - baptiste
+ajouter mail pour clé rsa - thomas
+ajouter dans profil.php les noms des controllers pour avoir le bon menu à gauche - baptiste
+ajouter equipe : mettre erreur si nom existe pas - baptiste
+ajouter équipe - baptiste
+détails groupes : page qui s'affiche pas - baptiste
+corriger css et caligraphie modifications - thomas
+compte admin - baptiste
+
+css applications - thomas
+applications - baptiste
+
+observation : headers already sent download log 39 to 44 and permission denied line 35 - thomas
