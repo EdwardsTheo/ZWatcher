@@ -22,7 +22,7 @@
                     if($_SESSION['power'] == "admin"){
 
                 ?>
-                    <h4 id='contact'><b>Gérer vos accèes pour cette machine</b></h4>
+                    <h4 id='contact'><b>Gérer vos accès pour cette machine</b></h4>
 
 <?php
                     function form_modifiy_user_listes($id_user) {
@@ -31,7 +31,7 @@
                         while($donnees = $req->fetch()) {
 
                             $username = $donnees['id_machine'];
-                            if($donnees['rsa'] == 0) $button = "créer une clé rsa pour cet user";
+                            if($donnees['rsa'] == 0) $button = "Créer une clé rsa pour cet user";
                             else $button = "Supprimer la clé RSA";
 
                             if($donnees['connexion_rsa'] == 0) $button1 = "Activer la connexion par clé rsa uniquement";
@@ -63,7 +63,7 @@
                         <form action='../view/profil.php?action=manage_admin' method='POST'>
                             <hr class='w3-opacity'> 
                         ";
-                        if($button == "créer une clé rsa pour cet user") {
+                        if($button == "Créer une clé rsa pour cet user") {
                             echo "
                                 <h4><b>Veuillez rentrer le mot de passe de l'user pour créer une clé rsa </b></h4>
                                 <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>

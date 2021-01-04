@@ -51,7 +51,6 @@ test ajout users, supprimer,
 mon parc ajouter liste qui change et crée un user - baptiste
 
 supprimer la ligne en haut de page dans modif - baptiste
-modifier ip - thomas
 dans gérer users : supprimer bouton parametres et ajouter compte admin - baptiste
 dans gerer groupes : ajouter compte admin - baptiste
 changer nom page Modification > Applications - baptiste
@@ -60,11 +59,7 @@ ajouter mail pour clé rsa - thomas
 ajouter dans profil.php les noms des controllers pour avoir le bon menu à gauche - baptiste
 ajouter equipe : mettre erreur si nom existe pas - baptiste
 ajouter équipe - baptiste
-détails groupes : page qui s'affiche pas - baptiste
-corriger css et caligraphie modifications - thomas
+détails groupes : page qui s'affiche pas - baptist
 compte admin - baptiste
 
-css applications - thomas
 applications - baptiste
-
-observation : headers already sent download log 39 to 44 and permission denied line 35 - thomas

@@ -18,7 +18,7 @@
                     if($_SESSION['power'] == "admin"){
 
                 ?>
-                        Sur cette page, vous décidez des applications que vous voulez rendre disponible pour vos machines. </br>
+                        Sur cette page, décidez quelles applications peuvent être rendues disponibles pour vos machines. </br>
                         Vous pouvez également proposer de nouvelles applications avec le formulaire</br>
                     
                     <?php
@@ -33,7 +33,7 @@
                             <form action='../view/profil.php?action=gestion_app' method='POST'>
                             <input type='submit' class='w3-button w3-black' name='choice' value='Applications activées'>
                             <input type='submit' class='w3-button w3-black' name='choice' value='Applications disponibles'>
-                            <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter une applications'>
+                            <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter une application'>
                             </form>
                         </div>";
                         
