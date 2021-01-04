@@ -48,11 +48,7 @@ test ajout users, supprimer,
 
 
 
-page supprimer user qui bug en reload
-
 mon parc ajouter liste qui change et crée un user - baptiste
-
-ajouter utilisateur : forbidden - thomas
 
 supprimer la ligne en haut de page dans modif - baptiste
 modifier ip - thomas
