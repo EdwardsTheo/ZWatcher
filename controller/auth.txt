@@ -1,100 +1,100 @@
-Jan  4 02:58:32 KingofGotham sshd[19280]: Failed password for invalid user test from 36.99.44.70 port 45956 ssh2
-Jan  4 02:58:33 KingofGotham sshd[19280]: Received disconnect from 36.99.44.70 port 45956:11: Bye Bye [preauth]
-Jan  4 02:58:33 KingofGotham sshd[19280]: Disconnected from invalid user test 36.99.44.70 port 45956 [preauth]
-Jan  4 02:58:40 KingofGotham sshd[19282]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:58:41 KingofGotham sshd[19282]: Invalid user user from 106.53.229.213 port 49214
-Jan  4 02:58:41 KingofGotham sshd[19282]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:58:41 KingofGotham sshd[19282]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.53.229.213 
-Jan  4 02:58:43 KingofGotham sshd[19282]: Failed password for invalid user user from 106.53.229.213 port 49214 ssh2
-Jan  4 02:58:44 KingofGotham sshd[19282]: Received disconnect from 106.53.229.213 port 49214:11: Bye Bye [preauth]
-Jan  4 02:58:44 KingofGotham sshd[19282]: Disconnected from invalid user user 106.53.229.213 port 49214 [preauth]
-Jan  4 02:58:49 KingofGotham sshd[19284]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:58:50 KingofGotham sshd[19284]: Invalid user uplink from 61.164.41.76 port 38638
-Jan  4 02:58:50 KingofGotham sshd[19284]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:58:50 KingofGotham sshd[19284]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.164.41.76 
-Jan  4 02:58:52 KingofGotham sshd[19284]: Failed password for invalid user uplink from 61.164.41.76 port 38638 ssh2
-Jan  4 02:58:53 KingofGotham sshd[19284]: Received disconnect from 61.164.41.76 port 38638:11: Bye Bye [preauth]
-Jan  4 02:58:53 KingofGotham sshd[19284]: Disconnected from invalid user uplink 61.164.41.76 port 38638 [preauth]
-Jan  4 02:58:58 KingofGotham su: (to bob) zwadmin on pts/1
-Jan  4 02:58:58 KingofGotham su: pam_unix(su:session): session opened for user bob by zwadmin(uid=1012)
-Jan  4 02:59:09 KingofGotham sshd[19296]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:11 KingofGotham sshd[19296]: Invalid user student from 81.68.90.243 port 45722
-Jan  4 02:59:11 KingofGotham sshd[19296]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:59:11 KingofGotham sshd[19296]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.68.90.243 
-Jan  4 02:59:13 KingofGotham sshd[19296]: Failed password for invalid user student from 81.68.90.243 port 45722 ssh2
-Jan  4 02:59:14 KingofGotham sshd[19296]: Received disconnect from 81.68.90.243 port 45722:11: Bye Bye [preauth]
-Jan  4 02:59:14 KingofGotham sshd[19296]: Disconnected from invalid user student 81.68.90.243 port 45722 [preauth]
-Jan  4 02:59:15 KingofGotham sshd[19301]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:17 KingofGotham sshd[19301]: Invalid user admin from 49.234.224.108 port 37604
-Jan  4 02:59:17 KingofGotham sshd[19301]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:59:17 KingofGotham sshd[19301]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.234.224.108 
-Jan  4 02:59:19 KingofGotham sshd[19301]: Failed password for invalid user admin from 49.234.224.108 port 37604 ssh2
-Jan  4 02:59:19 KingofGotham sshd[19301]: Received disconnect from 49.234.224.108 port 37604:11: Bye Bye [preauth]
-Jan  4 02:59:19 KingofGotham sshd[19301]: Disconnected from invalid user admin 49.234.224.108 port 37604 [preauth]
-Jan  4 02:59:20 KingofGotham sshd[19303]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:21 KingofGotham sshd[19305]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:22 KingofGotham sshd[19303]: Invalid user debian from 222.173.242.30 port 13893
-Jan  4 02:59:22 KingofGotham sshd[19303]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:59:22 KingofGotham sshd[19303]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=222.173.242.30 
-Jan  4 02:59:23 KingofGotham sshd[19303]: Failed password for invalid user debian from 222.173.242.30 port 13893 ssh2
-Jan  4 02:59:24 KingofGotham sshd[19303]: Received disconnect from 222.173.242.30 port 13893:11: Bye Bye [preauth]
-Jan  4 02:59:24 KingofGotham sshd[19303]: Disconnected from invalid user debian 222.173.242.30 port 13893 [preauth]
-Jan  4 02:59:25 KingofGotham sshd[19305]: Invalid user admin from 49.156.32.184 port 10187
-Jan  4 02:59:25 KingofGotham sshd[19305]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:59:25 KingofGotham sshd[19305]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.156.32.184 
-Jan  4 02:59:27 KingofGotham sshd[19305]: Failed password for invalid user admin from 49.156.32.184 port 10187 ssh2
-Jan  4 02:59:29 KingofGotham sshd[19305]: Received disconnect from 49.156.32.184 port 10187:11: Bye Bye [preauth]
-Jan  4 02:59:29 KingofGotham sshd[19305]: Disconnected from invalid user admin 49.156.32.184 port 10187 [preauth]
-Jan  4 02:59:36 KingofGotham sshd[19308]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:38 KingofGotham sshd[19308]: Invalid user student from 49.232.192.91 port 41648
-Jan  4 02:59:38 KingofGotham sshd[19308]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 02:59:38 KingofGotham sshd[19308]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.232.192.91 
-Jan  4 02:59:40 KingofGotham sshd[19308]: Failed password for invalid user student from 49.232.192.91 port 41648 ssh2
-Jan  4 02:59:41 KingofGotham sshd[19308]: Received disconnect from 49.232.192.91 port 41648:11: Bye Bye [preauth]
-Jan  4 02:59:41 KingofGotham sshd[19308]: Disconnected from invalid user student 49.232.192.91 port 41648 [preauth]
-Jan  4 02:59:48 KingofGotham sshd[19311]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:50 KingofGotham sshd[19311]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.172.108.84  user=root
-Jan  4 02:59:51 KingofGotham sshd[19314]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 02:59:52 KingofGotham sshd[19311]: Failed password for root from 45.172.108.84 port 50616 ssh2
-Jan  4 02:59:53 KingofGotham sshd[19314]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=36.99.44.70  user=root
-Jan  4 02:59:55 KingofGotham sshd[19314]: Failed password for root from 36.99.44.70 port 32874 ssh2
-Jan  4 03:00:01 KingofGotham sshd[19326]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:00:02 KingofGotham sshd[19326]: Invalid user noc from 106.13.31.93 port 54656
-Jan  4 03:00:02 KingofGotham sshd[19326]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 03:00:02 KingofGotham sshd[19326]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.13.31.93 
-Jan  4 03:00:04 KingofGotham sshd[19326]: Failed password for invalid user noc from 106.13.31.93 port 54656 ssh2
-Jan  4 03:00:06 KingofGotham sshd[19326]: Received disconnect from 106.13.31.93 port 54656:11: Bye Bye [preauth]
-Jan  4 03:00:06 KingofGotham sshd[19326]: Disconnected from invalid user noc 106.13.31.93 port 54656 [preauth]
-Jan  4 03:00:18 KingofGotham sshd[19338]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:00:19 KingofGotham sshd[19338]: Invalid user test from 68.183.221.115 port 40538
-Jan  4 03:00:19 KingofGotham sshd[19338]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 03:00:19 KingofGotham sshd[19338]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=68.183.221.115 
-Jan  4 03:00:21 KingofGotham sshd[19338]: Failed password for invalid user test from 68.183.221.115 port 40538 ssh2
-Jan  4 03:00:22 KingofGotham sshd[19338]: Received disconnect from 68.183.221.115 port 40538:11: Bye Bye [preauth]
-Jan  4 03:00:22 KingofGotham sshd[19338]: Disconnected from invalid user test 68.183.221.115 port 40538 [preauth]
-Jan  4 03:00:32 KingofGotham sshd[19340]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:00:34 KingofGotham sshd[19340]: Invalid user admin from 123.207.175.111 port 46180
-Jan  4 03:00:34 KingofGotham sshd[19340]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 03:00:34 KingofGotham sshd[19340]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=123.207.175.111 
-Jan  4 03:00:36 KingofGotham sshd[19340]: Failed password for invalid user admin from 123.207.175.111 port 46180 ssh2
-Jan  4 03:00:38 KingofGotham sshd[19342]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:00:38 KingofGotham sshd[19340]: Received disconnect from 123.207.175.111 port 46180:11: Bye Bye [preauth]
-Jan  4 03:00:38 KingofGotham sshd[19340]: Disconnected from invalid user admin 123.207.175.111 port 46180 [preauth]
-Jan  4 03:00:39 KingofGotham sshd[19342]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.13.97.37  user=root
-Jan  4 03:00:40 KingofGotham sshd[19342]: Failed password for root from 106.13.97.37 port 41456 ssh2
-Jan  4 03:01:04 KingofGotham sshd[19349]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:01:04 KingofGotham sshd[19349]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=141.157.202.138  user=root
-Jan  4 03:01:06 KingofGotham sshd[19349]: Failed password for root from 141.157.202.138 port 61448 ssh2
-Jan  4 03:01:06 KingofGotham sshd[19351]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:01:07 KingofGotham sshd[19349]: Received disconnect from 141.157.202.138 port 61448:11: Bye Bye [preauth]
-Jan  4 03:01:07 KingofGotham sshd[19349]: Disconnected from authenticating user root 141.157.202.138 port 61448 [preauth]
-Jan  4 03:01:08 KingofGotham sshd[19351]: Invalid user bouncer from 49.234.224.108 port 58312
-Jan  4 03:01:08 KingofGotham sshd[19351]: pam_unix(sshd:auth): check pass; user unknown
-Jan  4 03:01:08 KingofGotham sshd[19351]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.234.224.108 
-Jan  4 03:01:10 KingofGotham sshd[19351]: Failed password for invalid user bouncer from 49.234.224.108 port 58312 ssh2
-Jan  4 03:01:12 KingofGotham sshd[19358]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan  4 03:01:12 KingofGotham sshd[19358]: Accepted password for zwadmin from 37.165.41.124 port 8580 ssh2
-Jan  4 03:01:12 KingofGotham sshd[19358]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
-Jan  4 03:01:12 KingofGotham systemd-logind[557]: New session 1277 of user zwadmin.
-Jan  4 03:01:12 KingofGotham sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan  4 03:01:12 KingofGotham sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: Removed session 84.
+Jan  4 01:16:08 ZWatcher2 sshd[10043]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 01:16:08 ZWatcher2 sshd[10043]: Accepted password for zwadmin from 82.124.189.180 port 59935 ssh2
+Jan  4 01:16:08 ZWatcher2 sshd[10043]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: New session 85 of user zwadmin.
+Jan  4 01:16:08 ZWatcher2 sshd[10050]: Received disconnect from 82.124.189.180 port 59935:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 01:16:08 ZWatcher2 sshd[10050]: Disconnected from user zwadmin 82.124.189.180 port 59935
+Jan  4 01:16:08 ZWatcher2 sshd[10043]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: Session 85 logged out. Waiting for processes to exit.
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: Removed session 85.
+Jan  4 01:16:08 ZWatcher2 sshd[10054]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 01:16:08 ZWatcher2 sshd[10054]: Accepted password for zwadmin from 82.124.189.180 port 59937 ssh2
+Jan  4 01:16:08 ZWatcher2 sshd[10054]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: New session 86 of user zwadmin.
+Jan  4 01:16:08 ZWatcher2 sshd[10060]: Received disconnect from 82.124.189.180 port 59937:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 01:16:08 ZWatcher2 sshd[10060]: Disconnected from user zwadmin 82.124.189.180 port 59937
+Jan  4 01:16:08 ZWatcher2 sshd[10054]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: Session 86 logged out. Waiting for processes to exit.
+Jan  4 01:16:08 ZWatcher2 systemd-logind[557]: Removed session 86.
+Jan  4 01:17:01 ZWatcher2 CRON[10067]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan  4 01:17:01 ZWatcher2 CRON[10067]: pam_unix(cron:session): session closed for user root
+Jan  4 01:19:28 ZWatcher2 sshd[10071]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 01:19:28 ZWatcher2 sshd[10071]: Accepted password for zwadmin from 82.124.189.180 port 59961 ssh2
+Jan  4 01:19:28 ZWatcher2 sshd[10071]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: New session 88 of user zwadmin.
+Jan  4 01:19:28 ZWatcher2 sshd[10077]: Received disconnect from 82.124.189.180 port 59961:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 01:19:28 ZWatcher2 sshd[10077]: Disconnected from user zwadmin 82.124.189.180 port 59961
+Jan  4 01:19:28 ZWatcher2 sshd[10071]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Session 88 logged out. Waiting for processes to exit.
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Removed session 88.
+Jan  4 01:19:28 ZWatcher2 sshd[10079]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 01:19:28 ZWatcher2 sshd[10079]: Accepted password for zwadmin from 82.124.189.180 port 59963 ssh2
+Jan  4 01:19:28 ZWatcher2 sshd[10079]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: New session 89 of user zwadmin.
+Jan  4 01:19:28 ZWatcher2 sshd[10085]: Received disconnect from 82.124.189.180 port 59963:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 01:19:28 ZWatcher2 sshd[10085]: Disconnected from user zwadmin 82.124.189.180 port 59963
+Jan  4 01:19:28 ZWatcher2 sshd[10079]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Session 89 logged out. Waiting for processes to exit.
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Removed session 89.
+Jan  4 01:19:28 ZWatcher2 sshd[10089]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 01:19:28 ZWatcher2 sshd[10089]: Accepted password for zwadmin from 82.124.189.180 port 59965 ssh2
+Jan  4 01:19:28 ZWatcher2 sshd[10089]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: New session 90 of user zwadmin.
+Jan  4 01:19:28 ZWatcher2 sshd[10095]: Received disconnect from 82.124.189.180 port 59965:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 01:19:28 ZWatcher2 sshd[10095]: Disconnected from user zwadmin 82.124.189.180 port 59965
+Jan  4 01:19:28 ZWatcher2 sshd[10089]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Session 90 logged out. Waiting for processes to exit.
+Jan  4 01:19:28 ZWatcher2 systemd-logind[557]: Removed session 90.
+Jan  4 02:17:01 ZWatcher2 CRON[11123]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan  4 02:17:01 ZWatcher2 CRON[11123]: pam_unix(cron:session): session closed for user root
+Jan  4 02:47:18 ZWatcher2 sshd[3029]: Received disconnect from 192.168.0.254 port 53704:11: disconnected by user
+Jan  4 02:47:18 ZWatcher2 sshd[3029]: Disconnected from user zwadmin 192.168.0.254 port 53704
+Jan  4 02:47:18 ZWatcher2 sshd[2950]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 systemd-logind[557]: Session 6 logged out. Waiting for processes to exit.
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user root
+Jan  4 02:47:18 ZWatcher2 su: pam_unix(su:session): session closed for user zwadmin
+Jan  4 02:47:18 ZWatcher2 systemd-logind[557]: Removed session 6.
+Jan  4 02:47:28 ZWatcher2 systemd: pam_unix(systemd-user:session): session closed for user zwadmin
+Jan  4 02:59:59 ZWatcher2 sshd[11896]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 03:00:00 ZWatcher2 sshd[11896]: Accepted password for zwadmin from 37.165.41.124 port 8632 ssh2
+Jan  4 03:00:00 ZWatcher2 sshd[11896]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:00:00 ZWatcher2 systemd-logind[557]: New session 92 of user zwadmin.
+Jan  4 03:00:00 ZWatcher2 systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:00:00 ZWatcher2 sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan  4 03:00:00 ZWatcher2 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan  4 03:00:00 ZWatcher2 sudo: pam_unix(sudo:session): session closed for user root
+Jan  4 03:00:00 ZWatcher2 sshd[11908]: Received disconnect from 37.165.41.124 port 8632:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 03:00:00 ZWatcher2 sshd[11908]: Disconnected from user zwadmin 37.165.41.124 port 8632
+Jan  4 03:00:00 ZWatcher2 sshd[11896]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 03:00:00 ZWatcher2 systemd-logind[557]: Session 92 logged out. Waiting for processes to exit.
+Jan  4 03:00:00 ZWatcher2 systemd-logind[557]: Removed session 92.
+Jan  4 03:00:10 ZWatcher2 systemd: pam_unix(systemd-user:session): session closed for user zwadmin
+Jan  4 03:01:05 ZWatcher2 sshd[11913]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 03:01:05 ZWatcher2 sshd[11913]: Accepted password for zwadmin from 37.165.41.124 port 8602 ssh2
+Jan  4 03:01:05 ZWatcher2 sshd[11913]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:01:05 ZWatcher2 systemd-logind[557]: New session 94 of user zwadmin.
+Jan  4 03:01:05 ZWatcher2 systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:01:05 ZWatcher2 sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan  4 03:01:05 ZWatcher2 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan  4 03:01:05 ZWatcher2 sudo: pam_unix(sudo:session): session closed for user root
+Jan  4 03:01:05 ZWatcher2 sshd[11925]: Received disconnect from 37.165.41.124 port 8602:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan  4 03:01:05 ZWatcher2 sshd[11925]: Disconnected from user zwadmin 37.165.41.124 port 8602
+Jan  4 03:01:05 ZWatcher2 sshd[11913]: pam_unix(sshd:session): session closed for user zwadmin
+Jan  4 03:01:05 ZWatcher2 systemd-logind[557]: Session 94 logged out. Waiting for processes to exit.
+Jan  4 03:01:05 ZWatcher2 systemd-logind[557]: Removed session 94.
+Jan  4 03:01:16 ZWatcher2 systemd: pam_unix(systemd-user:session): session closed for user zwadmin
+Jan  4 03:17:01 ZWatcher2 CRON[12184]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan  4 03:17:01 ZWatcher2 CRON[12184]: pam_unix(cron:session): session closed for user root
+Jan  4 03:17:11 ZWatcher2 sshd[12187]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan  4 03:17:12 ZWatcher2 sshd[12187]: Accepted password for zwadmin from 192.168.0.254 port 55352 ssh2
+Jan  4 03:17:12 ZWatcher2 sshd[12187]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:17:12 ZWatcher2 systemd-logind[557]: New session 97 of user zwadmin.
+Jan  4 03:17:12 ZWatcher2 systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan  4 03:17:12 ZWatcher2 sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan  4 03:17:12 ZWatcher2 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)

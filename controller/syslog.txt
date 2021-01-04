@@ -1,100 +1,100 @@
-Jan  3 11:32:27 Gotham systemd[1]: Stopping User Manager for UID 1008...
-Jan  3 11:32:27 Gotham systemd[22376]: Stopped target Default.
-Jan  3 11:32:27 Gotham systemd[22376]: Stopped target Basic System.
-Jan  3 11:32:27 Gotham systemd[22376]: Stopped target Sockets.
-Jan  3 11:32:27 Gotham systemd[22376]: Stopped target Paths.
-Jan  3 11:32:27 Gotham systemd[22376]: Reached target Shutdown.
-Jan  3 11:32:27 Gotham systemd[22376]: systemd-exit.service: Succeeded.
-Jan  3 11:32:27 Gotham systemd[22376]: Started Exit the Session.
-Jan  3 11:32:27 Gotham systemd[22376]: Reached target Exit the Session.
-Jan  3 11:32:27 Gotham systemd[22376]: Stopped target Timers.
-Jan  3 11:32:27 Gotham systemd[1]: user@1008.service: Succeeded.
-Jan  3 11:32:27 Gotham systemd[1]: Stopped User Manager for UID 1008.
-Jan  3 11:32:27 Gotham systemd[1]: Stopping User Runtime Directory /run/user/1008...
-Jan  3 11:32:27 Gotham systemd[21791]: run-user-1008.mount: Succeeded.
-Jan  3 11:32:27 Gotham systemd[1]: run-user-1008.mount: Succeeded.
-Jan  3 11:32:27 Gotham systemd[1]: user-runtime-dir@1008.service: Succeeded.
-Jan  3 11:32:27 Gotham systemd[1]: Stopped User Runtime Directory /run/user/1008.
-Jan  3 11:32:27 Gotham systemd[1]: Removed slice User Slice of UID 1008.
-Jan  3 11:33:01 Gotham systemd[1]: Created slice User Slice of UID 1008.
-Jan  3 11:33:01 Gotham systemd[1]: Starting User Runtime Directory /run/user/1008...
-Jan  3 11:33:01 Gotham systemd[1]: Started User Runtime Directory /run/user/1008.
-Jan  3 11:33:01 Gotham systemd[1]: Starting User Manager for UID 1008...
-Jan  3 11:33:01 Gotham systemd[22425]: Reached target Timers.
-Jan  3 11:33:01 Gotham systemd[22425]: Reached target Paths.
-Jan  3 11:33:01 Gotham systemd[22425]: Reached target Sockets.
-Jan  3 11:33:01 Gotham systemd[22425]: Reached target Basic System.
-Jan  3 11:33:01 Gotham systemd[22425]: Reached target Default.
-Jan  3 11:33:01 Gotham systemd[1]: Started User Manager for UID 1008.
-Jan  3 11:33:01 Gotham systemd[22425]: Startup finished in 18ms.
-Jan  3 11:33:01 Gotham systemd[1]: Started Session 602 of user barney.
-Jan  3 11:33:01 Gotham systemd[1]: session-602.scope: Succeeded.
-Jan  3 11:33:01 Gotham systemd[1]: Started Session 604 of user barney.
-Jan  3 11:33:01 Gotham systemd[1]: session-604.scope: Succeeded.
-Jan  3 11:33:01 Gotham systemd[1]: Started Session 605 of user barney.
-Jan  3 11:33:01 Gotham systemd[1]: session-605.scope: Succeeded.
-Jan  3 11:33:11 Gotham systemd[1]: Stopping User Manager for UID 1008...
-Jan  3 11:33:11 Gotham systemd[22425]: Stopped target Default.
-Jan  3 11:33:11 Gotham systemd[22425]: Stopped target Basic System.
-Jan  3 11:33:11 Gotham systemd[22425]: Stopped target Timers.
-Jan  3 11:33:11 Gotham systemd[22425]: Stopped target Paths.
-Jan  3 11:33:11 Gotham systemd[22425]: Stopped target Sockets.
-Jan  3 11:33:11 Gotham systemd[22425]: Reached target Shutdown.
-Jan  3 11:33:11 Gotham systemd[22425]: systemd-exit.service: Succeeded.
-Jan  3 11:33:11 Gotham systemd[22425]: Started Exit the Session.
-Jan  3 11:33:11 Gotham systemd[22425]: Reached target Exit the Session.
-Jan  3 11:33:11 Gotham systemd[1]: user@1008.service: Succeeded.
-Jan  3 11:33:11 Gotham systemd[1]: Stopped User Manager for UID 1008.
-Jan  3 11:33:11 Gotham systemd[1]: Stopping User Runtime Directory /run/user/1008...
-Jan  3 11:33:11 Gotham systemd[21791]: run-user-1008.mount: Succeeded.
-Jan  3 11:33:11 Gotham systemd[1]: run-user-1008.mount: Succeeded.
-Jan  3 11:33:11 Gotham systemd[1]: user-runtime-dir@1008.service: Succeeded.
-Jan  3 11:33:11 Gotham systemd[1]: Stopped User Runtime Directory /run/user/1008.
-Jan  3 11:33:11 Gotham systemd[1]: Removed slice User Slice of UID 1008.
-Jan  3 11:35:24 Gotham systemd[1]: Created slice User Slice of UID 1008.
-Jan  3 11:35:24 Gotham systemd[1]: Starting User Runtime Directory /run/user/1008...
-Jan  3 11:35:24 Gotham systemd[1]: Started User Runtime Directory /run/user/1008.
-Jan  3 11:35:24 Gotham systemd[1]: Starting User Manager for UID 1008...
-Jan  3 11:35:24 Gotham systemd[22468]: Reached target Timers.
-Jan  3 11:35:24 Gotham systemd[22468]: Reached target Paths.
-Jan  3 11:35:24 Gotham systemd[22468]: Reached target Sockets.
-Jan  3 11:35:24 Gotham systemd[22468]: Reached target Basic System.
-Jan  3 11:35:24 Gotham systemd[22468]: Reached target Default.
-Jan  3 11:35:24 Gotham systemd[22468]: Startup finished in 17ms.
-Jan  3 11:35:24 Gotham systemd[1]: Started User Manager for UID 1008.
-Jan  3 11:35:24 Gotham systemd[1]: Started Session 606 of user barney.
-Jan  3 11:35:24 Gotham systemd[1]: session-606.scope: Succeeded.
-Jan  3 11:35:34 Gotham systemd[1]: Stopping User Manager for UID 1008...
-Jan  3 11:35:34 Gotham systemd[22468]: Stopped target Default.
-Jan  3 11:35:34 Gotham systemd[22468]: Stopped target Basic System.
-Jan  3 11:35:34 Gotham systemd[22468]: Stopped target Paths.
-Jan  3 11:35:34 Gotham systemd[22468]: Stopped target Timers.
-Jan  3 11:35:34 Gotham systemd[22468]: Stopped target Sockets.
-Jan  3 11:35:34 Gotham systemd[22468]: Reached target Shutdown.
-Jan  3 11:35:34 Gotham systemd[22468]: systemd-exit.service: Succeeded.
-Jan  3 11:35:34 Gotham systemd[22468]: Started Exit the Session.
-Jan  3 11:35:34 Gotham systemd[22468]: Reached target Exit the Session.
-Jan  3 11:35:34 Gotham systemd[1]: user@1008.service: Succeeded.
-Jan  3 11:35:34 Gotham systemd[1]: Stopped User Manager for UID 1008.
-Jan  3 11:35:34 Gotham systemd[1]: Stopping User Runtime Directory /run/user/1008...
-Jan  3 11:35:34 Gotham systemd[21791]: run-user-1008.mount: Succeeded.
-Jan  3 11:35:34 Gotham systemd[1]: run-user-1008.mount: Succeeded.
-Jan  3 11:35:34 Gotham systemd[1]: user-runtime-dir@1008.service: Succeeded.
-Jan  3 11:35:34 Gotham systemd[1]: Stopped User Runtime Directory /run/user/1008.
-Jan  3 11:35:34 Gotham systemd[1]: Removed slice User Slice of UID 1008.
-Jan  3 11:35:38 Gotham systemd[1]: Created slice User Slice of UID 1008.
-Jan  3 11:35:38 Gotham systemd[1]: Starting User Runtime Directory /run/user/1008...
-Jan  3 11:35:38 Gotham systemd[1]: Started User Runtime Directory /run/user/1008.
-Jan  3 11:35:38 Gotham systemd[1]: Starting User Manager for UID 1008...
-Jan  3 11:35:38 Gotham systemd[22484]: Reached target Timers.
-Jan  3 11:35:38 Gotham systemd[22484]: Reached target Sockets.
-Jan  3 11:35:38 Gotham systemd[22484]: Reached target Paths.
-Jan  3 11:35:38 Gotham systemd[22484]: Reached target Basic System.
-Jan  3 11:35:38 Gotham systemd[22484]: Reached target Default.
-Jan  3 11:35:38 Gotham systemd[22484]: Startup finished in 17ms.
-Jan  3 11:35:38 Gotham systemd[1]: Started User Manager for UID 1008.
-Jan  3 11:35:38 Gotham systemd[1]: Started Session 608 of user barney.
-Jan  3 11:35:38 Gotham systemd[1]: session-608.scope: Succeeded.
-Jan  3 11:35:42 Gotham systemd[1]: Started Session 610 of user barney.
-Jan  3 11:35:42 Gotham systemd[1]: session-610.scope: Succeeded.
-Jan  3 11:35:47 Gotham systemd[1]: Started Session 611 of user barney.
+Jan  4 02:47:28 ZWatcher2 systemd[3000]: Stopped target Timers.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
+Jan  4 02:47:28 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
+Jan  4 02:47:28 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
+Jan  4 02:56:15 ZWatcher2 systemd[1]: Starting Collect apt metrics for prometheus-node-exporter...
+Jan  4 02:56:15 ZWatcher2 systemd[1]: Starting Collect SMART metrics for prometheus-node-exporter...
+Jan  4 02:56:15 ZWatcher2 systemd[1]: prometheus-node-exporter-apt.service: Succeeded.
+Jan  4 02:56:15 ZWatcher2 systemd[1]: Started Collect apt metrics for prometheus-node-exporter.
+Jan  4 02:56:15 ZWatcher2 systemd[1]: prometheus-node-exporter-smartmon.service: Succeeded.
+Jan  4 02:56:15 ZWatcher2 systemd[1]: Started Collect SMART metrics for prometheus-node-exporter.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Timers.
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Sockets.
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Paths.
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Basic System.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: Started Session 92 of user zwadmin.
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Default.
+Jan  4 03:00:00 ZWatcher2 systemd[11899]: Startup finished in 18ms.
+Jan  4 03:00:00 ZWatcher2 systemd[1]: session-92.scope: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopping User Manager for UID 1007...
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Default.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Basic System.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Timers.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Paths.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Sockets.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Reached target Shutdown.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: systemd-exit.service: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Started Exit the Session.
+Jan  4 03:00:10 ZWatcher2 systemd[11899]: Reached target Exit the Session.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
+Jan  4 03:00:10 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
+Jan  4 03:00:10 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Sockets.
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Timers.
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Paths.
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Basic System.
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Default.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
+Jan  4 03:01:05 ZWatcher2 systemd[11916]: Startup finished in 18ms.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: Started Session 94 of user zwadmin.
+Jan  4 03:01:05 ZWatcher2 systemd[1]: session-94.scope: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopping User Manager for UID 1007...
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Default.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Basic System.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Timers.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Paths.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Sockets.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Reached target Shutdown.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: systemd-exit.service: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Started Exit the Session.
+Jan  4 03:01:16 ZWatcher2 systemd[11916]: Reached target Exit the Session.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
+Jan  4 03:01:16 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
+Jan  4 03:01:16 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
+Jan  4 03:12:05 ZWatcher2 systemd[1]: Starting Collect SMART metrics for prometheus-node-exporter...
+Jan  4 03:12:05 ZWatcher2 systemd[1]: Starting Collect apt metrics for prometheus-node-exporter...
+Jan  4 03:12:05 ZWatcher2 systemd[1]: prometheus-node-exporter-apt.service: Succeeded.
+Jan  4 03:12:05 ZWatcher2 systemd[1]: Started Collect apt metrics for prometheus-node-exporter.
+Jan  4 03:12:06 ZWatcher2 systemd[1]: prometheus-node-exporter-smartmon.service: Succeeded.
+Jan  4 03:12:06 ZWatcher2 systemd[1]: Started Collect SMART metrics for prometheus-node-exporter.
+Jan  4 03:17:01 ZWatcher2 CRON[12185]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Paths.
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Sockets.
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Timers.
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Basic System.
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Default.
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
+Jan  4 03:17:12 ZWatcher2 systemd[12190]: Startup finished in 19ms.
+Jan  4 03:17:12 ZWatcher2 systemd[1]: Started Session 97 of user zwadmin.
+Jan  4 03:17:12 ZWatcher2 systemd[1]: session-97.scope: Succeeded.
+Jan  4 03:17:16 ZWatcher2 systemd[1]: Started Session 99 of user zwadmin.
+Jan  4 03:17:16 ZWatcher2 systemd[1]: session-99.scope: Succeeded.
+Jan  4 03:17:20 ZWatcher2 systemd[1]: Started Session 100 of user zwadmin.

@@ -253,6 +253,6 @@ switch($_POST['choice']) {
 }
 
 
-header('location: ../view/profil.php?action=modif_users'); // redirect to the main app page with a message of confirmation 
+//header('location: ../view/profil.php?action=modif_users'); // redirect to the main app page with a message of confirmation 
 
 ?>

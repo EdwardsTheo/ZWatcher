@@ -1,1 +1,8 @@
-Jan  3 00:00:17 Gotham rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="543" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+Jan  3 17:20:27 ns2 rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="545" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+Jan  3 17:20:27 ns2 kernel: [    5.353656] random: crng init done
+Jan  3 17:20:27 ns2 kernel: [    5.353658] random: 7 urandom warning(s) missed due to ratelimiting
+Jan  3 17:20:27 ns2 VGAuthService[420]: LoadPrefs: Allowing 300 of clock skew for SAML date validation
+Jan  3 17:20:27 ns2 VGAuthService[420]: SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+Jan  3 17:20:27 ns2 VGAuthService[420]: ServiceNetworkCreateSocketDir: Created socket directory '/var/run/vmware'
+Jan  3 17:20:27 ns2 VGAuthService[420]: BEGIN SERVICE
+Jan  4 00:00:05 ZWatcher2 rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="545" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
