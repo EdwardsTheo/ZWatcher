@@ -47,6 +47,7 @@ test ajout users, supprimer,
 
 
 
+sudo chmod 777 -R /var/www  
 
 mon parc ajouter liste qui change et crée un user - baptiste
 

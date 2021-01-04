@@ -86,7 +86,7 @@
                         <hr class='w3-opacity'>
                         <input type='submit' class='w3-button w3-black' name='choice' value='Détails du profil'>
                         <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer les users'>
-                    </form>
+                    </div></form>
                     ";
                 }
                 else {
@@ -125,7 +125,7 @@
                     }
                     echo "
                     <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter les users'>
-                    </form>";
+                    </form></div>";
                 }
             }
 
@@ -164,7 +164,7 @@
                         if($donnees['id'] == $id_user[$i]) {
                             $username = $donnees['username'];
                             $id_user_string = $donnees['id'];
-                            if($donnees['rsa'] == 0) $button = "créer une clé rsa pour cet user";
+                            if($donnees['rsa'] == 0) $button = "Créer une clé rsa pour cet user";
                             else $button = "Supprimer la clé RSA";
                         }
                     }
@@ -203,7 +203,7 @@
                 echo "
                 <hr class='w3-opacity'>
                 <form action='../view/profil.php?action=modif_users' method='POST'>
-                    <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principale'>
+                    <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principal'>
                 </form>
                 </div>";
             }
@@ -263,13 +263,13 @@
     
         ?>
 
-<?php
+                <?php
                     }else{
                 ?>
                     Vous n'avez pas les droits pour accéder à ces fonctions.
                 <?php
                     }
                 ?>
-        </div>
+        
     </div>
 </html>

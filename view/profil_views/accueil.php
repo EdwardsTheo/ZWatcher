@@ -133,18 +133,3 @@
             </div>
  
 </html>
-
-
-                <?php
-                    if($_SESSION['power'] == "admin"){
-
-                ?>
-
-                
-                <?php
-                    }else{
-                ?>
-                    Vous n'avez pas les droits pour accéder à ces fonctions.
-                <?php
-                    }
-                ?>
