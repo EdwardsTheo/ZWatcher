@@ -1,7 +1,5 @@
 <?php	
 
-	print_r($_POST);
-	print_r($_SESSION);
     require('../ssh/ssh_controller.php');
    
 
@@ -66,7 +64,6 @@
 	}
 	
 	function update_upgrade() {
-		echo "oui";
 		main_ssh($_SESSION['id_machine'], 'update_upgrade');
 		$_SESSION['message'] = "Les paquets de la machine ont bien été mis à jour";
 	}

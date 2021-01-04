@@ -1,10 +1,8 @@
 <?php
 
-print_r($_POST);
+
 require('../ssh/ssh_controller.php');
 require('profil_manage_table_equipes_copy.php');
-
-
 
 function main_add_users() {
     $i = 1;
@@ -70,7 +68,6 @@ function set_session_user() {
         }
         $i++;
     }
-    print_r($_SESSION['id_user']);
 }
 
 function main_update_users_list() {
@@ -106,7 +103,6 @@ function add_team_grp() {
         //TEST SI L'EQUIPE EXISTE
         $test = check_team_name($_POST['nom_equipe'][$i], $_SESSION['id_machine']);
         $id_team = get_id_team($_POST['nom_equipe'][$i], $_SESSION['id_machine']);
-        echo $id_team;
         if($test == true) {
             // Ajoute de l'equipe en groupe dans la machine;
             main_ssh($_SESSION['id_machine'], 'add_groups', NULL, $_POST['nom_equipe'][$i]);
@@ -158,7 +154,6 @@ function add_team_to_grpbl($id_grp, $id_team, $nom_equipe) {
 
 function get_username($id_eleve) {
     $req = select_users_id2($id_eleve);
-    print_r($req);
     while($donnees = $req->fetch()) {
         if($id_eleve == $donnees['id']) {
             $username = $donnees['username'];

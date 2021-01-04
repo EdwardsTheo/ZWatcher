@@ -26,6 +26,7 @@
                     <?php
 
                     echo "<div class='w3-container w3-padding-large w3-grey'>";
+                
                     while($donnees = $req->fetch()){
                         echo "<h4 id='contact'><b>Modifier le hostname :</b></h4>
                         Saisissez un nouveau nom.
@@ -87,7 +88,8 @@
                         
                     }
                     $req->closeCursor();
-                    ?>
+                    
+                                        ?>
 
 <?php
                     }else{

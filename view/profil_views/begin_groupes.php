@@ -6,10 +6,10 @@
             <!--      <span class="w3-margin-right">Filter:</span> -->
             <a href="?action=modification"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=modif_liste"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Informations</button></a>
-                    <a href="#"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
-                    <a href="#"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Paramètres</button></a>
+                    <a href="?action=modif_machine"><button class="w3-button w3-white" disabled><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
                     <a href="?action=modif_users"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les users</button></a>
                     <a href="?action=modif_groups"><button class="w3-button w3-black w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les groupes</button></a>
+                    <a href="?action=modif_admin_listes"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Compte Admin</button></a>
                 </div>
                 </div>
                 </div>
@@ -48,9 +48,7 @@
         ?>
 
         <?php
-            print_r($_POST);
-            print_r($_SESSION);
-            echo "oui";
+    
             echo "
             <div class='w3-section w3-bottombar w3-padding-16'>
                 <form action='../view/profil.php?action=modif_groups' method='POST'>

@@ -2,7 +2,6 @@
 
     require("../ssh/ssh_controller.php");
     
-    print_r($_POST);
     function main_add_app() {
         $message = check_if_exist($_POST['nom_app']);
         if($message == "") $message = paquet_exist();

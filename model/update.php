@@ -199,7 +199,6 @@
     }
 
     function update_id_pswd_machine($id, $username, $password) {
-        echo gettype($password);
         $link = NULL;
         $link = connect_start();
         $req = $link -> prepare("UPDATE `listes` SET `id_machine` =  :id_machine, `pwd_machine` = :pwd_machine WHERE `id` = :id;");

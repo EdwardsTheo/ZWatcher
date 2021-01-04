@@ -1,6 +1,5 @@
 <?php
 
-print_r($_POST);
 require('../ssh/ssh_controller.php');
 profil_manage_admin_main();
 
@@ -82,7 +81,7 @@ function test_password_admin($id_user, $password) {
     $req = get_liste_data_id_admin($id_user, $_SESSION['id_machine']);
     $bool = false;
     while($donnees = $req->fetch()) {
-        if($donnees['user_admin'] == $id_user){
+        if($_SESSION['id_machine'] == $donnees['id']){
             $password = $donnees['pwd_machine'];
             $bool = true;
         }
@@ -120,7 +119,6 @@ function profil_manage_admin_main() {
     }
 }
 
-
-
+header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
 
 ?>

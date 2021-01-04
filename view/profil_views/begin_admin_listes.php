@@ -6,7 +6,7 @@
                 <!--      <span class="w3-margin-right">Filter:</span> -->
                 <a href="?action=modification"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=modif_liste"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Informations</button></a>
-                    <a href="#"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
+                    <a href="#"><button class="w3-button w3-white" disabled><i class="fas fa-globe-asia w3-margin-right"></i>Profil</button></a>
                     <a href="?action=modif_users"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les users</button></a>
                     <a href="?action=modif_groups"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les groupes</button></a>
                     <a href="?action=modif_admin_listes"><button class="w3-button w3-black w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Compte Admin</button></a>
@@ -74,7 +74,7 @@
                             echo "
                                 <a href='../rsa/$file.txt' download>Télécharger la clé RSA de l'utilisateur</a></br>
                                 <hr class='w3-opacity'> 
-                                <h4><b>Veuillez rentrer le mot de passe de l'user pour supprimer la clé rsa </b></h4>
+                                <h4><b>Veuillez rentrer votre mot de passe pour supprimer la clé rsa </b></h4>
                                 <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>
                             ";
                         }

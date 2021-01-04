@@ -465,7 +465,6 @@
 
     function select_user_avaible($id_machine, $id_groupe) {
         $db = connect_start();
-        echo $id_groupe;
         $request = $db->query("SELECT ul.id, ul.username
         FROM user_listes AS ul 
         LEFT OUTER JOIN groupe_bl AS bl

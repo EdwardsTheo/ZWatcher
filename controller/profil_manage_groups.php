@@ -1,6 +1,5 @@
 <?php
 
-print_r($_POST);
 require('../ssh/ssh_controller.php');
 
 switch($_POST['choice']) {
@@ -76,7 +75,6 @@ function set_session_groups() {
         }
         $i++;
     }
-    print_r($_SESSION['id_groupe']);
 }
 
 function change_grp_name() {
@@ -84,7 +82,6 @@ function change_grp_name() {
     foreach ($_POST['nom_groupe'] as $key => $value) {
         $test_name_group = test_name_groups($_POST['nom_groupe'][$i], $_POST['id_equipe'][$i]);
         if($test_name_group == true) {
-            echo "oui";
             update_group_name($_POST['id_equipe'][$i], $_POST['nom_groupe'][$i]);
             main_ssh($_SESSION['id_machine'], 'change_group_name', NULL, $_POST['nom_groupe'][$i], $_POST['old_groupe'][$i]);
         }

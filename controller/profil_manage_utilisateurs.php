@@ -94,7 +94,6 @@ function set_session() {
         }
         $i++;
     }
-    print_r($_SESSION['id_eleve']);
 }
 
 function main_update_utilisateurs() {
