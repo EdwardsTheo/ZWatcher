@@ -35,6 +35,7 @@ function generate_rsa_key_admin() {
         if($test_password_bash == true) {
             $hash = bin2hex(random_bytes(16));
             $_SESSION['hash'][1] = $hash;
+            $tmp_pass = $_SESSION['hash'][1];
             rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
              //Mis dans le fichier ~/.ssh/authorized key s
             rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
@@ -387,8 +388,8 @@ function generate_rsa_key_admin() {
                                     <p> Une clé RSA a été créée pour vous sur la plateforme ZWatcher.</p>
                                     <p>Vous pourrez la retrouver en vous connectant grâce au lien situé en bas de ce message.</p>
 
-                                    <p>Votre <em>passphrase</em> est la suivante : $hash </p>
-                                    <p>Contactez l'administrateur en cas de problème avec la création de votre clé RSA.. </p>
+                                    <p>Votre <em>passphrase</em> est la suivante : $tmp_pass </p>
+                                    <p>Contactez l'administrateur en cas de problème avec la création de votre clé RSA. </p>
                                     <p> Si vous n'êtes pas le destinataire de ce message, merci de l'ignorer et de le supprimer.</p>
                                     </p> Si vous rencontrez des problèmes avec votre compte ou si vous souhaitez le récupérer, contactez nos équipes via notre section <a href='http://zwa.2nd-itinet.fr/view/main_views/contact.php' class='hyperlink'>assistance</a>. </p>
                                     <table style='background-color:#f2f2f2;margin-top:-45px;'>
