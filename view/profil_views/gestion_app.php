@@ -106,7 +106,7 @@
                                 break;
                                 case 'Applications disponibles' : show_app_activate('0', "Activer les applications pour vos machines");
                                 break;
-                                case 'Ajouter une applications' : show_add_app();
+                                case 'Ajouter une application' : show_add_app();
                                 break;
                             }
                         }

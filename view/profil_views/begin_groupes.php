@@ -36,9 +36,9 @@
         }
 
         if(isset($_POST['choice_details'])) {
-            if($_POST['choice_details'] == 'Revenir au menu principale') {
+            if($_POST['choice_details'] == 'Revenir au menu principal') {
                 unset($_SESSION['id_groupe'][1]);
-                unset($_POST['choice']);
+		unset($_POST['choice']);
             }
             elseif($_POST['choice_details'] == 'Ajouter des users à ce groupe') {
                 $_POST['show_users'] = "true";
@@ -260,7 +260,7 @@
                     echo "
                     <hr class='w3-opacity'>
                     <form action='../view/profil.php?action=modif_groups' method='POST'>
-                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principale'>
+                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principal'>
                     </form>
                     </div>";
                     $i++;
@@ -299,6 +299,5 @@
                 <?php
                     }
                 ?>
-        </div>
     </div>
 </html>

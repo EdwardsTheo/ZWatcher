@@ -1,100 +1,100 @@
-Jan  4 02:47:28 ZWatcher2 systemd[3000]: Stopped target Timers.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
-Jan  4 02:47:28 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
-Jan  4 02:47:28 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
-Jan  4 02:56:15 ZWatcher2 systemd[1]: Starting Collect apt metrics for prometheus-node-exporter...
-Jan  4 02:56:15 ZWatcher2 systemd[1]: Starting Collect SMART metrics for prometheus-node-exporter...
-Jan  4 02:56:15 ZWatcher2 systemd[1]: prometheus-node-exporter-apt.service: Succeeded.
-Jan  4 02:56:15 ZWatcher2 systemd[1]: Started Collect apt metrics for prometheus-node-exporter.
-Jan  4 02:56:15 ZWatcher2 systemd[1]: prometheus-node-exporter-smartmon.service: Succeeded.
-Jan  4 02:56:15 ZWatcher2 systemd[1]: Started Collect SMART metrics for prometheus-node-exporter.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Timers.
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Sockets.
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Paths.
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Basic System.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: Started Session 92 of user zwadmin.
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Reached target Default.
-Jan  4 03:00:00 ZWatcher2 systemd[11899]: Startup finished in 18ms.
-Jan  4 03:00:00 ZWatcher2 systemd[1]: session-92.scope: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopping User Manager for UID 1007...
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Default.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Basic System.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Timers.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Paths.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Stopped target Sockets.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Reached target Shutdown.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: systemd-exit.service: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Started Exit the Session.
-Jan  4 03:00:10 ZWatcher2 systemd[11899]: Reached target Exit the Session.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
-Jan  4 03:00:10 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
-Jan  4 03:00:10 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Sockets.
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Timers.
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Paths.
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Basic System.
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Reached target Default.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
-Jan  4 03:01:05 ZWatcher2 systemd[11916]: Startup finished in 18ms.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: Started Session 94 of user zwadmin.
-Jan  4 03:01:05 ZWatcher2 systemd[1]: session-94.scope: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopping User Manager for UID 1007...
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Default.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Basic System.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Timers.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Paths.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Stopped target Sockets.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Reached target Shutdown.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: systemd-exit.service: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Started Exit the Session.
-Jan  4 03:01:16 ZWatcher2 systemd[11916]: Reached target Exit the Session.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: user@1007.service: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopped User Manager for UID 1007.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopping User Runtime Directory /run/user/1007...
-Jan  4 03:01:16 ZWatcher2 systemd[1268]: run-user-1007.mount: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: run-user-1007.mount: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: user-runtime-dir@1007.service: Succeeded.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: Stopped User Runtime Directory /run/user/1007.
-Jan  4 03:01:16 ZWatcher2 systemd[1]: Removed slice User Slice of UID 1007.
-Jan  4 03:12:05 ZWatcher2 systemd[1]: Starting Collect SMART metrics for prometheus-node-exporter...
-Jan  4 03:12:05 ZWatcher2 systemd[1]: Starting Collect apt metrics for prometheus-node-exporter...
-Jan  4 03:12:05 ZWatcher2 systemd[1]: prometheus-node-exporter-apt.service: Succeeded.
-Jan  4 03:12:05 ZWatcher2 systemd[1]: Started Collect apt metrics for prometheus-node-exporter.
-Jan  4 03:12:06 ZWatcher2 systemd[1]: prometheus-node-exporter-smartmon.service: Succeeded.
-Jan  4 03:12:06 ZWatcher2 systemd[1]: Started Collect SMART metrics for prometheus-node-exporter.
-Jan  4 03:17:01 ZWatcher2 CRON[12185]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Created slice User Slice of UID 1007.
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Starting User Runtime Directory /run/user/1007...
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Started User Runtime Directory /run/user/1007.
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Starting User Manager for UID 1007...
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Paths.
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Sockets.
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Timers.
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Basic System.
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Reached target Default.
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Started User Manager for UID 1007.
-Jan  4 03:17:12 ZWatcher2 systemd[12190]: Startup finished in 19ms.
-Jan  4 03:17:12 ZWatcher2 systemd[1]: Started Session 97 of user zwadmin.
-Jan  4 03:17:12 ZWatcher2 systemd[1]: session-97.scope: Succeeded.
-Jan  4 03:17:16 ZWatcher2 systemd[1]: Started Session 99 of user zwadmin.
-Jan  4 03:17:16 ZWatcher2 systemd[1]: session-99.scope: Succeeded.
-Jan  4 03:17:20 ZWatcher2 systemd[1]: Started Session 100 of user zwadmin.
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke tokenizer: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke calendar: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke phar: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke shmop: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke pdo: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke opcache: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:10 KingofGotham libapache2-mod-php7.3: php_invoke exif: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:11 KingofGotham libapache2-mod-php7.3: php_invoke sysvsem: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:11 KingofGotham libapache2-mod-php7.3: php_invoke json: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:11 KingofGotham libapache2-mod-php7.3: php_invoke ctype: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:11 KingofGotham libapache2-mod-php7.3: php_invoke iconv: already enabled for PHP 7.3 apache2 sapi
+Jan  4 16:41:11 KingofGotham libapache2-mod-php7.3: apache2_invoke: Enable module php7.3
+Jan  4 16:41:11 KingofGotham systemd[1]: Reloading.
+Jan  4 16:41:11 KingofGotham systemd[1]: /lib/systemd/system/fail2ban.service:12: PIDFile= references path below legacy directory /var/run/, updating /var/run/fail2ban/fail2ban.pid → /run/fail2ban/fail2ban.pid; please update the unit file accordingly.
+Jan  4 16:41:11 KingofGotham systemd[1]: Stopping The Apache HTTP Server...
+Jan  4 16:41:11 KingofGotham apachectl[26361]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jan  4 16:41:11 KingofGotham systemd[1]: apache2.service: Succeeded.
+Jan  4 16:41:11 KingofGotham systemd[1]: Stopped The Apache HTTP Server.
+Jan  4 16:41:11 KingofGotham systemd[1]: Starting The Apache HTTP Server...
+Jan  4 16:41:11 KingofGotham apachectl[26366]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jan  4 16:41:11 KingofGotham systemd[1]: Started The Apache HTTP Server.
+Jan  4 16:41:11 KingofGotham systemd[1]: session-1776.scope: Succeeded.
+Jan  4 16:41:12 KingofGotham systemd[1]: Started Session 1777 of user zwadmin.
+Jan  4 16:41:12 KingofGotham systemd[1]: session-1777.scope: Succeeded.
+Jan  4 16:41:19 KingofGotham systemd[1]: Started Session 1778 of user zwadmin.
+Jan  4 16:41:23 KingofGotham systemd[1]: session-1778.scope: Succeeded.
+Jan  4 16:43:37 KingofGotham systemd[1]: Created slice User Slice of UID 1013.
+Jan  4 16:43:37 KingofGotham systemd[1]: Starting User Runtime Directory /run/user/1013...
+Jan  4 16:43:37 KingofGotham systemd[1]: Started User Runtime Directory /run/user/1013.
+Jan  4 16:43:37 KingofGotham systemd[1]: Starting User Manager for UID 1013...
+Jan  4 16:43:37 KingofGotham systemd[26794]: Reached target Sockets.
+Jan  4 16:43:37 KingofGotham systemd[26794]: Reached target Paths.
+Jan  4 16:43:37 KingofGotham systemd[26794]: Reached target Timers.
+Jan  4 16:43:37 KingofGotham systemd[26794]: Reached target Basic System.
+Jan  4 16:43:37 KingofGotham systemd[26794]: Reached target Default.
+Jan  4 16:43:37 KingofGotham systemd[26794]: Startup finished in 18ms.
+Jan  4 16:43:37 KingofGotham systemd[1]: Started User Manager for UID 1013.
+Jan  4 16:43:37 KingofGotham systemd[1]: Started Session 1779 of user bob.
+Jan  4 16:43:55 KingofGotham systemd[1]: session-1779.scope: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[1]: Stopping User Manager for UID 1013...
+Jan  4 16:44:05 KingofGotham systemd[26794]: Stopped target Default.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Stopped target Basic System.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Stopped target Timers.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Stopped target Sockets.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Stopped target Paths.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Reached target Shutdown.
+Jan  4 16:44:05 KingofGotham systemd[26794]: systemd-exit.service: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Started Exit the Session.
+Jan  4 16:44:05 KingofGotham systemd[26794]: Reached target Exit the Session.
+Jan  4 16:44:05 KingofGotham systemd[1]: user@1013.service: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[1]: Stopped User Manager for UID 1013.
+Jan  4 16:44:05 KingofGotham systemd[1]: Stopping User Runtime Directory /run/user/1013...
+Jan  4 16:44:05 KingofGotham systemd[28754]: run-user-1013.mount: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[1]: run-user-1013.mount: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[1]: user-runtime-dir@1013.service: Succeeded.
+Jan  4 16:44:05 KingofGotham systemd[1]: Stopped User Runtime Directory /run/user/1013.
+Jan  4 16:44:05 KingofGotham systemd[1]: Removed slice User Slice of UID 1013.
+Jan  4 16:44:06 KingofGotham systemd[1]: Started Session 1781 of user zwadmin.
+Jan  4 16:44:06 KingofGotham systemd[1]: session-1781.scope: Succeeded.
+Jan  4 16:44:06 KingofGotham systemd[1]: Started Session 1782 of user zwadmin.
+Jan  4 16:44:06 KingofGotham systemd[1]: session-1782.scope: Succeeded.
+Jan  4 16:44:06 KingofGotham systemd[1]: Started Session 1783 of user zwadmin.
+Jan  4 16:44:06 KingofGotham systemd[1]: session-1783.scope: Succeeded.
+Jan  4 16:45:28 KingofGotham systemd[1]: Started Session 1784 of user zwadmin.
+Jan  4 16:45:28 KingofGotham systemd[1]: session-1784.scope: Succeeded.
+Jan  4 16:45:28 KingofGotham systemd[1]: Started Session 1785 of user zwadmin.
+Jan  4 16:45:28 KingofGotham systemd[1]: Stopping OpenBSD Secure Shell server...
+Jan  4 16:45:28 KingofGotham systemd[1]: ssh.service: Succeeded.
+Jan  4 16:45:28 KingofGotham systemd[1]: Stopped OpenBSD Secure Shell server.
+Jan  4 16:45:28 KingofGotham systemd[1]: ssh.service: Found left-over process 26838 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:45:28 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:45:28 KingofGotham systemd[1]: ssh.service: Found left-over process 26839 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:45:28 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:45:28 KingofGotham systemd[1]: Starting OpenBSD Secure Shell server...
+Jan  4 16:45:28 KingofGotham sshd[26863]: /etc/ssh/sshd_config line 67: Unsupported option KerberosGetAFSToken
+Jan  4 16:45:28 KingofGotham systemd[1]: ssh.service: Found left-over process 26838 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:45:28 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:45:28 KingofGotham systemd[1]: ssh.service: Found left-over process 26839 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:45:28 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:45:28 KingofGotham sshd[26864]: /etc/ssh/sshd_config line 67: Unsupported option KerberosGetAFSToken
+Jan  4 16:45:28 KingofGotham systemd[1]: Started OpenBSD Secure Shell server.
+Jan  4 16:45:28 KingofGotham systemd[1]: session-1785.scope: Succeeded.
+Jan  4 16:46:16 KingofGotham systemd[1]: Stopping OpenBSD Secure Shell server...
+Jan  4 16:46:16 KingofGotham systemd[1]: ssh.service: Succeeded.
+Jan  4 16:46:16 KingofGotham systemd[1]: Stopped OpenBSD Secure Shell server.
+Jan  4 16:46:16 KingofGotham systemd[1]: ssh.service: Found left-over process 26838 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:46:16 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:46:16 KingofGotham systemd[1]: ssh.service: Found left-over process 26839 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:46:16 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:46:16 KingofGotham systemd[1]: Starting OpenBSD Secure Shell server...
+Jan  4 16:46:16 KingofGotham sshd[26880]: /etc/ssh/sshd_config line 67: Unsupported option KerberosGetAFSToken
+Jan  4 16:46:16 KingofGotham systemd[1]: ssh.service: Found left-over process 26838 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:46:16 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:46:16 KingofGotham systemd[1]: ssh.service: Found left-over process 26839 (sshd) in control group while starting unit. Ignoring.
+Jan  4 16:46:16 KingofGotham systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Jan  4 16:46:16 KingofGotham sshd[26881]: /etc/ssh/sshd_config line 67: Unsupported option KerberosGetAFSToken
+Jan  4 16:46:16 KingofGotham systemd[1]: Started OpenBSD Secure Shell server.
+Jan  4 16:51:20 KingofGotham systemd[1]: Started Session 1786 of user zwadmin.
+Jan  4 16:51:20 KingofGotham systemd[1]: session-1786.scope: Succeeded.
+Jan  4 16:52:17 KingofGotham systemd[1]: Started Session 1787 of user zwadmin.

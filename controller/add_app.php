@@ -22,7 +22,7 @@
     }
 
     function paquet_exist() {
-        $output = main_ssh(4, "check_package");
+        $output = main_ssh($_SESSION['id_machine'], "check_package", $_POST['nom_app']);
 	    $message = ($output != "") ? "true" : "false";
 	    if($message == "false") $messsage = "le nom du paquet est invalide, veuillez réessayer"; 
 	    else $message = "";	

@@ -1,6 +1,6 @@
 <?php 
 
-function create_rsa($username, $hash) {
+function create_rsa($username, $hash) { 
     $command = "ssh-keygen -t rsa -b 4096 -N '$hash' -f ~/.ssh/id_rsa";
     return $command;
 }
