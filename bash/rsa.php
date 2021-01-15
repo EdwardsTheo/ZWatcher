@@ -1,7 +1,7 @@
 <?php 
 
 function create_rsa($username, $hash) { 
-    $command = "ssh-keygen -t rsa -b 4096 -N '$hash' -f ~/.ssh/id_rsa";
+    $command = "ssh-keygen -m PEM -t rsa -N '$hash' -f ~/.ssh/id_rsa";
     return $command;
 }
 
@@ -34,5 +34,22 @@ function restart_ssh() {
     $command = "sudo systemctl restart ssh";
     return $command;
 }
+
+function openssh($hash) {
+    $command = "openssl rsa -in /home/zwadmin/.ssh/id_rsa -out /home/zwadmin/.ssh/id_rsa.pem -passin pass:$hash";
+    return $command; 
+}
+
+function cat_rsa_key_pem() {
+    $command = "sudo cat /home/zwadmin/id_rsa.pem";
+    return $command; 
+}
+
+function cat_rsa_key_pub() {
+    $command = "sudo cat /home/zwadmin/id_rsa.pub";
+    return $command; 
+}
+
+
 
 ?>

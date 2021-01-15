@@ -36,18 +36,29 @@ function generate_rsa_key_admin() {
             $hash = bin2hex(random_bytes(16));
             $_SESSION['hash'][1] = $hash;
             $tmp_pass = $_SESSION['hash'][1];
-            rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
-             //Mis dans le fichier ~/.ssh/authorized key s
-            rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
+            $hash = 'zwadmin';
+            
+            //rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
+            //Mis dans le fichier ~/.ssh/authorized key s
+            //rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
         
             // Creation du fichier php au nom de l'user 
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
-            $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
-            file_put_contents("../rsa/$file.txt", $output);
+            //$output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
+            //$file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
+            //file_put_contents("../rsa/$file.txt", $output);
             
             //Update du statut rsa 0 => 1
-            $rsa = 1;
-            update_admin_rsa($_SESSION['id_machine'], $rsa);
+            //$rsa = 1;
+            //update_admin_rsa($_SESSION['id_machine'], $rsa);
+
+            
+            // Suite de commande pour permettre au site d'executer les scripts en clé RSA
+            //main_ssh($_SESSION['id_machine'], 'openssh', NULL, $_POST['old_username'][$i], $hash);
+            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pem', NULL, $_POST['old_username'][$i]);
+            file_put_contents("../rsa_admin/id_rsa.pem", $output);
+            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pub', NULL, $_POST['old_username'][$i]);
+            file_put_contents("../rsa_admin/id_rsa.pub", $output);
+            $output = shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem ../rsa_admin/id_rsa.pub');
 
             //Send mail with passphrase
 
@@ -498,7 +509,7 @@ function generate_rsa_key_admin() {
             $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n".
             'X-Mailer: PHP/' . phpversion();
 
-            mail($to, $subject, $message, $headers);
+           // mail($to, $subject, $message, $headers);
 
             //End mail
 
@@ -574,6 +585,6 @@ function profil_manage_admin_main() {
     }
 }
 
-header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
+//header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
 
 ?>

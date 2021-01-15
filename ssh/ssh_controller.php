@@ -132,6 +132,15 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case 'restart ssh' :
             $command = restart_ssh();
         break;
+        case 'openssh' :
+            $command = openssh($password);
+        break;
+        case 'cat_rsa_key_pem' :
+            $command = cat_rsa_key_pem();
+        break;
+        case 'cat_rsa_key_pub' :
+            $command = cat_rsa_key_pub();
+        break;
         //Default
         default :
             "error";
