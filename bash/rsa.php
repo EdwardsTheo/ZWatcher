@@ -41,12 +41,12 @@ function openssh($hash) {
 }
 
 function cat_rsa_key_pem() {
-    $command = "sudo cat /home/zwadmin/id_rsa.pem";
+    $command = "sudo cat /home/zwadmin/.ssh/id_rsa.pem";
     return $command; 
 }
 
 function cat_rsa_key_pub() {
-    $command = "sudo cat /home/zwadmin/id_rsa.pub";
+    $command = "sudo cat /home/zwadmin/.ssh/id_rsa.pub";
     return $command; 
 }
 

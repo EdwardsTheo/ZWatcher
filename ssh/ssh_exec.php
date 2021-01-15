@@ -7,7 +7,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
         $connect_rsa = $data['connexion_rsa'];
     }
    
-    echo $command; 
+    //echo $command; 
     //echo $ip;
     //echo $port;
     //echo $username;

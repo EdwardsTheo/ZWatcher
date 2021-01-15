@@ -38,28 +38,28 @@ function generate_rsa_key_admin() {
             $tmp_pass = $_SESSION['hash'][1];
             $hash = 'zwadmin';
             
-            //rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
+            rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
             //Mis dans le fichier ~/.ssh/authorized key s
-            //rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
+            rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
         
             // Creation du fichier php au nom de l'user 
-            //$output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
-            //$file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
-            //file_put_contents("../rsa/$file.txt", $output);
+            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
+            $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
+      	    file_put_contents("../rsa/$file", $output);
             
             //Update du statut rsa 0 => 1
-            //$rsa = 1;
-            //update_admin_rsa($_SESSION['id_machine'], $rsa);
+            $rsa = 1;
+            update_admin_rsa($_SESSION['id_machine'], $rsa);
 
             
             // Suite de commande pour permettre au site d'executer les scripts en clé RSA
-            //main_ssh($_SESSION['id_machine'], 'openssh', NULL, $_POST['old_username'][$i], $hash);
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
+            main_ssh($_SESSION['id_machine'], 'openssh', NULL, $_POST['old_username'][$i], $hash);
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pem', NULL, $_POST['old_username'][$i]);
-            file_put_contents("../rsa_admin/id_rsa.pem", $output);
+	    file_put_contents("../rsa_admin/id_rsa.pem", $output);
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pub', NULL, $_POST['old_username'][$i]);
             file_put_contents("../rsa_admin/id_rsa.pub", $output);
+            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
+            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
 
             //Send mail with passphrase
 
