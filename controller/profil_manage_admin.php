@@ -54,11 +54,12 @@ function generate_rsa_key_admin() {
             
             // Suite de commande pour permettre au site d'executer les scripts en clé RSA
             //main_ssh($_SESSION['id_machine'], 'openssh', NULL, $_POST['old_username'][$i], $hash);
+            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
+            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pem', NULL, $_POST['old_username'][$i]);
             file_put_contents("../rsa_admin/id_rsa.pem", $output);
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pub', NULL, $_POST['old_username'][$i]);
             file_put_contents("../rsa_admin/id_rsa.pub", $output);
-            $output = shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem ../rsa_admin/id_rsa.pub');
 
             //Send mail with passphrase
 
