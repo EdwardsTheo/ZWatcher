@@ -68,6 +68,6 @@
 		$_SESSION['message'] = "Les paquets de la machine ont bien été mis à jour";
 	}
 
-    header('location: ../view/profil.php?action=appli_machine'); // redirect to the main app page with a message of confirmation 
+   // header('location: ../view/profil.php?action=appli_machine'); // redirect to the main app page with a message of confirmation 
        
 ?>

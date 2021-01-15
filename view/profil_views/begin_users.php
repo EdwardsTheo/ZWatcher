@@ -24,7 +24,11 @@
                 ?>
                     Sur cette page, vous pouvez ajouter ou retirer des utilisateur qui sont sur votre machine</br>
                 <?php
-        	
+            
+        print_r($_POST);
+              
+        print_r($_SESSION);
+
 		if(isset($_SESSION['id_user'])) {
 			
 			$_POST['choice'] = 'info_utilisateur'; 
@@ -199,6 +203,7 @@
                     <input type='hidden' id='scales' name='old_username[$i]' value='$username'>
                 </form>
                 ";
+                users_details($id_user[1]);
 
                 echo "
                 <hr class='w3-opacity'>
@@ -236,6 +241,117 @@
                     unset($_SESSION['error'][$i]);
                     unset($_SESSION[$i]);
                 }
+            }
+
+            function users_details($id_user) {
+                $i=1;
+                $req1 = select_user_bl_listes($id_user);
+                $empty = false;
+                echo " <form action='../view/profil.php?action=manage_users' method='POST'>";
+                echo "<h4><b>Utilisateurs associés à cette user linux : </b></h4>";
+                while($donnees = $req1->fetch()) {
+                    $empty = true;
+                    if($i % 3 == 1){
+                        echo "<div class='w3-row-padding'>";
+                    }
+                    $nb = rand(1, 32);
+                    echo "<div class='w3-third w3-container w3-margin-bottom'>
+
+                        <div class='w3-container w3-white2'>
+                            <p><b>Eleve $donnees[username]</b></p>
+                            <input type='checkbox' id='scales' name='scales[$i]'>
+                            <input type='hidden' name='id_table[$i]' value='$donnees[id]'>";
+
+                    echo "
+                        </div>
+                    </div>";
+                    if($i % 3 == 0){
+                        echo "</div>";
+                    }
+                    $i = $i + 1;
+                }
+
+                if($empty == true) {
+                    echo "
+                        <hr class='w3-opacity'>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer le lien avec un ou des utilisateurs'>
+                        </div>
+                        </form>
+                        <hr class='w3-opacity'>";
+                }
+                else {
+                    echo "il n'y a pas d'utilisateurs associés à cette user linux !
+                    </div>
+                    </form>";
+                }
+
+                echo " 
+                <hr class='w3-opacity'>
+                <div class='w3-section w3-bottombar w3-padding-16'>
+                <hr class='w3-opacity'>
+                <form action='../view/profil.php?action=modif_users' method='POST'>
+                    <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cette user linux'>
+                <hr class='w3-opacity'>
+                </form>
+                ";
+
+
+                if(isset($_POST['choice_details'])) {
+                    if($_POST['choice_details'] == 'Associer des utilisateurs à cette user linux') {
+                        $j = 1;
+                        $empty = false;
+                        $req2 = simple_select_users_eleves();
+                        echo " <form action='../view/profil.php?action=manage_users' method='POST'>";
+                        while($donnees = $req2->fetch()) {
+                            $username = $donnees['username'];
+                            $empty = true;
+
+                            $test = already_linked($donnees['id'], $id_user);
+                            if($donnees['id'] == '1') $test = true;
+                            if($test == false) {
+                                if($j % 3 == 1){
+                                    echo "<div class='w3-row-padding'>";
+                                }
+                                $nb = rand(1, 32);
+                                echo "<div class='w3-third w3-container w3-margin-bottom'>
+                                    <div class='w3-container w3-white2'>
+                                    <p><b>Utilisateur $username</b></p>
+                                        <input type='checkbox' id='scales' name='scales[$j]'>
+                                        <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
+                                        <input type='hidden' name='id_user_listes[$j]' value='$id_user'>";                       
+                                    echo "
+                                        </div>
+                                    </div>";
+                                    if($j % 3 == 0){
+                                        echo "</div>";
+                                    }
+                                
+                                    echo "<hr class='w3-opacity'>";
+                                }
+                            $j++;
+                        }
+                        if($empty == true && $test == false) {
+                            echo '
+                            <input type="submit" class="w3-button w3-black" name="choice" value="Ajouter l\'utilisateur à cette user linux">
+                            </form>';
+                        }
+                        else {
+                            echo "Les users sont déjà tous dans ce groupe";
+                        }
+                    }
+                }
+            }
+
+            function already_linked($id_user, $id_user_machine) {
+                    $req = select_user_bl_listes_id($id_user, $id_user_machine); 
+                    $test = false;
+                    while($donnees = $req->fetch()) {
+                        if($id_user_machine == $donnees['id_user_listes']) {
+                            $test = true;
+                        }
+                    }
+                    return $test;
+                
             }
 
             if(isset($_POST['choice'])) {

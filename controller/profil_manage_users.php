@@ -689,6 +689,35 @@ function delete_rsa_keys() {
     }
 }
 
+
+// Partie lien utilisateurs - users linux 
+
+function delete_user_link() {
+    $i=1;
+    foreach ($_POST['id_table'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+               delete_user_link_table($_POST['id_table'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
+function add_user_link() {
+    foreach ($_POST['id_user'] as $key => $value) { 
+        $i = $key;
+    }
+    foreach ($_POST['id_user'] as $key => $value) {
+        if(isset($_POST['scales'][$i])) {
+            if($_POST['scales'][$i] == "on") {
+               insert_user_link($_POST['id_user'][$i], $_POST['id_user_listes'][$i]);
+            }
+        }
+        $i++;
+    }
+}
+
 switch($_POST['choice']) {
     case 'Ajouter les users' :  main_add_users();
     break;
@@ -704,6 +733,10 @@ switch($_POST['choice']) {
     break;
     case "Supprimer la clé RSA" : delete_rsa_keys();
     break;
+    case 'Supprimer le lien avec un ou des utilisateurs' : delete_user_link();
+    break;
+    case "Ajouter l'utilisateur à cette user linux" : add_user_link();
+    break; 
 }
 
 

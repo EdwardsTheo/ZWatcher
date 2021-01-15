@@ -4,8 +4,12 @@
     
     function main_add_app() {
         $message = check_if_exist($_POST['nom_app']);
+        $message = "";
         if($message == "") $message = paquet_exist();
-	if($message == "") $message = add_app($_POST['nom_app']);
+        if($message == "") {
+            $message = add_app($_POST['nom_app']);
+        }
+        else $message = "Il y'a eu une erreur lors de l'ajout du paquet";
         return $_SESSION['message'] = $message;
     }
     main_add_app();
@@ -35,13 +39,12 @@
         $req = get_listes();
         while($donnees = $req->fetch()) {
             $id_machine = $donnees['id'];
-            $req = insert_app_dispo($id, $id_machine);
-      
-        return $message = "L'application à bien été ajoutée";
+            insert_app_dispo($id, $id_machine);
         }
+        return $message = "L'application à bien été ajoutée";
     }
 
     
-    header('location: ../view/profil.php?action=gestion_app');
+    //header('location: ../view/profil.php?action=gestion_app');
 ?>
  

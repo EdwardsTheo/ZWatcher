@@ -138,7 +138,7 @@
 
     function insert_new_account($user, $password, $mail){
         $link = NULL;
-
+        echo $password;
         $options = array('cost' => 11);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
@@ -223,7 +223,7 @@
 
     function insert_app_dispo($id_app, $id_machine) {
         echo $id_app;
-        $status_dispo = 0;
+        $status_dispo = 1;
         $status_install = 0;
 
         $link = NULL; 
@@ -332,6 +332,17 @@
 	    $link->query('INSERT INTO `groupe_bl` (`id`,`id_groupe`, `id_user_listes`)
 		VALUES (NULL, 
         '.$link -> quote($id_group).',
+        '.$link -> quote($id_user).'
+		)');
+        connect_end($link);
+    }
+
+    function  insert_user_link($id_user, $id_user_listes) {
+        $link = NULL; 
+	    $link = connect_start();
+	    $link->query('INSERT INTO `user_bl_listes` (`id`,`id_user_listes`, `id_user`)
+		VALUES (NULL, 
+        '.$link -> quote($id_user_listes).',
         '.$link -> quote($id_user).'
 		)');
         connect_end($link);

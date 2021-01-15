@@ -73,7 +73,7 @@
             if (!($link = connect_start()))
                 throw new Exception("Could not connect to database");
 
-                if (!($result = $link->query("SELECT id, titre, description, port, id_machine, pwd_machine FROM listes WHERE id = $id"))) {
+                if (!($result = $link->query("SELECT * FROM listes WHERE id = $id"))) {
                     throw new Exception("No access to the table");  
                 }   
                 return $result; 
@@ -400,6 +400,16 @@
         connect_end($link);
     }
 
+    function utilisateur_in_team($id_user) {
+        $db = connect_start();
+        $request = $db->query("SELECT e.id, e.name, e.id_listes 
+        FROM equipes as e
+        INNER JOIN equipes_bl AS eb
+        ON eb.id_equipe = e.id  
+        WHERE eb.id_eleve = $id_user");
+        return $request;
+    }
+
     function select_users_id($id_profil) {
         $link = NULL;
         try {
@@ -515,6 +525,44 @@
     function select_get_app() {
         $db = connect_start();
         $request = $db->query("SELECT * FROM applis");
+        return $request;
+    }
+
+    function select_user_bl_listes($id_user) {
+        $db = connect_start();
+        $request = $db->query("SELECT ul.id_user_listes, ul.id_user, u.username, ul.id  
+        FROM user_bl_listes AS ul 
+        INNER JOIN user AS u 
+        ON u.id = ul.id_user
+        WHERE id_user_listes = $id_user");
+        return $request;
+    }
+
+    function select_user_bl_listes_id($id_user, $id_user_machine) {
+        $db = connect_start();
+        $request = $db->query("SELECT *
+        FROM user_bl_listes 
+        WHERE id_user_listes = $id_user_machine AND id_user = $id_user");
+        return $request;
+    }
+
+    function simple_select_users_eleves() {
+        $db = connect_start();
+        $request = $db->query("SELECT * FROM user");
+        return $request;
+    }
+
+    function select_user_bl_listes2($id_user) {
+        $db = connect_start();
+        $request = $db->query("SELECT ul.id_user_listes, ul.id_user, uli.username, ul.id, uli.id_listes, uli.rsa, l.ip, l.port, l.id 
+        FROM user_bl_listes AS ul 
+        INNER JOIN user AS u 
+        ON u.id = ul.id_user
+        INNER JOIN user_listes AS uli
+        ON uli.id = ul.id_user_listes
+        INNER JOIN listes AS l 
+        ON uli.id_listes = l.id
+        WHERE ul.id_user = $id_user");
         return $request;
     }
 

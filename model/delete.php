@@ -212,4 +212,22 @@
         return $request;
     }
 
+    function delete_applis($id) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM app_machine WHERE id_appli='$id'");
+        return $request;
+    }
+
+    function delete_applis_machine($id) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM applis WHERE id='$id'");
+        return $request;
+    }
+
+    function delete_user_link_table($id) {
+        $db = connect_start();
+        $request = $db->query("DELETE FROM user_bl_listes WHERE id='$id'");
+        return $request;
+    }
+
 ?>

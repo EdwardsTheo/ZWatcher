@@ -26,9 +26,95 @@
                 </div>
 
                 <?php
+
+                    function show_team($id_user) {
+                        $req = utilisateur_in_team($id_user);
+                        $i=0;
+                        while($data = $req->fetch()) {
+                            $team[$i] = $data['name'];
+                            $i++;
+                        }
+                        return $team;
+                    }
+                    
+                    function show_user($id_user) {
+                        $req = select_user_bl_listes2($id_user);
+                        $i = 0;
+                        while($data = $req->fetch()) {
+                            $user['username'][$i] = $data['username'];
+                            $user['id_listes'][$i] = $data['id_listes'];
+                            $user['ip'][$i] = $data['ip'];
+                            $user['port'][$i] = $data['port'];
+                            $user['rsa'][$i] = $data['rsa'];
+                            $user['id_machine'][$i] = $data['id'];
+                            $i++;
+                        }
+                        return $user;
+                    }
+                    
                     if($_SESSION['power'] == 'utilisateur') {
                         // EQUIPES 
+                        $team = show_team($_SESSION['id']);
+                        echo "
+                        <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                        <div class='w3-section w3-bottombar w3-padding-16'>
+                        <h4><b>Equipes : </b></h4>
+                        ";
+                        for($i = 0; $i < count($team); $i++) {
+                            echo "
+                            <h4><b>Vous faites partie de l'equipe $team[$i]</b></h4>
+                            ";
+                        }
+                        echo "
+                        </div>
+                        </div>
+                        <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
+                        <h4><b>Users : </b></h4>
+                        ";
                         // UTILISATEUR SUR UNE MACHINE ?
+                        $user = show_user($_SESSION['id']);
+
+                        $i = 0;
+                        foreach ($user['username'] as $key => $value) {
+                            $ip = $user['ip'][$i];
+                            $port = $user['port'][$i];
+                            $rsa = $user['rsa'][$i];
+                            $id_machine = $user['id_machine'][$i];
+                            $username = $user['username'][$i];
+                            echo "
+                            <div class='w3-section w3-bottombar w3-padding-16'>
+                            <h4><b>Vous avez un utilisateur associé à votre compte</b></h4>
+                            <hr class='w3-opacity'>
+                            
+                            <h5>Informations de la machine : </h5>
+                            <label>IP : $ip</label></br>
+                            <label>PORT : $port</label>
+                            
+                            <hr class='w3-opacity'>
+                            <h5>Identifiants de connexion : </h5>
+                            <label>Username : $username</label></br>
+                            </div>";
+                            
+                            if($rsa == 1) {
+                                $file = $username . "_" . $id_machine;
+                                echo "
+                                <hr class='w3-opacity'>
+                                <h5>Vous pouvez vous connecter en SSH avec la clé rsa</h5>
+                                <a href='../rsa/$file.txt' download>Télécharger la clé RSA</a></br>
+                                <hr class='w3-opacity'>
+                                ";
+                            }
+                            else {
+                                echo "
+                                <hr class='w3-opacity'>
+                                <h5>Vous pouvez vous connecter en renseignant un mot de passe car il n'y a pas encore de clé RSA disponible</h5>
+                                <hr class='w3-opacity'>
+                                ";
+                            }
+                          
+                           
+                            $i++;
+                        }
                         // SI OUI => CLE RSA ?
                     }
                 ?>

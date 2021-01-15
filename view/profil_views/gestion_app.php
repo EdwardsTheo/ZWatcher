@@ -6,7 +6,7 @@
                 <!--      <span class="w3-margin-right">Filter:</span> -->
                     <a href="?action=application"><button class="w3-button w3-white"><i class="fas fa-home w3-margin-right"></i>Accueil</button></a>
                     <a href="?action=appli_liste"><button class="w3-button w3-white"><i class="fas fa-info w3-margin-right"></i>Selection de la machine</button></a>
-                    <a href="?action=appli_machine"><button class="w3-button w3-white"><i class="fas fa-globe-asia w3-margin-right"></i>Installation</button></a>
+                    <a href="?action=appli_machine" ><button class="w3-button w3-white" disabled><i class="fas fa-globe-asia w3-margin-right"></i>Installation</button></a>
                     <a href="?action=gestion_app"><button class="w3-button w3-black w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gestion des applications</button></a>
                     </div>
                     </div>
@@ -31,13 +31,12 @@
                         echo "
                         <div class='w3-section w3-bottombar w3-padding-16'>
                             <form action='../view/profil.php?action=gestion_app' method='POST'>
-                            <input type='submit' class='w3-button w3-black' name='choice' value='Applications activées'>
                             <input type='submit' class='w3-button w3-black' name='choice' value='Applications disponibles'>
                             <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter une application'>
                             </form>
                         </div>";
                         
-                        function show_app_activate($status, $button) {
+                        function show_app_activate($status) {
                             $i = 1;
                             $req1 = get_app_avaible($_SESSION['id'], $status);
                             $empty = true;
@@ -56,7 +55,6 @@
                                     <div class='w3-container w3-white2'>
                                         <input class='w3-input w3-border' type='hidden' name='nom_appli[$i]' value=".$donnees['nom_appli'].">
                                         <input class='w3-input w3-border' type='hidden' name='id_appli[$i]' value=".$donnees['id_appli'].">
-                                        <input class='w3-input w3-border' type='hidden' name='action' value=".$button.">
                                         <p><b>".strtoupper($donnees['nom_appli'])."</b></p>
                                         <input type='checkbox' id='scales' name='scales[$i]'>
                                     </div>
@@ -70,12 +68,12 @@
                                 $i = $i + 1;
                                }
                                if($empty == false) {
-                                    echo " 
+                                    echo ' 
                                     </div>
-                                    <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                                    <button type='submit' class='w3-button w3-black '><i class='fas fa-check w3-margin-left'></i>".$button."</button>
+                                    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+                                        <input type="submit" class="w3-button w3-black" name="choice" value="Supprimer l\'application">
                                     </form>
-                                    </div>";
+                                    </div>';
                                }
                         }
                         
@@ -102,9 +100,7 @@
                            //PARTIE APPLICATIONS 
                            if(isset($_POST['choice'])) {
                             switch($_POST['choice']) {
-                                case 'Applications activées' : show_app_activate('1', "Désactiver les applications pour vos machines");
-                                break;
-                                case 'Applications disponibles' : show_app_activate('0', "Activer les applications pour vos machines");
+                                case 'Applications disponibles' : show_app_activate('1');
                                 break;
                                 case 'Ajouter une application' : show_add_app();
                                 break;
