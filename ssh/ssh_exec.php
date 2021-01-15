@@ -28,7 +28,8 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     }
     
     else {
-       $connection = ssh2_connect('82.64.225.10', 2020, array('hostkey' => 'ssh-rsa'));
+  
+	$connection = ssh2_connect('82.64.225.10', 2020, array('hostkey' => 'ssh-rsa'));
 
         ssh2_auth_pubkey_file($connection, 'zwadmin',
                     '/home/tbaptiste/id_rsa.pub',
