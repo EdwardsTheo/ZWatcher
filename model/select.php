@@ -303,6 +303,18 @@
         return $request;
     }
 
+    function simple_get_app_second($id_machine) {
+	    $db = connect_start();
+        $request = $db->query("SELECT am.id_appli, ap.nom_appli, am.status_install, am.id_machine
+        FROM app_machine AS am
+        LEFT JOIN applis as ap 
+        ON am.id_appli = ap.id
+        WHERE am.id_machine = $id_machine 
+        AND am.status_dispo = '1'");
+        
+        return $request;
+    }
+
     function get_listes_machine($id_machine) {
         $db = connect_start();
         $request = $db->query("SELECT * FROM listes WHERE id = $id_machine");
@@ -514,7 +526,7 @@
         return $request;
     }
 
-    function select_user_team() {
+    function select_user_team($id_groupe) {
         $db = connect_start();
         $request = $db->query("SELECT * 
         FROM groupe_bl 

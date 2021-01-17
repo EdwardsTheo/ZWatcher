@@ -297,7 +297,6 @@
     }
 
     function  insert_new_groups_listes($grp_name, $id_machine, $sudo, $id_equipe = NULL) {
-        echo gettype($id_equipe);
         $link = NULL; 
 	    $link = connect_start();
 	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`, `id_equipe`)
@@ -312,7 +311,6 @@
     }
 
     function insert_new_groups_listes_nullteam($grp_name, $id_machine, $sudo, $id_equipe = NULL) {
-        echo gettype($id_equipe);
         $link = NULL; 
 	    $link = connect_start();
 	    $link->query('INSERT INTO `groupe_listes` (`id`,`nom`, `id_listes`, `sudo`, `id_equipe`)

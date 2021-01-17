@@ -1,7 +1,5 @@
 <?php
     
-    print_r($_POST);
-
     $i=1;
     foreach ($_POST['nom_appli'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
@@ -16,6 +14,6 @@
         $i++;
     }
 
-    //header('location: ../view/profil.php?action=gestion_app');
+    header('location: ../view/profil.php?action=gestion_app');
 
 ?>

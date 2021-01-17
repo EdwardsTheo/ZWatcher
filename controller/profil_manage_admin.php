@@ -18,7 +18,7 @@ function main_update_admin_list() {
             $password = $_POST['psswd'][$i];
             $update = true;
         }
-        if(isset($update)) main_ssh($_SESSION['id_machine'], 'change_password', NULL, $_POST['old_username'][$i], $_POST['psswd'][$i]);
+        if(isset($update)) main_ssh($_SESSION['id_machine'], 'change_password', $_POST['old_username'][$i], $_POST['psswd'][$i]);
         update_id_pswd_machine($_SESSION['id_machine'], $_POST['old_username'][$i], $password);
         $i++;
     }
@@ -38,28 +38,35 @@ function generate_rsa_key_admin() {
             $tmp_pass = $_SESSION['hash'][1];
             $hash = 'zwadmin';
             
-            rsa_controller($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $_POST['password'][$i], $hash);
-            //Mis dans le fichier ~/.ssh/authorized key s
-            rsa_controller($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i], $_POST['password'][$i], $hash = NULL);
-        
-            // Creation du fichier php au nom de l'user 
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', NULL, $_POST['old_username'][$i]);
-            $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
-      	    file_put_contents("../rsa/$file", $output);
+            main_ssh($_SESSION['id_machine'], 'create_ssh_dir', $_POST['old_username'][$i]); 
+            main_ssh($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $hash);
+                //Mis dans le fichier ~/.ssh/authorized key s
+            main_ssh($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i]);
             
-            //Update du statut rsa 0 => 1
-            $rsa = 1;
-            update_admin_rsa($_SESSION['id_machine'], $rsa);
+                // Creation du fichier php au nom de l'user 
+                $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i]);
+                $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
+                file_put_contents("../rsa/$file.txt", $output);
+                
+                //Creation du fichier php au nom de l'user => id_rsa.pub
+                $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pub');
+                $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
+                file_put_contents("../rsa/$file.pub", $output);
 
-            
-            // Suite de commande pour permettre au site d'executer les scripts en clé RSA
-            main_ssh($_SESSION['id_machine'], 'openssh', NULL, $_POST['old_username'][$i], $hash);
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pem', NULL, $_POST['old_username'][$i]);
-	    file_put_contents("../rsa_admin/id_rsa.pem", $output);
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key_pub', NULL, $_POST['old_username'][$i]);
-            file_put_contents("../rsa_admin/id_rsa.pub", $output);
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
+                //Update du statut rsa 0 => 1
+                $rsa = 1;
+                update_admin_rsa($_SESSION['id_machine'], $rsa);
+
+                
+                // Suite de commande pour permettre au site d'executer les scripts en clé RSA
+                main_ssh($_SESSION['id_machine'], 'openssh', $_POST['old_username'][$i], $hash);
+                $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pem');
+                file_put_contents("../rsa_admin/id_rsa.pem", $output);
+                
+                $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pub');
+                file_put_contents("../rsa_admin/id_rsa.pub", $output);
+                shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
+                shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
 
             //Send mail with passphrase
 
@@ -528,11 +535,14 @@ function delete_rsa_keys_admin() {
         $test_password_bash = test_password_admin($_POST['id_profil'][$i], $_POST['password'][$i]);
             if($test_password_bash == true) {
             //Supprime le dossier rsa de l'utilisateur /home/$user/.ssh
-            main_ssh($_SESSION['id_machine'], 'delete rsa dir', NULL, $_POST['old_username'][$i]);
+            main_ssh($_SESSION['id_machine'], 'delete rsa dir', $_POST['old_username'][$i]);
             
             //Supprime le fichier dans le dossier rsa du projet 
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             unlink("../rsa/$file.txt");
+            unlink("../rsa/$file.pub");
+            unlink("../rsa_admin/id_rsa.pub");
+            unlink("../rsa_admin/id_rsa.pem");
 
             //Met le status rsa à 0 
             $rsa = 0;

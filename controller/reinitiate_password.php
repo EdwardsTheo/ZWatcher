@@ -10,12 +10,7 @@
     $password = $_POST['password'];
     $code = $_POST['code'];
     $user_id = $_POST['user'];
-    //$user_id = 1;
-
-    //echo "$password </br>";
-    //echo "$code </br>";
-    //echo "$user_id </br>";
-
+   
     $error_pwd = 0;
     if(strlen($password) < 8){
         $error_pwd = 1;

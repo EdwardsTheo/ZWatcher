@@ -45,6 +45,6 @@
     }
 
     
-    //header('location: ../view/profil.php?action=gestion_app');
+    header('location: ../view/profil.php?action=gestion_app');
 ?>
  

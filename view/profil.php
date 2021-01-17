@@ -2,7 +2,6 @@
 
 ob_start();
 session_start();
-//print_r($_SESSION);
 
 require("../model/config.php");
 require("../model/delete.php");

@@ -41,6 +41,7 @@
                 ";
                      
                 function show_app_installed($status, $button) {
+                    check_app_status();
                     $i = 1;
                     $req1 = get_app($_SESSION['id_machine'], $status);
                     $empty = true;
@@ -81,6 +82,26 @@
                         </form>
                         </div>";
                        }
+                }
+
+                function check_app_status() {
+                    $req1 = simple_get_app_second($_SESSION['id_machine']);
+                    $id_machine = $_SESSION['id_machine'];
+                    while($donnees = $req1->fetch()) {
+                        if($donnees['status_install'] == 1) {
+                            $output = main_ssh($id_machine, 'check_uninstall', $donnees['nom_appli']); // Check is the package is uninstalled  
+                        	if(trim($output) == "Installé : (aucun)") {
+                                update_status_install('0', $id_machine, $donnees['id_appli']);
+                            }
+                        }
+                        elseif($donnees['status_install'] == 0) {
+                            $output = main_ssh($id_machine, 'check_install', $donnees['nom_appli']); // Check is the package is installed 
+                            $check_install = (trim($output) == "Status: install ok installed") ? true : false; // returns true if install ok
+                            if($check_install == true) {
+                                update_status_install('1', $id_machine, $donnees['id_appli']);
+                           }
+                        }
+                    }
                 }
 
                 if(isset($_POST['choice'])) {

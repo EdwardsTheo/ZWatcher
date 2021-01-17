@@ -1,7 +1,9 @@
 <?php 
 
-    require('ssh_connection.php');
-    require('ssh_exec.php');
+    require('ssh_connection.php'); // The file to have the right connection information
+    require('ssh_exec.php'); // The file that execute the request
+    
+    // File that contains the bash command to execute
     require('../bash/install.php');
     require('../bash/check_install.php');
     require('../bash/check_package.php');
@@ -10,14 +12,15 @@
     require('../bash/user_group.php');
     require('../bash/rsa.php');
 
-function main_ssh($machine_ip, $order, $app_name = NULL, $username = NULL, $password = NULL) {
-    $login_info = info_login($machine_ip);  // give the information of the machine you want to connect
-    return $output = ssh_execute($order, $login_info, $app_name, $username, $password); // output to check is the execution went well
+function main_ssh($machine_ip, $order, $opt1 = NULL, $opt2 = NULL, $opt3 = NULL) {
+    $login_info = info_login($machine_ip);  // Put the connection informations inside an array
+    return $output = ssh_execute($order, $login_info, $opt1, $opt2, $opt3); // Get the ouput of the command you executed
 }
 
-function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $password = NULL) {
+function ssh_execute($order, $login_info, $opt1 = NULL, $opt2 = NULL, $opt3 = NULL) {
+    // order = the command you want to execute
     switch($order) {
-        //Modifications
+        // Modifications
         case "get_machine_hostname" :
             $command =  get_machine_hostname();
         break;
@@ -33,7 +36,7 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case "get_interface" :
             $command =  get_interface();
         break;
-        //Observation
+        // Observation
         case "dwl_auth" :
             $command =  dwl_auth();
         break;
@@ -46,100 +49,107 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         case "dwl_syslog" :
             $command =  dwl_syslog();
         break;
-        //Applications
+        // Applications
         case "Installer" :  
-            $command = install($app_name);
+            $command = install($opt1);
         break;
         case "check_install" :
-            $command = check_install($app_name);
+            $command = check_install($opt1);
         break;
         case "Désinstaller" :  
-            $command = uninstall($app_name);
+            $command = uninstall($opt1);
         break;
         case "check_uninstall" :
-            $command = check_uninstall($app_name);
+            $command = check_uninstall($opt1);
         break;
 	    case "check_package" :
-            $command = check_package($app_name);
+            $command = check_package($opt1);
         break;
         case "update_upgrade" :
             $command = bash_upgrade_update();
         break;
+        // User and Group
         case "add_user" :
-            $command = bash_add_user($username, $password);
+            $command = bash_add_user($opt1, $opt2);
         break;
         case "change_password" :
-            $command = bash_change_password($username, $password);
+            $command = bash_change_password($opt1, $opt2);
         break;
         case "change_bash" :
-            $command = change_bash($username);
+            $command = change_bash($opt1);
         break;
         case "bash_user_exist" :
-            $command = bash_user_exist($username);
+            $command = bash_user_exist($opt1);
         break;
         case "delete_users" :
-            $command = delete_users($username);
+            $command = delete_users($opt1);
         break;
         case "change_username" :
-            $command = change_username($username, $password);
+            $command = change_username($opt1, $opt2);
+        break;
+        case "change_home_dir" :
+            $command = change_home_dir($opt1, $opt2);
         break;
         case "create_home" :
-            $command = create_home($username);
+            $command = create_home($opt1);
         break;
         case "delete_home" :
-            $command = delete_home($username);
+            $command = delete_home($opt1);
         break;
-        // USERNAME == GROUPS NAME 
         case "add_groups" :
-            $command = add_groups($username);
+            $command = add_groups($opt1);
         break;
         case "check_groups" :
-            $command = check_groups($username);
+            $command = check_groups($opt1);
         break;
         case "add_groups_sudo" : 
-            $command = add_groups_sudo($username);
+            $command = add_groups_sudo($opt1);
         break;
         case "change_group_name" :
-            $command = change_group_name($username, $password);
+            $command = change_group_name($opt1, $opt2);
         break;
         case "add_user_to_groups" :
-            $command = add_user_to_groups($username, $password);
+            $command = add_user_to_groups($opt1, $opt2);
         break;
         case "remove_from_groups" :
-            $command = remove_from_groups($username, $password);
+            $command = remove_from_groups($opt1, $opt2);
         break;
         case 'delete_groups' :
-            $command = bash_delete_groups($username);
-        break;
-        case 'cat_rsa_key' :
-            $command = cat_rsa_key($username);
-        break;
-        case "delete rsa dir" : 
-            $command = delete_rsa_dir($username);
+            $command = bash_delete_groups($opt1);
         break;
         case "add_groups_sudo" : 
-            $command = add_groups_sudo($username);
+            $command = add_groups_sudo($opt1);
         break; 
         case "retire_sudo_groups" : 
-            $command = del_groups_sudo($username);
+            $command = del_groups_sudo($opt1);
         break; 
-        case "activer rsa login" :
-           $command = bash_active_rsa_login();
-        break;
-        case 'desactiver rsa login' :
-            $command = bash_desactivate_rsa_login();
-        break;
         case 'restart ssh' :
             $command = restart_ssh();
         break;
+        // RSA KEY 
+        case 'cat_rsa_key' :
+            $command = cat_rsa_key($opt1, $opt2);
+        break;
+        case "delete rsa dir" : 
+            $command = delete_rsa_dir($opt1);
+        break;
+        case "activer rsa login" :
+           $command = bash_password_auth_ssh();
+        break;
+        case 'desactiver rsa login' :
+            $command = bash_password_auth_ssh_second();
+        break;
         case 'openssh' :
-            $command = openssh($password);
+            $command = openssh($opt2);
         break;
-        case 'cat_rsa_key_pem' :
-            $command = cat_rsa_key_pem();
+        case "create_rsa" : 
+            $command = create_rsa($opt1, $opt2);
         break;
-        case 'cat_rsa_key_pub' :
-            $command = cat_rsa_key_pub();
+        case "authorise key" : 
+            $command = authorise_key($opt1);
+        break;
+        case "create_ssh_dir" :
+            $command = create_ssh_dir($opt1);
         break;
         //Default
         default :
@@ -147,25 +157,6 @@ function ssh_execute($order, $login_info, $app_name = NULL, $username = NULL, $p
         break;
     }
     return $output = ssh_launch($login_info['ip'], $login_info['port'], $login_info['name'], $login_info['password'], $command);
-}
-
-function rsa_controller($machine_id, $order, $username, $password, $hash = NULL) {	
-    switch($order) {
-        case "create_rsa" : 
-            $command = create_rsa($username, $hash);
-        break;
-        case "authorise key" : 
-            $command = authorise_key($username);
-        break;
-    }
-    $req = get_listes_machine($machine_id);
-    while($donnees = $req->fetch()){
-        $login['name'] = $username;
-        $login['password'] = $password;
-        $login['ip'] = $donnees['ip'];
-        $login['port'] = $donnees['port'];
-    }
-    return $output = ssh_launch($login['ip'], $login['port'], $login['name'], $login['password'], $command);
 }
     
 ?>
