@@ -97,9 +97,7 @@
                 </form> -->
 
                 <button onclick="confirm_function()" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Supprimer</button>
-                
-                <!-- Partie de javascript rajoutée et crée pour les besoins du devoir et non copiée collée -->
-
+        
                 <script>
                 function confirm_function() {
                     let answer = confirm("Voulez-vous vraiment supprimer votre photo de profil ?");
@@ -107,7 +105,7 @@
                     if(answer == true) {
                         document.location.href="../controller/delete_picture.php"; 
                     }else{
-                        //On reste sur la page en cours
+                       
                     }
                 }
                 </script>

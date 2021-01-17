@@ -97,7 +97,7 @@
                             "; 
                         }
 
-                           //PARTIE APPLICATIONS 
+        
                            if(isset($_POST['choice'])) {
                             switch($_POST['choice']) {
                                 case 'Applications disponibles' : show_app_activate('1');

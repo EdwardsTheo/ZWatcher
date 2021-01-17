@@ -1,16 +1,13 @@
 <?php
 
-
 require('../ssh/ssh_controller.php');
 require('profil_manage_table_equipes_copy.php');
 
 function main_add_users() {
     $i = 1;
     foreach ($_POST['username'] as $key => $value) { 
-        //TEST username dans la BDD 
         $test_username = test_username($_POST['username'][$i]);
         if($test_username == true) {
-            //TEST username à bien été crée dans la machine 
             $username = $_POST['username'][$i];
             $password = $_POST['pswd'][$i];
             main_ssh($_SESSION['id_machine'], 'add_user', $username, $password);
@@ -19,7 +16,6 @@ function main_add_users() {
                 main_ssh($_SESSION['id_machine'], 'change_password', $username, $password);
                 main_ssh($_SESSION['id_machine'], 'change_bash', $username, $password);
                 main_ssh($_SESSION['id_machine'], 'create_home', $username, $password);
-                //Alors ajout dans la BDD
                 $rsa = 0;
                 insert_new_user_listesnull($username, $password, $_SESSION['id_machine'], $rsa);
             }
@@ -187,39 +183,36 @@ function get_username($id_eleve) {
     return $username;
 }
 
-
-// Partie création clé RSA 
-
 function generate_rsa_key() {
     foreach ($_POST['id_profil'] as $key => $value) { 
         $i = $key;
     }
     foreach ($_POST['id_profil'] as $key => $value) { 
-        //TEST PASSWORD 
+        // Test if the password given is ok
         $test_password_bash = test_password_bash($_POST['id_profil'][$i], $_POST['password'][$i]);
         if($test_password_bash == true) {
             
-            //CREATION DE LA CLE RSA passphrase RANDOM 
+            // Create a rsa key with a random passphrase  
             $hash = bin2hex(random_bytes(16));
             $_SESSION['hash'][1] = $hash;
             $tmp_pass = $_SESSION['hash'][1];
             main_ssh($_SESSION['id_machine'], 'create_ssh_dir', $_POST['old_username'][$i]);
             main_ssh($_SESSION['id_machine'], 'create_rsa', $_POST['old_username'][$i], $hash);
                 
-            //Mis dans le fichier ~/.ssh/authorized key s
+            
             main_ssh($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i]);
                 
-            // Creation du fichier php au nom de l'user => id_rsa
+           
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa');
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             file_put_contents("../rsa/$file.txt", $output);
 
-            //Creation du fichier php au nom de l'user => id_rsa.pub
+            
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pub');
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             file_put_contents("../rsa/$file.pub", $output);
                 
-            //Update du statut rsa 0 => 1
+           
             $rsa = 1;
             update_users_rsa($_POST['id_profil'][$i], $rsa);
 
@@ -704,24 +697,17 @@ function delete_rsa_keys() {
     foreach ($_POST['id_profil'] as $key => $value) { 
         $test_password_bash = test_password_bash($_POST['id_profil'][$i], $_POST['password'][$i]);
             if($test_password_bash == true) {
-            //Supprime le dossier rsa de l'utilisateur /home/$user/.ssh
             main_ssh($_SESSION['id_machine'], 'delete rsa dir', $_POST['old_username'][$i]);
             
-            //Supprime le fichier dans le dossier rsa du projet 
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             unlink("../rsa/$file.txt");
             unlink("../rsa/$file.pub");
-
-            //Met le status rsa à 0 
             $rsa = 0;
             update_users_rsa($_POST['id_profil'][$i], $rsa);
         }
         else $_SESSION['error'][$i] = "Mot de passe incorrect";
     }
 }
-
-
-// Partie lien utilisateurs - users linux 
 
 function delete_user_link() {
     $i=1;

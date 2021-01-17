@@ -27,17 +27,15 @@ switch($_POST['choice']) {
 
 function main_add_groups() {
     $i = 1;
-    foreach ($_POST['groupe_name'] as $key => $value) {
-        //Test nom du groupe BDD 
-        $test_name_group = test_name_groups($_POST['groupe_name'][$i]);
+    foreach ($_POST['groupe_name'] as $key => $value) { 
+        $test_name_group = test_name_groups($_POST['groupe_name'][$i]); // Test if the name of the group already exist
         if($test_name_group == true) {
-            //TEST groupe bien crée dans la machine
-            main_ssh($_SESSION['id_machine'], 'add_groups', $_POST['groupe_name'][$i]);
-            $output = main_ssh($_SESSION['id_machine'], 'check_groups', $_POST['groupe_name'][$i]);
+            main_ssh($_SESSION['id_machine'], 'add_groups', $_POST['groupe_name'][$i]); // Create the group
+            $output = main_ssh($_SESSION['id_machine'], 'check_groups', $_POST['groupe_name'][$i]); // Check if the group is created
             if($output != "") {
                 if(isset($_POST['sudo_right'][$i])) {
                     if($_POST['sudo_right'][$i] == 'on') {
-                    main_ssh($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]);
+                    main_ssh($_SESSION['id_machine'], 'add_groups_sudo', $_POST['groupe_name'][$i]); // Give sudo right to the group
                     $sudo = 1;
                     }
                     else $sudo = 0;
@@ -82,8 +80,8 @@ function change_grp_name() {
     foreach ($_POST['nom_groupe'] as $key => $value) {
         $test_name_group = test_name_groups($_POST['nom_groupe'][$i], $_POST['id_equipe'][$i]);
         if($test_name_group == true) {
-            update_group_name($_POST['id_equipe'][$i], $_POST['nom_groupe'][$i]);
-            main_ssh($_SESSION['id_machine'], 'change_group_name', $_POST['nom_groupe'][$i], $_POST['old_groupe'][$i]);
+            update_group_name($_POST['id_equipe'][$i], $_POST['nom_groupe'][$i]); // Change inside the db
+            main_ssh($_SESSION['id_machine'], 'change_group_name', $_POST['nom_groupe'][$i], $_POST['old_groupe'][$i]); // Change inside the machine
         }
         else $_SESSION['error'][$i] = "Le nom de groupe ". $_POST['nom_groupe'][$i] ." est déjà prit";
         $i++;

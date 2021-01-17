@@ -1,16 +1,16 @@
 <?php 
 
-    require('ssh_connection.php'); // The file to have the right connection information
-    require('ssh_exec.php'); // The file that execute the request
+require('ssh_connection.php'); // The file to have the right connection information
+require('ssh_exec.php'); // The file that execute the request
     
-    // File that contains the bash command to execute
-    require('../bash/install.php');
-    require('../bash/check_install.php');
-    require('../bash/check_package.php');
-    require('../bash/edit_machine.php');
-    require('../bash/observ_machine.php');
-    require('../bash/user_group.php');
-    require('../bash/rsa.php');
+// File that contains the bash command to execute
+require('../bash/install.php');
+require('../bash/check_install.php');
+require('../bash/check_package.php');
+require('../bash/edit_machine.php');
+require('../bash/observ_machine.php');
+require('../bash/user_group.php');
+require('../bash/rsa.php');
 
 function main_ssh($machine_ip, $order, $opt1 = NULL, $opt2 = NULL, $opt3 = NULL) {
     $login_info = info_login($machine_ip);  // Put the connection informations inside an array

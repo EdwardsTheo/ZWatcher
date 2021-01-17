@@ -53,7 +53,6 @@
                     }
                     
                     if($_SESSION['power'] == 'utilisateur') {
-                        // EQUIPES 
                         $team = show_team($_SESSION['id']);
                         echo "
                         <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
@@ -71,7 +70,7 @@
                         <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
                         <h4><b>Users : </b></h4>
                         ";
-                        // UTILISATEUR SUR UNE MACHINE ?
+                        
                         $user = show_user($_SESSION['id']);
 
                         $i = 0;
@@ -100,7 +99,8 @@
                                 echo "
                                 <hr class='w3-opacity'>
                                 <h5>Vous pouvez vous connecter en SSH avec la clé rsa</h5>
-                                <a href='../rsa/$file.txt' download>Télécharger la clé RSA</a></br>
+                                <a href='../rsa/$file.txt' download>Télécharger la clé RSA privée</a></br>
+                                <a href='../rsa/$file.pub' download>Télécharger la clé RSA publique</a></br>
                                 <hr class='w3-opacity'>
                                 ";
                             }
@@ -115,7 +115,6 @@
                            
                             $i++;
                         }
-                        // SI OUI => CLE RSA ?
                     }
                 ?>
     </html>

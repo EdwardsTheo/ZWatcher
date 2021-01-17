@@ -4,7 +4,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     
     $req =  get_liste_data($_SESSION['id_machine']);
     while($data = $req->fetch()) {
-        // Check inside the db, which connection to make (RSA or standard login)
+        // Check inside the db, which connection to make (RSA or standard login username/password)
         $connect_rsa = $data['connexion_rsa'];
     }
    
@@ -33,10 +33,10 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     $stream = ssh2_exec($connection, $command);
     stream_set_blocking($stream, true);
     $output = stream_get_contents($stream);
-    //echo nl2br ("$output \n");
+    //echo nl2br ("$output \n"); // To the the output of the executed command
     unset($connection);
 
-    return $output;
+    return $output; // Return the result of the command
 }
 
 ?>

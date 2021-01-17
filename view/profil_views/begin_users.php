@@ -170,9 +170,6 @@
                     }
                     $i++;
                 }
-                if($button == "Supprimer la clé RSA") {
-                    //AFFICHAGE DE LA clé rsa à dl
-                }
                 echo "
                 <form action='../view/profil.php?action=manage_users' method='POST'>
                     <hr class='w3-opacity'> 

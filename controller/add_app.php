@@ -3,11 +3,12 @@
     require("../ssh/ssh_controller.php");
     
     function main_add_app() {
-        $message = check_if_exist($_POST['nom_app']);
+        //Main function to add an app and make it available on the interface
+        $message = check_if_exist($_POST['nom_app']); // check inside the db if the package is already stored  
         $message = "";
-        if($message == "") $message = paquet_exist();
+        if($message == "") $message = paquet_exist(); // check inside the command line if the package can be installed
         if($message == "") {
-            $message = add_app($_POST['nom_app']);
+            $message = add_app($_POST['nom_app']); // add the app to the db
         }
         else $message = "Il y'a eu une erreur lors de l'ajout du paquet";
         return $_SESSION['message'] = $message;
