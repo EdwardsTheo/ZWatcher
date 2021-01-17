@@ -69,7 +69,8 @@
                         elseif($button == 'Supprimer la clé RSA') {
                             $file = $username . "_" . $_SESSION['id_machine'];
                             echo "
-                                <a href='../rsa/$file.txt' download>Télécharger la clé RSA de l'utilisateur</a></br>
+                                <a href='../rsa/$file.txt' download>Télécharger la clé RSA privée de l'utilisateur</a></br>
+                                <a href='../rsa/$file.pub' download>Télécharger la clé RSA publique de l'utilisateur</a></br>
                                 <hr class='w3-opacity'> 
                                 <h4><b>Veuillez rentrer votre mot de passe pour supprimer la clé rsa </b></h4>
                                 <input class='w3-input w3-border' type='password'  name='password[$i]' value='' required></br>

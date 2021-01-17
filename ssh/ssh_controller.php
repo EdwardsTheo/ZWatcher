@@ -5,19 +5,17 @@ require('ssh_exec.php'); // The file that execute the request
     
 // File that contains the bash command to execute
 require('../bash/install.php');
-require('../bash/check_install.php');
-require('../bash/check_package.php');
 require('../bash/edit_machine.php');
 require('../bash/observ_machine.php');
 require('../bash/user_group.php');
 require('../bash/rsa.php');
 
-function main_ssh($machine_ip, $order, $opt1 = NULL, $opt2 = NULL, $opt3 = NULL) {
+function main_ssh($machine_ip, $order, $opt1 = NULL, $opt2 = NULL) {
     $login_info = info_login($machine_ip);  // Put the connection informations inside an array
-    return $output = ssh_execute($order, $login_info, $opt1, $opt2, $opt3); // Get the ouput of the command you executed
+    return $output = ssh_execute($order, $login_info, $opt1, $opt2, ); // Get the ouput of the command you executed
 }
 
-function ssh_execute($order, $login_info, $opt1 = NULL, $opt2 = NULL, $opt3 = NULL) {
+function ssh_execute($order, $login_info, $opt1 = NULL, $opt2 = NULL) {
     // order = the command you want to execute
     switch($order) {
         // Modifications

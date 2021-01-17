@@ -25,13 +25,13 @@ function check_package($app) {
 }
 
 function check_install($app) {
-    // Check if the package is installed from the machine 
+    // Check if the package is installed in the machine 
     $command = "dpkg -s $app | sed -n 2p";
     return $command;
 }
 
 function check_uninstall($app) {
-    // Check if the package is uninstalled from the machine
+    // Check if the package is not installed in the machine
     $command = "apt-cache policy $app | sed -n 2p";
     return $command;	
 }

@@ -48,9 +48,9 @@ function change_username($old_username, $new_username) {
     return $command;
 }
 
-function change_home_dir($old_username, $new_username) {
+function change_home_dir($username) {
     // When the username is changed, it changes is home directory with keeping the file inside
-    $command = "sudo usermod -m -d /home/$old_username $old_username";
+    $command = "sudo usermod -m -d /home/$username $username";
     return $command;
 }
 

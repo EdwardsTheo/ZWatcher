@@ -29,7 +29,6 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     }
 
     // After the connection is set, execute the command 
-
     $stream = ssh2_exec($connection, $command);
     stream_set_blocking($stream, true);
     $output = stream_get_contents($stream);
