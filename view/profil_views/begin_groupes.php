@@ -135,11 +135,12 @@
 
             function groups_details($id_groupe) {
                 $i=1;
-                echo "<h4><b>Details du groupe</b></h4>";
+                echo "<h2><b>Details du groupe</b></h2>
+                <hr class='w3-opacity'>";
                 $req1 = select_user_bl_group($id_groupe);
                 $empty = false;
                 echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
-                echo "<h4><b>Users faisant partie du groupe : </b></h4>";
+                echo "<h5><b>Users faisant partie du groupe : </b></h5>";
                 while($donnees = $req1->fetch()) {
                     $empty = true;
                     if($i % 3 == 1){
@@ -173,6 +174,9 @@
                         </form>
                         <hr class='w3-opacity'>";
                     echo " <form action='../view/profil.php?action=manage_groups' method='POST'>";
+                }
+                else {
+                    echo "<I>Il n'y a actuellement personne dans ce groupe</I>";
                 }
                 $req = select_group_listes_details($id_groupe, $_SESSION['id_machine']);
                 while($donnees = $req->fetch()) {
@@ -233,13 +237,13 @@
                                         echo "</div>";
                                     }
                                    
-                                    echo "<hr class='w3-opacity'>";
+                                
                                 }
                              $j++;
                         }
                         if($empty == true && $test == false) {
                             echo " 
-                            <input type='submit' class='w3-button w3-black' name='choice' value='Ajouter'>
+                            </div><input type='submit' class='w3-button w3-black' name='choice' value='Ajouter'>
                             </form>";
                         }
                         else {
@@ -251,9 +255,9 @@
                         </div>
                         <hr class='w3-opacity'>
                         <form action='../view/profil.php?action=manage_groups' method='POST'>
-                        <input type='hidden' name='id_group[$i]' value='$id_groupe'>
-                        <input type='hidden' name='nom_groupe[$i]' value='$donnees[nom]'>
-                        <input type='submit' class='w3-button w3-black' name='choice' value='$button'>
+                            <input type='hidden' name='id_group[$i]' value='$id_groupe'>
+                            <input type='hidden' name='nom_groupe[$i]' value='$donnees[nom]'>
+                            <input type='submit' class='w3-button w3-black' name='choice' value='$button'>
                         </form>
                     ";
 

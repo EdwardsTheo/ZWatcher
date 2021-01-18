@@ -4,7 +4,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     
     $req =  get_liste_data($_SESSION['id_machine']);
     while($data = $req->fetch()) {
-        // Check inside the db, which connection to make (RSA or standard login username/password)
+        // Get inside the db, which connection to make (RSA (1) or standard login username/password (0))
         $connect_rsa = $data['connexion_rsa'];
     }
    
@@ -14,13 +14,13 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     //echo $username; // username for login
     //echo $password; // password for the username
 
-    if($connect_rsa == 0) {
-        // If connect_rsa is set to RSA, use username/password to connect via ssh
+    if($connect_rsa == 0) { // 0 => login username/password
+        // If connect_rsa is set to 0, use username/password to connect via ssh
         $connection = ssh2_connect($ip, $port);
         ssh2_auth_password($connection, $username, $password); 
     }
     
-    else {
+    else { // 1 => login with rsa key
         // else, use the file id_rsa.pub and id_rsa.pem of the admin to connect via ssh with rsa keys
 	    $connection = ssh2_connect($ip, $port, array('hostkey' => 'ssh-rsa'));
         ssh2_auth_pubkey_file($connection, 'zwadmin',

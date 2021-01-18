@@ -82,15 +82,19 @@
                                 <input class="w3-input w3-border" type="text" name="port">
                             </div>
                             <div class="w3-section">
-                                <label>Identifiant</label>
+                                <label>Nom de votre compte admin</label>
                                 <input class="w3-input w3-border" type="text" name="iden">
                             </div>
                             <div class="w3-section">
-                                <label>Mot de passe</label>
+                                <label>Mot de passe de votre compte admin</label>
                                 <input class="w3-input w3-border" type="password" name="password">
                             </div>
+                            <div class="w3-section">
+                                <label>Mot de passe de l'utilisateur root</label>
+                                <input class="w3-input w3-border" type="password" name="root_password">
+                            </div>
                             
-
+                            <input class="w3-input w3-border" type="hidden" name="admin_add" value='yes'>
                             <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fas fa-check w3-margin-right"></i>Créer</button>
                             </form>
                         </div>

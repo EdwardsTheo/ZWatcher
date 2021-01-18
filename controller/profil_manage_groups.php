@@ -1,29 +1,7 @@
 <?php
 
 require('../ssh/ssh_controller.php');
-
-switch($_POST['choice']) {
-    case 'Ajouter les ou le groupe' :  main_add_groups();
-    break;
-    case 'Supprimer les membres' : main_delete_utilisateurs();
-    break;
-    case 'Modifier les informations' : main_update_utilisateurs();
-    break;
-    case 'Détails du groupe' :  set_session_groups();
-    break;
-    case 'Changer le nom' : change_grp_name();
-    break;
-    case 'Retirer les droits sudo' : manage_sudo_right();
-    break;
-    case 'Donner a ce groupe les droits sudo' : manage_sudo_right();
-    break;
-    case 'Ajouter' : add_user_to_group();
-    break;
-    case 'Supprimer les utilisateurs de ce groupe' : delete_user_bl();
-    break;
-    case 'Supprimer le groupe' : main_delete_group();
-    break;
-}
+print_r($_POST);
 
 function main_add_groups() {
     $i = 1;
@@ -108,7 +86,9 @@ function manage_sudo_right() {
 }
 
 function add_user_to_group() {
-    $i = 1;
+    foreach ($_POST['id_group'] as $key => $value) {
+        $i = $key;
+    }
     foreach ($_POST['id_group'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
@@ -146,6 +126,29 @@ function main_delete_group() {
         }
         $i++;
     }
+}
+
+switch($_POST['choice']) {
+    case 'Ajouter les ou le groupe' :  main_add_groups();
+    break;
+    case 'Supprimer les membres' : main_delete_utilisateurs();
+    break;
+    case 'Modifier les informations' : main_update_utilisateurs();
+    break;
+    case 'Détails du groupe' :  set_session_groups();
+    break;
+    case 'Changer le nom' : change_grp_name();
+    break;
+    case 'Retirer les droits sudo' : manage_sudo_right();
+    break;
+    case 'Donner a ce groupe les droits sudo' : manage_sudo_right();
+    break;
+    case 'Ajouter' : add_user_to_group();
+    break;
+    case 'Supprimer les utilisateurs de ce groupe' : delete_user_bl();
+    break;
+    case 'Supprimer le groupe' : main_delete_group();
+    break;
 }
 
 

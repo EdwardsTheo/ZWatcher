@@ -78,6 +78,12 @@ function del_groups_sudo($name_group) {
     return $command;
 }
 
+function add_admin_sudo() {
+    // Add the admin into sudoers file 
+    $command = "echo 'zwadmin ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo";
+    return $command;
+}
+
 function change_group_name($name_group, $old_name) {
     // Change the name of a group
     $command = "sudo groupmod -n $name_group $old_name";

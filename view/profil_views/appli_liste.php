@@ -17,7 +17,7 @@
                 <div id="centre">
                 <h4><b>Vos machines</b></h4>
                 <?php
-                    if($_SESSION['power'] == "admin"){
+                   
 
                 ?>
                 
@@ -26,7 +26,9 @@
                 <?php
                 
                 $i = 1;
+                $empty = false;
                 while($donnees = $req->fetch()){
+                    $empty = true;
                     if($i % 3 == 1){
                         echo "<div class='w3-row-padding'>";
                     }
@@ -37,9 +39,9 @@
                         <form action='?action=appli_machine' method = 'POST'>
                         <div class='w3-container w3-white2'>
                             <input class='w3-input w3-border' type='hidden' name='id_machine' value=".$donnees['id'].">
-                            <p><b>$donnees[1]</b></p>
-                            <p>$donnees[2]</p>
-                            $donnees[3]</br> </br>
+                            <p><b>$donnees[titre]</b></p>
+                            <p>$donnees[description]</p>
+                            $donnees[date_liste]</br> </br>
                             <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-right'></i>Accèder à la machine</button>
                         </div>
                         </form>
@@ -52,14 +54,12 @@
                     }
                     $i = $i + 1;
                 }
+                if($empty == false) {
+                    echo "Vous n'avez aucun user disponible sur une machine, attendez que l'admin fasse son boulot !";
+                }
                 ?>
-                <?php
-                    }else{
-                ?>
-                    Vous n'avez pas les droits pour accéder à ces fonctions.
-                <?php
-                    }
-                ?>
+              
+              
                 </div>
                 </div>
     </html>

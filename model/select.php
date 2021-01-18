@@ -578,4 +578,19 @@
         return $request;
     }
 
+    function select_user_bl_listes_second($id_user) {
+        $db = connect_start();
+        $request = $db->query("SELECT ubl.id, ubl.id_user, u.username, l.id, l.titre, l.description, l.date_liste 
+        FROM user_listes AS ul
+        INNER JOIN listes as l
+        ON ul.id_listes = l.id
+        INNER JOIN user_bl_listes AS ubl
+        ON ubl.id_user_listes = ul.id
+        INNER JOIN user AS u
+        ON ubl.id_user = u.id
+        WHERE u.id = $id_user");
+        return $request;
+    }
+
+
 ?>

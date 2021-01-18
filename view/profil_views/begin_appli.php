@@ -73,7 +73,7 @@
                             echo "</div>";
                         }
                         $i = $i + 1;
-                       }
+                    }
                        if($empty == false) {
                         echo " 
                         </div>

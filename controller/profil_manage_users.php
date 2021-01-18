@@ -118,6 +118,8 @@ function change_file_rsa($username, $old_username) {
 
 }
 
+print_r($_POST);
+
 function add_team_grp() {
     $i = 1;
     foreach ($_POST['nom_equipe'] as $key => $value) {
@@ -130,7 +132,7 @@ function add_team_grp() {
             $output = main_ssh($_SESSION['id_machine'], 'check_groups', $_POST['nom_equipe'][$i]);
             $output = "o";
             if($output != "") {
-                if($_POST['sudo'][$i] == 'on') {
+                if(isset($_POST['sudo'][$i])) {
                     main_ssh($_SESSION['id_machine'], 'add_groups_sudo', $_POST['nom_equipe'][$i]);
                     $sudo = 1;  
                 }
@@ -157,19 +159,22 @@ function get_id_team($nom_equipe, $id_machine) {
 
 function add_team_to_grpbl($id_grp, $id_team, $nom_equipe) {
     $req = simple_select_teambl(); 
+    $i = 0;
     while($donnees = $req->fetch()) {
         if($donnees['id_equipe'] == $id_team) {
             $rsa = 0;
             $username = get_username($donnees['id_eleve']);
-            $password = "ghghghgh";
+            $password = "secret";
             $id_user = insert_new_user_listes($username, $password, $_SESSION['id_machine'], $rsa, $id_team);
-              // Creation des users avec username élèves.
+            // Creation des users avec username élèves.
             main_ssh($_SESSION['id_machine'], 'add_user', $username, $password);
             main_ssh($_SESSION['id_machine'], 'create_home', $username, $password);
             insert_user_to_group($id_user, $id_grp);
             main_ssh($_SESSION['id_machine'], 'change_bash', $username, $password);
             main_ssh($_SESSION['id_machine'], 'add_user_to_groups',  $nom_equipe,  $username);
+            insert_user_link($donnees['id_eleve'], $id_user);
         }
+        $i++;
     }
 }
 
@@ -214,8 +219,8 @@ function generate_rsa_key() {
                 
            
             $rsa = 1;
-            update_users_rsa($_POST['id_profil'][$i], $rsa);
-
+            $req = update_users_rsa($_POST['id_profil'][$i], $rsa);
+echo $req;
             
             
             //Send mail with passphrase
@@ -715,10 +720,27 @@ function delete_user_link() {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
                delete_user_link_table($_POST['id_table'][$i]);
+               $info = get_user_listes($_POST['username'][$i]);
+               main_ssh($_SESSION['id_machine'], 'delete rsa dir', $info['username']);
+               $file = $info['username'] . "_" . $_SESSION['id_machine'];
+               unlink("../rsa/$file.txt");
+               unlink("../rsa/$file.pub");
+               $rsa = 0;
+               update_users_rsa($_POST['username'][$i], $rsa);
             }
         }
         $i++;
     }
+}
+
+function get_user_listes($id_user) {
+    $req = select_users_listes_id($_SESSION['id_machine'], $id_user);
+    while($donnees = $req->fetch()) {
+        $info['id'] = $donnees['id'];
+        $info['username'] = $donnees['username'];
+        $info['rsa'] = $donnees['rsa'];
+    }
+    return $info;
 }
 
 function add_user_link() {
@@ -729,6 +751,36 @@ function add_user_link() {
         if(isset($_POST['scales'][$i])) {
             if($_POST['scales'][$i] == "on") {
                insert_user_link($_POST['id_user'][$i], $_POST['id_user_listes'][$i]);
+               $info = get_user_listes($_POST['id_user_listes'][$i]);
+               print_r($info);
+               if($info['rsa'] == 0) {
+                   $password = 'secret';
+                   main_ssh($_SESSION['id_machine'], 'change_password', $info['username'], $password);
+                   $options = array('cost' => 11);
+                   $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+                   update_users_listes($info['username'], $hashed_password, $info['id']);
+               } 
+               else {
+                   $password = 'secret';
+                   main_ssh($_SESSION['id_machine'], 'delete rsa dir', $info['username']);
+                   main_ssh($_SESSION['id_machine'], 'create_ssh_dir', $info['username']);
+                   main_ssh($_SESSION['id_machine'], 'create_rsa', $info['username'], $password);
+                       
+                   
+                   main_ssh($_SESSION['id_machine'], 'authorise key', $info['username']);
+                       
+                  
+                   $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $info['username'], 'id_rsa');
+                   $file = $info['username'] . "_" . $_SESSION['id_machine'];
+                   file_put_contents("../rsa/$file.txt", $output);
+       
+                   
+                   $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $info['username'], 'id_rsa.pub');
+                   $file = $info['username'] . "_" . $_SESSION['id_machine'];
+                   file_put_contents("../rsa/$file.pub", $output);
+               
+                }  
+                
             }
         }
         $i++;
@@ -755,6 +807,5 @@ switch($_POST['choice']) {
     case "Ajouter l'utilisateur à cette user linux" : add_user_link();
     break; 
 }
-
 
 header('location: ../view/profil.php?action=modif_users'); // redirect to the main app page with a message of confirmation 

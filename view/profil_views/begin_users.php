@@ -39,6 +39,7 @@
             }
         }
 
+        if(isset($id_user[2])) $id_user[1] = $id_user[2];
 
         ?>
 
@@ -198,7 +199,6 @@
                 </form>
                 ";
                 users_details($id_user[1]);
-
                 echo "
                 <hr class='w3-opacity'>
                 <form action='../view/profil.php?action=modif_users' method='POST'>
@@ -241,9 +241,11 @@
                 $i=1;
                 $req1 = select_user_bl_listes($id_user);
                 $empty = false;
+                $check_user = 0;
                 echo " <form action='../view/profil.php?action=manage_users' method='POST'>";
                 echo "<h4><b>Utilisateurs associés à cette user linux : </b></h4>";
                 while($donnees = $req1->fetch()) {
+                    $check_user = 1;
                     $empty = true;
                     if($i % 3 == 1){
                         echo "<div class='w3-row-padding'>";
@@ -254,7 +256,8 @@
                         <div class='w3-container w3-white2'>
                             <p><b>Eleve $donnees[username]</b></p>
                             <input type='checkbox' id='scales' name='scales[$i]'>
-                            <input type='hidden' name='id_table[$i]' value='$donnees[id]'>";
+                            <input type='hidden' name='id_table[$i]' value='$donnees[id]'>
+                            <input type='hidden' name='username[$i]' value='$donnees[id_user_listes]'>";
 
                     echo "
                         </div>
@@ -267,7 +270,7 @@
 
                 if($empty == true) {
                     echo "
-                        <hr class='w3-opacity'>
+                        <hr class='w3-opacity'></div>
                         <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer le lien avec un ou des utilisateurs'>
                         </div>
                         </form>
@@ -279,17 +282,18 @@
                     </form>";
                 }
 
-                echo " 
-                <hr class='w3-opacity'>
-                <div class='w3-section w3-bottombar w3-padding-16'>
-                <hr class='w3-opacity'>
-                <form action='../view/profil.php?action=modif_users' method='POST'>
-                    <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cette user linux'>
-                <hr class='w3-opacity'>
-                </form>
-                ";
-
-
+                if($check_user == 0) {
+                    echo " 
+                    <hr class='w3-opacity'>
+                    <div class='w3-section w3-bottombar w3-padding-16'>
+                    <hr class='w3-opacity'>
+                    <form action='../view/profil.php?action=modif_users' method='POST'>
+                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cette user linux'>
+                    <hr class='w3-opacity'>
+                    </form>
+                    ";
+                }
+            
                 if(isset($_POST['choice_details'])) {
                     if($_POST['choice_details'] == 'Associer des utilisateurs à cette user linux') {
                         $j = 1;
@@ -312,6 +316,7 @@
                                     <p><b>Utilisateur $username</b></p>
                                         <input type='checkbox' id='scales' name='scales[$j]'>
                                         <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
+                                        <input type='hidden' name='username[$j]' value='$username'>
                                         <input type='hidden' name='id_user_listes[$j]' value='$id_user'>";                       
                                     echo "
                                         </div>
@@ -319,21 +324,21 @@
                                     if($j % 3 == 0){
                                         echo "</div>";
                                     }
-                                
                                     echo "<hr class='w3-opacity'>";
-                                }
-                            $j++;
-                        }
-                        if($empty == true && $test == false) {
-                            echo '
-                            <input type="submit" class="w3-button w3-black" name="choice" value="Ajouter l\'utilisateur à cette user linux">
-                            </form>';
-                        }
-                        else {
-                            echo "Les users sont déjà tous dans ce groupe";
-                        }
+                                    }
+                                $j++;
+                            }
+                            if($empty == true && $test == false) {
+                                echo '
+                                <input type="submit" class="w3-button w3-black" name="choice" value="Ajouter l\'utilisateur à cette user linux">
+                                </form>';
+                            }
+                            else {
+                                echo "Les users sont déjà tous dans ce groupe";
+                            }
                     }
-                }
+                }   
+                
             }
 
             function already_linked($id_user, $id_user_machine) {
