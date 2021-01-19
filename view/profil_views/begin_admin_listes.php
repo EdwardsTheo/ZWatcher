@@ -21,6 +21,13 @@
                     <?php
                     if($_SESSION['power'] == "admin"){
 
+                         
+                    if(isset($_SESSION['message'])) {
+                        $message = $_SESSION['message'];
+                        function_alert($message);
+                        unset($_SESSION['message']);
+                    }			 
+
                 ?>
                     <h4 id='contact'><b>Gérer vos accès pour cette machine</b></h4>
 

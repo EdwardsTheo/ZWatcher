@@ -42,7 +42,7 @@
             $id_machine = $donnees['id'];
             insert_app_dispo($id, $id_machine);
         }
-        return $message = "L'application à bien été ajoutée";
+        return $message = "L'application " .$nom_app. " à bien été ajoutée";
     }
 
     

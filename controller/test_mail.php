@@ -1,11 +1,28 @@
-<?php
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript Alert Box by PHP</title>
 
-$to      = 'thomasparis56@gmail.com';
-$subject = 'the subject';
-$message = 'hello';
-$headers = 'From: "ZWatcher"<noreply.zwatcher@gmail.com>';
+<?php 
+// PHP program to pop an alert 
+// message box on the screen 
+  
+// Function defnition 
+function function_alert($message) { 
+      
+    // Display the alert box  
+    echo "<script>alert('$message');</script>"; 
+} 
+  
+  
+// Function call 
+function_alert($_SESSION['message']); 
+  
+?> 
 
-mail($to, $subject, $message, $headers);
+</head>
 
-?>
-
+<body>
+</body>
+</html>

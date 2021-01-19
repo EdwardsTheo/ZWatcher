@@ -54,7 +54,7 @@
 
     function return_status_uni($output, $id_machine, $id_appli) {
 		if(trim($output) == "Installé : (aucun)") {
-			$_SESSION['message'] = "La désinstallation n'a pas rencontrée de problème";
+			$_SESSION['message'] = "La désinstallation de n'a pas rencontrée de problème";
 			update_status_install('0', $id_machine, $id_appli);
 		}
 		else {

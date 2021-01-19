@@ -8,6 +8,9 @@ require("../model/delete.php");
 require("../model/insert.php");
 require("../model/select.php");
 require("../model/update.php");
+require("../mail/mail.php");
+require("../controller/alert.php");
+
 ?>
 
 <!DOCTYPE HTML>
@@ -518,7 +521,9 @@ require("../model/update.php");
                     require('../controller/profil_accueil.php');
 				break;
 			}
-		}
+        }
+
+          
         ?>
 
         <!-- Footer -->
@@ -561,8 +566,7 @@ require("../model/update.php");
 
         </div>
         </footer>   
-        
-        
+                
         <div class="w3-black2 w3-center w3-padding-24">Powered by <a href="../view/main_views/contact.php" title="ZTeam" target="_blank" class="w3-hover-opacity">ZTeam</a></div>
 
         <!-- End page content -->
@@ -579,6 +583,8 @@ require("../model/update.php");
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("myOverlay").style.display = "none";
         }
+
+        
         </script>
         </div>
         </body>

@@ -19,10 +19,12 @@
                         Pour ajouter de nouvelles applications, accèdez à l'onglet "Gestions des applications" </br>
                     <?php
 		
-			if(isset($_SESSION['message'])) {
-				echo "<h4><b>$_SESSION[message]</b></h4>";
-				unset($_SESSION['message']);
-			}			 
+            
+            if(isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+                function_alert($message);
+                unset($_SESSION['message']);
+            }			 
 		    ?>
 
 		    <?php
@@ -78,7 +80,7 @@
                         echo " 
                         </div>
                         <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
-                        <button type='submit' class='w3-button w3-black w3-margin-bottom'><i class='fas fa-check w3-margin-left'></i>".$button."</button>
+                        <input type='submit' class='w3-button w3-black' name='choice' value='$button'>
                         </form>
                         </div>";
                        }

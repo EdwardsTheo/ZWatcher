@@ -13,7 +13,7 @@
                     </div>
                 </header>
 
-                <div class="w3-container w3-padding-large" style="">
+                <div class="w3-container w3-padding-large">
                 <div id="centre">
                 <h4><b>Vos machines</b></h4>
                 <?php

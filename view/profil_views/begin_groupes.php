@@ -25,8 +25,10 @@
                     Sur cette page, vous pouvez ajouter ou retirer des utilisateur qui sont sur votre machine</br>
                 <?php
     
+        
         if(isset($_SESSION['message'])) {
-            echo "<h4><b>$_SESSION[message]</b></h4>";
+            $message = $_SESSION['message'];
+            function_alert($message);
             unset($_SESSION['message']);
         }			 
 

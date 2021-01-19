@@ -53,7 +53,16 @@
                 </form>
             </div>
             ";
-
+            
+            if(isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+                function_alert($message);
+                unset($_SESSION['message']);
+            }			 
+    
+    
+            if(isset($_SESSION['error'][1])) error();
+            
             function show_users($id_machine) {
                 $empty = false;
                 $req = select_users_listes($_SESSION['id_machine']);
@@ -330,6 +339,7 @@
                             }
                             if($empty == true && $test == false) {
                                 echo '
+                                </br>
                                 <input type="submit" class="w3-button w3-black" name="choice" value="Ajouter l\'utilisateur à cette user linux">
                                 </form>';
                             }
@@ -353,6 +363,8 @@
                 
             }
 
+       
+
             if(isset($_POST['choice'])) {
                 switch($_POST['choice']) {
                     case 'Users présents sur la machine' : show_users($_SESSION['id_machine']);
@@ -367,14 +379,7 @@
                     break;
                 }
             }
-        if(isset($_SESSION['message'])) {
-            echo "<h4><b>$_SESSION[message]</b></h4>";
-            unset($_SESSION['message']);
-        }			 
-
-
-        if(isset($_SESSION['error'][1])) error();
-        
+    
     
         ?>
 

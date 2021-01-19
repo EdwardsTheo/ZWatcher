@@ -542,7 +542,7 @@
 
     function select_user_bl_listes($id_user) {
         $db = connect_start();
-        $request = $db->query("SELECT ul.id_user_listes, ul.id_user, u.username, ul.id  
+        $request = $db->query("SELECT ul.id_user_listes, ul.id_user, u.username, ul.id, u.mail
         FROM user_bl_listes AS ul 
         INNER JOIN user AS u 
         ON u.id = ul.id_user
