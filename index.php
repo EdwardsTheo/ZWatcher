@@ -50,7 +50,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide03.jpg"  alt="" />
+					<img src="demo/demo_log_in.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Gestionnaire d'administration à distance</a></p>
@@ -59,7 +59,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide04.jpg"  alt="" />
+					<img src="demo/demo_parc.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Suivi d'un parc d'équipements LINUX</a></p>
@@ -68,7 +68,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide05.jpg"  alt="" />
+					<img src="demo/modif2.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Modifications à distance</a></p>
@@ -77,7 +77,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide06.jpg"  alt="" />
+					<img src="demo/appli1.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Gestionnaire d'applications</a></p>
@@ -86,7 +86,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide07.jpg"  alt="" />
+					<img src="demo/log.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Tracing des activités</a></p>
@@ -95,7 +95,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</div>
 				</article>
 				<article>
-					<img src="images/slide09.jfif"  alt="" />
+					<img src="demo/demo_message.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="./view/main_views/presentation.php">Interface sociale incorporée</a></p>
@@ -133,7 +133,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide03.jpg" alt="" />
+									<img src="demo/demo_accueil.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -153,7 +153,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide01_bis.jpg" alt="" />
+									<img src="demo/demo_parc.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -162,7 +162,8 @@ header('Content-Type: text/html; charset=utf-8');
 									</header>
 									<p> A travers l'outil, l'administrateur doit pouvoir effectuer diverses tâches nécessaires au bon suivi d'un parc d'équipements. En particulier, 
 									il veut pouvoir modifier directement des informations système, gérer des applications à distance, que ce soit leur installation ou leur gestion dans 
-									le temps, ou encore suivre l'activité des utilisateurs sur l'ensemble du parc.</p>
+									le temps, ou encore suivre l'activité des utilisateurs sur l'ensemble du parc. Il peut gérer les écosystèmes utilisateurs et groupes, en faisant 
+									le lien avec la plateforme, notamment via la création de clés RSA.</p>
 									<footer class="align-center">
 										<a href="./view/main_views/presentation.php" class="button alt">Découvrir</a>
 									</footer>
@@ -173,7 +174,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide05_bis.jpg" alt="" />
+									<img src="demo/modif2.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -182,7 +183,8 @@ header('Content-Type: text/html; charset=utf-8');
 									</header>
 									<p>A travers une première interface de modifications, l'administrateur doit être capable de gérer facilement et rapidement à distance diverses 
 									informations système, comme les noms des machines, leur adresse IP ou adresse MAC entre autres. Il peut également être amené à modifier d'autres 
-									informations nécessaires à l'administration de son parc.	</p>
+									informations nécessaires à l'administration de son parc. Il peut remanier l'intégralité de l'écosystème d'une machine avec ses groupes, utilisateurs, 
+									ou encore accès.	</p>
 									<footer class="align-center">
 										<a href="./view/main_views/presentation.php" class="button alt">Découvrir</a>
 									</footer>
@@ -192,7 +194,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide06.jpg" alt="" />
+									<img src="demo/appli1.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -211,7 +213,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide07.jpg" alt="" />
+									<img src="demo/log.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -228,7 +230,7 @@ header('Content-Type: text/html; charset=utf-8');
 						</div><div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide09_bis.jfif" alt="" />
+									<img src="demo/demo_message.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -246,7 +248,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide10_bis.jfif" alt="" />
+									<img src="demo/contact.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -287,72 +289,82 @@ header('Content-Type: text/html; charset=utf-8');
 							<div class="image fit">
 <!-- afficher l'image dans un nouvel onglet
 								<a href="images/slide01.jpg" target="_blank"><img src="images/slide01.jpg" alt="" /></a>
--->								<a href="./view/main_views/amerique_nord.php"><img src="images/slide01.jpg" alt="" /></a>
+-->								<a href="./view/main_views/presentation.php"><img src="./demo/demo_log_in.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/amerique_nord.php"><img src="images/bank/an04.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_accueil.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/europe_nord.php"><img src="images/bank/en01_bis.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_compte.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/europe_nord.php"><img src="images/bank/en04_ter.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_contacts.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/europe_sud.php"><img src="images/bank/es01.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_message.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/europe_sud.php"><img src="images/bank/es04.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_parc.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/amerique_sud.php"><img src="images/bank/as01.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_create_machine.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/amerique_sud.php"><img src="images/bank/as07.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_equipe.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/oceanie.php"><img src="images/bank/oc03.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_equipe_info.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/asie.php"><img src="images/bank/asie01.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_equipe_create.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/afrique_nord.php"><img src="images/bank/af01.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/demo_utilisateurs.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/afrique_sud.php"><img src="images/bank/afs01_ter.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/modif1.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/afrique_sud.php"><img src="images/bank/afs02_bis.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/modif2.png" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="./view/main_views/afrique_sud.php"><img src="images/bank/afs04.jfif" alt="" /></a>
+								<a href="./view/main_views/presentation.php"><img src="./demo/appli1.png" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="./view/main_views/presentation.php"><img src="./demo/appli2.png" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="./view/main_views/presentation.php"><img src="./demo/log.png" alt="" /></a>
 							</div>
 						</div>
 					</div>

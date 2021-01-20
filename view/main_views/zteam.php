@@ -50,7 +50,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide03.jpg"  alt="" />
+					<img src="../../demo/demo_log_in.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Gestionnaire d'administration à distance</a></p>
@@ -59,7 +59,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide04.jpg"  alt="" />
+					<img src="../../demo/demo_parc.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Suivi d'un parc d'équipements LINUX</a></p>
@@ -68,7 +68,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide05.jpg"  alt="" />
+					<img src="../../demo/modif2.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Modifications à distance</a></p>
@@ -77,7 +77,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide06.jpg"  alt="" />
+					<img src="../../demo/appli1.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Gestionnaire d'applications</a></p>
@@ -86,7 +86,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide07.jpg"  alt="" />
+					<img src="../../demo/log.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Tracing des activités</a></p>
@@ -95,7 +95,7 @@ session_start();
 					</div>
 				</article>
 				<article>
-					<img src="../../images/slide09.jfif"  alt="" />
+					<img src="../../demo/demo_message.png"  alt="" />
 					<div class="inner">
 						<header>
 							<p><a href="../../view/main_views/presentation.php">Interface sociale incorporée</a></p>
