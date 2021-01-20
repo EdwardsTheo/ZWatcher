@@ -113,7 +113,7 @@ header('Content-Type: text/html; charset=utf-8');
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="images/slide02_bis.jpg" alt="" />
+									<img src="demo/home_menu_demo.png" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">

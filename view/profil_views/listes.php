@@ -17,21 +17,12 @@
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
                 <h4><b>Accueil</b></h4>
-                <?php
-                    if($_SESSION['power'] == "admin"){
 
-                ?>
                 Bienvenue <?php echo htmlspecialchars(htmlspecialchars($_SESSION['username'])) ?> dans le système de gestion de votre parc d'équipements.
                 <p>Visualisez, ajoutez, modifiez, supprimez et configurez votre parc à l'aide des sous-menus correspondants. 
                 </br></br>Attention, les modifications sont uniquement des modifications 
                 sur notre base de données propre à l'outil ZWatcher. Pour modifier les informations système de votre machine, rendez-vous dans la section <a href="?action=modification">Modification</a>.
-                <?php
-                }else{
-                ?>
-                Vous n'avez pas les droits pour accéder à ces fonctions.
-                <?php
-                }
-                ?>
+        
                 </div>
                 </div>
     </html>

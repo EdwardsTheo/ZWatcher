@@ -252,7 +252,7 @@
                 $empty = false;
                 $check_user = 0;
                 echo " <form action='../view/profil.php?action=manage_users' method='POST'>";
-                echo "<h4><b>Utilisateurs associés à cette user linux : </b></h4>";
+                echo "<h4><b>Utilisateurs associés à cet user linux : </b></h4>";
                 while($donnees = $req1->fetch()) {
                     $check_user = 1;
                     $empty = true;
@@ -286,7 +286,7 @@
                         <hr class='w3-opacity'>";
                 }
                 else {
-                    echo "il n'y a pas d'utilisateurs associés à cette user linux !
+                    echo "il n'y a pas d'utilisateurs associés à cet user linux !
                     </div>
                     </form>";
                 }

@@ -39,6 +39,8 @@
 					<li>Mes contacts : créez et gérez votre liste d'interlocuteurs, personnalisable</li></p>
                     <li>Messagerie : dialoguez directement avec d'autres utilisateurs de la plateforme grâce à cette interface incorporée</li></p>
                     <li>Mon parc : visualisez votre parc d'équipements, personnalisez et configurez les éléments qui le composent</li></p>
+                    <li>Equipes : affichez vos équipes, modifiez-les, créez-en de nouvelles et bien d'autres encore</li></p>
+                    <li>Utilisateurs : visualisez l'ensemble des utilisateurs de la plateforme</li></p>
                     <li>Modification : modifiez des informations système sur l'un des équipements de votre parc</li></p>
                     <li>Applications : configurez, installez, gérez voire supprimez des applications sur l'ensemble de votre parc</li></p>
                     <li>Observation : surveillez l'activité de vos équipements, et téléchargez des fichiers de logs</li></p>
@@ -54,7 +56,10 @@
 					<li>Mon compte : modifiez vos informations personnelles et personnalisez votre expérience utilisateur</li></p>
 					<li>Mes contacts : créez et gérez votre liste d'interlocuteurs, personnalisable</li></p>
                     <li>Messagerie : dialoguez directement avec d'autres utilisateurs de la plateforme grâce à cette interface incorporée</li></p>
-                    <li>Mon parc, Modification, Applications et Observation : cette interface de gestion n'est accessible qu'aux administrateurs</li></p>
+                    <li>Equipes : affichez vos équipes</li></p>
+                    <li>Mon parc : visualisez les équipements sur lesquels vous avez accès</li></p>
+                    <li>Applications : configurez, installez, gérez voire supprimez des applications sur l'ensemble de votre parc</li></p>
+                    <li>Utilisateurs, Modification et Observation : cette interface de gestion n'est accessible qu'aux administrateurs</li></p>
                     <li>Assistant : bénéficiez de l'aide directe de notre assistant qui vous répondra en temps réel à vos demandes (en cours de construction ...).</li>
 				</ul>
                 <?php

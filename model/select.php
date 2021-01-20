@@ -578,6 +578,20 @@
         return $request;
     }
 
+    function select_user_bl_listes3($id_user) {
+        $db = connect_start();
+        $request = $db->query("SELECT l.titre, l.description, l.date_liste 
+        FROM user_bl_listes AS ul 
+        INNER JOIN user AS u 
+        ON u.id = ul.id_user
+        INNER JOIN user_listes AS uli
+        ON uli.id = ul.id_user_listes
+        INNER JOIN listes AS l 
+        ON uli.id_listes = l.id
+        WHERE ul.id_user = $id_user");
+        return $request;
+    }
+
     function select_user_bl_listes_second($id_user) {
         $db = connect_start();
         $request = $db->query("SELECT ubl.id, ubl.id_user, u.username, l.id, l.titre, l.description, l.date_liste 

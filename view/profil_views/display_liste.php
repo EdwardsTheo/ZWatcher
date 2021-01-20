@@ -46,9 +46,26 @@
                 ?>
                 <?php
                 }else{
-                ?>
-                Vous n'avez pas les droits pour accéder à ces fonctions.
-                <?php
+                
+                    $i = 1;
+                    while($donnees = $req->fetch()){
+                        if($i % 3 == 1){
+                            echo "<div class='w3-row-padding'>";
+                        }
+                        $nb = rand(1, 32);
+                        echo "<div class='w3-third w3-container w3-margin-bottom'>
+                            <img src='../images/listes/l$nb.jfif' alt='' style='width:100%; border-radius:10px 10px 0px 0px;'>
+                            <div class='w3-container w3-white2'>
+                                <p><b>$donnees[0]</b></p>
+                                <p>$donnees[1]</p>
+                                $donnees[2]</br> </br>
+                            </div>
+                        </div>";
+                        if($i % 3 == 0){
+                            echo "</div>";
+                        }
+                        $i = $i + 1;
+                    }
                 }
                 ?>
 
