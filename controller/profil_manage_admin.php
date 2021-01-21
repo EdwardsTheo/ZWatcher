@@ -105,6 +105,8 @@ function delete_rsa_keys_admin() {
             unlink("../rsa/$file.pub");
             unlink("../rsa_admin/id_rsa.pub");
             unlink("../rsa_admin/id_rsa.pem");
+            shell_exec('sudo rm /rsa_admin/id_rsa.pem');
+            shell_exec('sudo rm /rsa_admin/id_rsa.pub');
 
             //Put the status back to 0 
             $rsa = 0;
@@ -161,6 +163,6 @@ function profil_manage_admin_main() {
     }
 }
 
-header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
+//header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
 
 ?>

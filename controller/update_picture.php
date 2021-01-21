@@ -15,7 +15,6 @@
 
     $targetDir = "./../images/uploads/";
     $fileName = basename($_FILES["file"]["name"]);
-    shell_exec("sudo chown www-data:www-data ../images/uploads/$fileName");
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 

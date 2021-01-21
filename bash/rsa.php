@@ -8,7 +8,7 @@ function create_ssh_dir($username) {
 
 function create_rsa($username, $hash) { 
     // Create an rsa key compatible with SSL inside the user home directory, then give the right of all the file inside for the user
-    $command = "sudo ssh-keygen -m PEM -t rsa -N '$hash' -f /home/$username/.ssh/id_rsa && sudo chown $username:$username /home/$username/.ssh/*";
+    $command = "ssh-keygen -m PEM -t rsa -N '$hash' -f /home/$username/.ssh/id_rsa && sudo chown $username:$username /home/$username/.ssh/*";
     return $command;
 }
 
