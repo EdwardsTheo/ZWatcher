@@ -44,7 +44,7 @@ function generate_rsa_key_admin() {
             main_ssh($_SESSION['id_machine'], 'authorise key', $_POST['old_username'][$i]);
             
             // Create a php file with the name of the user and the id of the machine
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i]);
+            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa');
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             file_put_contents("../rsa/$file.txt", $output);
                 
