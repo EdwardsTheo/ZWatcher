@@ -105,12 +105,12 @@ function delete_rsa_keys_admin() {
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             unlink("../rsa/$file.txt");
             unlink("../rsa/$file.pub");
-            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
-            unlink("../rsa_admin/id_rsa.pub");
-            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
-            unlink("../rsa_admin/id_rsa.pem");
-            shell_exec('sudo rm /rsa_admin/id_rsa.pem');
-            shell_exec('sudo rm /rsa_admin/id_rsa.pub');
+            $file_pub = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
+            unlink("../rsa_admin/$file_pub");
+            $file_pem = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
+            unlink("../rsa_admin/$file_pem");
+            shell_exec("sudo rm /rsa_admin/$file_pem");
+            shell_exec("sudo rm /rsa_admin/$file_pub");
 
             //Put the status back to 0 
             $rsa = 0;

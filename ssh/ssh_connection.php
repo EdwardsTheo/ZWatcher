@@ -14,7 +14,8 @@ function info_login($machine_id) {
             $login['password'] = $donnees['pwd_machine'];
         }
         
-        $login['ip'] = $donnees['ip'];
+	$login['id'] = $donnees['id'];
+	$login['ip'] = $donnees['ip'];
         $login['port'] = $donnees['port'];
     
     }

@@ -22,10 +22,13 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     
     else { // 1 => login with rsa key
         // else, use the file id_rsa.pub and id_rsa.pem of the admin to connect via ssh with rsa keys
+	    $id_pub = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
+	    $id_pem = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
+
 	    $connection = ssh2_connect($ip, $port, array('hostkey' => 'ssh-rsa'));
         ssh2_auth_pubkey_file($connection, 'zwadmin',
-                    '../rsa_admin/id_rsa.pub',
-                    '../rsa_admin/id_rsa.pem', '');
+                    "../rsa_admin/$id_pub",
+                    "../rsa_admin/$id_pem", '');
     }
 
     // After the connection is set, execute the command 
