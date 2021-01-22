@@ -48,9 +48,10 @@ function restart_ssh() {
     return $command;
 }
 
-function openssh($hash) {
+function openssh($hash, $username) {
     // Create a id_rsa.pem to use the ssh2_auth_pubkey_file function
-    $command = "openssl rsa -in /home/zwadmin/.ssh/id_rsa -out /home/zwadmin/.ssh/id_rsa.pem -passin pass:$hash";
+    $file = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
+    $command = "openssl rsa -in /home/$username/.ssh/id_rsa -out /home/$username/.ssh/$file -passin pass:$hash";
     return $command; 
 }
 

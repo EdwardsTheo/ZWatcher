@@ -60,15 +60,17 @@ function generate_rsa_key_admin() {
                 
             // Create the .pem key to use it for the ssh_auth_public_key
             main_ssh($_SESSION['id_machine'], 'openssh', $_POST['old_username'][$i], $hash);
-            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pem');
+            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
+            $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], $file);
+            
             file_put_contents("../rsa_admin/id_rsa.pem", $output);
                 
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pub');
-            file_put_contents("../rsa_admin/id_rsa.pub", $output);
+            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
+            file_put_contents("../rsa_admin/$file", $output);
 
             // Change the right so the website can read the file
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pem');
-            shell_exec('sudo chown www-data:www-data ../rsa_admin/id_rsa.pub');
+            shell_exec('sh ../bash/www-data.bash');
 
             //Send mail with passphrase
             
@@ -103,7 +105,9 @@ function delete_rsa_keys_admin() {
             $file = $_POST['old_username'][$i] . "_" . $_SESSION['id_machine'];
             unlink("../rsa/$file.txt");
             unlink("../rsa/$file.pub");
+            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
             unlink("../rsa_admin/id_rsa.pub");
+            $file = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
             unlink("../rsa_admin/id_rsa.pem");
             shell_exec('sudo rm /rsa_admin/id_rsa.pem');
             shell_exec('sudo rm /rsa_admin/id_rsa.pub');

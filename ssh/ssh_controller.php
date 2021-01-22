@@ -141,7 +141,7 @@ function ssh_execute($order, $login_info, $opt1 = NULL, $opt2 = NULL) {
             $command = bash_password_auth_ssh_second();
         break;
         case 'openssh' :
-            $command = openssh($opt2);
+            $command = openssh($opt2, $opt1);
         break;
         case "create_rsa" : 
             $command = create_rsa($opt1, $opt2);
