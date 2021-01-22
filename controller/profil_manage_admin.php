@@ -63,7 +63,7 @@ function generate_rsa_key_admin() {
             $file = "id_rsa_" . $_SESSION['id_machine'] . ".pem";
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], $file);
             
-            file_put_contents("../rsa_admin/id_rsa.pem", $output);
+            file_put_contents("../rsa_admin/$file", $output);
                 
             $output = main_ssh($_SESSION['id_machine'], 'cat_rsa_key', $_POST['old_username'][$i], 'id_rsa.pub');
             $file = "id_rsa_" . $_SESSION['id_machine'] . ".pub";
