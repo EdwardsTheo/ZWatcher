@@ -138,7 +138,6 @@
 
     function insert_new_account($user, $password, $mail){
         $link = NULL;
-        echo $password;
         $options = array('cost' => 11);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
