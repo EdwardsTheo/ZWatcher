@@ -10,6 +10,7 @@
                     <a href="?action=modif_users"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les users</button></a>
                     <a href="?action=modif_groups"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les groupes</button></a>
                     <a href="?action=modif_admin_listes"><button class="w3-button w3-black w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Compte Admin</button></a>
+                     <a href="?action=console"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-desktop w3-margin-right"></i>Console</button></a>
                     </div>
                     </div>
                     </div>

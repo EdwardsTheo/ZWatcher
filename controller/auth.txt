@@ -1,100 +1,100 @@
-Jan 21 12:38:08 ZHostname sshd[16213]: Invalid user dl from 51.161.45.174 port 44424
-Jan 21 12:38:08 ZHostname sshd[16213]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:38:08 ZHostname sshd[16213]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=51.161.45.174 
-Jan 21 12:38:10 ZHostname sshd[16213]: Failed password for invalid user dl from 51.161.45.174 port 44424 ssh2
-Jan 21 12:38:10 ZHostname sshd[16213]: Received disconnect from 51.161.45.174 port 44424:11: Bye Bye [preauth]
-Jan 21 12:38:10 ZHostname sshd[16213]: Disconnected from invalid user dl 51.161.45.174 port 44424 [preauth]
-Jan 21 12:38:44 ZHostname sshd[16215]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:38:44 ZHostname sshd[16215]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=46.173.191.124  user=root
-Jan 21 12:38:46 ZHostname sshd[16215]: Failed password for root from 46.173.191.124 port 39768 ssh2
-Jan 21 12:38:48 ZHostname sshd[16215]: Received disconnect from 46.173.191.124 port 39768:11: Bye Bye [preauth]
-Jan 21 12:38:48 ZHostname sshd[16215]: Disconnected from authenticating user root 46.173.191.124 port 39768 [preauth]
-Jan 21 12:39:01 ZHostname CRON[16217]: pam_unix(cron:session): session opened for user root by (uid=0)
-Jan 21 12:39:01 ZHostname CRON[16217]: pam_unix(cron:session): session closed for user root
-Jan 21 12:39:05 ZHostname sshd[16219]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:39:06 ZHostname sshd[16219]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.30.176.30  user=root
-Jan 21 12:39:08 ZHostname sshd[16219]: Failed password for root from 81.30.176.30 port 49108 ssh2
-Jan 21 12:39:09 ZHostname sshd[16219]: Received disconnect from 81.30.176.30 port 49108:11: Bye Bye [preauth]
-Jan 21 12:39:09 ZHostname sshd[16219]: Disconnected from authenticating user root 81.30.176.30 port 49108 [preauth]
-Jan 21 12:39:56 ZHostname sshd[16226]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:39:58 ZHostname sshd[16226]: Invalid user jake from 139.155.175.230 port 53092
-Jan 21 12:39:58 ZHostname sshd[16226]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:39:58 ZHostname sshd[16226]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.155.175.230 
-Jan 21 12:40:00 ZHostname sshd[16226]: Failed password for invalid user jake from 139.155.175.230 port 53092 ssh2
-Jan 21 12:40:02 ZHostname sshd[16233]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:40:02 ZHostname sshd[16235]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:40:03 ZHostname sshd[16235]: Invalid user easy from 51.161.45.174 port 47624
-Jan 21 12:40:03 ZHostname sshd[16235]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:40:03 ZHostname sshd[16235]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=51.161.45.174 
-Jan 21 12:40:03 ZHostname sshd[16233]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=201.17.36.10  user=root
-Jan 21 12:40:05 ZHostname sshd[16235]: Failed password for invalid user easy from 51.161.45.174 port 47624 ssh2
-Jan 21 12:40:05 ZHostname sshd[16233]: Failed password for root from 201.17.36.10 port 38424 ssh2
-Jan 21 12:40:06 ZHostname sshd[16233]: Received disconnect from 201.17.36.10 port 38424:11: Bye Bye [preauth]
-Jan 21 12:40:06 ZHostname sshd[16233]: Disconnected from authenticating user root 201.17.36.10 port 38424 [preauth]
-Jan 21 12:40:50 ZHostname sshd[16242]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:40:52 ZHostname sshd[16242]: Invalid user admin from 201.17.36.10 port 46500
-Jan 21 12:40:52 ZHostname sshd[16242]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:40:52 ZHostname sshd[16242]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=201.17.36.10 
-Jan 21 12:40:54 ZHostname sshd[16242]: Failed password for invalid user admin from 201.17.36.10 port 46500 ssh2
-Jan 21 12:41:09 ZHostname sshd[16249]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:41:10 ZHostname sshd[16249]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=186.101.233.58  user=root
-Jan 21 12:41:12 ZHostname sshd[16249]: Failed password for root from 186.101.233.58 port 43305 ssh2
-Jan 21 12:41:13 ZHostname sshd[16249]: Received disconnect from 186.101.233.58 port 43305:11: Bye Bye [preauth]
-Jan 21 12:41:13 ZHostname sshd[16249]: Disconnected from authenticating user root 186.101.233.58 port 43305 [preauth]
-Jan 21 12:41:28 ZHostname sshd[16251]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:41:29 ZHostname sshd[16251]: Invalid user phil from 49.234.47.124 port 53488
-Jan 21 12:41:29 ZHostname sshd[16251]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:41:29 ZHostname sshd[16251]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.234.47.124 
-Jan 21 12:41:31 ZHostname sshd[16251]: Failed password for invalid user phil from 49.234.47.124 port 53488 ssh2
-Jan 21 12:41:32 ZHostname sshd[16251]: Received disconnect from 49.234.47.124 port 53488:11: Bye Bye [preauth]
-Jan 21 12:41:32 ZHostname sshd[16251]: Disconnected from invalid user phil 49.234.47.124 port 53488 [preauth]
-Jan 21 12:41:48 ZHostname sshd[16258]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:41:53 ZHostname sshd[16260]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:41:53 ZHostname sshd[16260]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=81.30.176.30  user=root
-Jan 21 12:41:54 ZHostname sshd[16258]: Invalid user clouduser from 43.226.144.80 port 43926
-Jan 21 12:41:54 ZHostname sshd[16258]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:41:54 ZHostname sshd[16258]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=43.226.144.80 
-Jan 21 12:41:56 ZHostname sshd[16260]: Failed password for root from 81.30.176.30 port 36658 ssh2
-Jan 21 12:41:57 ZHostname sshd[16258]: Failed password for invalid user clouduser from 43.226.144.80 port 43926 ssh2
-Jan 21 12:41:59 ZHostname sshd[16258]: Received disconnect from 43.226.144.80 port 43926:11: Bye Bye [preauth]
-Jan 21 12:41:59 ZHostname sshd[16258]: Disconnected from invalid user clouduser 43.226.144.80 port 43926 [preauth]
-Jan 21 12:42:24 ZHostname sshd[16272]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:42:25 ZHostname sshd[16272]: Invalid user postgres from 43.226.144.80 port 47168
-Jan 21 12:42:25 ZHostname sshd[16272]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:42:25 ZHostname sshd[16272]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=43.226.144.80 
-Jan 21 12:42:27 ZHostname sshd[16272]: Failed password for invalid user postgres from 43.226.144.80 port 47168 ssh2
-Jan 21 12:43:35 ZHostname sshd[16284]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:43:38 ZHostname sshd[16284]: Invalid user ubuntu from 103.44.248.252 port 40330
-Jan 21 12:43:38 ZHostname sshd[16284]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:43:38 ZHostname sshd[16284]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.44.248.252 
-Jan 21 12:43:40 ZHostname sshd[16284]: Failed password for invalid user ubuntu from 103.44.248.252 port 40330 ssh2
-Jan 21 12:43:41 ZHostname sshd[16284]: Received disconnect from 103.44.248.252 port 40330:11: Bye Bye [preauth]
-Jan 21 12:43:41 ZHostname sshd[16284]: Disconnected from invalid user ubuntu 103.44.248.252 port 40330 [preauth]
-Jan 21 12:43:46 ZHostname sshd[16286]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:43:46 ZHostname sshd[16286]: Bad protocol version identification '\003' from 85.93.20.170 port 61850
-Jan 21 12:44:04 ZHostname sshd[16287]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:44:05 ZHostname sshd[16287]: Invalid user user from 144.217.87.192 port 50560
-Jan 21 12:44:05 ZHostname sshd[16287]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:44:05 ZHostname sshd[16287]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=144.217.87.192 
-Jan 21 12:44:07 ZHostname sshd[16287]: Failed password for invalid user user from 144.217.87.192 port 50560 ssh2
-Jan 21 12:44:09 ZHostname sshd[16287]: Received disconnect from 144.217.87.192 port 50560:11: Bye Bye [preauth]
-Jan 21 12:44:09 ZHostname sshd[16287]: Disconnected from invalid user user 144.217.87.192 port 50560 [preauth]
-Jan 21 12:44:18 ZHostname sshd[16289]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:44:19 ZHostname sshd[16289]: Invalid user webadmin from 186.101.233.58 port 37208
-Jan 21 12:44:19 ZHostname sshd[16289]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:44:19 ZHostname sshd[16289]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=186.101.233.58 
-Jan 21 12:44:21 ZHostname sshd[16289]: Failed password for invalid user webadmin from 186.101.233.58 port 37208 ssh2
-Jan 21 12:44:23 ZHostname sshd[16296]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:44:24 ZHostname sshd[16296]: Invalid user patrick from 106.253.59.78 port 42848
-Jan 21 12:44:24 ZHostname sshd[16296]: pam_unix(sshd:auth): check pass; user unknown
-Jan 21 12:44:24 ZHostname sshd[16296]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.253.59.78 
-Jan 21 12:44:26 ZHostname sshd[16296]: Failed password for invalid user patrick from 106.253.59.78 port 42848 ssh2
-Jan 21 12:44:28 ZHostname sshd[16296]: Received disconnect from 106.253.59.78 port 42848:11: Bye Bye [preauth]
-Jan 21 12:44:28 ZHostname sshd[16296]: Disconnected from invalid user patrick 106.253.59.78 port 42848 [preauth]
-Jan 21 12:44:37 ZHostname sshd[16298]: rexec line 67: Unsupported option KerberosGetAFSToken
-Jan 21 12:44:37 ZHostname sshd[16298]: Accepted password for zwadmin from 192.168.0.254 port 51364 ssh2
-Jan 21 12:44:37 ZHostname sshd[16298]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
-Jan 21 12:44:37 ZHostname systemd-logind[551]: New session 1707 of user zwadmin.
-Jan 21 12:44:37 ZHostname systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
-Jan 21 12:44:37 ZHostname sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
-Jan 21 12:44:37 ZHostname sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan 21 13:00:28 ZHostname sshd[16558]: Failed password for invalid user ravi from 144.217.87.192 port 42830 ssh2
+Jan 21 13:00:49 ZHostname sshd[16565]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:00:51 ZHostname sshd[16565]: Invalid user demo3 from 111.229.181.50 port 56882
+Jan 21 13:00:51 ZHostname sshd[16565]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:00:51 ZHostname sshd[16565]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=111.229.181.50 
+Jan 21 13:00:53 ZHostname sshd[16565]: Failed password for invalid user demo3 from 111.229.181.50 port 56882 ssh2
+Jan 21 13:00:55 ZHostname sshd[16565]: Received disconnect from 111.229.181.50 port 56882:11: Bye Bye [preauth]
+Jan 21 13:00:55 ZHostname sshd[16565]: Disconnected from invalid user demo3 111.229.181.50 port 56882 [preauth]
+Jan 21 13:01:14 ZHostname sshd[16572]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:01:15 ZHostname sshd[16572]: Invalid user temp from 148.72.212.161 port 42564
+Jan 21 13:01:15 ZHostname sshd[16572]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:01:15 ZHostname sshd[16572]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=148.72.212.161 
+Jan 21 13:01:17 ZHostname sshd[16572]: Failed password for invalid user temp from 148.72.212.161 port 42564 ssh2
+Jan 21 13:01:51 ZHostname sshd[16579]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:01:51 ZHostname sshd[16579]: Invalid user ti from 165.227.124.168 port 60830
+Jan 21 13:01:51 ZHostname sshd[16579]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:01:51 ZHostname sshd[16579]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=165.227.124.168 
+Jan 21 13:01:53 ZHostname sshd[16579]: Failed password for invalid user ti from 165.227.124.168 port 60830 ssh2
+Jan 21 13:02:12 ZHostname sshd[16601]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:02:18 ZHostname sshd[16603]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:02:19 ZHostname sshd[16601]: Invalid user cassandra from 177.152.124.20 port 47436
+Jan 21 13:02:19 ZHostname sshd[16601]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:02:19 ZHostname sshd[16601]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=177.152.124.20 
+Jan 21 13:02:21 ZHostname sshd[16601]: Failed password for invalid user cassandra from 177.152.124.20 port 47436 ssh2
+Jan 21 13:02:23 ZHostname sshd[16603]: Invalid user cluster from 111.229.181.50 port 42900
+Jan 21 13:02:23 ZHostname sshd[16603]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:02:23 ZHostname sshd[16603]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=111.229.181.50 
+Jan 21 13:02:23 ZHostname sshd[16610]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:02:25 ZHostname sshd[16610]: Invalid user tecmint from 139.155.175.230 port 47098
+Jan 21 13:02:25 ZHostname sshd[16610]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:02:25 ZHostname sshd[16610]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.155.175.230 
+Jan 21 13:02:25 ZHostname sshd[16603]: Failed password for invalid user cluster from 111.229.181.50 port 42900 ssh2
+Jan 21 13:02:27 ZHostname sshd[16610]: Failed password for invalid user tecmint from 139.155.175.230 port 47098 ssh2
+Jan 21 13:02:29 ZHostname sshd[16610]: Received disconnect from 139.155.175.230 port 47098:11: Bye Bye [preauth]
+Jan 21 13:02:29 ZHostname sshd[16610]: Disconnected from invalid user tecmint 139.155.175.230 port 47098 [preauth]
+Jan 21 13:02:30 ZHostname sshd[16617]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:02:30 ZHostname sshd[16619]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:02:31 ZHostname sshd[16617]: Invalid user timemachine from 201.17.36.10 port 50178
+Jan 21 13:02:31 ZHostname sshd[16617]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:02:31 ZHostname sshd[16617]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=201.17.36.10 
+Jan 21 13:02:32 ZHostname sshd[16619]: Invalid user ubuntu from 106.253.59.78 port 40386
+Jan 21 13:02:32 ZHostname sshd[16619]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:02:32 ZHostname sshd[16619]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.253.59.78 
+Jan 21 13:02:33 ZHostname sshd[16617]: Failed password for invalid user timemachine from 201.17.36.10 port 50178 ssh2
+Jan 21 13:02:34 ZHostname sshd[16619]: Failed password for invalid user ubuntu from 106.253.59.78 port 40386 ssh2
+Jan 21 13:02:35 ZHostname sshd[16617]: Received disconnect from 201.17.36.10 port 50178:11: Bye Bye [preauth]
+Jan 21 13:02:35 ZHostname sshd[16617]: Disconnected from invalid user timemachine 201.17.36.10 port 50178 [preauth]
+Jan 21 13:02:35 ZHostname sshd[16619]: Received disconnect from 106.253.59.78 port 40386:11: Bye Bye [preauth]
+Jan 21 13:02:35 ZHostname sshd[16619]: Disconnected from invalid user ubuntu 106.253.59.78 port 40386 [preauth]
+Jan 21 13:03:24 ZHostname sshd[16626]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:03:25 ZHostname sshd[16626]: Invalid user vikas from 201.17.36.10 port 58262
+Jan 21 13:03:25 ZHostname sshd[16626]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:03:25 ZHostname sshd[16626]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=201.17.36.10 
+Jan 21 13:03:28 ZHostname sshd[16626]: Failed password for invalid user vikas from 201.17.36.10 port 58262 ssh2
+Jan 21 13:04:07 ZHostname sshd[16638]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:04:10 ZHostname sshd[16638]: Invalid user he from 143.92.47.28 port 54126
+Jan 21 13:04:10 ZHostname sshd[16638]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:04:10 ZHostname sshd[16638]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=143.92.47.28 
+Jan 21 13:04:12 ZHostname sshd[16638]: Failed password for invalid user he from 143.92.47.28 port 54126 ssh2
+Jan 21 13:04:14 ZHostname sshd[16638]: Received disconnect from 143.92.47.28 port 54126:11: Bye Bye [preauth]
+Jan 21 13:04:14 ZHostname sshd[16638]: Disconnected from invalid user he 143.92.47.28 port 54126 [preauth]
+Jan 21 13:04:25 ZHostname sshd[16640]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:04:28 ZHostname sshd[16640]: Invalid user jerry from 45.55.180.7 port 49737
+Jan 21 13:04:28 ZHostname sshd[16640]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:04:28 ZHostname sshd[16640]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.55.180.7 
+Jan 21 13:04:29 ZHostname sshd[16640]: Failed password for invalid user jerry from 45.55.180.7 port 49737 ssh2
+Jan 21 13:04:31 ZHostname sshd[16647]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:04:36 ZHostname sshd[16647]: Invalid user user from 139.155.175.230 port 41424
+Jan 21 13:04:36 ZHostname sshd[16647]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:04:36 ZHostname sshd[16647]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.155.175.230 
+Jan 21 13:04:37 ZHostname sshd[16647]: Failed password for invalid user user from 139.155.175.230 port 41424 ssh2
+Jan 21 13:04:54 ZHostname sshd[16654]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:04:55 ZHostname sshd[16654]: Invalid user user from 46.173.191.124 port 35122
+Jan 21 13:04:55 ZHostname sshd[16654]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:04:55 ZHostname sshd[16654]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=46.173.191.124 
+Jan 21 13:04:57 ZHostname sshd[16654]: Failed password for invalid user user from 46.173.191.124 port 35122 ssh2
+Jan 21 13:04:57 ZHostname sshd[16654]: Received disconnect from 46.173.191.124 port 35122:11: Bye Bye [preauth]
+Jan 21 13:04:57 ZHostname sshd[16654]: Disconnected from invalid user user 46.173.191.124 port 35122 [preauth]
+Jan 21 13:05:24 ZHostname sshd[16656]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:05:26 ZHostname sshd[16656]: Invalid user deployer from 106.253.59.78 port 56610
+Jan 21 13:05:26 ZHostname sshd[16656]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:05:26 ZHostname sshd[16656]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.253.59.78 
+Jan 21 13:05:28 ZHostname sshd[16656]: Failed password for invalid user deployer from 106.253.59.78 port 56610 ssh2
+Jan 21 13:08:01 ZHostname sshd[16678]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:08:02 ZHostname sshd[16678]: Invalid user nagios from 46.173.191.124 port 57173
+Jan 21 13:08:02 ZHostname sshd[16678]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:08:02 ZHostname sshd[16678]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=46.173.191.124 
+Jan 21 13:08:04 ZHostname sshd[16678]: Failed password for invalid user nagios from 46.173.191.124 port 57173 ssh2
+Jan 21 13:08:07 ZHostname sshd[16685]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:08:10 ZHostname sshd[16685]: Invalid user pierre from 143.92.47.28 port 43024
+Jan 21 13:08:10 ZHostname sshd[16685]: pam_unix(sshd:auth): check pass; user unknown
+Jan 21 13:08:10 ZHostname sshd[16685]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=143.92.47.28 
+Jan 21 13:08:12 ZHostname sshd[16685]: Failed password for invalid user pierre from 143.92.47.28 port 43024 ssh2
+Jan 21 13:08:34 ZHostname sshd[16692]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 21 13:08:34 ZHostname sshd[16692]: Accepted password for zwadmin from 37.164.6.242 port 50521 ssh2
+Jan 21 13:08:34 ZHostname sshd[16692]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan 21 13:08:34 ZHostname systemd-logind[551]: New session 1709 of user zwadmin.
+Jan 21 13:08:34 ZHostname systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan 21 13:08:34 ZHostname sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan 21 13:08:34 ZHostname sudo: pam_unix(sudo:session): session opened for user root by (uid=0)

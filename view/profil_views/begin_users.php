@@ -10,6 +10,7 @@
                     <a href="?action=modif_users"><button class="w3-button w3-black w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les users</button></a>
                     <a href="?action=modif_groups"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Gérer les groupes</button></a>
                     <a href="?action=modif_admin_listes"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-tools w3-margin-right"></i>Compte Admin</button></a>
+                    <a href="?action=console"><button class="w3-button w3-white w3-hide-small"><i class="fas fa-desktop w3-margin-right"></i>Console</button></a>
                 </div>
                 </div>
                 </div>
@@ -297,14 +298,14 @@
                     <div class='w3-section w3-bottombar w3-padding-16'>
                     <hr class='w3-opacity'>
                     <form action='../view/profil.php?action=modif_users' method='POST'>
-                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cette user linux'>
+                        <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cet user linux'>
                     <hr class='w3-opacity'>
                     </form>
                     ";
                 }
             
                 if(isset($_POST['choice_details'])) {
-                    if($_POST['choice_details'] == 'Associer des utilisateurs à cette user linux') {
+                    if($_POST['choice_details'] == 'Associer des utilisateurs à cet user linux') {
                         $j = 1;
                         $empty = false;
                         $req2 = simple_select_users_eleves();

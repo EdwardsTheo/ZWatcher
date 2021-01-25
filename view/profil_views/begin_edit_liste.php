@@ -16,7 +16,7 @@
                 
                 <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <div id="centre">
-                    <h4><b>Ajout d'un équipement</b></h4>
+                    <h4><b>Modifier un équipement</b></h4>
                     </p>
                     <div class="w3-row-padding">
                         <a href = "?action=home_creation_liste">
@@ -59,15 +59,15 @@
                                 </div>
                                 <div class='w3-section'>
                                     <label>Port</label>
-                                    <input class='w3-input w3-border' type='text' name='port' value='$donnees[3]'></input>
+                                    <input class='w3-input w3-border' type='text' name='port' value='$donnees[6]'></input>
                                 </div>
                                 <div class='w3-section'>
                                     <label>Identifiant</label>
-                                    <input class='w3-input w3-border' type='text' name='iden' value='$donnees[4]'></input>
+                                    <input class='w3-input w3-border' type='text' name='iden' value='$donnees[7]'></input>
                                 </div>
                                 <div class='w3-section'>
                                     <label>Mot de passe</label>
-                                    <input class='w3-input w3-border' type='password' name='password' value='$donnees[5]'></input>
+                                    <input class='w3-input w3-border' type='password' name='password' value='$donnees[8]'></input>
                                 </div>
                                 <input class='w3-input w3-border' type='hidden' name='id_machine' value='$donnees[0]'></input>";
                             }

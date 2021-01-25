@@ -166,7 +166,7 @@ session_start();
 			<!-- Text stuff 3-->
 			<h2>Modifications à distance</h2>
 				<p>A travers une première interface de modifications, l'administrateur doit être capable de gérer facilement et rapidement à distance diverses informations système, comme les noms des machines, leur adresse IP ou adresse MAC entre autres. 
-				Il peut également être amené à modifier d'autres informations nécessaires à l'administration de son parc.</p>
+				Il peut également être amené à modifier d'autres informations nécessaires à l'administration de son parc, ou encore ouvrir directement une console.</p>
 				<hr />
 
 				<div class="row">
@@ -175,7 +175,7 @@ session_start();
 							<ul>
 								<li>Hostnames</li>
 								<li>Adresses IP ou MAC</li>
-								<li>Diverses modifications additionnelles</li>
+								<li>Toutes fonctionnalités</li>
 							</ul>
 					</div>
 				</div>
@@ -222,6 +222,26 @@ session_start();
 				<hr />
 
 				<!-- Text stuff 6-->
+			<h2>Fonctionnalités avancées</h2>
+				<p>Gestion totale de la machine à distance avec accès à un terminal en ligne. Création de clés RSA, gestion des accès sur les machines ... Toutes les tâches faisables en présentiel sont accessibles 
+				depuis l'interface. ZWatcher permet l'intéraction entre utilisateurs et équipes sur la plateforme et sur les équipements d'un parc : importez votre environnement Linux sur la plateforme.</p>
+				<hr />
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<h4>Intéractions possibles</h4>
+							<ul>
+								<li>Terminal accessible en ligne</li>
+								<li>Création de clés RSA</li>
+								<li>Gestion des accès système</li>
+								<li>Gestion d'équipes</li>
+							</ul>
+					</div>
+				</div>
+
+				<hr />
+
+				<!-- Text stuff 7-->
 			<h2>Interface sociale</h2>
 				<p>Une interface sociale incorporée permet aux différents membres, utilisateurs ou administrateurs, d'intéragir et d'échanger directement. 
 				Une liste de contacts permet d'enregistrer ses interlocuteurs, puis d'échanger avec eux au sein d'une interface de messagerie.</p>
@@ -244,42 +264,49 @@ session_start();
 		<div class="6u$ 12u$(medium)">
 
 			<!-- Image -->
-				<h2>Image 1</h2>
+				<h2>Interface de connexion</h2>
 
 				<span class="image fit"><img src="../../demo/demo_log_in.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
 				<hr />
 
 			<!-- Image -->
-				<h2>Image 2</h2>
+				<h2>Parc d'équipements</h2>
 
 				<span class="image fit"><img src="../../demo/demo_parc.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
 				<hr />
 
 			<!-- Image -->
-				<h2>Image 3</h2>
+				<h2>Gestion complète des systèmes</h2>
 
 				<span class="image fit"><img src="../../demo/modif2.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
 				<hr />
 
 			<!-- Image -->
-				<h2>Image 4</h2>
+				<h2>Self-service applications</h2>
 
 				<span class="image fit"><img src="../../demo/appli1.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
 				<hr />
 
 			<!-- Image -->
-				<h2>Image 5</h2>
+				<h2>Logs</h2>
 
 				<span class="image fit"><img src="../../demo/log.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
 				<hr />
 
 			<!-- Image -->
-				<h2>Image 6</h2>
+				<h2>Console intégrée</h2>
+
+				<span class="image fit"><img src="../../demo/console1.png" alt="" /></span>
+				<p style="margin-bottom:2.5cm;"></p>
+				<hr />
+
+			<!-- Image -->
+				<h2>Messagerie</h2>
 
 				<span class="image fit"><img src="../../demo/demo_message.png" alt="" /></span>
 				<p style="margin-bottom:2.5cm;"></p>
@@ -308,7 +335,7 @@ session_start();
 					<img src="../../images/graphismes/logo.png"/>
 				</div>
 				<div class="copyright">
-					&copy; ZWatcher 2020. Tous droits réservés - All rights reserved.
+					&copy; ZWatcher 2021. Tous droits réservés - All rights reserved.
 				</div>
 			</footer>
 

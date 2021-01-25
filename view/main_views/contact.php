@@ -158,7 +158,7 @@ session_start();
 					<img src="../../images/graphismes/logo.png"/>
 				</div>
 				<div class="copyright">
-					&copy; ZWatcher 2020. Tous droits réservés - All rights reserved.
+					&copy; ZWatcher 2021. Tous droits réservés - All rights reserved.
 				</div>
 			</footer>
 

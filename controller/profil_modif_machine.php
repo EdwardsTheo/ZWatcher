@@ -1,5 +1,8 @@
 <?php
 
+    if(isset($_SESSION['id_machine'])){
+        unset($_SESSION['id_machine']);
+    }
     $_SESSION['id_machine'] = $_POST['id'];
     $machine_id = $_POST['id'];
     $req = get_hostname($machine_id);

@@ -1,0 +1,100 @@
+Jan 25 05:33:58 ZHostname sshd[22482]: Received disconnect from 152.32.172.162 port 56058:11: Bye Bye [preauth]
+Jan 25 05:33:58 ZHostname sshd[22482]: Disconnected from authenticating user root 152.32.172.162 port 56058 [preauth]
+Jan 25 05:33:59 ZHostname sshd[22491]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:33:59 ZHostname sshd[22484]: Failed password for root from 186.206.157.14 port 61162 ssh2
+Jan 25 05:33:59 ZHostname sshd[22491]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=2.45.185.2  user=root
+Jan 25 05:34:02 ZHostname sshd[22491]: Failed password for root from 2.45.185.2 port 54274 ssh2
+Jan 25 05:34:02 ZHostname sshd[22491]: Received disconnect from 2.45.185.2 port 54274:11: Bye Bye [preauth]
+Jan 25 05:34:02 ZHostname sshd[22491]: Disconnected from authenticating user root 2.45.185.2 port 54274 [preauth]
+Jan 25 05:34:13 ZHostname sshd[22498]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:34:15 ZHostname sshd[22498]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=47.114.120.22  user=root
+Jan 25 05:34:15 ZHostname sshd[22500]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:34:16 ZHostname sshd[22498]: Failed password for root from 47.114.120.22 port 32840 ssh2
+Jan 25 05:34:17 ZHostname sshd[22500]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.75.215.151  user=root
+Jan 25 05:34:18 ZHostname sshd[22498]: Received disconnect from 47.114.120.22 port 32840:11: Bye Bye [preauth]
+Jan 25 05:34:18 ZHostname sshd[22498]: Disconnected from authenticating user root 47.114.120.22 port 32840 [preauth]
+Jan 25 05:34:19 ZHostname sshd[22500]: Failed password for root from 106.75.215.151 port 11384 ssh2
+Jan 25 05:34:50 ZHostname sshd[22527]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:34:52 ZHostname sshd[22527]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=152.32.172.162  user=root
+Jan 25 05:34:53 ZHostname sshd[22534]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:34:54 ZHostname sshd[22527]: Failed password for root from 152.32.172.162 port 38620 ssh2
+Jan 25 05:34:55 ZHostname sshd[22534]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=182.254.155.254  user=root
+Jan 25 05:34:58 ZHostname sshd[22534]: Failed password for root from 182.254.155.254 port 41458 ssh2
+Jan 25 05:34:59 ZHostname sshd[22534]: Received disconnect from 182.254.155.254 port 41458:11: Bye Bye [preauth]
+Jan 25 05:34:59 ZHostname sshd[22534]: Disconnected from authenticating user root 182.254.155.254 port 41458 [preauth]
+Jan 25 05:35:02 ZHostname sshd[22536]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:03 ZHostname sshd[22536]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.74.190.196  user=root
+Jan 25 05:35:05 ZHostname sshd[22538]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:05 ZHostname sshd[22536]: Failed password for root from 203.74.190.196 port 51994 ssh2
+Jan 25 05:35:07 ZHostname sshd[22538]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=118.140.205.198  user=root
+Jan 25 05:35:07 ZHostname sshd[22536]: Received disconnect from 203.74.190.196 port 51994:11: Bye Bye [preauth]
+Jan 25 05:35:07 ZHostname sshd[22536]: Disconnected from authenticating user root 203.74.190.196 port 51994 [preauth]
+Jan 25 05:35:07 ZHostname sshd[22540]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:08 ZHostname sshd[22540]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=222.128.60.162  user=root
+Jan 25 05:35:09 ZHostname sshd[22547]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:09 ZHostname sshd[22538]: Failed password for root from 118.140.205.198 port 57182 ssh2
+Jan 25 05:35:10 ZHostname sshd[22540]: Failed password for root from 222.128.60.162 port 32045 ssh2
+Jan 25 05:35:11 ZHostname sshd[22554]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:16 ZHostname sshd[22547]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=111.230.241.110  user=root
+Jan 25 05:35:18 ZHostname sshd[22547]: Failed password for root from 111.230.241.110 port 43304 ssh2
+Jan 25 05:35:19 ZHostname sshd[22547]: Received disconnect from 111.230.241.110 port 43304:11: Bye Bye [preauth]
+Jan 25 05:35:19 ZHostname sshd[22547]: Disconnected from authenticating user root 111.230.241.110 port 43304 [preauth]
+Jan 25 05:35:20 ZHostname sshd[22554]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=156.248.12.58  user=root
+Jan 25 05:35:22 ZHostname sshd[22554]: Failed password for root from 156.248.12.58 port 36304 ssh2
+Jan 25 05:35:23 ZHostname sshd[22554]: Received disconnect from 156.248.12.58 port 36304:11: Bye Bye [preauth]
+Jan 25 05:35:23 ZHostname sshd[22554]: Disconnected from authenticating user root 156.248.12.58 port 36304 [preauth]
+Jan 25 05:35:29 ZHostname sshd[22556]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:33 ZHostname sshd[22558]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:46 ZHostname sshd[22560]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:48 ZHostname sshd[22560]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.74.190.196  user=root
+Jan 25 05:35:50 ZHostname sshd[22562]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:50 ZHostname sshd[22562]: Accepted password for zwadmin from 37.173.176.72 port 19594 ssh2
+Jan 25 05:35:50 ZHostname sshd[22562]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan 25 05:35:50 ZHostname systemd-logind[551]: New session 2127 of user zwadmin.
+Jan 25 05:35:50 ZHostname systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan 25 05:35:50 ZHostname sshd[22558]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=49.234.45.94  user=root
+Jan 25 05:35:50 ZHostname sshd[22560]: Failed password for root from 203.74.190.196 port 33360 ssh2
+Jan 25 05:35:50 ZHostname sshd[22575]: Received disconnect from 37.173.176.72 port 19594:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan 25 05:35:50 ZHostname sshd[22575]: Disconnected from user zwadmin 37.173.176.72 port 19594
+Jan 25 05:35:50 ZHostname sshd[22562]: pam_unix(sshd:session): session closed for user zwadmin
+Jan 25 05:35:50 ZHostname systemd-logind[551]: Session 2127 logged out. Waiting for processes to exit.
+Jan 25 05:35:50 ZHostname systemd-logind[551]: Removed session 2127.
+Jan 25 05:35:50 ZHostname sshd[22581]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:51 ZHostname sshd[22581]: Accepted password for zwadmin from 37.173.176.72 port 19621 ssh2
+Jan 25 05:35:51 ZHostname sshd[22581]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan 25 05:35:51 ZHostname systemd-logind[551]: New session 2129 of user zwadmin.
+Jan 25 05:35:51 ZHostname sshd[22587]: Received disconnect from 37.173.176.72 port 19621:11: PECL/ssh2 (http://pecl.php.net/packages/ssh2)
+Jan 25 05:35:51 ZHostname sshd[22587]: Disconnected from user zwadmin 37.173.176.72 port 19621
+Jan 25 05:35:51 ZHostname sshd[22581]: pam_unix(sshd:session): session closed for user zwadmin
+Jan 25 05:35:51 ZHostname systemd-logind[551]: Session 2129 logged out. Waiting for processes to exit.
+Jan 25 05:35:51 ZHostname systemd-logind[551]: Removed session 2129.
+Jan 25 05:35:51 ZHostname sshd[22560]: Received disconnect from 203.74.190.196 port 33360:11: Bye Bye [preauth]
+Jan 25 05:35:51 ZHostname sshd[22560]: Disconnected from authenticating user root 203.74.190.196 port 33360 [preauth]
+Jan 25 05:35:52 ZHostname sshd[22558]: Failed password for root from 49.234.45.94 port 37052 ssh2
+Jan 25 05:35:52 ZHostname sshd[22592]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:53 ZHostname sshd[22594]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:53 ZHostname sshd[22596]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:35:53 ZHostname sshd[22594]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=92.222.90.130  user=root
+Jan 25 05:35:53 ZHostname sshd[22558]: Received disconnect from 49.234.45.94 port 37052:11: Bye Bye [preauth]
+Jan 25 05:35:53 ZHostname sshd[22558]: Disconnected from authenticating user root 49.234.45.94 port 37052 [preauth]
+Jan 25 05:35:54 ZHostname sshd[22592]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.76.117.206  user=root
+Jan 25 05:35:55 ZHostname sshd[22594]: Failed password for root from 92.222.90.130 port 46562 ssh2
+Jan 25 05:35:56 ZHostname sshd[22594]: Received disconnect from 92.222.90.130 port 46562:11: Bye Bye [preauth]
+Jan 25 05:35:56 ZHostname sshd[22594]: Disconnected from authenticating user root 92.222.90.130 port 46562 [preauth]
+Jan 25 05:35:56 ZHostname sshd[22592]: Failed password for root from 180.76.117.206 port 40174 ssh2
+Jan 25 05:35:57 ZHostname sshd[22592]: Received disconnect from 180.76.117.206 port 40174:11: Bye Bye [preauth]
+Jan 25 05:35:57 ZHostname sshd[22592]: Disconnected from authenticating user root 180.76.117.206 port 40174 [preauth]
+Jan 25 05:35:58 ZHostname sshd[22596]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.37.223.54  user=root
+Jan 25 05:36:00 ZHostname sshd[22603]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:36:00 ZHostname sshd[22596]: Failed password for root from 106.37.223.54 port 44349 ssh2
+Jan 25 05:36:01 ZHostname sshd[22603]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=182.254.155.254  user=root
+Jan 25 05:36:03 ZHostname sshd[22603]: Failed password for root from 182.254.155.254 port 53558 ssh2
+Jan 25 05:36:04 ZHostname sshd[22603]: Received disconnect from 182.254.155.254 port 53558:11: Bye Bye [preauth]
+Jan 25 05:36:04 ZHostname sshd[22603]: Disconnected from authenticating user root 182.254.155.254 port 53558 [preauth]
+Jan 25 05:36:09 ZHostname sshd[22612]: rexec line 67: Unsupported option KerberosGetAFSToken
+Jan 25 05:36:09 ZHostname sshd[22612]: Accepted password for zwadmin from 37.173.176.72 port 19632 ssh2
+Jan 25 05:36:09 ZHostname sshd[22612]: pam_unix(sshd:session): session opened for user zwadmin by (uid=0)
+Jan 25 05:36:09 ZHostname systemd-logind[551]: New session 2130 of user zwadmin.
+Jan 25 05:36:09 ZHostname systemd: pam_unix(systemd-user:session): session opened for user zwadmin by (uid=0)
+Jan 25 05:36:10 ZHostname sudo:  zwadmin : TTY=unknown ; PWD=/home/zwadmin ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/auth.log
+Jan 25 05:36:10 ZHostname sudo: pam_unix(sudo:session): session opened for user root by (uid=0)

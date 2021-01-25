@@ -367,6 +367,16 @@ header('Content-Type: text/html; charset=utf-8');
 								<a href="./view/main_views/presentation.php"><img src="./demo/log.png" alt="" /></a>
 							</div>
 						</div>
+						<div>	
+							<div class="image fit">
+								<a href="./view/main_views/presentation.php"><img src="./demo/console1.png" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="./view/main_views/presentation.php"><img src="./demo/console2.png" alt="" /></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -389,7 +399,7 @@ header('Content-Type: text/html; charset=utf-8');
 					<img src="./images/graphismes/logo.png"/>
 				</div>
 				<div class="copyright">
-					&copy; ZWatcher 2020. Tous droits réservés - All rights reserved.
+					&copy; ZWatcher 2021. Tous droits réservés - All rights reserved.
 				</div>
 			</footer>
 

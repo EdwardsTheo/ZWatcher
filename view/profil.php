@@ -205,7 +205,7 @@ require("../controller/alert.php");
                 <a href='?action=assistant' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-chalkboard-teacher fa-fw w3-margin-right'></i>Assistant</a>";
             }else if($_GET['action'] == "modification" || $_GET['action'] == "modif_liste" || $_GET['action'] == "modif_machine" || $_GET['action'] == "modif_hostname" || $_GET['action'] == "modif_ip"
             || $_GET['action'] == "modif_users" || $_GET['action'] == "manage_users" || $_GET['action'] == "manage_groups" || $_GET['action'] == "modif_groups"
-            || $_GET['action'] == "modif_admin_listes" || $_GET['action'] == "manage_admin"){
+            || $_GET['action'] == "modif_admin_listes" || $_GET['action'] == "manage_admin" || $_GET['action'] == "console"){
                 echo "<a href='?action=accueil' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-home fa-fw w3-margin-right'></i>Accueil</a>
                 <a href='?action=compte' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fas fa-address-card fa-fw w3-margin-right'></i>Mon compte</a> 
                 <a href='?action=contacts' onclick='w3_close()' class='w3-bar-item w3-button w3-padding'><i class='fa fa-user fa-fw w3-margin-right'></i>Mes contacts</a> 
@@ -479,6 +479,10 @@ require("../controller/alert.php");
                 break;
                 case 'manage_admin' :
                     require('../controller/profil_manage_admin.php');
+                break;
+                //Console;
+                case 'console' :
+                    require('../controller/profil_console.php');
                 break;
                 //Partie Applications
                 case 'application':
