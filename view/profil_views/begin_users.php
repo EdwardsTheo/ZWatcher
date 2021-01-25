@@ -32,6 +32,16 @@
             		$id_user = $_SESSION['id_user'];
             		
         }
+            function error() {
+                for($i = 1; $i < count($_SESSION['error']) + 1; $i++) {
+                    ?>
+                    <h4><b><?php echo "Problème lors de la création du compte $i"; ?></b></h4>
+                    <h4><b><?php print_r($_SESSION['error'][$i]); ?></b></h4>
+                    <?php
+                    unset($_SESSION['error'][$i]);
+                    unset($_SESSION[$i]);
+                }
+            }
         
         if(isset($_POST['choice_details'])) {
             if($_POST['choice_details'] == 'Revenir au menu principal') {
@@ -214,7 +224,8 @@
                 <form action='../view/profil.php?action=modif_users' method='POST'>
                     <input type='submit' class='w3-button w3-black' name='choice_details' value='Revenir au menu principal'>
                 </form>
-                </div>";
+		</div>
+		</div>";
             }
 
             function form_add_team_listes() {
@@ -236,16 +247,6 @@
                 }
             }
 
-            function error() {
-                for($i = 1; $i < count($_SESSION['error']) + 1; $i++) {
-                    ?>
-                    <h4><b><?php echo "Problème lors de la création du compte $i"; ?></b></h4>
-                    <h4><b><?php print_r($_SESSION['error'][$i]); ?></b></h4>
-                    <?php
-                    unset($_SESSION['error'][$i]);
-                    unset($_SESSION[$i]);
-                }
-            }
 
             function users_details($id_user) {
                 $i=1;
@@ -267,7 +268,8 @@
                             <p><b>Eleve $donnees[username]</b></p>
                             <input type='checkbox' id='scales' name='scales[$i]'>
                             <input type='hidden' name='id_table[$i]' value='$donnees[id]'>
-                            <input type='hidden' name='username[$i]' value='$donnees[id_user_listes]'>";
+			    <input type='hidden' name='username[$i]' value='$donnees[id_user_listes]'>"
+			;
 
                     echo "
                         </div>
@@ -279,7 +281,8 @@
                 }
 
                 if($empty == true) {
-                    echo "
+			echo "
+			</div>
                         <hr class='w3-opacity'></div>
                         <input type='submit' class='w3-button w3-black' name='choice' value='Supprimer le lien avec un ou des utilisateurs'>
                         </div>
@@ -294,13 +297,13 @@
 
                 if($check_user == 0) {
                     echo " 
-                    <hr class='w3-opacity'>
-                    <div class='w3-section w3-bottombar w3-padding-16'>
+                    <div class='w3-section'>
                     <hr class='w3-opacity'>
                     <form action='../view/profil.php?action=modif_users' method='POST'>
                         <input type='submit' class='w3-button w3-black' name='choice_details' value='Associer des utilisateurs à cet user linux'>
                     <hr class='w3-opacity'>
-                    </form>
+		    </form>
+	           
                     ";
                 }
             
@@ -321,16 +324,17 @@
                                     echo "<div class='w3-row-padding'>";
                                 }
                                 $nb = rand(1, 32);
-                                echo "<div class='w3-third w3-container w3-margin-bottom'>
-                                    <div class='w3-container w3-white2'>
+                                echo "<div clas='w3-third w3-container w3-margin-bottom'>
+				      <div class='w3-container w3-white2'>
                                     <p><b>Utilisateur $username</b></p>
                                         <input type='checkbox' id='scales' name='scales[$j]'>
                                         <input type='hidden' name='id_user[$j]' value='$donnees[id]'>
                                         <input type='hidden' name='username[$j]' value='$username'>
                                         <input type='hidden' name='id_user_listes[$j]' value='$id_user'>";                       
                                     echo "
-                                        </div>
-                                    </div>";
+					</div>
+					</div>
+                                    ";
                                     if($j % 3 == 0){
                                         echo "</div>";
                                     }
@@ -340,7 +344,8 @@
                             }
                             if($empty == true && $test == false) {
                                 echo '
-                                </br>
+				</br>
+			
                                 <input type="submit" class="w3-button w3-black" name="choice" value="Ajouter l\'utilisateur à cette user linux">
                                 </form>';
                             }

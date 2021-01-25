@@ -167,6 +167,6 @@ function profil_manage_admin_main() {
     }
 }
 
-//header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
+header('location: ../view/profil.php?action=modif_admin_listes'); // redirect to the main app page with a message of confirmation 
 
 ?>

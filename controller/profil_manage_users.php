@@ -317,8 +317,10 @@ function get_user_mail($id_user) {
 }
 
 function add_user_link() {
+$j = 0;	
     foreach ($_POST['id_user'] as $key => $value) { 
-        $i = $key;
+        if($j == 0) $i = $key;
+    	$j++;
     }
     foreach ($_POST['id_user'] as $key => $value) {
         if(isset($_POST['scales'][$i])) {

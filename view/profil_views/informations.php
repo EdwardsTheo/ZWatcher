@@ -59,7 +59,7 @@
                     if($_SESSION['power'] == 'utilisateur') {
                         $team = show_team($_SESSION['id']);
                         $empty = false;
-                        if($team[150] != 'empty') { 
+                        if($team[150] !== 'empty') { 
                             echo "
                             <div class='w3-container w3-padding-large' style='margin-bottom:32px'>
                             <h4><b>Equipes dont vous faites partie  : </b></h4>
@@ -69,15 +69,16 @@
                                 if($i % 3 == 1){
                                     echo "<div class='w3-row-padding'>";
                                 }
-                                $nb = rand(1, 32);
+				$nb = rand(1, 32);
+				if(isset($team[$i])) {
                                 echo "
                                 <div class='w3-third w3-container w3-margin-bottom'>
                                     <div class='w3-container w3-white2'>
-                                        <h4><b>Equipe $team[$i]</b></h4>
+                                        <h4><b>$team[$i]</b></h4>
                                     </div>
                                 </div>
                                 ";
-                                
+				}
                                 if($i % 3 == 0){
                                     echo "</div>";
                                 }
