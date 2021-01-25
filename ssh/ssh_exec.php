@@ -35,7 +35,7 @@ function ssh_launch($ip, $port, $username, $password, $command) {
     $stream = ssh2_exec($connection, $command);
     stream_set_blocking($stream, true);
     $output = stream_get_contents($stream);
-    //echo nl2br ("$output \n"); // To the the output of the executed command
+    //echo nl2br ("$output \n"); // the output of the executed command
     unset($connection);
 
     return $output; // Return the result of the command
