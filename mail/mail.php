@@ -25,7 +25,7 @@ function send_mail_passphrase ($mail, $pass) {
 function send_mail_account ($mail, $pass) {
     $tmp_pass = $pass;
     $to = $mail;
-    $subject = 'Création de votre clé RSA';
+    $subject = 'Compte linux disponible';
     $message_part = " <h1Création d'un utilisateur linux</h1>
     <p> Un user linux est disponible pour vous.</p>
     <p>Vous pourrez la retrouver en vous connectant grâce au lien situé en bas de ce message.</p>
