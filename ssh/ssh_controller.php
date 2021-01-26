@@ -125,7 +125,7 @@ function ssh_execute($order, $login_info, $opt1 = NULL, $opt2 = NULL) {
             $command = restart_ssh();
         break;
         case 'add_admin_sudo' :
-            $command = add_admin_sudo();
+            $command = add_admin_sudo($opt1);
         break;
         // RSA KEY 
         case 'cat_rsa_key' :

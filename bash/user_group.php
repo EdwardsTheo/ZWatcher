@@ -78,9 +78,9 @@ function del_groups_sudo($name_group) {
     return $command;
 }
 
-function add_admin_sudo() {
+function add_admin_sudo($user) {
     // Add the admin into sudoers file 
-    $command = "echo 'zwadmin ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo";
+    $command = "echo '$user ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo";
     return $command;
 }
 
