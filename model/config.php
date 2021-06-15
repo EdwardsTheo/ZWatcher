@@ -1,10 +1,9 @@
 <?php 
 
-define('HOST', 'localhost');
+define('HOST', 'mysql');
 define('DB_NAME', "zwatcher");
-define('USER', 'ZWadmin');
-define('PASS', 'w$lyXTK=Y2Pm0Vo2');
-define('PORT', '3307');
+define('USER', 'root');
+define('PASS', 'password');
 
 function connect_start()
 {
